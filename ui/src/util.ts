@@ -31,31 +31,26 @@ export function totalActivityData( data: Array<DeviceData>) {
 export function totalActivityData2( data: Array<DeviceData>) {
     const ret: Array<Dataset> =[]
     let a_u: Dataset = {
-        sectionCaption: "active_useable",
-        sectionValue: 0
-    }
-    let a_uu: Dataset = {
-        sectionCaption: "active_unuseable",
+        sectionCaption: "active_usable",
         sectionValue: 0
     }
     let ia_u: Dataset = {
-        sectionCaption: "inactive_useable",
+        sectionCaption: "inactive_usable",
         sectionValue: 0
     }
     let ia_uu: Dataset = {
-        sectionCaption: "inactive_unuseable",
+        sectionCaption: "inactive_unusable",
         sectionValue: 0
     }
     const dummy = data
     for(const point of dummy){
         if (point.getIsactive()) {
-            point.getIsuseable()? a_u.sectionValue!++  : a_uu.sectionValue!++
+            a_u.sectionValue!++
         } else {
-            point.getIsuseable()? ia_u.sectionValue!++  : ia_uu.sectionValue!++
+            point.getIsusable()? ia_u.sectionValue!++  : ia_uu.sectionValue!++
         }
     }
     ret.push(a_u)
-    ret.push(a_uu)
     ret.push(ia_u)
     ret.push(ia_uu)
     return ret
