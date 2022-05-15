@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package frontendPackage;
+
+service DataService {
+  rpc ConnectionTesting(ChartDatasetRequest) returns (TestResponse) {};
+  rpc ChartDatasetGathering(ChartDatasetRequest) returns (stream ChartDatasetResponse) {}; 
+}
+
+message ChartDatasetRequest {
+  int32 chart_id = 1;
+}
+
+message Error {
+  int32 id = 1;
+  string priority = 2;
+  string kind = 3;
+  string date = 4;
+}
+
+message DeviceData {
+  string uuid = 1;
+  bool isActive = 2;
+  bool isUsable = 3;
+  string classes = 4;
+  repeated Error errors = 5;
+  string location = 6;
+  string staff = 7;
+  string depot = 8;
+  repeated string ensemble = 9;
+  int32 runtimeCurrent = 10;
+  int32 runtimeMaintenance = 11;
+  int32 runtimeTotal = 12;
+}
+
+message ChartDatasetResponse {
+  DeviceData DeviceData = 1;
+}
+
+message TestResponse {
+  string hello = 1;
+}

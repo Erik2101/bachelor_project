@@ -1,0 +1,7 @@
+.bar-chart {
+    display: flex;
+    height: 90%;
+    width: 80%;
+    background-color: #917EBF;
+    border-radius: 10px;
+}

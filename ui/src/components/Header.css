@@ -1,0 +1,22 @@
+.main-app-header {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #1F1B29;
+    grid-column: 1 / 4;
+    color: #8458F4;
+}
+
+.logo {
+    width: 50%;
+    padding:0px 20px 0px 20px;
+}
+
+.tab-container {
+    justify-content: space-between;
+    display: flex;
+    width: 50%;
+    padding:0px 20px 0px 20px;
+}
