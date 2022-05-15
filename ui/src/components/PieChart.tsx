@@ -42,17 +42,14 @@ const PieChart = (props: {data: Array<DeviceData>}) => {
 
     const arc = d3.arc<PieArcDatum<number>>()
                     .innerRadius(size / 4 - 2)
-                    .outerRadius(size / 2 - 1)
-                    .padAngle(0.02)
-                    .padRadius(150)
-                    .cornerRadius(5);
+                    .outerRadius(size / 2 - 1);
 
     svg.append("g")
-            .attr("fill", (_d,i) => colours[i])
             .selectAll("path")
             .data(arcs)
             .join("path")
             .attr("d", d => arc(d))
+            .attr("fill", (_,i) => colours[i])
     }
 
     return (
