@@ -14,7 +14,7 @@ const BarChart = (props: {
 
     const update = React.useRef(false)
 
-    function drawChart(data: Array<Dataset>) {
+    function drawChart(data: Array<Dataset>, colours: Array<string>, title: string) {
 
         const containerWidth = parseInt(d3.select(".bar-chart").style("width"))
         const containerHeight = parseInt(d3.select(".bar-chart").style("height"))
@@ -26,8 +26,6 @@ const BarChart = (props: {
         }
         const chartWidth = containerWidth - margin.left - margin.right
         const chartHeight = containerHeight - margin.top - margin.bottom
-
-        const chartTitle = "Barchart title dummy"
     
         const svg = d3.select(d3Chart.current)
                         .attr("width", containerWidth)
@@ -67,7 +65,6 @@ const BarChart = (props: {
             .call(d3.axisLeft(y))
 
         svg.append("g")
-            .attr("fill","#1F1B29")
             .selectAll("rect")
             .data(data)
             .join("rect")
@@ -75,7 +72,8 @@ const BarChart = (props: {
                 .attr("y", d => y(d.sectionValue))
                 .attr("height", d => y(0)-y(d.sectionValue))
                 .attr("width", x.bandwidth())
-                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + "," + -chartHeight/2 + ")")
+                .attr("fill", (_, i) => colours[i])
+                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + "," + (-chartHeight / 2 - 0.5) + ")")
 
         svg.append("text")
             .attr("x", (containerWidth / 2))             
@@ -84,7 +82,7 @@ const BarChart = (props: {
             .attr("text-anchor", "middle")  
             .style("font-size", "1em")
             .style("font-weight", "600")
-            .text(chartTitle)
+            .text(title)
     }
 
    /*  React.useEffect(() => {
@@ -110,10 +108,25 @@ const BarChart = (props: {
 
     React.useEffect(() => {
         let data
-        if(props.typeId === 1) data = totalActivityData(props.data)
-        if(props.typeId === 2) data = totalActivityData2(props.data)
+        let colours : Array<string>
+        let title : string
+        if(props.typeId === 1) {
+            data = totalActivityData(props.data)
+            colours = ["#29DB44", "#ABA7AA"]
+            title = "Aktivitätstatus aller bekannten Geräte"
+        }
+        else if(props.typeId === 2) {
+            data = totalActivityData2(props.data)
+            colours = ["#29DB44", "#B1E6BE", "#ABA7AA"]
+            title = "Aktivitätsstatus und Einsatzbereitschaft aller bekannten Geräte"
+        }
+        else {
+            console.log("typeId: expected 1, 2. Received:" + props.typeId)
+            colours = ["#4B4D4B", "#4B4D4B", "#4B4D4B"]
+            title = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
 
-        if (data) drawChart(data)
+        if (data) drawChart(data, colours, title)
     },[])
 
     return (

@@ -2,8 +2,16 @@
     display: flex;
     height: 90%;
     width: 80%;
-    background-color: #917EBF;
+    background-color: #BAB8BA;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+}
+
+.tooltip {
+    font-size: 0.8em;
+    background-color: #424242;
+    color: #D4D4D4;
+    padding: 5px;
+    border-radius: 5px;
 }

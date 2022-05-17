@@ -63,13 +63,18 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
             .attr("transform", "translate("+ -chartWidth / 2 + ", " + - chartHeight / 2 + ")")
 
         const colours = [
-            {fill: "#44F295", stroke: "#48DB63"},
+            {fill: "#44F295", stroke: "#2B8A3C"},
             {fill: "#F5CC26", stroke: "#F2941D"},
             {fill: "#F54E1B", stroke: "#DB281A"}
         ]
 
+        const tooltip = d3.select(".area-chart").append("div")
+                            .attr("class", "tooltip")
+                            .style("position", "absolute")
+                            .style("opacity", 0)
+
         for (const j in range (template.dataSet.length)) {
-            const area = d3.area()
+            /* const area = d3.area()
                                 .x((_d, i) => x(new Date(template.dataSet[j].data[i].date)))
                                 .y0(y(0))
                                 .y1((_d, i) => y(template.dataSet[j].data[i].errNum))
@@ -77,13 +82,50 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
             svg.append("path")
                 .datum(template.dataSet[j].data)
                 .attr("d", area)
-                .attr("fill", colours[j].fill!)
-                .attr("stroke", colours[j].stroke!)
-                .attr("stroke-width", 1)
+                .attr("fill", colours[j].fill)
+                .attr("stroke", "none")
                 .attr("fill-opacity", 0.25)
+                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")") */
+
+            const line = d3.line()
+                            .x((_d, i) => x(new Date(template.dataSet[j].data[i].date)))
+                            .y((_d, i) => y(template.dataSet[j].data[i].errNum))
+
+            svg.append("path")
+                .datum(template.dataSet[j].data)
+                .attr("d", line)
+                .attr("fill", "none")
+                .attr("stroke", colours[j].stroke)
+                .attr("stroke-width", 1)
                 .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
         
-            /* svg.selectAll" */
+            svg.selectAll("dataPoints")
+                .data(template.dataSet[j].data)
+                .enter()
+                .append("circle")
+                    .attr("fill", colours[j].stroke)
+                    .attr("stroke", "none")
+                    .attr("cx", (_d, i) => x(new Date(template.dataSet[j].data[i].date)))
+                    .attr("cy", (_d, i) => y(template.dataSet[j].data[i].errNum))
+                    .attr("r", 2)
+                    .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+
+                    .on("mousemove", function(event, d) {
+                        tooltip.transition()
+                                    .duration(50)
+                                    .style("opacity", 1)
+
+                        tooltip.html(d.errNum.toString())
+                                .style("left", d3.pointer(event, window)[0] + "px")
+                                .style("top", (d3.pointer(event, window)[1] - margin.top * 0.4)  + "px");
+                    })
+
+                    .on("mouseleave", function() {
+                        tooltip.transition()
+                                    .duration(50)
+                                    .style("opacity", 0)
+                    })
+
         }
 
         svg.append("text")
