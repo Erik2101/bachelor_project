@@ -21,15 +21,17 @@ const PieChart = (props: {data: Array<DeviceData>}) => {
     const containerWidth = parseInt(d3.select(".pie-chart").style("width"))
     const containerHeight = parseInt(d3.select(".pie-chart").style("height"))
     const margin = {
-        top: containerHeight * 0.2, 
+        top: containerHeight * 0.1, 
         right: containerWidth * 0.1,
-        bottom: containerHeight * 0.00,
+        bottom: containerHeight * 0.1,
         left: containerWidth * 0.1
     }
 
     const size = containerHeight < containerWidth ?
                 containerHeight - margin.top - margin.bottom :
                 containerWidth - margin.left - margin.right
+
+    const chartTitle = "PieChart dummy title"
 
     const svg = d3.select(d3Chart.current)
                     .attr("width", containerWidth)
@@ -50,6 +52,16 @@ const PieChart = (props: {data: Array<DeviceData>}) => {
             .join("path")
             .attr("d", d => arc(d))
             .attr("fill", (_,i) => colours[i])
+            .attr("transform", "translate(0, " + margin.top / 2 + ")")
+
+    svg.append("text")
+        .attr("x", (containerWidth / 2))             
+        .attr("y", 0 )
+        .attr("transform", "translate(" + (-size / 2 - margin.left) + ", " + -size / 2 +")")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "1em")
+        .style("font-weight", "600")
+        .text(chartTitle)
     }
 
     return (

@@ -16,6 +16,9 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
             domain.push(new Date(date))
         }
 
+        const chartTitle = "Gerätefehler von " + template.xDomain[0] + " bis " +
+                            template.xDomain[template.xDomain.length - 1] + " nach Prioritäten"
+
         const containerWidth = parseInt(d3.select(".area-chart").style("width"))
         const containerHeight = parseInt(d3.select(".area-chart").style("height"))
         const margin = {
@@ -38,7 +41,7 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
         console.log(dx)
         const x = d3.scaleTime()
                         .domain(dx)
-                        .range([margin.left, chartWidth])
+                        .range([margin.left, chartWidth + margin.right])
 
         svg.append("g")
             .call(d3.axisBottom(x))
@@ -53,7 +56,7 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
         
         const y = d3.scaleLinear()
                         .domain([0, yMax])
-                        .range([chartHeight, margin.top])
+                        .range([chartHeight, margin.top / 2])
 
         svg.append("g")
             .call(d3.axisLeft(y))
@@ -67,9 +70,9 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
 
         for (const j in range (template.dataSet.length)) {
             const area = d3.area()
-                                .x((d, i) => x(new Date(template.dataSet[j].data[i].date)))
+                                .x((_d, i) => x(new Date(template.dataSet[j].data[i].date)))
                                 .y0(y(0))
-                                .y1((d, i) => y(template.dataSet[j].data[i].errNum))
+                                .y1((_d, i) => y(template.dataSet[j].data[i].errNum))
 
             svg.append("path")
                 .datum(template.dataSet[j].data)
@@ -77,9 +80,20 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
                 .attr("fill", colours[j].fill!)
                 .attr("stroke", colours[j].stroke!)
                 .attr("stroke-width", 1)
-                .attr("fill-opacity", 0.5)
+                .attr("fill-opacity", 0.25)
                 .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+        
+            /* svg.selectAll" */
         }
+
+        svg.append("text")
+            .attr("x", (containerWidth / 2))             
+            .attr("y", 0 )
+            .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+            .attr("text-anchor", "middle")  
+            .style("font-size", "1em")
+            .style("font-weight", "600")
+            .text(chartTitle)
             
     }
 

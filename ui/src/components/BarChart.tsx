@@ -14,11 +14,6 @@ const BarChart = (props: {
 
     const update = React.useRef(false)
 
-    /* const [dimensions, setDimensions] = React.useState({
-                                        width: window.parent.innerWidth,
-                                        height: window.parent.innerHeight,
-    }) */
-
     function drawChart(data: Array<Dataset>) {
 
         const containerWidth = parseInt(d3.select(".bar-chart").style("width"))
@@ -31,19 +26,22 @@ const BarChart = (props: {
         }
         const chartWidth = containerWidth - margin.left - margin.right
         const chartHeight = containerHeight - margin.top - margin.bottom
+
+        const chartTitle = "Barchart title dummy"
     
         const svg = d3.select(d3Chart.current)
                         .attr("width", containerWidth)
                         .attr("height", containerHeight)
+                        .attr("viewBox", [-containerWidth / 2, -containerHeight / 2, containerWidth, containerHeight])
 
 
         const x = d3.scaleBand()
                     .domain(data.map(item => item.sectionCaption))
                     .range([margin.left, chartWidth + margin.right])
-                    .padding(0.3)
+                    .padding(0.4)
 
         svg.append("g")
-            .attr("transform", "translate(0, " + chartHeight + ")")
+            .attr("transform", "translate(" + (-chartWidth /2 - margin.left) +  ", " + chartHeight/2 + ")")
             .call(d3.axisBottom(x).tickFormat(null).tickSizeOuter(0))
 
         function makeValueIterable() {
@@ -62,10 +60,10 @@ const BarChart = (props: {
 
         const y = d3.scaleLinear()
                     .domain([0, yMax])
-                    .range([chartHeight , margin.top])
+                    .range([chartHeight , margin.top / 2])
 
         svg.append("g")
-            .attr("transform", "translate(" + margin.left + ",0)")
+            .attr("transform", "translate(" + -chartWidth / 2 + "," + -chartHeight/2 + ")")
             .call(d3.axisLeft(y))
 
         svg.append("g")
@@ -77,6 +75,16 @@ const BarChart = (props: {
                 .attr("y", d => y(d.sectionValue))
                 .attr("height", d => y(0)-y(d.sectionValue))
                 .attr("width", x.bandwidth())
+                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + "," + -chartHeight/2 + ")")
+
+        svg.append("text")
+            .attr("x", (containerWidth / 2))             
+            .attr("y", 0 )
+            .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+            .attr("text-anchor", "middle")  
+            .style("font-size", "1em")
+            .style("font-weight", "600")
+            .text(chartTitle)
     }
 
    /*  React.useEffect(() => {
