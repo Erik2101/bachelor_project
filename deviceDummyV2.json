@@ -1,0 +1,5066 @@
+[
+    {
+        "uuid": "0d00983e-accc-314c-bd6d-df4dd5ccf614",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "0d00983e-accc-314c-bd6d-df4dd5ccf614"
+        ],
+        "runtimeCurrent": 51404,
+        "runtimeMaintenance": 102809,
+        "runtimeTotal": 205618
+    },
+    {
+        "uuid": "cf0a27fc-04f8-f5ec-f0af-913b1356f872",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 4137,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-08 05:19:17"
+            },
+            {
+                "id": 9207,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-09 12:19:15"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "617769e8-f176-0ff0-3595-d7ff87b6fee2",
+            "c21b881e-4a6d-e40b-bdc0-1b3cbe4ee112",
+            "fa05f58a-9799-025a-1324-f7b47b43b69b",
+            "cf0a27fc-04f8-f5ec-f0af-913b1356f872"
+        ],
+        "runtimeCurrent": 246938,
+        "runtimeMaintenance": 493876,
+        "runtimeTotal": 987752
+    },
+    {
+        "uuid": "27b3f5ae-93b9-9bb6-a8dc-c3990e17ea58",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "27b3f5ae-93b9-9bb6-a8dc-c3990e17ea58"
+        ],
+        "runtimeCurrent": 281944,
+        "runtimeMaintenance": 563888,
+        "runtimeTotal": 1127777
+    },
+    {
+        "uuid": "cea1fd45-a325-e25b-f237-80bc8c0c60b9",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "1c23b85d-d6df-00b3-0a80-5baa98c72dbd",
+            "a2afbf07-bcb2-be52-5115-75ae1cc3c882",
+            "80dc199c-d150-f6e7-05e9-46d70aaf1019",
+            "cea1fd45-a325-e25b-f237-80bc8c0c60b9"
+        ],
+        "runtimeCurrent": 223010,
+        "runtimeMaintenance": 446019,
+        "runtimeTotal": 892038
+    },
+    {
+        "uuid": "dbe99845-02d5-a42c-5e9b-62fedf69b528",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Gregor Scherer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "dbe99845-02d5-a42c-5e9b-62fedf69b528"
+        ],
+        "runtimeCurrent": 84064,
+        "runtimeMaintenance": 168128,
+        "runtimeTotal": 336257
+    },
+    {
+        "uuid": "f52f77b4-377a-07b8-8a98-c73138694736",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Lambert Becker",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "f52f77b4-377a-07b8-8a98-c73138694736"
+        ],
+        "runtimeCurrent": 104561,
+        "runtimeMaintenance": 209122,
+        "runtimeTotal": 418244
+    },
+    {
+        "uuid": "08cfaf72-5b83-36dd-c9e6-fc2ff5168332",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Magdalene Schwenke",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "08cfaf72-5b83-36dd-c9e6-fc2ff5168332"
+        ],
+        "runtimeCurrent": 81090,
+        "runtimeMaintenance": 162179,
+        "runtimeTotal": 324358
+    },
+    {
+        "uuid": "617769e8-f176-0ff0-3595-d7ff87b6fee2",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "cf0a27fc-04f8-f5ec-f0af-913b1356f872",
+            "c21b881e-4a6d-e40b-bdc0-1b3cbe4ee112",
+            "fa05f58a-9799-025a-1324-f7b47b43b69b",
+            "617769e8-f176-0ff0-3595-d7ff87b6fee2"
+        ],
+        "runtimeCurrent": 107451,
+        "runtimeMaintenance": 214902,
+        "runtimeTotal": 429804
+    },
+    {
+        "uuid": "0df53faf-7d9a-96ac-6507-7cab9e6250f6",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "c3ae0201-cce6-a950-ec7c-bae7af3d9d39",
+            "03e6213c-6ab1-3260-d840-4c1fa722b19b",
+            "726ce53a-67e8-685a-5b5a-bfdaeac6a14f",
+            "6aace98e-3135-4242-ea5a-28d0e1015e17",
+            "0df53faf-7d9a-96ac-6507-7cab9e6250f6"
+        ],
+        "runtimeCurrent": 53599,
+        "runtimeMaintenance": 107198,
+        "runtimeTotal": 214396
+    },
+    {
+        "uuid": "d87b9214-9463-d7f8-4f30-01852ea10b1d",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "d87b9214-9463-d7f8-4f30-01852ea10b1d"
+        ],
+        "runtimeCurrent": 202276,
+        "runtimeMaintenance": 404552,
+        "runtimeTotal": 809104
+    },
+    {
+        "uuid": "3ea76be2-8b1c-4d4c-fe8a-f18e82dfb969",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Lambert Becker",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "3ea76be2-8b1c-4d4c-fe8a-f18e82dfb969"
+        ],
+        "runtimeCurrent": 64930,
+        "runtimeMaintenance": 129860,
+        "runtimeTotal": 259719
+    },
+    {
+        "uuid": "11afe979-c81c-27a9-6c2b-a678a3859042",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-1",
+        "staff": "Dietmar Brahms",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "11afe979-c81c-27a9-6c2b-a678a3859042"
+        ],
+        "runtimeCurrent": 69644,
+        "runtimeMaintenance": 139287,
+        "runtimeTotal": 278574
+    },
+    {
+        "uuid": "c3ae0201-cce6-a950-ec7c-bae7af3d9d39",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "0df53faf-7d9a-96ac-6507-7cab9e6250f6",
+            "03e6213c-6ab1-3260-d840-4c1fa722b19b",
+            "726ce53a-67e8-685a-5b5a-bfdaeac6a14f",
+            "6aace98e-3135-4242-ea5a-28d0e1015e17",
+            "c3ae0201-cce6-a950-ec7c-bae7af3d9d39"
+        ],
+        "runtimeCurrent": 69333,
+        "runtimeMaintenance": 138666,
+        "runtimeTotal": 277331
+    },
+    {
+        "uuid": "a896bd9c-9b46-be0d-1ae6-efc2f4d99b85",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Lambert Becker",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "d85b5e0e-6a37-3fe3-6846-2579732e1f23",
+            "d32bef39-3260-4475-90f1-274ca2cddf71",
+            "c1aa9f43-47b4-fbf6-9266-838507425309",
+            "a896bd9c-9b46-be0d-1ae6-efc2f4d99b85"
+        ],
+        "runtimeCurrent": 44908,
+        "runtimeMaintenance": 89816,
+        "runtimeTotal": 179631
+    },
+    {
+        "uuid": "5d8e69dd-e49d-0ef6-f158-8aa1c6023a9c",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "5d8e69dd-e49d-0ef6-f158-8aa1c6023a9c"
+        ],
+        "runtimeCurrent": 198640,
+        "runtimeMaintenance": 397280,
+        "runtimeTotal": 794561
+    },
+    {
+        "uuid": "1c23b85d-d6df-00b3-0a80-5baa98c72dbd",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 6252,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-07 23:00:16"
+            },
+            {
+                "id": 699,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-08 08:02:57"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "cea1fd45-a325-e25b-f237-80bc8c0c60b9",
+            "a2afbf07-bcb2-be52-5115-75ae1cc3c882",
+            "80dc199c-d150-f6e7-05e9-46d70aaf1019",
+            "1c23b85d-d6df-00b3-0a80-5baa98c72dbd"
+        ],
+        "runtimeCurrent": 126445,
+        "runtimeMaintenance": 252890,
+        "runtimeTotal": 505780
+    },
+    {
+        "uuid": "d85b5e0e-6a37-3fe3-6846-2579732e1f23",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "a896bd9c-9b46-be0d-1ae6-efc2f4d99b85",
+            "d32bef39-3260-4475-90f1-274ca2cddf71",
+            "c1aa9f43-47b4-fbf6-9266-838507425309",
+            "d85b5e0e-6a37-3fe3-6846-2579732e1f23"
+        ],
+        "runtimeCurrent": 238062,
+        "runtimeMaintenance": 476123,
+        "runtimeTotal": 952246
+    },
+    {
+        "uuid": "c21b881e-4a6d-e40b-bdc0-1b3cbe4ee112",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "cf0a27fc-04f8-f5ec-f0af-913b1356f872",
+            "617769e8-f176-0ff0-3595-d7ff87b6fee2",
+            "fa05f58a-9799-025a-1324-f7b47b43b69b",
+            "c21b881e-4a6d-e40b-bdc0-1b3cbe4ee112"
+        ],
+        "runtimeCurrent": 239403,
+        "runtimeMaintenance": 478806,
+        "runtimeTotal": 957613
+    },
+    {
+        "uuid": "3b1bc9f8-23b7-1cef-8910-1c1432f1169c",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "3b1bc9f8-23b7-1cef-8910-1c1432f1169c"
+        ],
+        "runtimeCurrent": 36808,
+        "runtimeMaintenance": 73617,
+        "runtimeTotal": 147234
+    },
+    {
+        "uuid": "d32bef39-3260-4475-90f1-274ca2cddf71",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 2913,
+                "priority": "medium",
+                "kind": "physical",
+                "date": "2022-03-07 18:12:55"
+            },
+            {
+                "id": 8596,
+                "priority": "medium",
+                "kind": "technical",
+                "date": "2022-03-10 19:34:32"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Aaron Braband",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "a896bd9c-9b46-be0d-1ae6-efc2f4d99b85",
+            "d85b5e0e-6a37-3fe3-6846-2579732e1f23",
+            "c1aa9f43-47b4-fbf6-9266-838507425309",
+            "d32bef39-3260-4475-90f1-274ca2cddf71"
+        ],
+        "runtimeCurrent": 260304,
+        "runtimeMaintenance": 520608,
+        "runtimeTotal": 1041216
+    },
+    {
+        "uuid": "e09b57d3-8bd8-4fb3-0d3c-7e17f9b8532b",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "e09b57d3-8bd8-4fb3-0d3c-7e17f9b8532b"
+        ],
+        "runtimeCurrent": 243052,
+        "runtimeMaintenance": 486103,
+        "runtimeTotal": 972206
+    },
+    {
+        "uuid": "03e6213c-6ab1-3260-d840-4c1fa722b19b",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "0df53faf-7d9a-96ac-6507-7cab9e6250f6",
+            "c3ae0201-cce6-a950-ec7c-bae7af3d9d39",
+            "726ce53a-67e8-685a-5b5a-bfdaeac6a14f",
+            "6aace98e-3135-4242-ea5a-28d0e1015e17",
+            "03e6213c-6ab1-3260-d840-4c1fa722b19b"
+        ],
+        "runtimeCurrent": 29000,
+        "runtimeMaintenance": 58000,
+        "runtimeTotal": 116001
+    },
+    {
+        "uuid": "ed6ac894-e939-4e0f-26e3-fa27c1d050dd",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Gregor Scherer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "ed6ac894-e939-4e0f-26e3-fa27c1d050dd"
+        ],
+        "runtimeCurrent": 184726,
+        "runtimeMaintenance": 369452,
+        "runtimeTotal": 738904
+    },
+    {
+        "uuid": "491eaa61-54c1-efde-e7b2-1b3e5574b20e",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "491eaa61-54c1-efde-e7b2-1b3e5574b20e"
+        ],
+        "runtimeCurrent": 123198,
+        "runtimeMaintenance": 246396,
+        "runtimeTotal": 492792
+    },
+    {
+        "uuid": "a4e6a97a-db31-2a22-2b79-2ff88f9e719f",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "a4e6a97a-db31-2a22-2b79-2ff88f9e719f"
+        ],
+        "runtimeCurrent": 130252,
+        "runtimeMaintenance": 260504,
+        "runtimeTotal": 521007
+    },
+    {
+        "uuid": "e9275913-c588-cc95-b326-2c2add209360",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Gregor Scherer",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "e9275913-c588-cc95-b326-2c2add209360"
+        ],
+        "runtimeCurrent": 143306,
+        "runtimeMaintenance": 286612,
+        "runtimeTotal": 573224
+    },
+    {
+        "uuid": "5462fafb-e840-36ca-4897-5fea721a63e9",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 7145,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-08 03:53:38"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "5462fafb-e840-36ca-4897-5fea721a63e9"
+        ],
+        "runtimeCurrent": 72206,
+        "runtimeMaintenance": 144412,
+        "runtimeTotal": 288823
+    },
+    {
+        "uuid": "13451e30-fda5-6efa-3471-5e5043a39d8c",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Aaron Braband",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "13451e30-fda5-6efa-3471-5e5043a39d8c"
+        ],
+        "runtimeCurrent": 112638,
+        "runtimeMaintenance": 225276,
+        "runtimeTotal": 450552
+    },
+    {
+        "uuid": "1dfe0eba-9e49-e54d-337e-bb6fe6dbb301",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "1dfe0eba-9e49-e54d-337e-bb6fe6dbb301"
+        ],
+        "runtimeCurrent": 248502,
+        "runtimeMaintenance": 497004,
+        "runtimeTotal": 994007
+    },
+    {
+        "uuid": "13229475-3d35-8cd8-0e37-5d7d3176cb73",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "13229475-3d35-8cd8-0e37-5d7d3176cb73"
+        ],
+        "runtimeCurrent": 215683,
+        "runtimeMaintenance": 431366,
+        "runtimeTotal": 862732
+    },
+    {
+        "uuid": "4395391e-b87b-c231-3ae9-20f68c6be743",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "4395391e-b87b-c231-3ae9-20f68c6be743"
+        ],
+        "runtimeCurrent": 24028,
+        "runtimeMaintenance": 48055,
+        "runtimeTotal": 96110
+    },
+    {
+        "uuid": "c1aa9f43-47b4-fbf6-9266-838507425309",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Isabell Fertig",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "a896bd9c-9b46-be0d-1ae6-efc2f4d99b85",
+            "d85b5e0e-6a37-3fe3-6846-2579732e1f23",
+            "d32bef39-3260-4475-90f1-274ca2cddf71",
+            "c1aa9f43-47b4-fbf6-9266-838507425309"
+        ],
+        "runtimeCurrent": 187169,
+        "runtimeMaintenance": 374338,
+        "runtimeTotal": 748677
+    },
+    {
+        "uuid": "641b266f-228a-91d8-dabe-593b3b6826e0",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Lambert Becker",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "641b266f-228a-91d8-dabe-593b3b6826e0"
+        ],
+        "runtimeCurrent": 286418,
+        "runtimeMaintenance": 572837,
+        "runtimeTotal": 1145674
+    },
+    {
+        "uuid": "8ecd1d8f-310b-9c4a-f514-a3be5672524f",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 762,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-08 11:11:46"
+            },
+            {
+                "id": 4429,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-10 15:57:16"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "8ecd1d8f-310b-9c4a-f514-a3be5672524f"
+        ],
+        "runtimeCurrent": 49330,
+        "runtimeMaintenance": 98660,
+        "runtimeTotal": 197321
+    },
+    {
+        "uuid": "87c6a517-a35d-c66e-5bca-ad4c736ac3a8",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "87c6a517-a35d-c66e-5bca-ad4c736ac3a8"
+        ],
+        "runtimeCurrent": 182064,
+        "runtimeMaintenance": 364128,
+        "runtimeTotal": 728256
+    },
+    {
+        "uuid": "60c5125e-08c5-3b1c-0115-4a523d1508a1",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 3574,
+                "priority": "high",
+                "kind": "technical",
+                "date": "2022-03-10 17:17:15"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "60c5125e-08c5-3b1c-0115-4a523d1508a1"
+        ],
+        "runtimeCurrent": 133704,
+        "runtimeMaintenance": 267408,
+        "runtimeTotal": 534816
+    },
+    {
+        "uuid": "726ce53a-67e8-685a-5b5a-bfdaeac6a14f",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 8376,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-09 18:42:49"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "0df53faf-7d9a-96ac-6507-7cab9e6250f6",
+            "c3ae0201-cce6-a950-ec7c-bae7af3d9d39",
+            "03e6213c-6ab1-3260-d840-4c1fa722b19b",
+            "6aace98e-3135-4242-ea5a-28d0e1015e17",
+            "726ce53a-67e8-685a-5b5a-bfdaeac6a14f"
+        ],
+        "runtimeCurrent": 115357,
+        "runtimeMaintenance": 230714,
+        "runtimeTotal": 461428
+    },
+    {
+        "uuid": "6aace98e-3135-4242-ea5a-28d0e1015e17",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 8265,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-08 14:56:27"
+            },
+            {
+                "id": 8655,
+                "priority": "high",
+                "kind": "technical",
+                "date": "2022-03-09 10:42:52"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Aaron Braband",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "0df53faf-7d9a-96ac-6507-7cab9e6250f6",
+            "c3ae0201-cce6-a950-ec7c-bae7af3d9d39",
+            "03e6213c-6ab1-3260-d840-4c1fa722b19b",
+            "726ce53a-67e8-685a-5b5a-bfdaeac6a14f",
+            "6aace98e-3135-4242-ea5a-28d0e1015e17"
+        ],
+        "runtimeCurrent": 147709,
+        "runtimeMaintenance": 295418,
+        "runtimeTotal": 590836
+    },
+    {
+        "uuid": "b739326f-23d7-7d00-f9a8-b9a3c480e7c3",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "b739326f-23d7-7d00-f9a8-b9a3c480e7c3"
+        ],
+        "runtimeCurrent": 92818,
+        "runtimeMaintenance": 185636,
+        "runtimeTotal": 371272
+    },
+    {
+        "uuid": "788f7433-01c1-f85c-91a8-b04c317f1f91",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Gregor Scherer",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "788f7433-01c1-f85c-91a8-b04c317f1f91"
+        ],
+        "runtimeCurrent": 239001,
+        "runtimeMaintenance": 478002,
+        "runtimeTotal": 956003
+    },
+    {
+        "uuid": "5ab89e89-1c3d-d1da-3dd8-9ed124e89849",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Dietmar Brahms",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "5ab89e89-1c3d-d1da-3dd8-9ed124e89849"
+        ],
+        "runtimeCurrent": 94990,
+        "runtimeMaintenance": 189980,
+        "runtimeTotal": 379961
+    },
+    {
+        "uuid": "14d104c5-ad90-0f00-ea73-786a1b307b53",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "14d104c5-ad90-0f00-ea73-786a1b307b53"
+        ],
+        "runtimeCurrent": 38180,
+        "runtimeMaintenance": 76359,
+        "runtimeTotal": 152718
+    },
+    {
+        "uuid": "b3c9130d-8993-dadd-260f-e43e1607554d",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 3088,
+                "priority": "medium",
+                "kind": "technical",
+                "date": "2022-03-11 13:20:07"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "b3c9130d-8993-dadd-260f-e43e1607554d"
+        ],
+        "runtimeCurrent": 44731,
+        "runtimeMaintenance": 89462,
+        "runtimeTotal": 178923
+    },
+    {
+        "uuid": "60a1e281-5fc8-1d4e-f58f-562b9462ded3",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 7797,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-13 02:46:53"
+            },
+            {
+                "id": 6153,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-13 21:51:26"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-1",
+        "staff": "Gregor Scherer",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "60a1e281-5fc8-1d4e-f58f-562b9462ded3"
+        ],
+        "runtimeCurrent": 219732,
+        "runtimeMaintenance": 439463,
+        "runtimeTotal": 878926
+    },
+    {
+        "uuid": "29745e14-c0a2-4518-fdd4-1e1f46d917b2",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 9665,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-13 18:22:45"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Magdalene Schwenke",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "29745e14-c0a2-4518-fdd4-1e1f46d917b2"
+        ],
+        "runtimeCurrent": 258383,
+        "runtimeMaintenance": 516766,
+        "runtimeTotal": 1033533
+    },
+    {
+        "uuid": "5ed603ee-e6f6-7aaa-091c-2bdfc526f8ef",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Lambert Becker",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "5ed603ee-e6f6-7aaa-091c-2bdfc526f8ef"
+        ],
+        "runtimeCurrent": 146030,
+        "runtimeMaintenance": 292061,
+        "runtimeTotal": 584122
+    },
+    {
+        "uuid": "1753e88b-c8a6-9c5d-3edc-3854d7485a72",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Magdalene Schwenke",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "1753e88b-c8a6-9c5d-3edc-3854d7485a72"
+        ],
+        "runtimeCurrent": 56284,
+        "runtimeMaintenance": 112569,
+        "runtimeTotal": 225138
+    },
+    {
+        "uuid": "547addb2-c520-9101-cf76-8959ca385066",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "547addb2-c520-9101-cf76-8959ca385066"
+        ],
+        "runtimeCurrent": 43223,
+        "runtimeMaintenance": 86446,
+        "runtimeTotal": 172893
+    },
+    {
+        "uuid": "ddd3a8c7-a4b2-da44-bf9c-90a015b9b991",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "ddd3a8c7-a4b2-da44-bf9c-90a015b9b991"
+        ],
+        "runtimeCurrent": 274644,
+        "runtimeMaintenance": 549288,
+        "runtimeTotal": 1098577
+    },
+    {
+        "uuid": "b7fac627-10f3-581c-5007-91b3734864a0",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "b7fac627-10f3-581c-5007-91b3734864a0"
+        ],
+        "runtimeCurrent": 8300,
+        "runtimeMaintenance": 16600,
+        "runtimeTotal": 33201
+    },
+    {
+        "uuid": "e5b65ce8-b1b3-23a3-31be-94638c597a91",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "e5b65ce8-b1b3-23a3-31be-94638c597a91"
+        ],
+        "runtimeCurrent": 259900,
+        "runtimeMaintenance": 519800,
+        "runtimeTotal": 1039601
+    },
+    {
+        "uuid": "45d845d0-d7e3-c35a-d7de-869ff5904749",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "45d845d0-d7e3-c35a-d7de-869ff5904749"
+        ],
+        "runtimeCurrent": 175872,
+        "runtimeMaintenance": 351744,
+        "runtimeTotal": 703489
+    },
+    {
+        "uuid": "25b715cc-1214-8fd9-ebe8-f0202b2593ae",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "25b715cc-1214-8fd9-ebe8-f0202b2593ae"
+        ],
+        "runtimeCurrent": 69145,
+        "runtimeMaintenance": 138290,
+        "runtimeTotal": 276579
+    },
+    {
+        "uuid": "37719cd9-6132-ed03-b2e0-f14348a5ddfe",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "37719cd9-6132-ed03-b2e0-f14348a5ddfe"
+        ],
+        "runtimeCurrent": 179855,
+        "runtimeMaintenance": 359710,
+        "runtimeTotal": 719420
+    },
+    {
+        "uuid": "00eb6f59-20ac-ccf9-d860-369de23f6379",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Aaron Braband",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "00eb6f59-20ac-ccf9-d860-369de23f6379"
+        ],
+        "runtimeCurrent": 226664,
+        "runtimeMaintenance": 453328,
+        "runtimeTotal": 906656
+    },
+    {
+        "uuid": "a2afbf07-bcb2-be52-5115-75ae1cc3c882",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Isabell Fertig",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "cea1fd45-a325-e25b-f237-80bc8c0c60b9",
+            "1c23b85d-d6df-00b3-0a80-5baa98c72dbd",
+            "80dc199c-d150-f6e7-05e9-46d70aaf1019",
+            "a2afbf07-bcb2-be52-5115-75ae1cc3c882"
+        ],
+        "runtimeCurrent": 118367,
+        "runtimeMaintenance": 236734,
+        "runtimeTotal": 473469
+    },
+    {
+        "uuid": "8ce89ac8-728c-9c24-1eb0-a5b7c89088cf",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "8ce89ac8-728c-9c24-1eb0-a5b7c89088cf"
+        ],
+        "runtimeCurrent": 188158,
+        "runtimeMaintenance": 376317,
+        "runtimeTotal": 752634
+    },
+    {
+        "uuid": "927cfed9-6f3c-271c-59a3-196a434035fe",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Maximilian Kempf",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "927cfed9-6f3c-271c-59a3-196a434035fe"
+        ],
+        "runtimeCurrent": 108700,
+        "runtimeMaintenance": 217400,
+        "runtimeTotal": 434801
+    },
+    {
+        "uuid": "25f8b26f-38d1-82c8-f636-47b94c334dfc",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "25f8b26f-38d1-82c8-f636-47b94c334dfc"
+        ],
+        "runtimeCurrent": 292277,
+        "runtimeMaintenance": 584554,
+        "runtimeTotal": 1169107
+    },
+    {
+        "uuid": "66849a6a-751c-05a1-3bd4-9186e6c8dcbe",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 6454,
+                "priority": "medium",
+                "kind": "technical",
+                "date": "2022-03-11 16:18:19"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "66849a6a-751c-05a1-3bd4-9186e6c8dcbe"
+        ],
+        "runtimeCurrent": 118634,
+        "runtimeMaintenance": 237268,
+        "runtimeTotal": 474537
+    },
+    {
+        "uuid": "56bc07d5-e9f7-080c-4a3b-e57f24d4e43d",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Dietmar Brahms",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "56bc07d5-e9f7-080c-4a3b-e57f24d4e43d"
+        ],
+        "runtimeCurrent": 298556,
+        "runtimeMaintenance": 597112,
+        "runtimeTotal": 1194224
+    },
+    {
+        "uuid": "5c9dcfe1-2d81-a097-8b4e-505547749766",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 2288,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-13 16:41:17"
+            },
+            {
+                "id": 3279,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-12 22:12:38"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "5c9dcfe1-2d81-a097-8b4e-505547749766"
+        ],
+        "runtimeCurrent": 96023,
+        "runtimeMaintenance": 192046,
+        "runtimeTotal": 384093
+    },
+    {
+        "uuid": "f1e5ecf0-a987-99eb-cb03-14174543b3fc",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "f1e5ecf0-a987-99eb-cb03-14174543b3fc"
+        ],
+        "runtimeCurrent": 286881,
+        "runtimeMaintenance": 573762,
+        "runtimeTotal": 1147523
+    },
+    {
+        "uuid": "b826d7b2-5c96-b92c-49b9-c73577e9b966",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "b826d7b2-5c96-b92c-49b9-c73577e9b966"
+        ],
+        "runtimeCurrent": 59857,
+        "runtimeMaintenance": 119714,
+        "runtimeTotal": 239429
+    },
+    {
+        "uuid": "6c24e8ba-46f3-4bfb-5f9a-65bd854150e6",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 9628,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-13 03:12:04"
+            },
+            {
+                "id": 6187,
+                "priority": "medium",
+                "kind": "physical",
+                "date": "2022-03-11 04:21:19"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "6c24e8ba-46f3-4bfb-5f9a-65bd854150e6"
+        ],
+        "runtimeCurrent": 244385,
+        "runtimeMaintenance": 488770,
+        "runtimeTotal": 977541
+    },
+    {
+        "uuid": "4889b404-29e3-9a88-2f1f-ad74c2440ad7",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "4889b404-29e3-9a88-2f1f-ad74c2440ad7"
+        ],
+        "runtimeCurrent": 83898,
+        "runtimeMaintenance": 167796,
+        "runtimeTotal": 335592
+    },
+    {
+        "uuid": "6b3570e9-755f-828d-1349-2eb4369c57f3",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "6b3570e9-755f-828d-1349-2eb4369c57f3"
+        ],
+        "runtimeCurrent": 264454,
+        "runtimeMaintenance": 528908,
+        "runtimeTotal": 1057816
+    },
+    {
+        "uuid": "fa05f58a-9799-025a-1324-f7b47b43b69b",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "cf0a27fc-04f8-f5ec-f0af-913b1356f872",
+            "617769e8-f176-0ff0-3595-d7ff87b6fee2",
+            "c21b881e-4a6d-e40b-bdc0-1b3cbe4ee112",
+            "fa05f58a-9799-025a-1324-f7b47b43b69b"
+        ],
+        "runtimeCurrent": 200160,
+        "runtimeMaintenance": 400320,
+        "runtimeTotal": 800639
+    },
+    {
+        "uuid": "e271bc43-e6b8-abfd-846d-a654b28ed0bd",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "e271bc43-e6b8-abfd-846d-a654b28ed0bd"
+        ],
+        "runtimeCurrent": 119222,
+        "runtimeMaintenance": 238444,
+        "runtimeTotal": 476887
+    },
+    {
+        "uuid": "7329983a-ac89-62f1-021d-d49f949b0d33",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "7329983a-ac89-62f1-021d-d49f949b0d33"
+        ],
+        "runtimeCurrent": 252449,
+        "runtimeMaintenance": 504898,
+        "runtimeTotal": 1009797
+    },
+    {
+        "uuid": "8d57c8db-ec82-bbbb-211c-cbdbcd1671d8",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "8d57c8db-ec82-bbbb-211c-cbdbcd1671d8"
+        ],
+        "runtimeCurrent": 39764,
+        "runtimeMaintenance": 79528,
+        "runtimeTotal": 159055
+    },
+    {
+        "uuid": "80dc199c-d150-f6e7-05e9-46d70aaf1019",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "cea1fd45-a325-e25b-f237-80bc8c0c60b9",
+            "1c23b85d-d6df-00b3-0a80-5baa98c72dbd",
+            "a2afbf07-bcb2-be52-5115-75ae1cc3c882",
+            "80dc199c-d150-f6e7-05e9-46d70aaf1019"
+        ],
+        "runtimeCurrent": 37375,
+        "runtimeMaintenance": 74750,
+        "runtimeTotal": 149499
+    },
+    {
+        "uuid": "7c0c37f4-350d-38d0-dcd0-6d6ca001ccba",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Lambert Becker",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "7c0c37f4-350d-38d0-dcd0-6d6ca001ccba"
+        ],
+        "runtimeCurrent": 125653,
+        "runtimeMaintenance": 251306,
+        "runtimeTotal": 502613
+    },
+    {
+        "uuid": "e757b394-b743-e7be-8940-c4fb08cd3c56",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Lambert Becker",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "e757b394-b743-e7be-8940-c4fb08cd3c56"
+        ],
+        "runtimeCurrent": 49388,
+        "runtimeMaintenance": 98777,
+        "runtimeTotal": 197554
+    },
+    {
+        "uuid": "c2791fdb-ceb8-3829-d92e-e96ce3d6afc0",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "c2791fdb-ceb8-3829-d92e-e96ce3d6afc0"
+        ],
+        "runtimeCurrent": 299098,
+        "runtimeMaintenance": 598196,
+        "runtimeTotal": 1196391
+    },
+    {
+        "uuid": "c95d9bca-808f-65be-efce-43e538522cc9",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "c95d9bca-808f-65be-efce-43e538522cc9"
+        ],
+        "runtimeCurrent": 229273,
+        "runtimeMaintenance": 458546,
+        "runtimeTotal": 917093
+    },
+    {
+        "uuid": "fa364ba0-8f04-9db2-c467-437eb3e10eb4",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 9239,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-12 10:52:40"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Isabell Fertig",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "fa364ba0-8f04-9db2-c467-437eb3e10eb4"
+        ],
+        "runtimeCurrent": 177067,
+        "runtimeMaintenance": 354134,
+        "runtimeTotal": 708268
+    },
+    {
+        "uuid": "cf02bba4-cf5f-9680-2dc3-22371f887749",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 6745,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-13 16:34:33"
+            },
+            {
+                "id": 8177,
+                "priority": "medium",
+                "kind": "technical",
+                "date": "2022-03-12 14:00:02"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "cf02bba4-cf5f-9680-2dc3-22371f887749"
+        ],
+        "runtimeCurrent": 122760,
+        "runtimeMaintenance": 245521,
+        "runtimeTotal": 491042
+    },
+    {
+        "uuid": "3dc0c06e-b078-dfe2-890e-0a0d8ba55b97",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Lambert Becker",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "3dc0c06e-b078-dfe2-890e-0a0d8ba55b97"
+        ],
+        "runtimeCurrent": 157208,
+        "runtimeMaintenance": 314415,
+        "runtimeTotal": 628830
+    },
+    {
+        "uuid": "6110fe87-edc8-2b2d-c650-ca9e2739112d",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "6110fe87-edc8-2b2d-c650-ca9e2739112d"
+        ],
+        "runtimeCurrent": 167210,
+        "runtimeMaintenance": 334420,
+        "runtimeTotal": 668839
+    },
+    {
+        "uuid": "751d3cf4-aceb-6ad0-8b23-d25733bd7b9d",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "751d3cf4-aceb-6ad0-8b23-d25733bd7b9d"
+        ],
+        "runtimeCurrent": 47962,
+        "runtimeMaintenance": 95924,
+        "runtimeTotal": 191848
+    },
+    {
+        "uuid": "e3115a2a-996c-eb42-9dd1-9d71ef73eaaa",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "e3115a2a-996c-eb42-9dd1-9d71ef73eaaa"
+        ],
+        "runtimeCurrent": 50861,
+        "runtimeMaintenance": 101722,
+        "runtimeTotal": 203443
+    },
+    {
+        "uuid": "492975db-cff7-9e34-ef21-b29500bbd4c0",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "492975db-cff7-9e34-ef21-b29500bbd4c0"
+        ],
+        "runtimeCurrent": 77904,
+        "runtimeMaintenance": 155808,
+        "runtimeTotal": 311617
+    },
+    {
+        "uuid": "9fdf57e5-ef1b-35c8-d44c-0f72675ba33d",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 6648,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-12 05:11:52"
+            },
+            {
+                "id": 3677,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-13 12:29:34"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Gregor Scherer",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "9fdf57e5-ef1b-35c8-d44c-0f72675ba33d"
+        ],
+        "runtimeCurrent": 37522,
+        "runtimeMaintenance": 75043,
+        "runtimeTotal": 150086
+    },
+    {
+        "uuid": "b62376ad-ae6d-0342-0cbc-0a421a1f7beb",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Isabell Fertig",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "b62376ad-ae6d-0342-0cbc-0a421a1f7beb"
+        ],
+        "runtimeCurrent": 197763,
+        "runtimeMaintenance": 395526,
+        "runtimeTotal": 791053
+    },
+    {
+        "uuid": "5dc9a073-8a12-82b4-81e7-406acf613e8e",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 6290,
+                "priority": "medium",
+                "kind": "physical",
+                "date": "2022-03-13 09:50:57"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "5dc9a073-8a12-82b4-81e7-406acf613e8e"
+        ],
+        "runtimeCurrent": 72172,
+        "runtimeMaintenance": 144344,
+        "runtimeTotal": 288688
+    },
+    {
+        "uuid": "fc07b1fb-3b70-ec9d-8e99-81646341da12",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Lambert Becker",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "fc07b1fb-3b70-ec9d-8e99-81646341da12"
+        ],
+        "runtimeCurrent": 195688,
+        "runtimeMaintenance": 391377,
+        "runtimeTotal": 782754
+    },
+    {
+        "uuid": "f86e3ea2-50bf-a949-3c8a-5e0ae8c82c6f",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Dietmar Brahms",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "f86e3ea2-50bf-a949-3c8a-5e0ae8c82c6f"
+        ],
+        "runtimeCurrent": 155729,
+        "runtimeMaintenance": 311458,
+        "runtimeTotal": 622916
+    },
+    {
+        "uuid": "90449f46-ef98-d29e-435c-f116d74c7440",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Magdalene Schwenke",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "90449f46-ef98-d29e-435c-f116d74c7440"
+        ],
+        "runtimeCurrent": 247968,
+        "runtimeMaintenance": 495936,
+        "runtimeTotal": 991871
+    },
+    {
+        "uuid": "242fa540-3bdd-a400-af99-58ad92162ff0",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-2",
+        "staff": "Isabell Fertig",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "242fa540-3bdd-a400-af99-58ad92162ff0"
+        ],
+        "runtimeCurrent": 213769,
+        "runtimeMaintenance": 427538,
+        "runtimeTotal": 855075
+    },
+    {
+        "uuid": "a0a835c3-a192-a747-e792-c6023a8946ab",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 9281,
+                "priority": "medium",
+                "kind": "technical",
+                "date": "2022-03-12 11:18:10"
+            },
+            {
+                "id": 1947,
+                "priority": "medium",
+                "kind": "technical",
+                "date": "2022-03-12 19:37:02"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "a0a835c3-a192-a747-e792-c6023a8946ab"
+        ],
+        "runtimeCurrent": 115744,
+        "runtimeMaintenance": 231488,
+        "runtimeTotal": 462977
+    },
+    {
+        "uuid": "6fbe5498-a28e-a333-e1a0-5ad0d78f7ead",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Dietmar Brahms",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "6fbe5498-a28e-a333-e1a0-5ad0d78f7ead"
+        ],
+        "runtimeCurrent": 107571,
+        "runtimeMaintenance": 215142,
+        "runtimeTotal": 430285
+    },
+    {
+        "uuid": "0f6555bc-78ab-3f3c-7342-5fe09705a6c2",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 6796,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-13 07:54:54"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "0f6555bc-78ab-3f3c-7342-5fe09705a6c2"
+        ],
+        "runtimeCurrent": 45546,
+        "runtimeMaintenance": 91092,
+        "runtimeTotal": 182185
+    },
+    {
+        "uuid": "99ba2e51-30af-6adf-3763-a0a01f16b679",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Lambert Becker",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "99ba2e51-30af-6adf-3763-a0a01f16b679"
+        ],
+        "runtimeCurrent": 220016,
+        "runtimeMaintenance": 440032,
+        "runtimeTotal": 880063
+    },
+    {
+        "uuid": "54d629ff-b83b-d831-7ce6-f34be5663072",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 97,
+                "priority": "high",
+                "kind": "technical",
+                "date": "2022-03-13 11:48:39"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-1",
+        "staff": "Gregor Scherer",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "54d629ff-b83b-d831-7ce6-f34be5663072"
+        ],
+        "runtimeCurrent": 198221,
+        "runtimeMaintenance": 396442,
+        "runtimeTotal": 792885
+    },
+    {
+        "uuid": "cf308e2f-94b6-691d-81d9-68f78e303cab",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Aaron Braband",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "cf308e2f-94b6-691d-81d9-68f78e303cab"
+        ],
+        "runtimeCurrent": 152879,
+        "runtimeMaintenance": 305758,
+        "runtimeTotal": 611515
+    },
+    {
+        "uuid": "af8db22f-dc32-4e07-3030-a0d3bd7fb2de",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 7223,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-13 13:08:26"
+            },
+            {
+                "id": 7394,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-12 08:20:52"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Aaron Braband",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "af8db22f-dc32-4e07-3030-a0d3bd7fb2de"
+        ],
+        "runtimeCurrent": 163704,
+        "runtimeMaintenance": 327408,
+        "runtimeTotal": 654817
+    },
+    {
+        "uuid": "9ae1213a-f791-e756-0782-8020660abe48",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "9ae1213a-f791-e756-0782-8020660abe48"
+        ],
+        "runtimeCurrent": 105132,
+        "runtimeMaintenance": 210264,
+        "runtimeTotal": 420528
+    },
+    {
+        "uuid": "f7a7e0f2-691b-5a00-2327-64e18de7dc6e",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 4674,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-13 06:39:06"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Aaron Braband",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "f7a7e0f2-691b-5a00-2327-64e18de7dc6e"
+        ],
+        "runtimeCurrent": 64366,
+        "runtimeMaintenance": 128732,
+        "runtimeTotal": 257463
+    },
+    {
+        "uuid": "609ceae9-ebb6-8935-870a-ff4213d2c68a",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "609ceae9-ebb6-8935-870a-ff4213d2c68a"
+        ],
+        "runtimeCurrent": 75417,
+        "runtimeMaintenance": 150834,
+        "runtimeTotal": 301667
+    },
+    {
+        "uuid": "dcf9f04f-3480-8627-9727-79a7d8dde577",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "dcf9f04f-3480-8627-9727-79a7d8dde577"
+        ],
+        "runtimeCurrent": 192261,
+        "runtimeMaintenance": 384522,
+        "runtimeTotal": 769045
+    },
+    {
+        "uuid": "f2da805b-6f75-30a6-5b06-5cd13ab0966b",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Isabell Fertig",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "f2da805b-6f75-30a6-5b06-5cd13ab0966b"
+        ],
+        "runtimeCurrent": 209230,
+        "runtimeMaintenance": 418460,
+        "runtimeTotal": 836920
+    },
+    {
+        "uuid": "2bb043fc-137f-736d-2b92-6920dda7c296",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "2bb043fc-137f-736d-2b92-6920dda7c296"
+        ],
+        "runtimeCurrent": 161193,
+        "runtimeMaintenance": 322386,
+        "runtimeTotal": 644773
+    },
+    {
+        "uuid": "5e31a838-b31d-9d8f-7cd4-60576079bb9d",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 6171,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-12 07:20:04"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Magdalene Schwenke",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "5e31a838-b31d-9d8f-7cd4-60576079bb9d"
+        ],
+        "runtimeCurrent": 210499,
+        "runtimeMaintenance": 420998,
+        "runtimeTotal": 841997
+    },
+    {
+        "uuid": "5e34c408-d96f-5e5b-e813-eb1e940cee7e",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 4587,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-13 19:03:36"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "5e34c408-d96f-5e5b-e813-eb1e940cee7e"
+        ],
+        "runtimeCurrent": 147912,
+        "runtimeMaintenance": 295824,
+        "runtimeTotal": 591647
+    },
+    {
+        "uuid": "ec0b64ce-b024-03b8-6bef-dcfb0d792077",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Isabell Fertig",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "ec0b64ce-b024-03b8-6bef-dcfb0d792077"
+        ],
+        "runtimeCurrent": 53412,
+        "runtimeMaintenance": 106824,
+        "runtimeTotal": 213648
+    },
+    {
+        "uuid": "10c01740-c13a-4082-8709-5fe41866e23e",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 2609,
+                "priority": "high",
+                "kind": "technical",
+                "date": "2022-03-12 12:01:08"
+            },
+            {
+                "id": 4182,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-13 10:34:06"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "10c01740-c13a-4082-8709-5fe41866e23e"
+        ],
+        "runtimeCurrent": 148652,
+        "runtimeMaintenance": 297304,
+        "runtimeTotal": 594607
+    },
+    {
+        "uuid": "8eb68953-5cb0-13d8-712d-eaf7b2986fee",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "8eb68953-5cb0-13d8-712d-eaf7b2986fee"
+        ],
+        "runtimeCurrent": 62398,
+        "runtimeMaintenance": 124795,
+        "runtimeTotal": 249590
+    },
+    {
+        "uuid": "8e413147-647c-044b-dfa1-ed78204d15da",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Lambert Becker",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "8e413147-647c-044b-dfa1-ed78204d15da"
+        ],
+        "runtimeCurrent": 146110,
+        "runtimeMaintenance": 292220,
+        "runtimeTotal": 584441
+    },
+    {
+        "uuid": "aaea4d70-bf04-9bc7-ce4e-da2479e04c3c",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 1030,
+                "priority": "medium",
+                "kind": "technical",
+                "date": "2022-03-11 00:33:23"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "aaea4d70-bf04-9bc7-ce4e-da2479e04c3c"
+        ],
+        "runtimeCurrent": 34028,
+        "runtimeMaintenance": 68056,
+        "runtimeTotal": 136112
+    },
+    {
+        "uuid": "3d5904d5-e06b-3627-f46c-00667bfc44d7",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "3d5904d5-e06b-3627-f46c-00667bfc44d7"
+        ],
+        "runtimeCurrent": 193898,
+        "runtimeMaintenance": 387796,
+        "runtimeTotal": 775593
+    },
+    {
+        "uuid": "9543e6c9-e8e7-7867-21d7-a5dd4b66bd62",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "9543e6c9-e8e7-7867-21d7-a5dd4b66bd62"
+        ],
+        "runtimeCurrent": 71769,
+        "runtimeMaintenance": 143538,
+        "runtimeTotal": 287077
+    },
+    {
+        "uuid": "4add70e6-1b71-915f-9796-517d0d8506fb",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "4add70e6-1b71-915f-9796-517d0d8506fb"
+        ],
+        "runtimeCurrent": 98968,
+        "runtimeMaintenance": 197937,
+        "runtimeTotal": 395874
+    },
+    {
+        "uuid": "dd110a69-cc71-7f28-800d-a886b7171c27",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 8798,
+                "priority": "medium",
+                "kind": "physical",
+                "date": "2022-03-14 23:03:18"
+            },
+            {
+                "id": 8597,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-15 23:28:41"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Isabell Fertig",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "dd110a69-cc71-7f28-800d-a886b7171c27"
+        ],
+        "runtimeCurrent": 236202,
+        "runtimeMaintenance": 472404,
+        "runtimeTotal": 944807
+    },
+    {
+        "uuid": "4f5d2bf1-70f7-5bf0-3008-a09c8287262b",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "4f5d2bf1-70f7-5bf0-3008-a09c8287262b"
+        ],
+        "runtimeCurrent": 208700,
+        "runtimeMaintenance": 417399,
+        "runtimeTotal": 834798
+    },
+    {
+        "uuid": "9e267690-2d7a-b220-b380-83a38a5cb89c",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "9e267690-2d7a-b220-b380-83a38a5cb89c"
+        ],
+        "runtimeCurrent": 227258,
+        "runtimeMaintenance": 454516,
+        "runtimeTotal": 909031
+    },
+    {
+        "uuid": "d70dc54d-43a5-df7a-220e-88adc0a4a858",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Gregor Scherer",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "d70dc54d-43a5-df7a-220e-88adc0a4a858"
+        ],
+        "runtimeCurrent": 264275,
+        "runtimeMaintenance": 528550,
+        "runtimeTotal": 1057100
+    },
+    {
+        "uuid": "6933a88a-9e88-662b-d581-ca7e3f8f9554",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Gregor Scherer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "6933a88a-9e88-662b-d581-ca7e3f8f9554"
+        ],
+        "runtimeCurrent": 249899,
+        "runtimeMaintenance": 499798,
+        "runtimeTotal": 999596
+    },
+    {
+        "uuid": "429b3fde-78ea-a31e-f3c2-7a916cfb14d2",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Isabell Fertig",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "429b3fde-78ea-a31e-f3c2-7a916cfb14d2"
+        ],
+        "runtimeCurrent": 35986,
+        "runtimeMaintenance": 71972,
+        "runtimeTotal": 143945
+    },
+    {
+        "uuid": "2d73b7ff-f7cc-22de-578d-de61886f8174",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 4147,
+                "priority": "medium",
+                "kind": "physical",
+                "date": "2022-03-16 09:28:20"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Magdalene Schwenke",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "2d73b7ff-f7cc-22de-578d-de61886f8174"
+        ],
+        "runtimeCurrent": 297620,
+        "runtimeMaintenance": 595240,
+        "runtimeTotal": 1190481
+    },
+    {
+        "uuid": "4e69fc1f-f4e5-cb38-a00c-a978e16d2742",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Dietmar Brahms",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "4e69fc1f-f4e5-cb38-a00c-a978e16d2742"
+        ],
+        "runtimeCurrent": 192363,
+        "runtimeMaintenance": 384726,
+        "runtimeTotal": 769451
+    },
+    {
+        "uuid": "8161ef1e-32e2-43a1-f722-65b6a6068ec2",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "8161ef1e-32e2-43a1-f722-65b6a6068ec2"
+        ],
+        "runtimeCurrent": 145956,
+        "runtimeMaintenance": 291913,
+        "runtimeTotal": 583826
+    },
+    {
+        "uuid": "497e7060-d7e1-e28e-6c52-9d74a5dc84ee",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "497e7060-d7e1-e28e-6c52-9d74a5dc84ee"
+        ],
+        "runtimeCurrent": 230476,
+        "runtimeMaintenance": 460952,
+        "runtimeTotal": 921903
+    },
+    {
+        "uuid": "3bf59560-b4f2-ba49-eb81-f1697549e1e0",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 7806,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-21 00:46:34"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Isabell Fertig",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "3bf59560-b4f2-ba49-eb81-f1697549e1e0"
+        ],
+        "runtimeCurrent": 292178,
+        "runtimeMaintenance": 584356,
+        "runtimeTotal": 1168713
+    },
+    {
+        "uuid": "3582adf4-9e37-e72b-ab2d-8dfe8c1bf83a",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 5674,
+                "priority": "medium",
+                "kind": "physical",
+                "date": "2022-03-19 21:19:31"
+            },
+            {
+                "id": 329,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-18 06:39:23"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "3582adf4-9e37-e72b-ab2d-8dfe8c1bf83a"
+        ],
+        "runtimeCurrent": 196263,
+        "runtimeMaintenance": 392526,
+        "runtimeTotal": 785052
+    },
+    {
+        "uuid": "27a5b4b7-716a-e6d0-035c-7f3d26230359",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 237,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-18 21:15:23"
+            },
+            {
+                "id": 3228,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-19 17:15:51"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "27a5b4b7-716a-e6d0-035c-7f3d26230359"
+        ],
+        "runtimeCurrent": 281650,
+        "runtimeMaintenance": 563300,
+        "runtimeTotal": 1126599
+    },
+    {
+        "uuid": "40559c96-bb3c-8fd9-7848-eb236523db0b",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "40559c96-bb3c-8fd9-7848-eb236523db0b"
+        ],
+        "runtimeCurrent": 10286,
+        "runtimeMaintenance": 20571,
+        "runtimeTotal": 41142
+    },
+    {
+        "uuid": "167c3d01-0a05-f134-5235-1a6b77ccb2d5",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Isabell Fertig",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "167c3d01-0a05-f134-5235-1a6b77ccb2d5"
+        ],
+        "runtimeCurrent": 128231,
+        "runtimeMaintenance": 256462,
+        "runtimeTotal": 512925
+    },
+    {
+        "uuid": "041a3959-3aa1-4fb5-2a3f-783f3bab84d4",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 6101,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-17 19:05:37"
+            },
+            {
+                "id": 8801,
+                "priority": "medium",
+                "kind": "physical",
+                "date": "2022-03-21 16:07:54"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "041a3959-3aa1-4fb5-2a3f-783f3bab84d4"
+        ],
+        "runtimeCurrent": 208111,
+        "runtimeMaintenance": 416222,
+        "runtimeTotal": 832444
+    },
+    {
+        "uuid": "a7d1e6ca-7c62-9bad-3450-fd2a240c222d",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-1",
+        "staff": "Isabell Fertig",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "a7d1e6ca-7c62-9bad-3450-fd2a240c222d"
+        ],
+        "runtimeCurrent": 45011,
+        "runtimeMaintenance": 90022,
+        "runtimeTotal": 180044
+    },
+    {
+        "uuid": "17006695-688c-49ce-bed9-2e476019d439",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "17006695-688c-49ce-bed9-2e476019d439"
+        ],
+        "runtimeCurrent": 43806,
+        "runtimeMaintenance": 87612,
+        "runtimeTotal": 175223
+    },
+    {
+        "uuid": "26eea7e1-2c22-f409-d570-9d1c9a2d6a06",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "26eea7e1-2c22-f409-d570-9d1c9a2d6a06"
+        ],
+        "runtimeCurrent": 235148,
+        "runtimeMaintenance": 470296,
+        "runtimeTotal": 940592
+    },
+    {
+        "uuid": "1f4f9179-e9a0-44fe-3014-ef7a19b10acc",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Gregor Scherer",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "1f4f9179-e9a0-44fe-3014-ef7a19b10acc"
+        ],
+        "runtimeCurrent": 49780,
+        "runtimeMaintenance": 99561,
+        "runtimeTotal": 199122
+    },
+    {
+        "uuid": "c9008cd9-313e-f323-43c0-ce5eeded9ba7",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "c9008cd9-313e-f323-43c0-ce5eeded9ba7"
+        ],
+        "runtimeCurrent": 78556,
+        "runtimeMaintenance": 157112,
+        "runtimeTotal": 314223
+    },
+    {
+        "uuid": "88d9653f-36ec-4f47-ff7e-847960f8b47f",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Lambert Becker",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "88d9653f-36ec-4f47-ff7e-847960f8b47f"
+        ],
+        "runtimeCurrent": 170070,
+        "runtimeMaintenance": 340141,
+        "runtimeTotal": 680282
+    },
+    {
+        "uuid": "2b821299-bf06-9782-dcdc-fe6b56fee8b8",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "2b821299-bf06-9782-dcdc-fe6b56fee8b8"
+        ],
+        "runtimeCurrent": 131285,
+        "runtimeMaintenance": 262570,
+        "runtimeTotal": 525139
+    },
+    {
+        "uuid": "76b5e392-c001-ce2b-fcc7-b248f39a4bcb",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "76b5e392-c001-ce2b-fcc7-b248f39a4bcb"
+        ],
+        "runtimeCurrent": 261545,
+        "runtimeMaintenance": 523090,
+        "runtimeTotal": 1046180
+    },
+    {
+        "uuid": "e702a6d9-c3a3-4295-07f9-33ed9a8ad104",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 3062,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-19 09:53:55"
+            },
+            {
+                "id": 5377,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-17 14:08:48"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Aaron Braband",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "e702a6d9-c3a3-4295-07f9-33ed9a8ad104"
+        ],
+        "runtimeCurrent": 251850,
+        "runtimeMaintenance": 503700,
+        "runtimeTotal": 1007399
+    },
+    {
+        "uuid": "22f6df17-a8c7-338b-9fa9-bf161c2e4b76",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "22f6df17-a8c7-338b-9fa9-bf161c2e4b76"
+        ],
+        "runtimeCurrent": 148004,
+        "runtimeMaintenance": 296008,
+        "runtimeTotal": 592016
+    },
+    {
+        "uuid": "fc8109e0-b766-3023-632d-10511a4244a5",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "fc8109e0-b766-3023-632d-10511a4244a5"
+        ],
+        "runtimeCurrent": 265330,
+        "runtimeMaintenance": 530660,
+        "runtimeTotal": 1061319
+    },
+    {
+        "uuid": "26c80703-d7dc-a9d7-bd90-021a7b898bd2",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 6315,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-19 01:07:49"
+            },
+            {
+                "id": 3617,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-18 06:24:20"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Gregor Scherer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "26c80703-d7dc-a9d7-bd90-021a7b898bd2"
+        ],
+        "runtimeCurrent": 230268,
+        "runtimeMaintenance": 460537,
+        "runtimeTotal": 921074
+    },
+    {
+        "uuid": "42e1701d-f10b-f255-4ca9-57db29d351b8",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "42e1701d-f10b-f255-4ca9-57db29d351b8"
+        ],
+        "runtimeCurrent": 291404,
+        "runtimeMaintenance": 582808,
+        "runtimeTotal": 1165616
+    },
+    {
+        "uuid": "ded41168-6132-5a36-67c8-be4619f47c08",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Dietmar Brahms",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "ded41168-6132-5a36-67c8-be4619f47c08"
+        ],
+        "runtimeCurrent": 91841,
+        "runtimeMaintenance": 183682,
+        "runtimeTotal": 367363
+    },
+    {
+        "uuid": "b0ef16c4-20d7-400b-099d-0a2d9ec38aee",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 3764,
+                "priority": "medium",
+                "kind": "physical",
+                "date": "2022-03-20 13:13:09"
+            },
+            {
+                "id": 7379,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-21 15:43:47"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Gregor Scherer",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "b0ef16c4-20d7-400b-099d-0a2d9ec38aee"
+        ],
+        "runtimeCurrent": 93239,
+        "runtimeMaintenance": 186478,
+        "runtimeTotal": 372956
+    },
+    {
+        "uuid": "3148b088-f7cf-427c-2cc9-f6a7d8524615",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "3148b088-f7cf-427c-2cc9-f6a7d8524615"
+        ],
+        "runtimeCurrent": 232732,
+        "runtimeMaintenance": 465465,
+        "runtimeTotal": 930930
+    },
+    {
+        "uuid": "5a2541f7-3fc6-043e-d103-044c24068491",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "5a2541f7-3fc6-043e-d103-044c24068491"
+        ],
+        "runtimeCurrent": 216967,
+        "runtimeMaintenance": 433934,
+        "runtimeTotal": 867868
+    },
+    {
+        "uuid": "9ca9b797-11ae-5ba5-be81-b595238265f6",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 8481,
+                "priority": "medium",
+                "kind": "technical",
+                "date": "2022-03-17 21:24:52"
+            },
+            {
+                "id": 3305,
+                "priority": "high",
+                "kind": "technical",
+                "date": "2022-03-21 13:45:54"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "9ca9b797-11ae-5ba5-be81-b595238265f6"
+        ],
+        "runtimeCurrent": 38013,
+        "runtimeMaintenance": 76026,
+        "runtimeTotal": 152052
+    },
+    {
+        "uuid": "8660a0a1-08a3-9cc6-9ad3-e1f857c5bc48",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "8660a0a1-08a3-9cc6-9ad3-e1f857c5bc48"
+        ],
+        "runtimeCurrent": 251042,
+        "runtimeMaintenance": 502083,
+        "runtimeTotal": 1004166
+    },
+    {
+        "uuid": "33b46324-d04f-a64f-678a-183b14619033",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "33b46324-d04f-a64f-678a-183b14619033"
+        ],
+        "runtimeCurrent": 109742,
+        "runtimeMaintenance": 219484,
+        "runtimeTotal": 438969
+    },
+    {
+        "uuid": "5eec6536-0461-7f61-c5b1-7dd43bba0394",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "5eec6536-0461-7f61-c5b1-7dd43bba0394"
+        ],
+        "runtimeCurrent": 175476,
+        "runtimeMaintenance": 350952,
+        "runtimeTotal": 701903
+    },
+    {
+        "uuid": "afa140e6-1de2-88b4-6a69-3d24db8a035b",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "afa140e6-1de2-88b4-6a69-3d24db8a035b"
+        ],
+        "runtimeCurrent": 6182,
+        "runtimeMaintenance": 12365,
+        "runtimeTotal": 24730
+    },
+    {
+        "uuid": "f1b7db05-a1ae-7158-e611-f372c32a592a",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "f1b7db05-a1ae-7158-e611-f372c32a592a"
+        ],
+        "runtimeCurrent": 69689,
+        "runtimeMaintenance": 139378,
+        "runtimeTotal": 278757
+    },
+    {
+        "uuid": "3ecc4e3d-a091-e740-9ac3-6b8070075ed0",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Dietmar Brahms",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "3ecc4e3d-a091-e740-9ac3-6b8070075ed0"
+        ],
+        "runtimeCurrent": 32907,
+        "runtimeMaintenance": 65814,
+        "runtimeTotal": 131627
+    },
+    {
+        "uuid": "8116a394-c845-fd78-ba0c-b16215690c71",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "8116a394-c845-fd78-ba0c-b16215690c71"
+        ],
+        "runtimeCurrent": 129715,
+        "runtimeMaintenance": 259430,
+        "runtimeTotal": 518860
+    },
+    {
+        "uuid": "b63687f6-b5c5-8384-2676-4e2f0dd1053d",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Gregor Scherer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "b63687f6-b5c5-8384-2676-4e2f0dd1053d"
+        ],
+        "runtimeCurrent": 101591,
+        "runtimeMaintenance": 203182,
+        "runtimeTotal": 406364
+    },
+    {
+        "uuid": "9f5dd9e0-c30f-5458-c886-5e6db62906a7",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Uwe Eberhardt",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "9f5dd9e0-c30f-5458-c886-5e6db62906a7"
+        ],
+        "runtimeCurrent": 8226,
+        "runtimeMaintenance": 16452,
+        "runtimeTotal": 32905
+    },
+    {
+        "uuid": "fc332642-4a94-1d08-a90a-077b3f552635",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 1727,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-20 04:08:02"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Lambert Becker",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "fc332642-4a94-1d08-a90a-077b3f552635"
+        ],
+        "runtimeCurrent": 125501,
+        "runtimeMaintenance": 251002,
+        "runtimeTotal": 502005
+    },
+    {
+        "uuid": "af48377d-fba2-b828-070b-2126c04fe1c2",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Gregor Scherer",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "af48377d-fba2-b828-070b-2126c04fe1c2"
+        ],
+        "runtimeCurrent": 208466,
+        "runtimeMaintenance": 416932,
+        "runtimeTotal": 833863
+    },
+    {
+        "uuid": "78177acc-ad7b-35bd-bebe-1af8adcf0879",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "78177acc-ad7b-35bd-bebe-1af8adcf0879"
+        ],
+        "runtimeCurrent": 289954,
+        "runtimeMaintenance": 579909,
+        "runtimeTotal": 1159818
+    },
+    {
+        "uuid": "f7297dfb-65a7-4700-0879-470d77b17bfc",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Isabell Fertig",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "f7297dfb-65a7-4700-0879-470d77b17bfc"
+        ],
+        "runtimeCurrent": 25900,
+        "runtimeMaintenance": 51800,
+        "runtimeTotal": 103601
+    },
+    {
+        "uuid": "f8c14344-73af-0bb4-435e-c0352ba950a4",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "f8c14344-73af-0bb4-435e-c0352ba950a4"
+        ],
+        "runtimeCurrent": 141072,
+        "runtimeMaintenance": 282144,
+        "runtimeTotal": 564287
+    },
+    {
+        "uuid": "4c113af2-5850-9b42-55d2-798c23f236c1",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "4c113af2-5850-9b42-55d2-798c23f236c1"
+        ],
+        "runtimeCurrent": 86516,
+        "runtimeMaintenance": 173032,
+        "runtimeTotal": 346063
+    },
+    {
+        "uuid": "4f37cbc6-8e50-059e-f093-2701e696d17d",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Aaron Braband",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "4f37cbc6-8e50-059e-f093-2701e696d17d"
+        ],
+        "runtimeCurrent": 127275,
+        "runtimeMaintenance": 254550,
+        "runtimeTotal": 509101
+    },
+    {
+        "uuid": "4e3574b0-6943-2727-388c-1b965876786b",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "4e3574b0-6943-2727-388c-1b965876786b"
+        ],
+        "runtimeCurrent": 12274,
+        "runtimeMaintenance": 24549,
+        "runtimeTotal": 49098
+    },
+    {
+        "uuid": "e757d6ed-4399-eeff-fb67-eba9ba76c0ea",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "e757d6ed-4399-eeff-fb67-eba9ba76c0ea"
+        ],
+        "runtimeCurrent": 5590,
+        "runtimeMaintenance": 11180,
+        "runtimeTotal": 22361
+    },
+    {
+        "uuid": "db934aeb-de4d-e84a-8451-59f862fc4948",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "db934aeb-de4d-e84a-8451-59f862fc4948"
+        ],
+        "runtimeCurrent": 52195,
+        "runtimeMaintenance": 104390,
+        "runtimeTotal": 208779
+    },
+    {
+        "uuid": "820f2c81-11e1-899e-8b04-71c8a04688a2",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "820f2c81-11e1-899e-8b04-71c8a04688a2"
+        ],
+        "runtimeCurrent": 244748,
+        "runtimeMaintenance": 489495,
+        "runtimeTotal": 978990
+    },
+    {
+        "uuid": "05ca77a6-e9c0-c360-a5a1-201eb0522afe",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 6874,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-20 08:44:44"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Uwe Eberhardt",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "05ca77a6-e9c0-c360-a5a1-201eb0522afe"
+        ],
+        "runtimeCurrent": 281160,
+        "runtimeMaintenance": 562321,
+        "runtimeTotal": 1124642
+    },
+    {
+        "uuid": "c9c2dd4c-c167-9f7d-34d4-2713d10ec76c",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-1",
+        "staff": "Isabell Fertig",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "c9c2dd4c-c167-9f7d-34d4-2713d10ec76c"
+        ],
+        "runtimeCurrent": 174041,
+        "runtimeMaintenance": 348082,
+        "runtimeTotal": 696165
+    },
+    {
+        "uuid": "773e13c8-9ee3-b27e-31b2-b6ff5a59fa9a",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "773e13c8-9ee3-b27e-31b2-b6ff5a59fa9a"
+        ],
+        "runtimeCurrent": 190624,
+        "runtimeMaintenance": 381248,
+        "runtimeTotal": 762495
+    },
+    {
+        "uuid": "6d8cc005-9cd7-1ec1-0a11-f977f41b2c24",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "6d8cc005-9cd7-1ec1-0a11-f977f41b2c24"
+        ],
+        "runtimeCurrent": 205694,
+        "runtimeMaintenance": 411388,
+        "runtimeTotal": 822777
+    },
+    {
+        "uuid": "03d68bff-e438-9ca7-9e4a-d525f695ee87",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Gregor Scherer",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "03d68bff-e438-9ca7-9e4a-d525f695ee87"
+        ],
+        "runtimeCurrent": 44094,
+        "runtimeMaintenance": 88187,
+        "runtimeTotal": 176374
+    },
+    {
+        "uuid": "832ec906-8a57-615f-3610-cd813aa09555",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "832ec906-8a57-615f-3610-cd813aa09555"
+        ],
+        "runtimeCurrent": 104104,
+        "runtimeMaintenance": 208208,
+        "runtimeTotal": 416416
+    },
+    {
+        "uuid": "e178eeae-4868-a87f-c680-95b345aefbbf",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Gregor Scherer",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "e178eeae-4868-a87f-c680-95b345aefbbf"
+        ],
+        "runtimeCurrent": 32045,
+        "runtimeMaintenance": 64090,
+        "runtimeTotal": 128179
+    },
+    {
+        "uuid": "5cf17b42-23ba-6c27-39a7-dd6b1509c770",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "5cf17b42-23ba-6c27-39a7-dd6b1509c770"
+        ],
+        "runtimeCurrent": 282039,
+        "runtimeMaintenance": 564078,
+        "runtimeTotal": 1128157
+    },
+    {
+        "uuid": "effcbc4c-9836-87d5-4577-5aa91456fd71",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-2",
+        "staff": "Magdalene Schwenke",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "effcbc4c-9836-87d5-4577-5aa91456fd71"
+        ],
+        "runtimeCurrent": 151684,
+        "runtimeMaintenance": 303368,
+        "runtimeTotal": 606735
+    },
+    {
+        "uuid": "6658ce98-9058-ca23-58a7-f5a789705760",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Aaron Braband",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "6658ce98-9058-ca23-58a7-f5a789705760"
+        ],
+        "runtimeCurrent": 80966,
+        "runtimeMaintenance": 161932,
+        "runtimeTotal": 323864
+    },
+    {
+        "uuid": "05664f90-811c-bc2e-b442-89bce359e7a3",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 3571,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-20 10:05:52"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "05664f90-811c-bc2e-b442-89bce359e7a3"
+        ],
+        "runtimeCurrent": 182859,
+        "runtimeMaintenance": 365718,
+        "runtimeTotal": 731437
+    },
+    {
+        "uuid": "38b52c7f-ffb6-9867-592f-e902ae773999",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 6400,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-21 02:41:05"
+            },
+            {
+                "id": 5734,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-18 09:46:17"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-1",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "38b52c7f-ffb6-9867-592f-e902ae773999"
+        ],
+        "runtimeCurrent": 290764,
+        "runtimeMaintenance": 581528,
+        "runtimeTotal": 1163056
+    },
+    {
+        "uuid": "b749bd83-3271-1f3f-1f37-d5b389ed936e",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "b749bd83-3271-1f3f-1f37-d5b389ed936e"
+        ],
+        "runtimeCurrent": 300299,
+        "runtimeMaintenance": 600598,
+        "runtimeTotal": 1201197
+    },
+    {
+        "uuid": "291dfe66-935e-f74b-4be1-ddd415a2ad99",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Gregor Scherer",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "291dfe66-935e-f74b-4be1-ddd415a2ad99"
+        ],
+        "runtimeCurrent": 243293,
+        "runtimeMaintenance": 486586,
+        "runtimeTotal": 973172
+    },
+    {
+        "uuid": "f4d12c1f-8c0c-8553-b5ee-6d9ec1a88b1e",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "f4d12c1f-8c0c-8553-b5ee-6d9ec1a88b1e"
+        ],
+        "runtimeCurrent": 292392,
+        "runtimeMaintenance": 584784,
+        "runtimeTotal": 1169569
+    },
+    {
+        "uuid": "8f7ae867-b5bd-6ebb-dd23-221bda8eca64",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Lambert Becker",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "8f7ae867-b5bd-6ebb-dd23-221bda8eca64"
+        ],
+        "runtimeCurrent": 95761,
+        "runtimeMaintenance": 191522,
+        "runtimeTotal": 383044
+    },
+    {
+        "uuid": "b8bf807b-76ff-6a37-d02e-8089a08b0d44",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 6843,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-17 23:14:39"
+            },
+            {
+                "id": 9288,
+                "priority": "low",
+                "kind": "technical",
+                "date": "2022-03-17 13:17:41"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "b8bf807b-76ff-6a37-d02e-8089a08b0d44"
+        ],
+        "runtimeCurrent": 251990,
+        "runtimeMaintenance": 503981,
+        "runtimeTotal": 1007962
+    },
+    {
+        "uuid": "025bb480-2f9f-0bb9-d982-d6e9aa00897e",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "025bb480-2f9f-0bb9-d982-d6e9aa00897e"
+        ],
+        "runtimeCurrent": 4108,
+        "runtimeMaintenance": 8216,
+        "runtimeTotal": 16432
+    },
+    {
+        "uuid": "28fb5b2d-edf9-a5b6-deda-ec65ec0f08f6",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-1",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "28fb5b2d-edf9-a5b6-deda-ec65ec0f08f6"
+        ],
+        "runtimeCurrent": 166508,
+        "runtimeMaintenance": 333016,
+        "runtimeTotal": 666033
+    },
+    {
+        "uuid": "df40ffe1-1347-7625-0014-de4ab8420911",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "df40ffe1-1347-7625-0014-de4ab8420911"
+        ],
+        "runtimeCurrent": 80487,
+        "runtimeMaintenance": 160974,
+        "runtimeTotal": 321947
+    },
+    {
+        "uuid": "82e2ba44-ef29-4258-4097-9727a639a6a7",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-OR-1",
+        "staff": "Magdalene Schwenke",
+        "depot": "RAD-DEP-2",
+        "ensemble": [
+            "82e2ba44-ef29-4258-4097-9727a639a6a7"
+        ],
+        "runtimeCurrent": 39644,
+        "runtimeMaintenance": 79287,
+        "runtimeTotal": 158574
+    },
+    {
+        "uuid": "3390e8d3-74dc-f208-406f-dffc8f882c79",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 1391,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-19 14:05:19"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Sylvia Sommer",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "3390e8d3-74dc-f208-406f-dffc8f882c79"
+        ],
+        "runtimeCurrent": 40322,
+        "runtimeMaintenance": 80644,
+        "runtimeTotal": 161287
+    },
+    {
+        "uuid": "a6f7d8f1-88b0-60c7-cddf-1d80d4fda2b3",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "a6f7d8f1-88b0-60c7-cddf-1d80d4fda2b3"
+        ],
+        "runtimeCurrent": 113270,
+        "runtimeMaintenance": 226540,
+        "runtimeTotal": 453080
+    },
+    {
+        "uuid": "7db11dbe-e51b-2684-bca9-19d193fcd928",
+        "isActive": false,
+        "isUsable": false,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 903,
+                "priority": "low",
+                "kind": "physical",
+                "date": "2022-03-18 14:08:44"
+            },
+            {
+                "id": 3632,
+                "priority": "high",
+                "kind": "physical",
+                "date": "2022-03-17 00:52:17"
+            },
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-OR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "AMB-DEP-2",
+        "ensemble": [
+            "7db11dbe-e51b-2684-bca9-19d193fcd928"
+        ],
+        "runtimeCurrent": 6621,
+        "runtimeMaintenance": 13242,
+        "runtimeTotal": 26484
+    },
+    {
+        "uuid": "62cfc15f-32ab-3617-88b0-da5baae1b36f",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "AMB-PR-2",
+        "staff": "Sylvia Sommer",
+        "depot": "AMB-DEP-1",
+        "ensemble": [
+            "62cfc15f-32ab-3617-88b0-da5baae1b36f"
+        ],
+        "runtimeCurrent": 289604,
+        "runtimeMaintenance": 579208,
+        "runtimeTotal": 1158417
+    },
+    {
+        "uuid": "b181f9cc-8d5a-fec7-44de-96425a02eee1",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-OR-2",
+        "staff": "Magdalene Schwenke",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "b181f9cc-8d5a-fec7-44de-96425a02eee1"
+        ],
+        "runtimeCurrent": 153272,
+        "runtimeMaintenance": 306544,
+        "runtimeTotal": 613087
+    },
+    {
+        "uuid": "740dee32-5058-5604-a8a0-1c7bedb19414",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "diagnosis",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-2",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "740dee32-5058-5604-a8a0-1c7bedb19414"
+        ],
+        "runtimeCurrent": 44683,
+        "runtimeMaintenance": 89366,
+        "runtimeTotal": 178732
+    },
+    {
+        "uuid": "d7fff669-4881-7ba4-35aa-fd082088da9e",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-PR-1",
+        "staff": "Isabell Fertig",
+        "depot": "G-DEP-1",
+        "ensemble": [
+            "d7fff669-4881-7ba4-35aa-fd082088da9e"
+        ],
+        "runtimeCurrent": 151778,
+        "runtimeMaintenance": 303555,
+        "runtimeTotal": 607110
+    },
+    {
+        "uuid": "bcffa904-dd91-5c05-0cb6-0180946053ab",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Melanie F\u00fcrst",
+        "depot": "ICU-DEP-2",
+        "ensemble": [
+            "bcffa904-dd91-5c05-0cb6-0180946053ab"
+        ],
+        "runtimeCurrent": 296298,
+        "runtimeMaintenance": 592596,
+        "runtimeTotal": 1185193
+    },
+    {
+        "uuid": "5e4d086b-c13a-ca13-7ff7-9bdf14217bc4",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-1",
+        "staff": "Aaron Braband",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "5e4d086b-c13a-ca13-7ff7-9bdf14217bc4"
+        ],
+        "runtimeCurrent": 60267,
+        "runtimeMaintenance": 120534,
+        "runtimeTotal": 241069
+    },
+    {
+        "uuid": "167ceafc-3e6a-6e09-7c6e-f1449f4c35ef",
+        "isActive": false,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "RAD-PR-1",
+        "staff": "Dietmar Brahms",
+        "depot": "RAD-DEP-1",
+        "ensemble": [
+            "167ceafc-3e6a-6e09-7c6e-f1449f4c35ef"
+        ],
+        "runtimeCurrent": 228231,
+        "runtimeMaintenance": 456462,
+        "runtimeTotal": 912925
+    },
+    {
+        "uuid": "2fd30867-7598-1537-6961-e6dcf6769cf9",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "G-OR-2",
+        "staff": "Isabell Fertig",
+        "depot": "G-DEP-2",
+        "ensemble": [
+            "2fd30867-7598-1537-6961-e6dcf6769cf9"
+        ],
+        "runtimeCurrent": 261240,
+        "runtimeMaintenance": 522480,
+        "runtimeTotal": 1044961
+    },
+    {
+        "uuid": "422fffc1-e55e-0266-f23b-bfaed41de359",
+        "isActive": true,
+        "isUsable": true,
+        "classes": "treatment",
+        "errors": [
+            {
+                "id": 0,
+                "priority": "none",
+                "kind": "none",
+                "date": "none"
+            }
+        ],
+        "location": "ICU-PR-2",
+        "staff": "Maximilian Kempf",
+        "depot": "ICU-DEP-1",
+        "ensemble": [
+            "422fffc1-e55e-0266-f23b-bfaed41de359"
+        ],
+        "runtimeCurrent": 162734,
+        "runtimeMaintenance": 325469,
+        "runtimeTotal": 650938
+    }
+]

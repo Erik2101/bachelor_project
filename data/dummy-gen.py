@@ -34,7 +34,10 @@ def create_dummy_device():
 
     uuid = uuid_gen()
     dummy.update({"uuid": uuid})
-    active = random.choice(bool_pool)
+    if random.randint(0, 9) > 3:
+        active = True
+    else:
+        active = False
     dummy.update({"isActive": active})
     if active:
         dummy.update({"isUsable": True})
@@ -67,7 +70,6 @@ def room_gen():
 
 # generates an error with a date between start and end timestamps
 def error_gen(start, end):
-    priorities = ["low", "medium", "high"]
     kinds = ["physical", "technical"]
 
     error = {
@@ -78,7 +80,14 @@ def error_gen(start, end):
     }
 
     identifier = {"id": random.randint(1, 9999)}
-    priority = {"priority": priorities[random.randint(0, 2)]}
+    percent = random.randint(0,9)
+    if percent < 2:
+        prio = "high"
+    elif 2 <= percent < 5:
+        prio = "medium"
+    else:
+        prio = "low" 
+    priority = {"priority": prio}
     kind = {"kind": kinds[random.randint(0, 1)]}
     date = {"date": str(datetime_gen(start, end))}
 
@@ -137,13 +146,13 @@ for i in range(200):
     else:
         if i < 41:
             s = datetime(2022, 3, 7, 0, 0, 0, 0, None)
-            e = datetime(2022, 3, 10, 0, 0, 0, 999999, None)
+            e = datetime(2022, 3, 10, 23, 59, 59, 999999, None)
         elif i < 111:
             s = datetime(2022, 3, 11, 0, 0, 0, 0, None)
-            e = datetime(2022, 3, 13, 0, 0, 0, 999999, None)
+            e = datetime(2022, 3, 13, 23, 59, 59, 999999, None)
         elif i < 121:
             s = datetime(2022, 3, 14, 0, 0, 0, 0, None)
-            e = datetime(2022, 3, 16, 0, 0, 0, 999999, None)
+            e = datetime(2022, 3, 16, 23, 59, 59, 999999, None)
         else:
             s = datetime(2022, 3, 17, 0, 0, 0, 0, None)
             e = datetime(2022, 3, 21, 23, 59, 59, 999999, None)
