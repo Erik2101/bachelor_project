@@ -43,13 +43,12 @@ function getServer() {
 
     ChartDatasetGathering: (call) => {
       const requestId = call.request.chartId || 0
+      let activityData: Array<DeviceData> = []
       if (!requestId) return call.end();
-      if (requestId === 1) {
-        const activityData: Array<DeviceData> = require("./data/deviceDummyV2.json")
-        for (const item of activityData) {
-          const ret: ChartDatasetResponse = { "DeviceData": item }
-          call.write(ret);
-        }
+      activityData = (requestId === 1) ? require("./data/deviceDummyV2.json") : require("./data/deviceDummyV2.1.json")
+      for (const item of activityData) {
+        const ret: ChartDatasetResponse = { "DeviceData": item }
+        call.write(ret);
       }
       call.on('cancelled', () => {
       })

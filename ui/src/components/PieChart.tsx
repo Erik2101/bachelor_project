@@ -42,7 +42,6 @@ const PieChart = (props: {data: Array<DeviceData>}) => {
 
     const pie = d3.pie();
     const arcs = pie(input.valueArray);
-    console.log(arcs)
 
     const arc = d3.arc<PieArcDatum<number>>()
                     .innerRadius(size / 4 - 2)

@@ -39,7 +39,6 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
 
 
         const dx = [domain[0], domain[domain.length - 1]]
-        console.log(dx)
         const x = d3.scaleTime()
                         .domain(dx)
                         .range([margin.left, chartWidth + margin.right])

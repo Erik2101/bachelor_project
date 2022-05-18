@@ -5,23 +5,23 @@ import { DeviceData } from "../proto/frontend_pb";
 import { totalActivityData , totalActivityData2} from "../util";
 import { Dataset } from "../util";
 
-const BarChart = (props: {
+function BarChart(props: {
     "typeId": number,
     "data": Array<DeviceData>,
-}) => {
+}) {
 
     const d3Chart = React.useRef(null)
+    const [data, setData] = React.useState<Array<Dataset>>([])
+    const [title, setTitle] = React.useState<string>("XXXXXXXXXXXXXXXXX")
+    const [colours, setColours] = React.useState<Array<string>>(["black", "grey", "white"])
 
-    const update = React.useRef(false)
-
-    function drawChart(data: Array<Dataset>, colours: Array<string>, title: string) {
-
+    const drawChart = React.useCallback(() => {
         const containerWidth = parseInt(d3.select(".chart-container").style("width"))
         const containerHeight = parseInt(d3.select(".chart-container").style("height"))
         const margin = {
-            top: containerHeight * 0.2, 
+            top: containerHeight * 0.1,
             right: containerWidth * 0.1,
-            bottom: containerHeight * 0.00,
+            bottom: containerHeight * 0.01,
             left: containerWidth * 0.1
         }
         const chartWidth = containerWidth - margin.left - margin.right
@@ -30,17 +30,13 @@ const BarChart = (props: {
         const svg = d3.select(d3Chart.current)
                         .attr("width", containerWidth)
                         .attr("height", containerHeight)
-                        .attr("viewBox", [-containerWidth / 2, -containerHeight / 2, containerWidth, containerHeight])
+                        .attr("viewBox", [0, 0, containerWidth, containerHeight])
 
 
         const x = d3.scaleBand()
                     .domain(data.map(item => item.sectionCaption))
                     .range([margin.left, chartWidth + margin.right])
                     .padding(0.4)
-
-        svg.append("g")
-            .attr("transform", "translate(" + (-chartWidth /2 - margin.left) +  ", " + chartHeight/2 + ")")
-            .call(d3.axisBottom(x).tickFormat(null).tickSizeOuter(0))
 
         function makeValueIterable() {
             const ret = []
@@ -58,76 +54,79 @@ const BarChart = (props: {
 
         const y = d3.scaleLinear()
                     .domain([0, yMax])
-                    .range([chartHeight , margin.top / 2])
+                    .range([chartHeight + margin.bottom , 2 * margin.top])
 
-        svg.append("g")
-            .attr("transform", "translate(" + -chartWidth / 2 + "," + -chartHeight/2 + ")")
-            .call(d3.axisLeft(y))
-
-        svg.append("g")
-            .selectAll("rect")
+        svg
+            .selectAll("g")
             .data(data)
-            .join("rect")
-                .attr("x", (d,i) => margin.left + (i + 1) * (x.step() - x.bandwidth()) + i * x.bandwidth())
-                .attr("y", d => y(d.sectionValue))
-                .attr("height", d => y(0)-y(d.sectionValue))
-                .attr("width", x.bandwidth())
-                .attr("fill", (_, i) => colours[i])
-                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + "," + (-chartHeight / 2 - 0.5) + ")")
-
+            .join(
+                (enter) => {
+                    return enter
+                            .append("g")
+                            .call((g) =>
+                            g
+                                .append("rect")
+                                .attr("x", (_,i) => margin.left + (i + 1) * (x.step() - x.bandwidth()) + i * x.bandwidth())
+                                .attr("y", d => y(d.sectionValue))
+                                .attr("height", d => y(0)-y(d.sectionValue))
+                                .attr("width", x.bandwidth())
+                                .attr("fill", (_, i) => colours[i])
+                                .attr("transform", "translate(0, 0)")
+                            );
+                },
+                (update) =>
+                    update
+                        .call((g) =>
+                            g
+                                .select("rect")
+                                .transition()
+                                    .duration(200)
+                                    .attr("y", d => y(d.sectionValue))
+                                    .attr("height", d => y(0)-y(d.sectionValue))
+                        ),
+                (exit) =>
+                    exit.call((g) => 
+                        g.transition().duration(200).style("opacity", 0).remove()
+                    )
+            );
+        
         svg.append("text")
-            .attr("x", (containerWidth / 2))             
-            .attr("y", 0 )
-            .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
-            .attr("text-anchor", "middle")  
-            .style("font-size", "1em")
-            .style("font-weight", "600")
-            .text(title)
-    }
+                .attr("x", (containerWidth / 2))             
+                .attr("y", 0 )
+                .attr("transform", "translate(0, " + margin.top +")")
+                .attr("text-anchor", "middle")  
+                .style("font-size", "1em")
+                .style("font-weight", "600")
+                .text(title)
 
-   /*  React.useEffect(() => {
-        function watchDimensions() {
-            setDimensions({
-                width: window.parent.innerWidth,
-                height: window.parent.innerHeight
-            })
-            if(update.current) {
-                d3.selectAll("g").remove()
-            } else {
-                update.current = true
-            }
-        }
-        window.parent.addEventListener("resize", watchDimensions)
-        let data
-        if(props.typeId === 1) data = totalActivityData(props.data)
-        if(props.typeId === 2) data = totalActivityData2(props.data)
+        svg.append("g")
+                .call(d3.axisBottom(x).tickFormat(null).tickSizeOuter(0))
+                .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
 
-        if (data) drawChart(data)
-        return () => {window.parent.removeEventListener("resize", watchDimensions)}
-    }, [dimensions] ) */
+        svg.append("g")
+                .call(d3.axisLeft(y))
+                .attr("transform", "translate(" + margin.left + ", 0)") 
+                            
+    }, [data, title, colours])
 
     React.useEffect(() => {
-        let data
-        let colours : Array<string>
-        let title : string
         if(props.typeId === 1) {
-            data = totalActivityData(props.data)
-            colours = ["#2B8A3C", "#969997"]
-            title = "Aktivitätstatus aller bekannten Geräte"
+            setData(totalActivityData(props.data)) 
+            setColours(["#2B8A3C", "#969997"])
+            setTitle("Aktivitätstatus aller bekannten Geräte")
         }
         else if(props.typeId === 2) {
-            data = totalActivityData2(props.data)
-            colours = ["#2B8A3C", "#B1E6BE", "#969997"]
-            title = "Aktivitätsstatus und Einsatzbereitschaft aller bekannten Geräte"
+            setData(totalActivityData2(props.data))
+            setColours(["#2B8A3C", "#B1E6BE", "#969997"])
+            setTitle("Aktivitätsstatus und Einsatzbereitschaft aller bekannten Geräte")
         }
-        else {
-            console.log("typeId: expected 1, 2. Received:" + props.typeId)
-            colours = ["#4B4D4B", "#4B4D4B", "#4B4D4B"]
-            title = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-        }
+        console.log("ehh?")
+        return () => {};
+    },[props])
 
-        if (data) drawChart(data, colours, title)
-    },[])
+    React.useEffect(() => {
+        if (data) drawChart()
+    }, [data])
 
     return (
         <div className="chart-container">

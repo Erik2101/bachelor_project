@@ -150,7 +150,6 @@ export function errorSpreadData(input: Array<DeviceData>) {
 
     // maybe reverse the date string here after sorting for better reading
     // also maybe remove year if year is the same on all strings
-    console.log(ret)
     return ret
 }
 
