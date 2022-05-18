@@ -1,6 +1,6 @@
 import React from "react";
 import * as d3 from "d3";
-import "./BarChart.css";
+import "./ChartContainer.css";
 import { DeviceData } from "../proto/frontend_pb";
 import { totalActivityData , totalActivityData2} from "../util";
 import { Dataset } from "../util";
@@ -16,8 +16,8 @@ const BarChart = (props: {
 
     function drawChart(data: Array<Dataset>, colours: Array<string>, title: string) {
 
-        const containerWidth = parseInt(d3.select(".bar-chart").style("width"))
-        const containerHeight = parseInt(d3.select(".bar-chart").style("height"))
+        const containerWidth = parseInt(d3.select(".chart-container").style("width"))
+        const containerHeight = parseInt(d3.select(".chart-container").style("height"))
         const margin = {
             top: containerHeight * 0.2, 
             right: containerWidth * 0.1,
@@ -112,12 +112,12 @@ const BarChart = (props: {
         let title : string
         if(props.typeId === 1) {
             data = totalActivityData(props.data)
-            colours = ["#29DB44", "#ABA7AA"]
+            colours = ["#2B8A3C", "#969997"]
             title = "Aktivitätstatus aller bekannten Geräte"
         }
         else if(props.typeId === 2) {
             data = totalActivityData2(props.data)
-            colours = ["#29DB44", "#B1E6BE", "#ABA7AA"]
+            colours = ["#2B8A3C", "#B1E6BE", "#969997"]
             title = "Aktivitätsstatus und Einsatzbereitschaft aller bekannten Geräte"
         }
         else {
@@ -130,7 +130,7 @@ const BarChart = (props: {
     },[])
 
     return (
-        <div className="bar-chart">
+        <div className="chart-container">
             <svg ref={d3Chart}></svg>
         </div>
     )

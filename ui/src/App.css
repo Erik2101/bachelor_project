@@ -1,11 +1,12 @@
 .App {
-    height: 100vh;
-    width: 100vw;
-    background-color: #8F8D8F;
+    height: 100%;
+    width: 100%;
     justify-items: center;
     align-items: center;
     display: grid;
+    background-color: #8F8D8F;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 6fr 6fr;
+    grid-auto-rows: 6fr;
     grid-auto-flow: row;
 }

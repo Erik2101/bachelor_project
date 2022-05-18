@@ -1,6 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 import "./AreaChart.css";
+import "./ChartContainer.css"
 import { errorSpreadData } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
 import { range } from "d3";
@@ -19,8 +20,8 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
         const chartTitle = "Gerätefehler von " + template.xDomain[0] + " bis " +
                             template.xDomain[template.xDomain.length - 1] + " nach Prioritäten"
 
-        const containerWidth = parseInt(d3.select(".area-chart").style("width"))
-        const containerHeight = parseInt(d3.select(".area-chart").style("height"))
+        const containerWidth = parseInt(d3.select(".chart-container").style("width"))
+        const containerHeight = parseInt(d3.select(".chart-container").style("height"))
         const margin = {
             top: containerHeight * 0.2, 
             right: containerWidth * 0.1,
@@ -68,7 +69,7 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
             {fill: "#F54E1B", stroke: "#DB281A"}
         ]
 
-        const tooltip = d3.select(".area-chart").append("div")
+        const tooltip = d3.select(".chart-container").append("div")
                             .attr("class", "tooltip")
                             .style("position", "absolute")
                             .style("opacity", 0)
@@ -144,7 +145,7 @@ const AreaChart = (props: {data : Array<DeviceData>}) => {
     })
 
     return (
-        <div className="area-chart">
+        <div className="chart-container">
             <svg ref={areaChart}></svg>
         </div>
     )

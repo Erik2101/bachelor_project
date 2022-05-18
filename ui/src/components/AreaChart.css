@@ -1,13 +1,3 @@
-.area-chart {
-    display: flex;
-    height: 90%;
-    width: 80%;
-    background-color: #BAB8BA;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
 .tooltip {
     font-size: 0.8em;
     background-color: #424242;

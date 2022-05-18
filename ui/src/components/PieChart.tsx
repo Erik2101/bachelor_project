@@ -1,6 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 import "./PieChart.css";
+import "./ChartContainer.css";
 import { DeviceData } from "../proto/frontend_pb";
 import { PieDataSet, pieReadyData, totalActivityData } from "../util";
 import { PieArcDatum } from "d3";
@@ -18,8 +19,8 @@ const PieChart = (props: {data: Array<DeviceData>}) => {
         
     function drawChart(input: PieDataSet) {
 
-    const containerWidth = parseInt(d3.select(".pie-chart").style("width"))
-    const containerHeight = parseInt(d3.select(".pie-chart").style("height"))
+    const containerWidth = parseInt(d3.select(".chart-container").style("width"))
+    const containerHeight = parseInt(d3.select(".chart-container").style("height"))
     const margin = {
         top: containerHeight * 0.1, 
         right: containerWidth * 0.1,
@@ -94,7 +95,7 @@ const PieChart = (props: {data: Array<DeviceData>}) => {
     }
 
     return (
-        <div className="pie-chart">
+        <div className="chart-container">
             <svg ref={d3Chart}/>
             <div className="tooltip"></div>
         </div>

@@ -44,10 +44,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {deviceDataStore.length > 0 && <AreaChart data={deviceDataStore}/>}
       {deviceDataStore.length > 0 && <BarChart typeId={1} data={deviceDataStore}/>}
-      {deviceDataStore.length > 0 && <BarChart typeId={2} data={deviceDataStore}/>}
       {deviceDataStore.length > 0 && <PieChart data={deviceDataStore}/>}
+      {deviceDataStore.length > 0 && <BarChart typeId={2} data={deviceDataStore}/>}
+      {deviceDataStore.length > 0 && <AreaChart data={deviceDataStore}/>}
     </div>
   );
 }
