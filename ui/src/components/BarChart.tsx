@@ -72,7 +72,14 @@ function BarChart(props: {
                                 .attr("width", x.bandwidth())
                                 .attr("fill", (_, i) => colours[i])
                                 .attr("transform", "translate(0, 0)")
-                            );
+                            )
+                            .append("text")
+                                .attr("x", (containerWidth / 2))             
+                                .attr("y", margin.top )
+                                .attr("text-anchor", "middle")  
+                                .style("font-size", "1em")
+                                .style("font-weight", "600")
+                                .text(title)
                 },
                 (update) =>
                     update
@@ -80,32 +87,23 @@ function BarChart(props: {
                             g
                                 .select("rect")
                                 .transition()
-                                    .duration(200)
+                                    .duration(1000)
                                     .attr("y", d => y(d.sectionValue))
                                     .attr("height", d => y(0)-y(d.sectionValue))
                         ),
                 (exit) =>
                     exit.call((g) => 
-                        g.transition().duration(200).style("opacity", 0).remove()
+                        g.transition().duration(0).style("opacity", 0).remove()
                     )
             );
-        
-        svg.append("text")
-                .attr("x", (containerWidth / 2))             
-                .attr("y", 0 )
-                .attr("transform", "translate(0, " + margin.top +")")
-                .attr("text-anchor", "middle")  
-                .style("font-size", "1em")
-                .style("font-weight", "600")
-                .text(title)
 
         svg.append("g")
-                .call(d3.axisBottom(x).tickFormat(null).tickSizeOuter(0))
-                .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
+            .call(d3.axisBottom(x).tickFormat(null).tickSizeOuter(0))
+            .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
 
         svg.append("g")
-                .call(d3.axisLeft(y))
-                .attr("transform", "translate(" + margin.left + ", 0)") 
+            .call(d3.axisLeft(y))
+            .attr("transform", "translate(" + margin.left + ", 0)") 
                             
     }, [data, title, colours])
 
@@ -120,7 +118,6 @@ function BarChart(props: {
             setColours(["#2B8A3C", "#B1E6BE", "#969997"])
             setTitle("Aktivitätsstatus und Einsatzbereitschaft aller bekannten Geräte")
         }
-        console.log("ehh?")
         return () => {};
     },[props])
 

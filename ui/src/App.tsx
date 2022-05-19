@@ -46,7 +46,8 @@ function App() {
   function update(oldStore: Array<DeviceData> | undefined, responses: Array<ChartDatasetResponse>) {
     {
       if (!oldStore) { oldStore = [] }
-      let ret = oldStore
+      /* let ret = oldStore */
+      let ret : Array<DeviceData> = []
       let respPushed = false
       for(const response of responses) {
         const resp = response.getDevicedata()
