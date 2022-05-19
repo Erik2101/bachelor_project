@@ -143,8 +143,31 @@ export function errorSpreadData(input: Array<DeviceData>) {
         item.data = item.data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     }
     const sorted_domain = domain.sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
+
+    let final_sorted_domain = []
+    const day_in_ms = 24 * 60 * 60 * 1000
+    const is_ms = sorted_domain.length * day_in_ms
+    const should_ms = new Date(sorted_domain[sorted_domain.length - 1]).getTime() - new Date(sorted_domain[0]).getTime()
+    if ( should_ms > is_ms) {
+        for (let i = 0; i < should_ms / (day_in_ms); i++) {
+            final_sorted_domain.push(convertDate(new Date(new Date(sorted_domain[0]).getTime() + (i * day_in_ms))))
+        }
+    } else {
+        final_sorted_domain = sorted_domain
+    }
+
+    for(const prio of data) {
+        if (prio.data.length < final_sorted_domain.length) {
+            for ( let i = 0; i < final_sorted_domain.length; i++ ) {
+                if (prio.data[i].date !== final_sorted_domain[i]) {
+                    prio.data.splice(i, 0, {date: final_sorted_domain[i], errNum: 0})
+                }
+            }
+        }
+    }
+
     const ret: ErrSpreadChartData = {
-        xDomain: sorted_domain,
+        xDomain: final_sorted_domain,
         dataSet: data
     }
 

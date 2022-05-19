@@ -28,6 +28,7 @@ function App() {
       const stream =  client.chartDatasetGathering(request, {});
       stream.on("data", function (response) {
           streamData.push(response)
+          // setDeviceDataStore(oldStore => update(oldStore, response))
         })
       stream.on("status", function(status) {
         console.log(status.code);
@@ -46,7 +47,7 @@ function App() {
   function update(oldStore: Array<DeviceData> | undefined, responses: Array<ChartDatasetResponse>) {
     {
       if (!oldStore) { oldStore = [] }
-      /* let ret = oldStore */
+      // let ret = oldStore
       let ret : Array<DeviceData> = []
       let respPushed = false
       for(const response of responses) {
@@ -69,6 +70,30 @@ function App() {
     }
   }
 
+// streamt jede response in den state
+ /*  function update(oldStore: Array<DeviceData> | undefined, response: ChartDatasetResponse) {
+    {
+      if (!oldStore) { oldStore = [] }
+      let ret = oldStore
+      // let ret : Array<DeviceData> = []
+      let respPushed = false
+      const resp = response.getDevicedata()
+      if (resp) {
+        for (const item of oldStore) {
+          if(item.getUuid() === resp.getUuid()) {
+            ret[ret.indexOf(item)] = resp
+            respPushed = true
+          }
+        }
+        if (!respPushed) {
+          ret.push(resp)
+          respPushed = false
+        }
+      }
+    return ret
+    }
+  } */
+
   function handleClick() {
     setDataSetCount(prevCount =>  {return prevCount === 0 ? 1 : 0})
   }
@@ -76,7 +101,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <button className="refresh-button" onClick={handleClick}>Update Dataset?</button>
+      <button className="refresh-button" onClick={handleClick}>Datensatz wechseln.</button>
       {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
       {deviceDataStore && <PieChart data={deviceDataStore}/>}
       {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}

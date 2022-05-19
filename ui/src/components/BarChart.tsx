@@ -73,13 +73,6 @@ function BarChart(props: {
                                 .attr("fill", (_, i) => colours[i])
                                 .attr("transform", "translate(0, 0)")
                             )
-                            .append("text")
-                                .attr("x", (containerWidth / 2))             
-                                .attr("y", margin.top )
-                                .attr("text-anchor", "middle")  
-                                .style("font-size", "1em")
-                                .style("font-weight", "600")
-                                .text(title)
                 },
                 (update) =>
                     update
@@ -97,6 +90,20 @@ function BarChart(props: {
                     )
             );
 
+        svg.selectAll("text")
+                .data([1])
+                .join(
+                    enter => enter.append("text"),
+                    update => update,
+                    exit => exit.remove()
+                )
+                .attr("x", (containerWidth / 2))             
+                .attr("y", margin.top )
+                .attr("text-anchor", "middle")  
+                .style("font-size", "1em")
+                .style("font-weight", "600")
+                .text(title)
+                            
         svg.append("g")
             .call(d3.axisBottom(x).tickFormat(null).tickSizeOuter(0))
             .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
