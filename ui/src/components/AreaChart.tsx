@@ -65,6 +65,7 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                                 .style("opacity", 0);
 
             const justData = []
+            const testData = []
 
             for (const j in range (data.dataSet.length)) {
                 /* const area = d3.area()
@@ -81,70 +82,16 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                     .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")") */
 
                 justData.push(data.dataSet[j].data)
-                    
-                svg.selectAll("circle")
-                        .data(data.dataSet[j].data)
-                        .join(
-                            enter => enter.append("circle"),               
-                            update => update,
-                            exit => exit.remove()
-                        )
-                        .attr("fill", colours[j].stroke)
-                        .attr("stroke", "none")
-                        .attr("cx", (_d, i) => x(new Date(data.dataSet[j].data[i].date)))
-                        .attr("cy", (_d, i) => y(data.dataSet[j].data[i].errNum))
-                        .attr("r", 2)
-                        .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
-                        
-                        .on("mouseover", (element) => select(element.currentTarget).attr("r", 4))
-                        .on("mouseout", (element) => select(element.currentTarget).attr("r", 2))
-
-                        .on("mousemove", function(event, d) {
-                            tooltip.transition()
-                                        .duration(50)
-                                        .style("opacity", 1)
-
-                            tooltip.html(d.errNum.toString())
-                                    .style("left", d3.pointer(event, window)[0] + "px")
-                                    .style("top", (d3.pointer(event, window)[1] - margin.top * 0.4)  + "px");
-                        })
-
-                        .on("mouseleave", function() {
-                            tooltip.transition()
-                                        .duration(50)
-                                        .style("opacity", 0)
-                        })
-            
-                    /* .append("circle")
-                        .attr("fill", colours[j].stroke)
-                        .attr("stroke", "none")
-                        .attr("cx", (_d, i) => x(new Date(data.dataSet[j].data[i].date)))
-                        .attr("cy", (_d, i) => y(data.dataSet[j].data[i].errNum))
-                        .attr("r", 2)
-                        .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
-
-                        .on("mousemove", function(event, d) {
-                            tooltip.transition()
-                                        .duration(50)
-                                        .style("opacity", 1)
-
-                            tooltip.html(d.errNum.toString())
-                                    .style("left", d3.pointer(event, window)[0] + "px")
-                                    .style("top", (d3.pointer(event, window)[1] - margin.top * 0.4)  + "px");
-                        })
-
-                        .on("mouseleave", function() {
-                            tooltip.transition()
-                                        .duration(50)
-                                        .style("opacity", 0)
-                        }) */
+                for (const i in range(domain.length)) {
+                    testData.push(data.dataSet[j].data[i])
+                }
             }
         
-        const lineFunction = d3.line<ErrPerDate>()
+            const lineFunction = d3.line<ErrPerDate>()
                                 .x((d, i) => x(new Date(d.date)))
                                 .y((d, i) => y(d.errNum))
 
-        svg.selectAll("path")
+            svg.selectAll("path")
                 .data(justData)
                 .join(
                     enter => enter.append("path"),
@@ -157,42 +104,65 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                 .attr("stroke-width", 1)
                 .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
                 
+            svg.selectAll("circle")
+                .data(testData)
+                .join(
+                    enter => enter.append("circle"),               
+                    update => update,
+                    exit => exit.remove()
+                )
+                .attr("fill", (_, i) => colours[Math.ceil((i + 1) / domain.length) - 1].stroke)
+                .attr("stroke", "none")
+                .attr("cx", (d, i) => x(new Date(d.date)))
+                .attr("cy", (d, i) => y(d.errNum))
+                .attr("r", 2)
+                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+                
+                .on("mouseover", (element) => select(element.currentTarget).attr("r", 4))
+                .on("mouseout", (element) => select(element.currentTarget).attr("r", 2))
 
-        /* svg.append("text")
-            .attr("x", (containerWidth / 2))             
-            .attr("y", 0 )
-            .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
-            .attr("text-anchor", "middle")  
-            .style("font-size", "1em")
-            .style("font-weight", "600")
-            .text(chartTitle) */
+                .on("mousemove", function(event, d) {
+                    tooltip.transition()
+                                .duration(50)
+                                .style("opacity", 1)
 
-        const chartTitle = "Gerätefehler von " + data.xDomain[0] + " bis " +
-        data.xDomain[data.xDomain.length - 1] + " nach Prioritäten"
-        
-        svg.selectAll("text")
-            .data([1])
-            .join(
-                enter => enter.append("text"),
-                update => update,
-                exit => exit.remove()
-            )
-            .attr("x", (containerWidth / 2))             
-            .attr("y", 0 )
-            .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
-            .attr("text-anchor", "middle")  
-            .style("font-size", "1em")
-            .style("font-weight", "600")
-            .text(chartTitle)
+                    tooltip.html(d.errNum.toString())
+                            .style("left", d3.pointer(event, window)[0] + "px")
+                            .style("top", (d3.pointer(event, window)[1] - margin.top * 0.4)  + "px");
+                })
+
+                .on("mouseleave", function() {
+                    tooltip.transition()
+                                .duration(50)
+                                .style("opacity", 0)
+                })
+
+            const chartTitle = "Gerätefehler von " + data.xDomain[0] + " bis " +
+            data.xDomain[data.xDomain.length - 1] + " nach Prioritäten"
+            
+            svg.selectAll("text")
+                .data([1])
+                .join(
+                    enter => enter.append("text"),
+                    update => update,
+                    exit => exit.remove()
+                )
+                .attr("x", (containerWidth / 2))             
+                .attr("y", 0 )
+                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+                .attr("text-anchor", "middle")  
+                .style("font-size", "1em")
+                .style("font-weight", "600")
+                .text(chartTitle)
 
 
-        svg.append("g")
-            .call(d3.axisLeft(y))
-            .attr("transform", "translate("+ -chartWidth / 2 + ", " + - chartHeight / 2 + ")")
+            svg.append("g")
+                .call(d3.axisLeft(y))
+                .attr("transform", "translate("+ -chartWidth / 2 + ", " + - chartHeight / 2 + ")")
 
-        svg.append("g")
-            .call(d3.axisBottom(x))
-            .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + chartHeight / 2 +")")
+            svg.append("g")
+                .call(d3.axisBottom(x))
+                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + chartHeight / 2 +")")
         }
     }, [data])
 
