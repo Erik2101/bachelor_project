@@ -65,31 +65,19 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                                 .style("opacity", 0);
 
             const justData = []
-            const testData = []
+            const circleData = []
 
             for (const j in range (data.dataSet.length)) {
-                /* const area = d3.area()
-                                    .x((_d, i) => x(new Date(data.dataSet[j].data[i].date)))
-                                    .y0(y(0))
-                                    .y1((_d, i) => y(data.dataSet[j].data[i].errNum))
-
-                svg.append("path")
-                    .datum(data.dataSet[j].data)
-                    .attr("d", area)
-                    .attr("fill", colours[j].fill)
-                    .attr("stroke", "none")
-                    .attr("fill-opacity", 0.25)
-                    .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")") */
-
+                
                 justData.push(data.dataSet[j].data)
                 for (const i in range(domain.length)) {
-                    testData.push(data.dataSet[j].data[i])
+                    circleData.push(data.dataSet[j].data[i])
                 }
             }
         
             const lineFunction = d3.line<ErrPerDate>()
-                                .x((d, i) => x(new Date(d.date)))
-                                .y((d, i) => y(d.errNum))
+                                    .x((d) => x(new Date(d.date)))
+                                    .y((d) => y(d.errNum))
 
             svg.selectAll("path")
                 .data(justData)
@@ -103,9 +91,28 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                 .attr("stroke", (_, i) => colours[i].stroke)
                 .attr("stroke-width", 1)
                 .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+
+            /* const areaFunction = d3.area<ErrPerDate>()
+                                    .x((d) => x(new Date(d.date)))
+                                    .y0(y(0))
+                                    .y1((d) => y(d.errNum))
+
+            svg.selectAll("path")
+                .data(justData)
+                .join(
+                    enter => enter.append("path"),
+                    update => update,
+                    exit => exit.remove()
+                )
+                .attr("d", (d) => areaFunction(d))
+                .attr("fill", (_, i) => colours[i].fill)
+                .attr("stroke", "none")
+                .attr("fill-opacity", 0.25)
+                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")") */
+
                 
             svg.selectAll("circle")
-                .data(testData)
+                .data(circleData)
                 .join(
                     enter => enter.append("circle"),               
                     update => update,
