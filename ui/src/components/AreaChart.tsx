@@ -2,7 +2,7 @@ import React from "react";
 import * as d3 from "d3";
 import "./AreaChart.css";
 import "./ChartContainer.css"
-import { errorSpreadData, ErrSpreadChartData } from "../util";
+import { errorSpreadData, ErrPerDate, ErrSpreadChartData } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
 import { geoCircle, range, select } from "d3";
 import { callbackify } from "util";
@@ -64,6 +64,8 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                                 .style("position", "absolute")
                                 .style("opacity", 0);
 
+            const justData = []
+
             for (const j in range (data.dataSet.length)) {
                 /* const area = d3.area()
                                     .x((_d, i) => x(new Date(data.dataSet[j].data[i].date)))
@@ -78,42 +80,7 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                     .attr("fill-opacity", 0.25)
                     .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")") */
 
-                const line = d3.line()
-                                .x((_d, i) => x(new Date(data.dataSet[j].data[i].date)))
-                                .y((_d, i) => y(data.dataSet[j].data[i].errNum))
-
-                /* svg.selectAll("g")
-                    .datum(data.dataSet[j].data)
-                    .join(
-                        (enter) => {
-                            return enter
-                                .append("g")
-                                .call((g) =>
-                                g
-                                    .append("path")
-                                    .attr("d", line)
-                                    .attr("fill", "none")
-                                    .attr("stroke", colours[j].stroke)
-                                    .attr("stroke-width", 1)
-                                    .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
-                                )   
-                        },
-                        (exit) => 
-                            exit.call((g) => g.transition().duration(0).style("opacity", 0).remove())
-                    ) */
-
-                svg.selectAll("path")
-                        .data([data.dataSet[j].data])
-                        .join(
-                            enter => enter.append("path").attr("class", "line"),
-                            update => update,
-                            exit => exit.remove()
-                        )
-                        .attr("d", line)
-                        .attr("fill", "none")
-                        .attr("stroke", colours[j].stroke)
-                        .attr("stroke-width", 1)
-                        .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+                justData.push(data.dataSet[j].data)
                     
                 svg.selectAll("circle")
                         .data(data.dataSet[j].data)
@@ -148,49 +115,6 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                                         .style("opacity", 0)
                         })
             
-                /* svg.selectAll("dataPoints")
-                    .data(data.dataSet[j].data)
-                    .join(
-                        (enter) => {
-                            return enter
-                                    .append("circle")
-                                        .call((circle) => 
-                                            circle
-                                                .attr("fill", colours[j].stroke)
-                                                .attr("stroke", "none")
-                                                .attr("cx", (_d, i) => x(new Date(data.dataSet[j].data[i].date)))
-                                                .attr("cy", (_d, i) => y(data.dataSet[j].data[i].errNum))
-                                                .attr("r", 2)
-                                                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
-
-                                                .on("mousemove", function(event, d) {
-                                                    tooltip.transition()
-                                                                .duration(50)
-                                                                .style("opacity", 1)
-
-                                                    tooltip.html(d.errNum.toString())
-                                                            .style("left", d3.pointer(event, window)[0] + "px")
-                                                            .style("top", (d3.pointer(event, window)[1] - margin.top * 0.4)  + "px");
-                                                })
-
-                                                .on("mouseleave", function() {
-                                                    tooltip.transition()
-                                                                .duration(50)
-                                                                .style("opacity", 0)
-                                                })
-                                            )
-                        }, */
-                        /* (update) =>
-                                update
-                                    .call((circle) => 
-                                    circle.transition()
-                                            .duration(200)
-                                            .attr("cx", (_d, i) => x(new Date(data.dataSet[j].data[i].date)))
-                                            .attr("cy", (_d, i) => y(data.dataSet[j].data[i].errNum))
-                                            .attr("r", 2)
-                                    ), */
-                     /*    (exit) => exit.call((circle) => circle.transition().duration(0).style("opacity", 0).remove())
-                    ) */
                     /* .append("circle")
                         .attr("fill", colours[j].stroke)
                         .attr("stroke", "none")
@@ -215,6 +139,24 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                                         .style("opacity", 0)
                         }) */
             }
+        
+        const lineFunction = d3.line<ErrPerDate>()
+                                .x((d, i) => x(new Date(d.date)))
+                                .y((d, i) => y(d.errNum))
+
+        svg.selectAll("path")
+                .data(justData)
+                .join(
+                    enter => enter.append("path"),
+                    update => update,
+                    exit => exit.remove()
+                )
+                .attr("d", (d) => lineFunction(d))
+                .attr("fill", "none")
+                .attr("stroke", (_, i) => colours[i].stroke)
+                .attr("stroke-width", 1)
+                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+                
 
         /* svg.append("text")
             .attr("x", (containerWidth / 2))             
