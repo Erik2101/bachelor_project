@@ -76,23 +76,32 @@ function RoomCard(props: {data: Array<DeviceData>}) {
             }
             for (const device of devices_in_room) {
                 const errors = device.getErrorsList()
-                let count_high = 0
-                let count_med = 0
-                let count_low = 0
+                let count = [0, 0, 0] ///[high, medium, low]
                 if (errors.length > 1) {
                     for (const error of errors) {
                         if (error.getId() !== 0) {
                             const prio = error.getPriority()
                             if (prio === "high") {
-                                count_high++
+                                count[0]++
                             } else {
                                 if (prio === "medium") {
-                                    count_med++
+                                    count[1]++
                                 } else {
-                                    count_low++
+                                    count[2]++
                                 }
                             }
                         }
+                    }
+                }
+                let error_colours = [] // [high, medium, low]
+                for (const value of count) {
+                    if (value === 0) {
+                        error_colours.push({color: "black"})
+                    } else {
+                        error_colours.push({
+                            color: "red",
+                            fontWeight: 600
+                        })
                     }
                 }
                 ret.push(
@@ -100,9 +109,9 @@ function RoomCard(props: {data: Array<DeviceData>}) {
                         <td className="uuid-cell">{device.getUuid()}</td>
                         <td className="activity-cell">{device.getIsactive().toString()}</td>
                         <td className="ready-cell">{(device.getIsusable()).toString()}</td>
-                        <td className="high-cell">{count_high}</td>
-                        <td className="medium-cell">{count_med}</td>
-                        <td className="low-cell">{count_low}</td>
+                        <td className="high-cell" style={error_colours[0]}>{count[0]}</td>
+                        <td className="medium-cell" style={error_colours[1]}>{count[1]}</td>
+                        <td className="low-cell" style={error_colours[2]}>{count[2]}</td>
                     </tr>
                 )
             }
@@ -126,12 +135,15 @@ function RoomCard(props: {data: Array<DeviceData>}) {
     function roomIndicator(int : number) {
         let property : number
         let class_name : string
+        let label : string
         if (int === 0) {
             property = roomStatus[1]
             class_name = "room-ready-indicator"
+            label = "Bereit:"
         } else {
             property = roomStatus[2]
             class_name = "room-active-indicator"
+            label = "Aktiv:"
         }
         const ratio = property / roomStatus[0]
         let background_color : string
@@ -146,7 +158,12 @@ function RoomCard(props: {data: Array<DeviceData>}) {
         }
         const style = {background: background_color}
         const percentage : string = ratio >= 0.1 ? Math.round(ratio * 100).toString() + "%" : "0" + Math.round(ratio * 100).toString() + "%"
-        return (<div className={class_name} style={style}>{percentage}</div>)
+        return (
+            <div className="indicator-container">
+                <label className="indicator-label">{label}</label>
+                <div className={class_name} style={style}>{percentage}</div>
+            </div>
+        )
     }
 
     function getRoomState(input : DeviceData[]) {
@@ -169,15 +186,24 @@ function RoomCard(props: {data: Array<DeviceData>}) {
 
     return (
         <div className="room-card-container">
-            {deviceData && <select className="station-select" onChange={handleStationChange}>
-                <option value="default">Station:</option>
-                {getStations(deviceData)}
-            </select>}
+            {deviceData &&
+            <div className="select-container">
+                <label className="select-label">Station:</label>
+                <select className="station-select" onChange={handleStationChange}>
+                    <option value="default">-Station wählen-</option>
+                    {getStations(deviceData)}
+                </select>
+            </div>
+            }
             { deviceData && selectedStation !== "default" &&
-            <select className="room-select" onChange={handleRoomChange}>
-                <option value="default">Raum:</option>
-                {getRooms(deviceData, selectedStation)}
-            </select> }
+            <div className="select-container">
+                <label className="select-label">Raum:</label>
+                <select className="room-select" id="room-select-1" onChange={handleRoomChange}>
+                    <option value="default">-Raum wählen-</option>
+                    {getRooms(deviceData, selectedStation)}
+                </select>
+            </div> 
+            }
             {selectedRoom!=="default" && roomIndicator(1)}
             {selectedRoom!=="default" && roomIndicator(0)}
             {/* <hr className="divider"/> */}

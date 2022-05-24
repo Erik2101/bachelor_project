@@ -14,6 +14,38 @@
     margin: 20px;
 }
 
+.select-container {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.select-label, .indicator-label {
+    margin-left: 1px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.indicator-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    grid-column: span 2;
+}
+
+.room-ready-indicator, .room-active-indicator {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 5px #8F8D8F solid;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
 .divider {
     grid-column: 1 / 7;
     width: 90%;
@@ -68,24 +100,4 @@
 
 .activity-cell, .ready-cell, .high-cell , .medium-cell, .low-cell {
     text-align: center;
-}
-
-.room-ready-indicator, .room-active-indicator {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    border: 5px #8F8D8F solid;
-    align-self: center;
-    justify-self: center;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 40px;
-}
-
-.room-active-indicator {
-    grid-column: 5 / 6;
-}
-
-.room-ready-indicator {
-    grid-column: 6 / 7;
 }
