@@ -1,9 +1,9 @@
 .chart-container {
     display: flex;
     height: 90%;
-    min-height: 200px;
+    min-height: 300px;
     width: 90%;
-    min-width: 300px;
+    min-width: 500px;
     background-color: #BAB8BA;
     border-radius: 10px;
     justify-content: center;

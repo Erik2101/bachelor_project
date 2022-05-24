@@ -29,7 +29,7 @@
 .indicator-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     grid-column: span 2;
 }
@@ -44,6 +44,8 @@
     text-align: center;
     vertical-align: middle;
     line-height: 40px;
+    margin-right: 5px;
+    margin-left: 20px;
 }
 
 .divider {
@@ -58,12 +60,11 @@
 
 .table-container {
     width: 100%;
-    /* min-width: 400px; */
-    max-height: 400px;
+    height: 100%;
+    max-height: 500px;
     grid-column: 1 / 7;
     overflow-y: auto;
-    overflow-x: hidden;
-    align-self: center;
+    overflow-x: auto;
     justify-self: center;
 }
 
@@ -87,14 +88,14 @@
 }
 
 .uuid-cell {
-    width: 70%;
+    width: 60%;
 }
 
-.activity-cell, .ready-cell{
-    width: 7.5%;
+.activity-cell, .ready-cell, .medium-cell{
+    width: 10%;
 }
 
-.high-cell , .medium-cell, .low-cell {
+.high-cell, .low-cell {
     width: 5%,
 }
 

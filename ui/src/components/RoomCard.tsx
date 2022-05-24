@@ -216,7 +216,7 @@ function RoomCard(props: {data: Array<DeviceData>}) {
                             <th className="activity-cell">aktiv</th>
                             <th className="ready-cell">ready</th>
                             <th className="high-cell">high</th>
-                            <th className="medium-cell">med</th>
+                            <th className="medium-cell">medium</th>
                             <th className="low-cell">low</th>
                         </tr>
                     </thead>
