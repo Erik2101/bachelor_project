@@ -124,8 +124,19 @@ function RoomCard(props: {data: Array<DeviceData>}) {
         if (value === "default") {
             setSelectedRoom("default")
         }
-        setSelectedStation(value)
+        setSelectedStation(value)        
     }
+
+    function updateRoom() {
+        const target = document.getElementById("room-select") as HTMLSelectElement
+        if (target) {
+            setSelectedRoom(target.value)
+        } 
+    }
+
+    React.useEffect(() => {
+        updateRoom()
+    }, [selectedStation])
 
     function handleRoomChange(event : React.ChangeEvent<HTMLSelectElement>) {
         const value = event.target.value
@@ -198,7 +209,7 @@ function RoomCard(props: {data: Array<DeviceData>}) {
             { deviceData && selectedStation !== "default" &&
             <div className="select-container">
                 <label className="select-label">Raum:</label>
-                <select className="room-select" id="room-select-1" onChange={handleRoomChange}>
+                <select className="room-select" id="room-select" onChange={handleRoomChange}>
                     <option value="default">-Raum wählen-</option>
                     {getRooms(deviceData, selectedStation)}
                 </select>
