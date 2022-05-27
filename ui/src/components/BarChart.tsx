@@ -80,9 +80,11 @@ function BarChart(props: {
                             g
                                 .select("rect")
                                 .transition()
-                                    .duration(1000)
+                                    .duration(1)
                                     .attr("x", (_,i) => margin.left + (i + 1) * (x.step() - x.bandwidth()) + i * x.bandwidth())
                                     .attr("width", x.bandwidth())
+                                .transition()
+                                    .duration(1000)
                                     .attr("y", d => y(d.sectionValue))
                                     .attr("height", d => y(0)-y(d.sectionValue))
                         ),

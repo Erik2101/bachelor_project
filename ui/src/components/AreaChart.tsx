@@ -4,8 +4,7 @@ import "./AreaChart.css";
 import "./ChartContainer.css"
 import { errorSpreadData, ErrPerDate, ErrSpreadChartData } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
-import { geoCircle, range, select } from "d3";
-import { callbackify } from "util";
+import { range, select } from "d3";
 
 function AreaChart (props: {data : Array<DeviceData>}) {
 
@@ -23,9 +22,9 @@ function AreaChart (props: {data : Array<DeviceData>}) {
             const containerWidth = parseInt(d3.select(".chart-container").style("width"))
             const containerHeight = parseInt(d3.select(".chart-container").style("height"))
             const margin = {
-                top: containerHeight * 0.2, 
+                top: containerHeight * 0.1, 
                 right: containerWidth * 0.1,
-                bottom: containerHeight * 0.00,
+                bottom: containerHeight * 0.1,
                 left: containerWidth * 0.1
             }
 
@@ -35,7 +34,7 @@ function AreaChart (props: {data : Array<DeviceData>}) {
             const svg = d3.select(areaChart.current)
                             .attr("width", containerWidth)
                             .attr("height", containerHeight)
-                            .attr("viewBox", [-containerWidth / 2, -containerHeight / 2, containerWidth, containerHeight])
+                            .attr("viewBox", [0, 0, containerWidth, containerHeight])
 
 
             const dx = [domain[0], domain[domain.length - 1]]
@@ -52,7 +51,7 @@ function AreaChart (props: {data : Array<DeviceData>}) {
             
             const y = d3.scaleLinear()
                             .domain([0, yMax])
-                            .range([chartHeight, margin.top / 2])
+                            .range([chartHeight + margin.bottom, 2 * margin.top])
 
             const colours = [
                 {fill: "#44F295", stroke: "#2B8A3C"},
@@ -84,13 +83,14 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                 .join(
                     enter => enter.append("path"),
                     update => update,
-                    exit => exit.remove()
+                    (exit) => 
+                        exit.call((path) =>
+                             path.transition().duration(0).style("opacity", 0).remove())
                 )
                 .attr("d", (d) => lineFunction(d))
                 .attr("fill", "none")
                 .attr("stroke", (_, i) => colours[i].stroke)
                 .attr("stroke-width", 1)
-                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
 
             /* const areaFunction = d3.area<ErrPerDate>()
                                     .x((d) => x(new Date(d.date)))
@@ -123,7 +123,6 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                 .attr("cx", (d, i) => x(new Date(d.date)))
                 .attr("cy", (d, i) => y(d.errNum))
                 .attr("r", 2)
-                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
                 
                 .on("mouseover", (element) => select(element.currentTarget).attr("r", 4))
                 .on("mouseout", (element) => select(element.currentTarget).attr("r", 2))
@@ -135,7 +134,7 @@ function AreaChart (props: {data : Array<DeviceData>}) {
 
                     tooltip.html(d.errNum.toString())
                             .style("left", d3.pointer(event, window)[0] + "px")
-                            .style("top", (d3.pointer(event, window)[1] - margin.top * 0.4)  + "px");
+                            .style("top", (d3.pointer(event, window)[1] - margin.top * 0.8)  + "px");
                 })
 
                 .on("mouseleave", function() {
@@ -154,22 +153,23 @@ function AreaChart (props: {data : Array<DeviceData>}) {
                     update => update,
                     exit => exit.remove()
                 )
-                .attr("x", (containerWidth / 2))             
-                .attr("y", 0 )
-                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+                .attr("x", containerWidth / 2)             
+                .attr("y", margin.top )
                 .attr("text-anchor", "middle")  
                 .style("font-size", "1em")
                 .style("font-weight", "600")
                 .text(chartTitle)
 
-
-            svg.append("g")
-                .call(d3.axisLeft(y))
-                .attr("transform", "translate("+ -chartWidth / 2 + ", " + - chartHeight / 2 + ")")
+            // remove old axis-ticks before drawing the new axis
+            svg.selectAll("g").remove()
 
             svg.append("g")
                 .call(d3.axisBottom(x))
-                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + chartHeight / 2 +")")
+                .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
+
+            svg.append("g")
+                .call(d3.axisLeft(y))
+                .attr("transform", "translate("+ margin.left + ", 0)")
         }
     }, [data])
 
@@ -178,7 +178,7 @@ function AreaChart (props: {data : Array<DeviceData>}) {
     }, [data])
 
     React.useEffect(() => {
-        if (props.data) setData(errorSpreadData(props.data))
+        setData(errorSpreadData(props.data))
     }, [props])
 
     return (
