@@ -65,10 +65,10 @@ function PieChart (props: {
     const containerWidth = parseInt(d3.select(".chart-container").style("width"))
     const containerHeight = parseInt(d3.select(".chart-container").style("height"))
     const margin = {
-        top: containerHeight * 0.1, 
-        right: containerWidth * 0.1,
-        bottom: containerHeight * 0.1,
-        left: containerWidth * 0.1
+        top: containerHeight * 0.1 / props.typeId, 
+        right: containerWidth * 0.1 / props.typeId,
+        bottom: containerHeight * 0.1 / props.typeId,
+        left: containerWidth * 0.1 / props.typeId
     }
 
     const chartWidth = containerWidth - margin.left - margin.right
@@ -187,11 +187,14 @@ function PieChart (props: {
 
     return (
         <div className="chart-container">
-            {props.typeId === 2 && 
-            <select className="class-select" onChange={handleClassChange}>
-                <option value="default">-Station wählen:-</option>
-                {populateSelect(props.data)}
-            </select>
+            {props.typeId === 2 &&
+            <div className="select-container">
+                <label className="select-label">Station:</label>
+                <select className="class-select" onChange={handleClassChange}>
+                    <option value="default">-Station wählen:-</option>
+                    {populateSelect(props.data)}
+                </select>
+            </div>
             }
             {((props.typeId === 2 && selection !== "default") || props.typeId === 1 ) && <svg ref={d3Chart}/>}
             <div className="tooltip"></div>
