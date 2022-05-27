@@ -104,10 +104,11 @@ function App() {
       <Header />
       <button className="refresh-button" onClick={handleClick}>Datensatz wechseln.</button>
       {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
-      {deviceDataStore && <PieChart data={deviceDataStore}/>}
+      {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
       {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
       {deviceDataStore && <AreaChart data={deviceDataStore}/>}
       {deviceDataStore && <RoomCard data={deviceDataStore}/>}
+      {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
     </div>
   );
 }

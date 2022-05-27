@@ -3,24 +3,62 @@ import * as d3 from "d3";
 import "./PieChart.css";
 import "./ChartContainer.css";
 import { DeviceData } from "../proto/frontend_pb";
-import { PieDataSet, pieReadyData, totalActivityData } from "../util";
+import { CaptionColourPair, devicesOfAClassPerStation, PieDataSet, pieReadyData, stationColours, totalActivityData } from "../util";
 import { PieArcDatum } from "d3";
 
-const colours = ["#2B8A3C", "#969997"]
-
-function PieChart (props: {data: Array<DeviceData>}) {
+function PieChart (props: {
+    data: Array<DeviceData>,
+    typeId: number
+}) {
 
     const d3Chart = React.useRef(null)
     const [data, setData] = React.useState<PieDataSet>()
+    const [title, setTitle] = React.useState<string>("XXXXXXXXXXXXXXXXX")
+    const [colours, setColours] = React.useState<Array<CaptionColourPair>>([{caption: "default", colour: "black"}])
+    const [selection, setSelection] = React.useState<string>("default")
 
     React.useEffect(() => {
         if (data) drawChart()
     },[data])
 
     React.useEffect(() => {
-        setData(pieReadyData(totalActivityData(props.data)))
+        if (props.typeId === 1) {
+            setData(pieReadyData(totalActivityData(props.data)))
+            setTitle("Aktivitätstatus aller bekannten Geräte")
+            setColours([
+                {caption: "Aktiv", colour: "#2B8A3C"},
+                {caption: "Inaktiv", colour: "#969997"}])
+        }
+        if (props.typeId === 2) {
+            setTitle("Anzahl der Geräte einer Klasse pro Station")
+            setColours(stationColours(props.data))
+        }
         return () => {};
     }, [props])
+
+    function handleClassChange(event : React.ChangeEvent<HTMLSelectElement>) {
+        /* const chosen_class = event.target.value
+        if (chosen_class !== "default"){
+            const gathered_data = devicesOfAClassPerStation(props.data)
+            for (const item of gathered_data) {
+                if (chosen_class === item.class) {
+                    setData(pieReadyData(item.devicesPerStation))
+                }
+            }
+        } */
+        setSelection(event.target.value)
+    }
+
+    React.useEffect(() => {
+        if (selection !== "default") {
+            const gathered_data = devicesOfAClassPerStation(props.data)
+            for (const item of gathered_data) {
+                if (selection === item.class) {
+                    setData(pieReadyData(item.devicesPerStation))
+                }
+            }
+        }
+    }, [selection, props])
         
     const drawChart = React.useCallback(() => {
 
@@ -36,9 +74,6 @@ function PieChart (props: {data: Array<DeviceData>}) {
     const chartWidth = containerWidth - margin.left - margin.right
     const chartHeight = containerHeight - margin.top - margin.bottom
     const size = containerHeight < containerWidth ? chartHeight : chartWidth
-                
-
-    const chartTitle = "Aktivitätstatus aller bekannten Geräte"
 
     const svg = d3.select(d3Chart.current)
                     .attr("width", containerWidth)
@@ -66,7 +101,7 @@ function PieChart (props: {data: Array<DeviceData>}) {
                                     g
                                         .append("path")
                                         .attr("d", d => arc(d))
-                                        .attr("fill", (_,i) => colours[i])
+                                        .attr("fill", (_,i) => colours[i].colour)
                                         .attr("fill-opacity", 0.6)
                                         .attr("transform", "translate(0, " + margin.top / 2 + ")")
 
@@ -123,13 +158,42 @@ function PieChart (props: {data: Array<DeviceData>}) {
                 .attr("text-anchor", "middle")  
                 .style("font-size", "1em")
                 .style("font-weight", "600")
-                .text(chartTitle)
+                .text(title)
                 
     }, [data])
 
+    function populateSelect(input: Array<DeviceData>) {
+        let classes : Array<string> = []
+        for (const device of input) {
+            const target_class = device.getClasses()
+            let knownClass = false
+            for (const member of classes) {
+                if (member === target_class) {
+                    knownClass = true
+                }
+            }
+            if (!knownClass) classes.push(target_class)
+        }
+        const sorted_classes = classes.sort((a, b) => b.localeCompare(a))
+        sorted_classes.reverse()
+        let ret = []
+        for (const member of classes) {
+            ret.push(
+                <option value={member} key={ret.length}>{member}</option>
+            )
+        }
+        return ret
+    }
+
     return (
         <div className="chart-container">
-            <svg ref={d3Chart}/>
+            {props.typeId === 2 && 
+            <select className="class-select" onChange={handleClassChange}>
+                <option value="default">-Station wählen:-</option>
+                {populateSelect(props.data)}
+            </select>
+            }
+            {((props.typeId === 2 && selection !== "default") || props.typeId === 1 ) && <svg ref={d3Chart}/>}
             <div className="tooltip"></div>
         </div>
     )

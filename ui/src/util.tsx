@@ -2,6 +2,11 @@ import { lchown } from "fs"
 import { isExternalModuleNameRelative } from "typescript"
 import { DeviceData } from "./proto/frontend_pb"
 
+const bigColourArray = 
+["#2B8A3C", "#F2941D", "#DB281A", "#969997", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C",
+ "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C",
+ "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C" ]
+
 export type Dataset = {
     sectionCaption: string,
     sectionValue: number,
@@ -25,8 +30,18 @@ export type ErrSpreadChartData = {
     dataSet: Array<ErrPerPrioPerDate>
 }
 
+export type DevicesPerClassPerStation = {
+    class: string,
+    devicesPerStation: Array<Dataset>
+}
+
+export type CaptionColourPair = {
+    caption: string,
+    colour: string
+}
+
 export function totalActivityData( data: Array<DeviceData>) {
-    const ret: Array<Dataset> =[]
+    const ret: Array<Dataset> = []
     let active: Dataset = {
         sectionCaption: "active",
         sectionValue: 0
@@ -84,6 +99,76 @@ export function pieReadyData(input: Array<Dataset>) {
     }
 
     return ret
+}
+
+// impelementation für geräte, die alle genau einer klasse zugehörig sind
+export function devicesOfAClassPerStation ( data: Array<DeviceData>) {
+    const ret : Array<DevicesPerClassPerStation> = []
+    for (const device of data) {
+        let entry_exists = false
+        let member_exists = false
+        const target_class = device.getClasses()
+        const target_station = device.getLocation().split("-")[0]
+        for (const entry of ret) {
+            if (entry.class === target_class) {
+                entry_exists = true
+                for (const member of entry.devicesPerStation) {
+                    if (member.sectionCaption === target_station) {
+                        member_exists = true
+                        member.sectionValue++
+                    }
+                }
+                if (!member_exists) {
+                    entry.devicesPerStation.push({
+                        sectionCaption: target_station,
+                        sectionValue: 1
+                    })
+                }
+            }
+        }
+        if (!entry_exists) {
+            ret.push({
+                class: target_class,
+                devicesPerStation: 
+                [{
+                    sectionCaption: target_station,
+                    sectionValue: 1
+                }]
+            })
+        }
+    }
+    for (const entry of ret) {
+        const sorted_entry = entry.devicesPerStation.sort((a, b) => b.sectionCaption.localeCompare(a.sectionCaption))
+        sorted_entry.reverse()
+        entry.devicesPerStation = sorted_entry
+    }
+    const sorted_ret = ret.sort((a, b) => b.class.localeCompare(a.class))
+    sorted_ret.reverse()
+    return sorted_ret
+}
+
+export function stationColours(input : Array<DeviceData>) {
+    const ret : Array<CaptionColourPair> = []
+    let count = 0
+    for (const device of input) {
+        let known = false
+        const station = device.getLocation().split("-")[0]
+        for (const entry of ret) {
+            if (entry.caption === station) {
+                known = true
+            }
+        }
+        if (!known) {
+            ret.push({
+            caption: station,
+            colour: bigColourArray[count]
+            })
+            count++
+        }
+    }
+    const sorted_colour_pairs = ret.sort((a, b) => b.caption.localeCompare(a.caption))
+    sorted_colour_pairs.reverse()
+    return sorted_colour_pairs
 }
 
 export function errorSpreadData(input: Array<DeviceData>) {
