@@ -65,10 +65,10 @@ function PieChart (props: {
     const containerWidth = parseInt(d3.select(".chart-container").style("width"))
     const containerHeight = parseInt(d3.select(".chart-container").style("height"))
     const margin = {
-        top: containerHeight * 0.1 / props.typeId, 
-        right: containerWidth * 0.1 / props.typeId,
-        bottom: containerHeight * 0.1 / props.typeId,
-        left: containerWidth * 0.1 / props.typeId
+        top: containerHeight * 0.1, 
+        right: containerWidth * 0.1,
+        bottom: containerHeight * 0.1,
+        left: containerWidth * 0.1
     }
 
     const chartWidth = containerWidth - margin.left - margin.right

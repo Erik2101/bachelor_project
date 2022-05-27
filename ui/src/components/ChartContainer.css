@@ -2,6 +2,22 @@
     display: flex;
     height: 90%;
     min-height: 300px;
+    max-height: 600px;
+    width: 90%;
+    min-width: 500px;
+    background-color: #BAB8BA;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-container-select {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 2fr 17fr;
+    height: 90%;
+    min-height: 300px;
+    max-height: 600px;
     width: 90%;
     min-width: 500px;
     background-color: #BAB8BA;

@@ -1,13 +1,14 @@
 .room-card-container {
     display: grid;
     height: 90%;
-    min-height: 200px;
+    min-height: 300px;
+    max-height: 600px;
     width: 90%;
-    min-width: 300px;
+    min-width: 500px;
     background-color: #BAB8BA;
     border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2fr /* 1fr */ 17fr;
+    grid-template-rows: 2fr 17fr;
 }
 
 .room-card-container > select {

@@ -1,16 +1,16 @@
 import React from "react";
 import * as d3 from "d3";
-import "./AreaChart.css";
+import "./MultiLineChart.css";
 import "./ChartContainer.css"
 import { errorSpreadData, ErrPerDate, ErrSpreadChartData } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
 import { range, select } from "d3";
 
-function AreaChart (props: {data : Array<DeviceData>}) {
+function MultiLineChart (props: {data : Array<DeviceData>}) {
 
     const [data, setData] = React.useState<ErrSpreadChartData>()
 
-    const areaChart = React.useRef(null)
+    const lineChart = React.useRef(null)
 
     const drawChart = React.useCallback(() => {
         if(data) {
@@ -31,7 +31,7 @@ function AreaChart (props: {data : Array<DeviceData>}) {
             const chartWidth = containerWidth - margin.left - margin.right
             const chartHeight = containerHeight - margin.top - margin.bottom
 
-            const svg = d3.select(areaChart.current)
+            const svg = d3.select(lineChart.current)
                             .attr("width", containerWidth)
                             .attr("height", containerHeight)
                             .attr("viewBox", [0, 0, containerWidth, containerHeight])
@@ -183,10 +183,10 @@ function AreaChart (props: {data : Array<DeviceData>}) {
 
     return (
         <div className="chart-container">
-            <svg ref={areaChart}></svg>
+            <svg ref={lineChart}></svg>
             <div className="tooltip"></div>
         </div>
     )
 }
 
-export default AreaChart
+export default MultiLineChart

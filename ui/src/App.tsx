@@ -6,8 +6,9 @@ import PieChart from './components/PieChart';
 import {ChartDatasetRequest, ChartDatasetResponse} from "./proto/frontend_pb";
 import {DataServiceClient} from "./proto/FrontendServiceClientPb";
 import { DeviceData } from './proto/frontend_pb';
-import AreaChart from './components/AreaChart';
 import RoomCard from './components/RoomCard';
+import MultiLineChart from './components/MultiLineChart';
+import MultiBarChart from './components/MultiBarChart';
 
 function App() {
 
@@ -106,9 +107,10 @@ function App() {
       {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
       {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
       {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
-      {deviceDataStore && <AreaChart data={deviceDataStore}/>}
+      {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
       {deviceDataStore && <RoomCard data={deviceDataStore}/>}
       {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
+      {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
     </div>
   );
 }
