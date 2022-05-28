@@ -1,13 +1,3 @@
-.tooltip {
-    position: absolute;
-    font-size: 0.8em;
-    background-color: #424242;
-    color: #D4D4D4;
-    padding: 5px;
-    border-radius: 5px;
-    opacity: 0;
-}
-
 .class-select {
     align-self: flex-start;
 }

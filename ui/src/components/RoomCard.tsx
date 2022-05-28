@@ -217,7 +217,6 @@ function RoomCard(props: {data: Array<DeviceData>}) {
             }
             {selectedRoom!=="default" && roomIndicator(1)}
             {selectedRoom!=="default" && roomIndicator(0)}
-            {/* <hr className="divider"/> */}
             {selectedRoom !=="default" &&
             <div className="table-container">
                 <table className="device-table">

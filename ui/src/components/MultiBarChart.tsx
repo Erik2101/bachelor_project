@@ -113,8 +113,9 @@ function MultiBarChart(props : {
                         .attr("width", containerWidth)
                         .attr("height", containerHeight)
                         .attr("viewBox", [0, 0, containerWidth, containerHeight])
+
         if (data) {
-            
+
             const y = d3.scaleBand()
                             .domain(data.map(function (d) {return (d.uuid.split("-")[0] + "...")}))
                             .range([0, chartHeight])
@@ -142,8 +143,9 @@ function MultiBarChart(props : {
             }
             const stacked_data = d3.stack().keys(subgroups)(iterable_data)
 
-            console.log(stacked_data)
-
+            const tooltip = d3.select(".tooltip")
+                            .style("opacity", 0)
+            
             svg.selectAll("g")
                 .data(stacked_data)
                 .join(
@@ -168,6 +170,28 @@ function MultiBarChart(props : {
                     .attr("width", (d) => x(d[1]) - x(d[0]))
                     .attr("height", y.bandwidth())
                     .attr("stroke", "#424242")
+                    
+                    .on("mouseover", function(event, d) {
+                        const subgroup_name = d3.select(this.parentNode).datum().key
+                        // this needs to be adjusted for maintain and total to contain their prior values
+                        const subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
+                        tooltip
+                            .html("subgroup: " + subgroup_name + "<br>" + "Value: " + subgroup_value)
+                            .style("opacity", 1)
+                    })
+
+                    .on("mousemove", function(event, d) {
+                        tooltip
+                            .style("left", (d3.pointer(event, window)[0] - margin.left) + "px")
+                            .style("top", (d3.pointer(event, window)[1] - 3*margin.top)  + "px")
+                    })
+
+                    .on("mouseout", function() {
+                        tooltip
+                            .style("opacity", 0)
+                            .style("left", "0px")
+                            .style("top", "0px")
+                    })
 
             svg.append("g")
                 .call(d3.axisLeft(y))
@@ -196,14 +220,10 @@ function MultiBarChart(props : {
             const temp = ensembleDeviceUptime(props.data)
             for (const ensemble of temp) {
                 if (selection === ensemble.ensembleName) {
-                    // set svg opacity 1
                     setData(ensemble.devices)
                 }
             }
-        } else {
-            // set svg opacity 0
-        }
-        
+        }        
     }, [props, selection])
 
     return (
@@ -219,6 +239,7 @@ function MultiBarChart(props : {
             <div className="sub-flex-container">
                 {selection !== "default" && <svg ref={d3Chart}/>}
             </div>
+            <div className="tooltip"></div>
         </div>
     )
 }
