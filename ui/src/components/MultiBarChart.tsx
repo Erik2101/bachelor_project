@@ -1,7 +1,6 @@
 import React from "react";
 import * as d3 from "d3";
 import { DeviceData } from "../proto/frontend_pb";
-import { Dataset } from "../util";
 import "./ChartContainer.css";
 import "./MultiBarChart.css";
 
@@ -31,6 +30,13 @@ function MultiBarChart(props : {
 
     function handleSelection(event : React.ChangeEvent<HTMLSelectElement>) {
         setSelection(event.target.value)
+    }
+
+    function updateEnsList() {
+        const target = document.getElementById("ensemble-select") as HTMLSelectElement
+        if (target) {
+            setSelection(target.value)
+        } 
     }
 
     function ensembleDeviceUptime(input : Array<DeviceData>) {
@@ -91,9 +97,9 @@ function MultiBarChart(props : {
         const containerHeight = parseInt(d3.select(".sub-flex-container").style("height"))
         const margin = {
             top: containerHeight * 0.05,
-            right: containerWidth * 0.1,
+            right: containerWidth * 0.05,
             bottom: containerHeight * 0.05,
-            left: containerWidth * 0.1
+            left: containerWidth * 0.10
         }
         const chartWidth = containerWidth - margin.left - margin.right
         const chartHeight = containerHeight - margin.top - margin.bottom
@@ -107,11 +113,7 @@ function MultiBarChart(props : {
             const y = d3.scaleBand()
                             .domain(data.map(function (d) {return (d.uuid.split("-")[0] + "...")}))
                             .range([0, chartHeight])
-                            .padding(0.2)
-
-            svg.append("g")
-                    .call(d3.axisLeft(y))
-                    .attr("transform", "translate(" + margin.left + ", 0)") 
+                            .padding(0.3)
 
             let xMax = 0
             for (const device of data) {
@@ -122,16 +124,12 @@ function MultiBarChart(props : {
             const x = d3.scaleLinear()
                             .domain([0, xMax])
                             .range([0, chartWidth])
-                            
-            svg.append("g")
-                    .call(d3.axisBottom(x))
-                    .attr("transform", "translate(" + margin.left + ", " + chartHeight + ")") 
 
             const subgroups = ["current", "maintain", "total"]
 
             const colour = d3.scaleOrdinal()
                                 .domain(subgroups)
-                                .range(["#2B8A3C", "#B1E6BE", "#969997"])
+                                .range(colours)
 
             const iterable_data = []
             for (const item of data) {
@@ -139,23 +137,42 @@ function MultiBarChart(props : {
             }
             const stacked_data = d3.stack().keys(subgroups)(iterable_data)
 
-            svg
-                .append("g")
-                .selectAll("g")
-                .data(stacked_data)
-                .enter().append("g")
-                    .attr("fill", (d) => colour(d.key))
-                    .selectAll("rect")
-                        .data(function(d) {return d})
-                        .enter().append("rect")
-                            .attr("y", (_, i) =>  (i + 1) * (y.step() - y.bandwidth()) + i * y.bandwidth())
-                            .attr("x", (d) => x(d[0]) + margin.left)
-                            .attr("width", (d) => x(d[1]) - x(d[0]))
-                            .attr("height", y.bandwidth())
-                            .attr("stroke", "#424242")
+            console.log(stacked_data)
 
-        } else {
-            svg.selectAll("g").remove()
+            svg.selectAll("g")
+                .data(stacked_data)
+                .join(
+                    enter => enter.append("g"),
+                    update => update,
+                    (exit) => 
+                        exit.call((g) =>
+                             g.transition().duration(0).style("opacity", 0).remove())
+                )
+                .attr("fill", (d) => colour(d.key))
+                .selectAll("rect")
+                    .data(function(d) {return d})
+                    .join(
+                        enter => enter.append("rect"),
+                        update => update,
+                        exit => 
+                        exit.call((rect) =>
+                             rect.transition().duration(0).style("opacity", 0).remove())
+                    )
+                    .attr("y", (_, i) =>  (i + 1) * (y.step() - y.bandwidth()) + i * y.bandwidth())
+                    .attr("x", (d) => x(d[0]) + margin.left)
+                    .attr("width", (d) => x(d[1]) - x(d[0]))
+                    .attr("height", y.bandwidth())
+                    .attr("stroke", "#424242")
+
+            svg.append("g")
+                .call(d3.axisLeft(y))
+                .attr("transform", "translate(" + margin.left + ", 0)") 
+            
+            svg.append("g")
+                .call(d3.axisBottom(x))
+                .attr("transform", "translate(" + margin.left + ", " + chartHeight + ")") 
+                
+
         }
     }, [data])
 
@@ -164,23 +181,31 @@ function MultiBarChart(props : {
     }, [data])
 
     React.useEffect(() => {
-        setTitle("Geräte einer Klasse nach Stationen")
-        const temp = ensembleDeviceUptime(props.data)
-        for (const ensemble of temp) {
-            if (selection === ensemble.ensembleName) {
-                setData(ensemble.devices)
+        updateEnsList()
+    }, [props])
+
+    React.useEffect(() => {
+        setTitle("Betriebsdauern aller Geräte eines SDC-Ensembles")
+        setColours(["#2B8A3C", "#B1E6BE", "#969997"])
+        if (selection !== "default") {
+            const temp = ensembleDeviceUptime(props.data)
+            for (const ensemble of temp) {
+                if (selection === ensemble.ensembleName) {
+                    // set svg opacity 1
+                    setData(ensemble.devices)
+                }
             }
+        } else {
+            // set svg opacity 0
         }
-        if (selection === "default") {
-            setData([])
-        }
+        
     }, [props, selection])
 
     return (
         <div className="chart-container-select">
             <div className="select-container">
                 <label className="select-label">Ensemble:</label>
-                <select className="ensemble-select" onChange={handleSelection}>
+                <select className="ensemble-select" id="ensemble-select" onChange={handleSelection}>
                     <option>-Ensemble wählen:-</option>
                     {populateSelect(ensembleDeviceUptime(props.data))}
                 </select>

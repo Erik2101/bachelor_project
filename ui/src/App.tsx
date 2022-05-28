@@ -104,13 +104,13 @@ function App() {
     <div className="App">
       <Header />
       <button className="refresh-button" onClick={handleClick}>Datensatz wechseln.</button>
+      {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
       {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
       {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
       {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
       {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
       {deviceDataStore && <RoomCard data={deviceDataStore}/>}
       {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
-      {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
     </div>
   );
 }

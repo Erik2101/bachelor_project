@@ -16,14 +16,14 @@
 
 .chart-container-select {
     display: grid;
-    grid-template-columns: 1fr 2fr ;
+    grid-template-columns: 1fr 4fr ;
     grid-template-rows: 2fr 17fr;
     justify-content: center;
     align-items: center;
 }
 
 .chart-title {
-    padding-left: 10%;
+    padding-left: 15%;
     font-weight: 600;
     font-size: 1em;
     color: #424242;
