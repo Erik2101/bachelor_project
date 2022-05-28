@@ -1,6 +1,5 @@
 import React from "react";
 import * as d3 from "d3";
-import "./MultiLineChart.css";
 import "./ChartContainer.css"
 import { errorSpreadData, ErrPerDate, ErrSpreadChartData } from "../util";
 import { DeviceData } from "../proto/frontend_pb";

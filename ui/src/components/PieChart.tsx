@@ -61,15 +61,26 @@ function PieChart (props: {
     }, [selection, props])
         
     const drawChart = React.useCallback(() => {
+    const containerWidth = props.typeId === 1 ? 
+                            parseInt(d3.select(".chart-container").style("width")) :
+                            parseInt(d3.select(".sub-flex-container").style("width"))
+    const containerHeight = props.typeId === 1 ?
+                            parseInt(d3.select(".chart-container").style("height")) :
+                            parseInt(d3.select(".sub-flex-container").style("height"))
+    const margin = props.typeId === 1 ? 
+        {
+            top: containerHeight * 0.1, 
+            right: containerWidth * 0.1,
+            bottom: containerHeight * 0.1,
+            left: containerWidth * 0.1
+        } :
+        {
+            top: 0, 
+            right: containerWidth * 0.05,
+            bottom: containerHeight * 0.05,
+            left: containerWidth * 0.05
+        }
 
-    const containerWidth = parseInt(d3.select(".chart-container").style("width"))
-    const containerHeight = parseInt(d3.select(".chart-container").style("height"))
-    const margin = {
-        top: containerHeight * 0.1, 
-        right: containerWidth * 0.1,
-        bottom: containerHeight * 0.1,
-        left: containerWidth * 0.1
-    }
 
     const chartWidth = containerWidth - margin.left - margin.right
     const chartHeight = containerHeight - margin.top - margin.bottom
@@ -78,7 +89,7 @@ function PieChart (props: {
     const svg = d3.select(d3Chart.current)
                     .attr("width", containerWidth)
                     .attr("height", containerHeight)
-                    .attr("viewBox", [-containerWidth / 2, -containerHeight / 2, containerWidth, containerHeight])
+                    .attr("viewBox", [0, 0, containerWidth, containerHeight])
 
     const pie = d3.pie();
     if (data) {
@@ -103,20 +114,25 @@ function PieChart (props: {
                                         .attr("d", d => arc(d))
                                         .attr("fill", (_,i) => colours[i].colour)
                                         .attr("fill-opacity", 0.6)
-                                        .attr("transform", "translate(0, " + margin.top / 2 + ")")
+                                        .attr("transform", "translate(" + containerWidth / 2 + ", " + (containerHeight / 2 + margin.top / 2) + ")")
 
-                                        .on("mousemove", function (event, d) {
+                                        .on("mouseover", function(event, d) {
                                             d3.select(this).transition()
-                                                            .duration(50)
-                                                            .attr("fill-opacity", 1);
-                                                        
-                                            tooltip.transition()
+                                            .duration(50)
+                                            .attr("fill-opacity", 1);
+                                        
+                                            tooltip
+                                                    .html(d.data.toString())
+                                                    .transition()
                                                     .duration(50)
                                                     .style("opacity", 1);
-                        
-                                            tooltip.html(d.data.toString())
-                                                    .style("left", (d3.pointer(event, window)[0] - margin.left * 0.75) + "px")
-                                                    .style("top", (d3.pointer(event, window)[1] - margin.top * 0.75)  + "px");           
+                                        })
+
+                                        .on("mousemove", function (event) {
+                                            tooltip
+                                            // turboscuffed btw.
+                                                    .style("left", (d3.pointer(event, window)[0] - margin.left * 0.75 * props.typeId) + "px")
+                                                    .style("top", (d3.pointer(event, window)[1] - margin.bottom * 0.75 * props.typeId)  + "px");           
                                         })
                         
                                         .on("mouseout", function () {
@@ -145,7 +161,8 @@ function PieChart (props: {
 
         }
 
-        svg.selectAll("text")
+        if (props.typeId === 1) {
+            svg.selectAll("text")
                 .data([1])
                 .join(
                     enter => enter.append("text"),
@@ -153,12 +170,12 @@ function PieChart (props: {
                     exit => exit.remove()
                 )
                 .attr("x", (containerWidth / 2))             
-                .attr("y", 0 )
-                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")")
+                .attr("y", margin.top )
                 .attr("text-anchor", "middle")  
                 .style("font-size", "1em")
                 .style("font-weight", "600")
                 .text(title)
+            }
                 
     }, [data])
 
@@ -185,7 +202,36 @@ function PieChart (props: {
         return ret
     }
 
-    return (
+    let final_return
+    if (props.typeId === 1) {
+        final_return = (
+            <div className="chart-container">
+                <svg ref={d3Chart}/>
+                <div className="tooltip"></div>
+            </div>
+        )
+    } else {
+        if (props.typeId === 2) {
+            final_return = (
+            <div className="chart-container-select">
+                <div className="select-container">
+                    <label className="select-label">Station:</label>
+                    <select className="class-select" onChange={handleClassChange}>
+                        <option value="default">-Station wählen:-</option>
+                        {populateSelect(props.data)}
+                    </select>
+                </div>
+                <h3 className="chart-title">{title}</h3>
+                <div className="sub-flex-container">
+                    {selection !== "default" && <svg ref={d3Chart}/>}
+                </div>
+                <div className="tooltip"></div>
+            </div>
+            )
+        }
+    }
+
+    /* return (
         <div className="chart-container">
             {props.typeId === 2 &&
             <div className="select-container">
@@ -199,7 +245,9 @@ function PieChart (props: {
             {((props.typeId === 2 && selection !== "default") || props.typeId === 1 ) && <svg ref={d3Chart}/>}
             <div className="tooltip"></div>
         </div>
-    )
+    ) */
+
+    return final_return 
 }
 
 export default PieChart
