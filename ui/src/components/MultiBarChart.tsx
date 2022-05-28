@@ -39,6 +39,11 @@ function MultiBarChart(props : {
         } 
     }
 
+    function sToHour(input : number) {
+        const ret = input / 60 / 60
+        return ret
+    }
+
     function ensembleDeviceUptime(input : Array<DeviceData>) {
         const ensembles : Array<EnsembleDeviceList>= []
         for (const device of input) {
@@ -47,9 +52,9 @@ function MultiBarChart(props : {
                 for (const ensemble of ensembles) {
                     for (const item of ensemble.devices) {
                         if (device.getUuid() === item.uuid) {
-                            item.data.current = device.getRuntimecurrent()
-                            item.data.maintain = device.getRuntimemaintenance() - item.data.current,
-                            item.data.total = device.getRuntimetotal() - device.getRuntimemaintenance(),
+                            item.data.current = sToHour(device.getRuntimecurrent())
+                            item.data.maintain = sToHour(device.getRuntimemaintenance() - item.data.current)
+                            item.data.total = sToHour(device.getRuntimetotal() - device.getRuntimemaintenance())
                             devicePushed = true 
                         }
                     }
@@ -67,9 +72,9 @@ function MultiBarChart(props : {
                         })
                     }
                     const current = dev[dev.length - 1].data
-                    current.current = device.getRuntimecurrent()
-                    current.maintain = device.getRuntimemaintenance() - current.current
-                    current.total = device.getRuntimetotal() - device.getRuntimemaintenance()
+                    current.current = sToHour(device.getRuntimecurrent())
+                    current.maintain = sToHour(device.getRuntimemaintenance() - current.current)
+                    current.total = sToHour(device.getRuntimetotal() - device.getRuntimemaintenance())
                     ensembles.push({
                         ensembleName: device.getLocation(),
                         devices: dev
@@ -185,7 +190,7 @@ function MultiBarChart(props : {
     }, [props])
 
     React.useEffect(() => {
-        setTitle("Betriebsdauern aller Geräte eines SDC-Ensembles")
+        setTitle("Betriebsdauern aller Geräte eines SDC-Ensembles (in Stunden)")
         setColours(["#2B8A3C", "#B1E6BE", "#969997"])
         if (selection !== "default") {
             const temp = ensembleDeviceUptime(props.data)
