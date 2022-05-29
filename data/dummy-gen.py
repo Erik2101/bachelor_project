@@ -2,6 +2,9 @@ import json
 import random
 from datetime import datetime, timedelta
 
+station_pool = ["G", "ICU", "AMB", "RAD"]
+room_pool = ["OR", "PR"]
+rnumber_pool = ["1", "2", "3"]
 
 # function for generating a medical device dummy
 def create_dummy_device():
@@ -26,7 +29,7 @@ def create_dummy_device():
     }
 
     bool_pool = [True, False]
-    classes = ["treatment", "diagnosis"]
+    classes = ["Beatmungsgerät", "Dialysemaschine", "Röntgengerät", "Blutdruckmessgerät"]
 
     names = ["Sylvia Sommer", "Magdalene Schwenke", "Isabell Fertig", "Gregor Scherer", "Uwe Eberhardt",
              "Aaron Braband", "Lambert Becker", "Dietmar Brahms", "Melanie Fürst", "Maximilian Kempf"
@@ -34,7 +37,7 @@ def create_dummy_device():
 
     uuid = uuid_gen()
     dummy.update({"uuid": uuid})
-    if random.randint(0, 9) > 3:
+    if random.randint(0, 9) > 4:
         active = True
     else:
         active = False
@@ -42,7 +45,11 @@ def create_dummy_device():
     if active:
         dummy.update({"isUsable": True})
     else:
-        dummy.update({"isUsable": random.choice(bool_pool)})
+        if random.randint(0, 9) > 2:
+            usable = False
+        else :
+            usable = True
+        dummy.update({"isUsable": usable})
     dummy.update({"classes": random.choice(classes)})
     rooms = room_gen()
     dummy.update({"location": rooms[0]})
@@ -50,8 +57,9 @@ def create_dummy_device():
     dummy.update({"depot": rooms[1]})
     dummy.update({"ensemble": []})
     total = runtime_gen()
-    dummy.update({"runtimeCurrent": round(total / 4)})
-    dummy.update({"runtimeMaintenance": round(total / 2)})
+    maintain = total / random.randint(2, 6)
+    dummy.update({"runtimeCurrent": round(maintain / random.randint(2, 6))})
+    dummy.update({"runtimeMaintenance": round(maintain)})
     dummy.update({"runtimeTotal": total})
 
     return dummy
@@ -59,11 +67,9 @@ def create_dummy_device():
 
 # generates a room-key and a depot-key on the same station
 def room_gen():
-    stations = ["G", "ICU", "AMB", "RAD"]
-    rooms = ["OR", "PR"]
-    station = random.choice(stations)
+    station = random.choice(station_pool)
 
-    room = "".join(station + "-" + random.choice(rooms) + "-" + str(random.randint(1, 2)))
+    room = "".join(station + "-" + random.choice(room_pool) + "-" + str(random.randint(1, 2)))
     depot = "".join(station + "-DEP-" + str(random.randint(1, 2)))
     return [room, depot]
 
@@ -80,13 +86,13 @@ def error_gen(start, end):
     }
 
     identifier = {"id": random.randint(1, 9999)}
-    percent = random.randint(0,9)
+    percent = random.randint(0, 9)
     if percent < 2:
         prio = "high"
     elif 2 <= percent < 5:
         prio = "medium"
     else:
-        prio = "low" 
+        prio = "low"
     priority = {"priority": prio}
     kind = {"kind": kinds[random.randint(0, 1)]}
     date = {"date": str(datetime_gen(start, end))}
@@ -135,22 +141,22 @@ def uuid_gen():
     return "".join(sect_1 + "-" + sect_2 + "-" + sect_3 + "-" + sect_4 + "-" + sect_5)
 
 
-# generate 200 dummy objects
+# generate 400 dummy objects
 # assign errors depending on "isUsable"-value
 # error timestamps are spread over 2 weeks, hopefully with higher counts around weekends
 dummySet = []
-for i in range(200):
+for i in range(400):
     temp = create_dummy_device()
     if temp.get("isUsable"):
         errors = {"errors": []}
     else:
-        if i < 41:
+        if i < 61:
             s = datetime(2022, 3, 7, 0, 0, 0, 0, None)
             e = datetime(2022, 3, 10, 23, 59, 59, 999999, None)
-        elif i < 111:
+        elif i < 221:
             s = datetime(2022, 3, 11, 0, 0, 0, 0, None)
             e = datetime(2022, 3, 13, 23, 59, 59, 999999, None)
-        elif i < 121:
+        elif i < 241:
             s = datetime(2022, 3, 14, 0, 0, 0, 0, None)
             e = datetime(2022, 3, 16, 23, 59, 59, 999999, None)
         else:
@@ -172,12 +178,11 @@ for i in range(200):
     dummySet.append(temp)
 
 # get count of devices per room
-roomStore = {
-    "G-OR-1": [], "G-OR-2": [], "G-PR-1": [], "G-PR-2": [],
-    "ICU-OR-1": [], "ICU-OR-2": [], "ICU-PR-1": [], "ICU-PR-2": [],
-    "AMB-OR-1": [], "AMB-OR-2": [], "AMB-PR-1": [], "AMB-PR-2": [],
-    "RAD-OR-1": [], "RAD-OR-2": [], "RAD-PR-1": [], "RAD-PR-2": []
-}
+roomStore = {}
+for station1 in station_pool:
+    for room1 in room_pool:
+        for nr in rnumber_pool:
+            roomStore.update({"".join(station1 + "-" + room1 + "-" + nr): []})
 
 for item in dummySet:
     prevVal = roomStore.get(item.get("location"))
@@ -193,7 +198,7 @@ sorted_store.reverse()
 # each device will be given an array with the uuid's of it's ensemble-members
 ens_list = []
 
-for i in range(4):
+for i in range(5):
     ensemble = []
     target_array = sorted_store[i][1]
     stop = round(len(target_array) / 4)
@@ -225,6 +230,7 @@ for item in dummySet:
 # print dummySet as pretty-json to file
 output = json.dumps(dummySet, indent=4)
 
-deviceDummyFile = open("deviceDummyV2.json", "w")
+deviceDummyFile = open("deviceDummyV2.1.json", "w")
 deviceDummyFile.write(output)
 deviceDummyFile.close()
+
