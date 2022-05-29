@@ -37,15 +37,6 @@ function PieChart (props: {
     }, [props])
 
     function handleClassChange(event : React.ChangeEvent<HTMLSelectElement>) {
-        /* const chosen_class = event.target.value
-        if (chosen_class !== "default"){
-            const gathered_data = devicesOfAClassPerStation(props.data)
-            for (const item of gathered_data) {
-                if (chosen_class === item.class) {
-                    setData(pieReadyData(item.devicesPerStation))
-                }
-            }
-        } */
         setSelection(event.target.value)
     }
 
@@ -230,22 +221,6 @@ function PieChart (props: {
             )
         }
     }
-
-    /* return (
-        <div className="chart-container">
-            {props.typeId === 2 &&
-            <div className="select-container">
-                <label className="select-label">Station:</label>
-                <select className="class-select" onChange={handleClassChange}>
-                    <option value="default">-Station wählen:-</option>
-                    {populateSelect(props.data)}
-                </select>
-            </div>
-            }
-            {((props.typeId === 2 && selection !== "default") || props.typeId === 1 ) && <svg ref={d3Chart}/>}
-            <div className="tooltip"></div>
-        </div>
-    ) */
 
     return final_return 
 }

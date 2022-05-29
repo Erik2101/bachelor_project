@@ -10,9 +10,31 @@ function MultiBarChart(props : {
 
     const d3Chart = React.useRef(null)
     const [selection, setSelection] = React.useState<string>("default")
-    const [data, setData] = React.useState<Array<DeviceUptime>>([])
+    const [data, setData] = React.useState<Array<DeviceUptime>>()
     const [title, setTitle] = React.useState<string>("XXXXXXXXXXXXXXXXX")
     const [colours, setColours] = React.useState<Array<string>>(["red", "blue", "green"])
+
+    React.useEffect(() => {
+        if (data) drawChart()
+    }, [data])
+
+    React.useEffect(() => {
+        updateEnsList()
+    }, [props])
+
+    React.useEffect(() => {
+        setTitle("Betriebsdauern aller Geräte eines SDC-Ensembles (in Stunden)")
+        setColours(["#2B8A3C", "#B1E6BE", "#969997"])
+        if (selection !== "default") {
+            const temp = ensembleDeviceUptime(props.data)
+            for (const ensemble of temp) {
+                if (selection === ensemble.ensembleName) {
+                    setData(ensemble.devices)
+                }
+            }
+        }
+        return () => {};      
+    }, [props, selection])
 
     type DeviceUptime = {
         uuid: string,
@@ -172,7 +194,7 @@ function MultiBarChart(props : {
                     .attr("stroke", "#424242")
                     
                     .on("mouseover", function(event, d) {
-                        const subgroup_name = d3.select(this.parentNode).datum().key
+                        const subgroup_name : string = d3.select((event.target as HTMLElement).parentElement).datum().key
                         // this needs to be adjusted for maintain and total to contain their prior values
                         const subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
                         tooltip
@@ -205,33 +227,12 @@ function MultiBarChart(props : {
         }
     }, [data])
 
-    React.useEffect(() => {
-        if (data) drawChart()
-    }, [data])
-
-    React.useEffect(() => {
-        updateEnsList()
-    }, [props])
-
-    React.useEffect(() => {
-        setTitle("Betriebsdauern aller Geräte eines SDC-Ensembles (in Stunden)")
-        setColours(["#2B8A3C", "#B1E6BE", "#969997"])
-        if (selection !== "default") {
-            const temp = ensembleDeviceUptime(props.data)
-            for (const ensemble of temp) {
-                if (selection === ensemble.ensembleName) {
-                    setData(ensemble.devices)
-                }
-            }
-        }        
-    }, [props, selection])
-
     return (
         <div className="chart-container-select">
             <div className="select-container">
                 <label className="select-label">Ensemble:</label>
                 <select className="ensemble-select" id="ensemble-select" onChange={handleSelection}>
-                    <option>-Ensemble wählen:-</option>
+                    <option value="default">-Ensemble wählen:-</option>
                     {populateSelect(ensembleDeviceUptime(props.data))}
                 </select>
             </div>
