@@ -102,7 +102,7 @@ function PieChart (props: {
                                 .call((g) =>
                                     g
                                         .append("path")
-                                        .attr("d", d => arc(d))
+                                        .attr("d", d => arc(d as PieArcDatum<number>))
                                         .attr("fill", (_,i) => colours[i].colour)
                                         .attr("fill-opacity", 0.6)
                                         .attr("transform", "translate(" + containerWidth / 2 + ", " + (containerHeight / 2 + margin.top / 2) + ")")
@@ -144,7 +144,7 @@ function PieChart (props: {
                                     .select("path")
                                         .transition()
                                             .duration(1)
-                                            .attr("d", d => arc(d))
+                                            .attr("d", d => arc(d as PieArcDatum<number>))
                             ),
                     (exit) =>
                         exit.call((g) => g.transition().duration(0).style("opacity", 0).remove())
