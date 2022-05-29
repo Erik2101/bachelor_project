@@ -16,6 +16,7 @@ function PieChart (props: {
     const [title, setTitle] = React.useState<string>("XXXXXXXXXXXXXXXXX")
     const [colours, setColours] = React.useState<Array<CaptionColourPair>>([{caption: "default", colour: "black"}])
     const [selection, setSelection] = React.useState<string>("default")
+    // const [dimensions, setDimensions] = React.useState<{width: number, height: number}>()
 
     React.useEffect(() => {
         if (data) drawChart()

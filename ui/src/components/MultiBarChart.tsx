@@ -195,8 +195,17 @@ function MultiBarChart(props : {
                     
                     .on("mouseover", function(event, d) {
                         const subgroup_name = d3.select((event.target as HTMLElement).parentElement).datum().key
-                        // this needs to be adjusted for maintain and total to contain their prior values
-                        const subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
+                        
+                        let subgroup_value
+                        if (subgroup_name === "total") {
+                            subgroup_value = Math.round((d.data[subgroup_name] + d.data["maintain"] + d.data["current"]) * 10) / 10
+                        } else {
+                            if (subgroup_name === "maintain") {
+                                subgroup_value = Math.round((d.data[subgroup_name] + d.data["current"]) * 10) / 10
+                            } else {
+                                subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
+                            }
+                        }
                         tooltip
                             .html("subgroup: " + subgroup_name + "<br>" + "Value: " + subgroup_value)
                             .style("opacity", 1)
