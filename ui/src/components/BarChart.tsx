@@ -56,6 +56,9 @@ function BarChart(props: {
                     .domain([0, yMax])
                     .range([chartHeight + margin.bottom , 2 * margin.top])
 
+        const tooltip = d3.select(".tooltip")
+                            .style("opacity", 0)
+
         svg
             .selectAll("g")
             .data(data)
@@ -71,7 +74,36 @@ function BarChart(props: {
                                 .attr("height", d => y(0)-y(d.sectionValue))
                                 .attr("width", x.bandwidth())
                                 .attr("fill", (_, i) => colours[i])
+                                .attr("fill-opacity", 0.6)
                                 .attr("transform", "translate(0, 0)")
+
+                                .on("mouseover", function(event, d) {
+                                    d3.select(this).transition()
+                                                    .duration(50)
+                                                    .style("opacity", 1);
+
+                                    tooltip
+                                            .html(d.sectionValue.toString())
+                                            .transition()
+                                            .duration(50)
+                                            .style("opacity", 1)
+                                })
+
+                                .on("mousemove", function(event) {
+                                    tooltip
+                                            .style("left", (d3.pointer(event, window)[0] - margin.left * 0.75) + "px")
+                                            .style("top", (d3.pointer(event, window)[1] - margin.top * 0.75) + "px")
+                                })
+
+                                .on("mouseout", function() {
+                                    d3.select(this).transition()
+                                                    .duration(50)
+                                                    .attr("fill-opacity", 0.6);
+                                                            
+                                    tooltip.transition()
+                                            .duration(50)
+                                            .style("opacity", 0);
+                                })
                             )
                 },
                 (update) =>
@@ -139,6 +171,7 @@ function BarChart(props: {
     return (
         <div className="chart-container">
             <svg ref={d3Chart}></svg>
+            <div className="tooltip"></div>
         </div>
     )
 }
