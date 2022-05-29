@@ -52,103 +52,105 @@ function PieChart (props: {
     }, [selection, props])
         
     const drawChart = React.useCallback(() => {
-    const containerWidth = props.typeId === 1 ? 
-                            parseInt(d3.select(".chart-container").style("width")) :
-                            parseInt(d3.select(".sub-flex-container").style("width"))
-    const containerHeight = props.typeId === 1 ?
-                            parseInt(d3.select(".chart-container").style("height")) :
-                            parseInt(d3.select(".sub-flex-container").style("height"))
-    const margin = props.typeId === 1 ? 
-        {
-            top: containerHeight * 0.1, 
-            right: containerWidth * 0.1,
-            bottom: containerHeight * 0.1,
-            left: containerWidth * 0.1
-        } :
-        {
-            top: 0, 
-            right: containerWidth * 0.05,
-            bottom: containerHeight * 0.05,
-            left: containerWidth * 0.05
-        }
+
+        const containerWidth = props.typeId === 1 ? 
+                                parseInt(d3.select(".chart-container").style("width")) :
+                                parseInt(d3.select(".sub-flex-container").style("width"))
+        const containerHeight = props.typeId === 1 ?
+                                parseInt(d3.select(".chart-container").style("height")) :
+                                parseInt(d3.select(".sub-flex-container").style("height"))
+        const margin = props.typeId === 1 ? 
+            {
+                top: containerHeight * 0.1, 
+                right: containerWidth * 0.1,
+                bottom: containerHeight * 0.1,
+                left: containerWidth * 0.1
+            } :
+            {
+                top: 0, 
+                right: containerWidth * 0.05,
+                bottom: containerHeight * 0.05,
+                left: containerWidth * 0.05
+            }
 
 
-    const chartWidth = containerWidth - margin.left - margin.right
-    const chartHeight = containerHeight - margin.top - margin.bottom
-    const size = containerHeight < containerWidth ? chartHeight : chartWidth
+        const chartWidth = containerWidth - margin.left - margin.right
+        const chartHeight = containerHeight - margin.top - margin.bottom
+        const size = containerHeight < containerWidth ? chartHeight : chartWidth
 
-    const svg = d3.select(d3Chart.current)
-                    .attr("width", containerWidth)
-                    .attr("height", containerHeight)
-                    .attr("viewBox", [0, 0, containerWidth, containerHeight])
+        const svg = d3.select(d3Chart.current)
+                        .attr("width", containerWidth)
+                        .attr("height", containerHeight)
+                        .attr("viewBox", [0, 0, containerWidth, containerHeight])
 
-    const pie = d3.pie();
-    if (data) {
-        const arcs = pie(data.valueArray)
+        const pie = d3.pie()
 
-        const arc = d3.arc<PieArcDatum<number>>()
-                        .innerRadius(size / 4 - 2)
-                        .outerRadius(size / 2 - 1);
+        if (data) {
+            const arcs = pie(data.valueArray)
 
-        const tooltip = d3.select(".tooltip")
-                            .style("opacity", 0);
+            const arc = d3.arc<PieArcDatum<number>>()
+                            .innerRadius(size / 4 - 2)
+                            .outerRadius(size / 2 - 1)
 
-        svg.selectAll("g")
-                .data(arcs)
-                .join(
-                    (enter) => {
-                        return enter
-                                .append("g")
-                                .call((g) =>
-                                    g
-                                        .append("path")
-                                        .attr("d", d => arc(d as PieArcDatum<number>))
-                                        .attr("fill", (_,i) => colours[i].colour)
-                                        .attr("fill-opacity", 0.6)
-                                        .attr("transform", "translate(" + containerWidth / 2 + ", " + (containerHeight / 2 + margin.top / 2) + ")")
-
-                                        .on("mouseover", function(event, d) {
-                                            d3.select(this).transition()
-                                            .duration(50)
-                                            .attr("fill-opacity", 1);
-                                        
-                                            tooltip
-                                                    .html(d.data.toString())
-                                                    .transition()
-                                                    .duration(50)
-                                                    .style("opacity", 1);
-                                        })
-
-                                        .on("mousemove", function (event) {
-                                            tooltip
-                                            // turboscuffed btw.
-                                                    .style("left", (d3.pointer(event, window)[0] - margin.left * 0.75 * props.typeId) + "px")
-                                                    .style("top", (d3.pointer(event, window)[1] - margin.bottom * 0.75 * props.typeId)  + "px");           
-                                        })
-                        
-                                        .on("mouseout", function () {
-                                            d3.select(this).transition()
-                                                            .duration(50)
-                                                            .attr("fill-opacity", 0.6);
-                                                        
-                                            tooltip.transition()
-                                                    .duration(50)
-                                                    .style("opacity", 0);
-                                        })
-                                )
-                    },
-                    (update) =>
-                        update
-                            .call((g) => 
-                                g
-                                    .select("path")
-                                        .transition()
-                                            .duration(1)
+            const tooltip = d3.select(".tooltip")
+                                .style("opacity", 0)
+            
+            svg.selectAll("g")
+                    .data(arcs)
+                    .join(
+                        (enter) => {
+                            return enter
+                                    .append("g")
+                                    .call((g) =>
+                                        g
+                                            .append("path")
                                             .attr("d", d => arc(d as PieArcDatum<number>))
-                            ),
-                    (exit) =>
-                        exit.call((g) => g.transition().duration(0).style("opacity", 0).remove())
-                )               
+                                            .attr("fill", (_,i) => colours[i].colour)
+                                            .attr("fill-opacity", 0.6)
+                                            .attr("transform", "translate(" + (containerWidth / 2) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
+
+                                            .on("mouseover", function(event, d) {
+                                                d3.select(this).transition()
+                                                .duration(50)
+                                                .attr("fill-opacity", 1);
+                                            
+                                                tooltip
+                                                        .html(d.data.toString())
+                                                        .transition()
+                                                        .duration(50)
+                                                        .style("opacity", 1);
+                                            })
+
+                                            .on("mousemove", function (event) {
+                                                tooltip
+                                                // turboscuffed btw.
+                                                        .style("left", (d3.pointer(event, window)[0] - margin.left * 0.75 * props.typeId) + "px")
+                                                        .style("top", (d3.pointer(event, window)[1] - margin.bottom * 0.75 * props.typeId)  + "px");           
+                                            })
+                            
+                                            .on("mouseout", function () {
+                                                d3.select(this).transition()
+                                                                .duration(50)
+                                                                .attr("fill-opacity", 0.6);
+                                                            
+                                                tooltip.transition()
+                                                        .duration(50)
+                                                        .style("opacity", 0);
+                                            })
+                                    )
+                        },
+                        (update) =>
+                            update
+                                .call((g) => 
+                                    g
+                                        .select("path")
+                                            .transition()
+                                                .duration(1)
+                                                .attr("d", d => arc(d as PieArcDatum<number>))
+                                ),
+                        (exit) =>
+                            exit.call((g) => g.transition().duration(0).style("opacity", 0).remove())
+                    )               
 
         }
 
@@ -166,7 +168,7 @@ function PieChart (props: {
                 .style("font-size", "1em")
                 .style("font-weight", "600")
                 .text(title)
-            }
+        }
                 
     }, [data])
 

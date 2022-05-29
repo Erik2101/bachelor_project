@@ -177,7 +177,7 @@ function MultiBarChart(props : {
                         exit.call((g) =>
                              g.transition().duration(0).style("opacity", 0).remove())
                 )
-                .attr("fill", (d) => colour(d.key))
+                .attr("fill", (d) => (colour(d.key) as string))
                 .selectAll("rect")
                     .data(function(d) {return d})
                     .join(
@@ -194,7 +194,7 @@ function MultiBarChart(props : {
                     .attr("stroke", "#424242")
                     
                     .on("mouseover", function(event, d) {
-                        const subgroup_name : string = d3.select((event.target as HTMLElement).parentElement).datum().key
+                        const subgroup_name = d3.select((event.target as HTMLElement).parentElement).datum().key
                         // this needs to be adjusted for maintain and total to contain their prior values
                         const subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
                         tooltip
