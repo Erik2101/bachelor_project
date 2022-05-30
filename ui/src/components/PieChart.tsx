@@ -16,7 +16,6 @@ function PieChart (props: {
     const [title, setTitle] = React.useState<string>("XXXXXXXXXXXXXXXXX")
     const [colours, setColours] = React.useState<Array<CaptionColourPair>>([{caption: "default", colour: "black"}])
     const [selection, setSelection] = React.useState<string>("default")
-    // const [dimensions, setDimensions] = React.useState<{width: number, height: number}>()
 
     React.useEffect(() => {
         if (data) drawChart()
@@ -148,6 +147,7 @@ function PieChart (props: {
                                             .transition()
                                                 .duration(1)
                                                 .attr("d", d => arc(d as PieArcDatum<number>))
+                                                .attr("transform", "translate(" + (containerWidth / 2) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
                                 ),
                         (exit) =>
                             exit.call((g) => g.transition().duration(0).style("opacity", 0).remove())
