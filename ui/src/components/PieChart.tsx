@@ -73,10 +73,14 @@ function PieChart (props: {
                 left: containerWidth * 0.05
             }
 
-
         const chartWidth = containerWidth - margin.left - margin.right
         const chartHeight = containerHeight - margin.top - margin.bottom
         const size = containerHeight < containerWidth ? chartHeight : chartWidth
+
+        const size_reg = containerWidth < 600 ? 0.75 : 1 
+
+        const legend_height = 20 * size_reg
+        const legend_spacing = 5 
 
         const svg = d3.select(d3Chart.current)
                         .attr("width", containerWidth)
@@ -84,13 +88,14 @@ function PieChart (props: {
                         .attr("viewBox", [0, 0, containerWidth, containerHeight])
 
         const pie = d3.pie()
+                        .sort(null)
 
         if (data) {
             const arcs = pie(data.valueArray)
 
             const arc = d3.arc<PieArcDatum<number>>()
-                            .innerRadius(size / 4 - 2)
-                            .outerRadius(size / 2 - 1)
+                            .innerRadius((size * size_reg) / 4 - 2)
+                            .outerRadius((size * size_reg) / 2 - 1)
 
             const tooltip = d3.select(".tooltip")
                                 .style("opacity", 0)
@@ -107,7 +112,7 @@ function PieChart (props: {
                                             .attr("d", d => arc(d as PieArcDatum<number>))
                                             .attr("fill", (_,i) => colours[i].colour)
                                             .attr("fill-opacity", 0.6)
-                                            .attr("transform", "translate(" + (containerWidth / 2) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
+                                            .attr("transform", "translate(" + (containerWidth / 4 + 1.75 * (containerWidth * 0.05)) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
 
                                             .on("mouseover", function(event, d) {
                                                 d3.select(this).transition()
@@ -147,7 +152,7 @@ function PieChart (props: {
                                             .transition()
                                                 .duration(1)
                                                 .attr("d", d => arc(d as PieArcDatum<number>))
-                                                .attr("transform", "translate(" + (containerWidth / 2) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
+                                                .attr("transform", "translate(" + (containerWidth / 4 + 1.75 * (containerWidth * 0.05)) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
                                 ),
                         (exit) =>
                             exit.call((g) => g.transition().duration(0).style("opacity", 0).remove())
@@ -170,6 +175,41 @@ function PieChart (props: {
                 .style("font-weight", "600")
                 .text(title)
         }
+
+        const legend = svg.selectAll("legend")
+                            .data(colours)
+                            .join(
+                                enter => enter.append("g"),
+                                update => update.call((g) => g
+                                                                .attr("transform", (d, i) => {
+                                                                    const height = legend_height + legend_spacing
+                                                                    const offset = height * colours.length / 2
+                                                                    const horizontal = legend_height
+                                                                    const vertical = i * height - offset
+                                    
+                                                                    return "translate(" + ( horizontal + (chartWidth) - (containerWidth * 0.1) ) + ", " + (vertical +  margin.top + containerHeight / 2) + ")"
+                                                                })
+                                ),
+                                exit => exit.remove()
+                            )
+                            .attr("transform", (d, i) => {
+                                const height = legend_height + legend_spacing
+                                const offset = height * colours.length / 2
+                                const horizontal = legend_height
+                                const vertical = i * height - offset
+
+                                return "translate(" + ( horizontal + (chartWidth) - (containerWidth * 0.1) ) + ", " + (vertical +  margin.top + containerHeight / 2) + ")"
+                            })
+
+        legend.append("rect")
+            .attr("width", legend_height)
+            .attr("height", legend_height)
+            .style("fill", d => d.colour)
+                                
+        legend.append("text")
+                    .attr("x", legend_height + legend_spacing)
+                    .attr("y", legend_height - legend_spacing)
+                    .text(d => d.caption)
                 
     }, [data])
 
