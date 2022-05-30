@@ -1,6 +1,7 @@
 .App {
     height: 100%;
     width: 100%;
+    min-width: 1000px;
     justify-items: center;
     align-items: center;
     display: grid;

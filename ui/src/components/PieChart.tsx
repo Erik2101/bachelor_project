@@ -210,6 +210,7 @@ function PieChart (props: {
                     .attr("x", legend_height + legend_spacing)
                     .attr("y", legend_height - legend_spacing)
                     .text(d => d.caption)
+                    .style("font-size", 16 * size_reg)
                 
     }, [data])
 
