@@ -80,7 +80,7 @@ function BarChart(props: {
                                 .on("mouseover", function(event, d) {
                                     d3.select(this).transition()
                                                     .duration(50)
-                                                    .style("opacity", 1);
+                                                    .attr("fill-opacity", 1);
 
                                     tooltip
                                             .html(d.sectionValue.toString())

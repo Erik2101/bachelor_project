@@ -222,6 +222,10 @@ function PieChart (props: {
                 <div className="tooltip"></div>
             </div>
             )
+        } else {
+            final_return = (
+                <div>default return exit.</div>
+            )
         }
     }
 

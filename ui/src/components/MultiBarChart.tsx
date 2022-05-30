@@ -207,7 +207,7 @@ function MultiBarChart(props : {
                             }
                         }
                         tooltip
-                            .html("subgroup: " + subgroup_name + "<br>" + "Value: " + subgroup_value)
+                            .html("subgroup: " + subgroup_name + "<br>" + "Value: " + subgroup_value + " h")
                             .style("opacity", 1)
                     })
 
