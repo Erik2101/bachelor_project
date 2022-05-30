@@ -2,6 +2,7 @@ import * as d3 from "d3"
 import { lchown } from "fs"
 import { isExternalModuleNameRelative } from "typescript"
 import { DeviceData } from "./proto/frontend_pb"
+import { theme } from "./theme"
 
 export type Dataset = {
     sectionCaption: string,
@@ -164,7 +165,7 @@ export function stationColours(input : Array<DeviceData>) {
     }
     const sorted_colour_pairs = ret.sort((a, b) => b.caption.localeCompare(a.caption))
     sorted_colour_pairs.reverse()
-    const colours = colorArrayFromTwo("#026773", "#3CA6A6", sorted_colour_pairs.length)
+    const colours = colorArrayFromTwo(theme.blue3, theme.blue4, sorted_colour_pairs.length)
     for (const item of sorted_colour_pairs) {
         item.colour = colours(sorted_colour_pairs.indexOf(item).toString())
     }

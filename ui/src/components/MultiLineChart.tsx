@@ -54,9 +54,9 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                             .range([chartHeight + margin.bottom, 2 * margin.top])
 
             const colours = [
-                {fill: "#44F295", stroke: theme.high_prio},
-                {fill: "#F5CC26", stroke: theme.medium_prio},
-                {fill: "#F54E1B", stroke: theme.low_prio}
+                {fill: "#44F295", stroke: theme.low_prio}, // low
+                {fill: "#F5CC26", stroke: theme.medium_prio}, // medium
+                {fill: "#F54E1B", stroke: theme.high_prio} // high
             ]
 
             const tooltip = d3.select(".tooltip")
@@ -91,25 +91,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 .attr("fill", "none")
                 .attr("stroke", (_, i) => colours[i].stroke)
                 .attr("stroke-width", 1)
-
-            /* const areaFunction = d3.area<ErrPerDate>()
-                                    .x((d) => x(new Date(d.date)))
-                                    .y0(y(0))
-                                    .y1((d) => y(d.errNum))
-
-            svg.selectAll("path")
-                .data(justData)
-                .join(
-                    enter => enter.append("path"),
-                    update => update,
-                    exit => exit.remove()
-                )
-                .attr("d", (d) => areaFunction(d))
-                .attr("fill", (_, i) => colours[i].fill)
-                .attr("stroke", "none")
-                .attr("fill-opacity", 0.25)
-                .attr("transform", "translate(" + (-chartWidth / 2 - margin.left) + ", " + -chartHeight / 2 +")") */
-
                 
             svg.selectAll("circle")
                 .data(circleData)
