@@ -4,6 +4,7 @@ import "./ChartContainer.css";
 import { DeviceData } from "../proto/frontend_pb";
 import { totalActivityData , totalActivityData2} from "../util";
 import { Dataset } from "../util";
+import { theme } from "../theme";
 
 function BarChart(props: {
     "typeId": number,
@@ -153,12 +154,12 @@ function BarChart(props: {
     React.useEffect(() => {
         if(props.typeId === 1) {
             setData(totalActivityData(props.data)) 
-            setColours(["#2B8A3C", "#969997"])
+            setColours([theme.active, theme.inactive])
             setTitle("Aktivitätstatus aller bekannten Geräte")
         }
         else if(props.typeId === 2) {
             setData(totalActivityData2(props.data))
-            setColours(["#2B8A3C", "#B1E6BE", "#969997"])
+            setColours([theme.active, "#B1E6BE", theme.inactive])
             setTitle("Aktivitätsstatus und Einsatzbereitschaft aller bekannten Geräte")
         }
         return () => {};

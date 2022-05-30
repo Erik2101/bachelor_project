@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import { DeviceData } from "../proto/frontend_pb";
 import "./ChartContainer.css";
 import "./MultiBarChart.css";
+import { theme } from "../theme";
 
 function MultiBarChart(props : {
     data : Array<DeviceData>
@@ -24,7 +25,7 @@ function MultiBarChart(props : {
 
     React.useEffect(() => {
         setTitle("Betriebsdauern aller Geräte eines SDC-Ensembles (in Stunden)")
-        setColours(["#2B8A3C", "#B1E6BE", "#969997"])
+        setColours([theme.blue1, theme.blue3, theme.blue4])
         if (selection !== "default") {
             const temp = ensembleDeviceUptime(props.data)
             for (const ensemble of temp) {
@@ -194,7 +195,10 @@ function MultiBarChart(props : {
                     .attr("stroke", "#424242")
                     
                     .on("mouseover", function(event, d) {
-                        const subgroup_name = d3.select((event.target as HTMLElement).parentElement).datum().key
+                        const parent_datum = d3.select(event.target.parentElement).datum()
+                        // weiß nicht wie man diese Fehler beheben kann, da datum abhängig von der Gerätezahl immer unterschiedlich ist
+                        // was typechecking schwierig macht.
+                        const subgroup_name = parent_datum.key
                         
                         let subgroup_value
                         if (subgroup_name === "total") {

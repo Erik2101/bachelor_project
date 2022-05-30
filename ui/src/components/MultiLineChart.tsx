@@ -4,6 +4,7 @@ import "./ChartContainer.css"
 import { errorSpreadData, ErrPerDate, ErrSpreadChartData } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
 import { range, select } from "d3";
+import { theme } from "../theme";
 
 function MultiLineChart (props: {data : Array<DeviceData>}) {
 
@@ -53,9 +54,9 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                             .range([chartHeight + margin.bottom, 2 * margin.top])
 
             const colours = [
-                {fill: "#44F295", stroke: "#2B8A3C"},
-                {fill: "#F5CC26", stroke: "#F2941D"},
-                {fill: "#F54E1B", stroke: "#DB281A"}
+                {fill: "#44F295", stroke: theme.high_prio},
+                {fill: "#F5CC26", stroke: theme.medium_prio},
+                {fill: "#F54E1B", stroke: theme.low_prio}
             ]
 
             const tooltip = d3.select(".tooltip")

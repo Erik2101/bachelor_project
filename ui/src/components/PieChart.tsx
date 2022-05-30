@@ -5,6 +5,7 @@ import "./ChartContainer.css";
 import { DeviceData } from "../proto/frontend_pb";
 import { CaptionColourPair, devicesOfAClassPerStation, PieDataSet, pieReadyData, stationColours, totalActivityData } from "../util";
 import { PieArcDatum } from "d3";
+import { theme } from "../theme";
 
 function PieChart (props: {
     data: Array<DeviceData>,
@@ -26,8 +27,8 @@ function PieChart (props: {
             setData(pieReadyData(totalActivityData(props.data)))
             setTitle("Aktivitätstatus aller bekannten Geräte")
             setColours([
-                {caption: "Aktiv", colour: "#2B8A3C"},
-                {caption: "Inaktiv", colour: "#969997"}])
+                {caption: "Aktiv", colour: theme.active},
+                {caption: "Inaktiv", colour: theme.inactive}])
         }
         if (props.typeId === 2) {
             setTitle("Anzahl der Geräte einer Klasse pro Station")

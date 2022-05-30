@@ -1,5 +1,7 @@
 import React from "react";
 import { DeviceData } from "../proto/frontend_pb";
+import { theme } from "../theme";
+import { colorArrayFromTwo } from "../util";
 import "./RoomCard.css";
 
 function RoomCard(props: {data: Array<DeviceData>}) {
@@ -99,7 +101,7 @@ function RoomCard(props: {data: Array<DeviceData>}) {
                         error_colours.push({color: "black"})
                     } else {
                         error_colours.push({
-                            color: "red",
+                            color: theme.high_prio,
                             fontWeight: 600
                         })
                     }
@@ -157,12 +159,13 @@ function RoomCard(props: {data: Array<DeviceData>}) {
             label = "Aktiv:"
         }
         const ratio = property / roomStatus[0]
+        const colours = colorArrayFromTwo(theme.i_u, theme.high_prio, 5)
         let background_color : string
-        if (ratio === 1) { background_color = "green" } else {
-            if (ratio > 0.9) { background_color = "lime" } else {
-                if (ratio > 0.7) { background_color = "yellow" } else {
-                    if (ratio > 0.5) { background_color = "orange" } else {
-                        background_color = "red"
+        if (ratio === 1) { background_color = /* colours("0") */ theme.active } else {
+            if (ratio > 0.9) { background_color = /* colours("1") */ theme.i_u } else {
+                if (ratio > 0.7) { background_color = colours("2") } else {
+                    if (ratio > 0.5) { background_color = /* colours("3") */ theme.medium_prio } else {
+                        background_color = /* colours("4") */ theme.high_prio
                     }
                 }
             }

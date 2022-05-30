@@ -1,11 +1,7 @@
+import * as d3 from "d3"
 import { lchown } from "fs"
 import { isExternalModuleNameRelative } from "typescript"
 import { DeviceData } from "./proto/frontend_pb"
-
-const bigColourArray = 
-["#2B8A3C", "#F2941D", "#DB281A", "#969997", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C",
- "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C",
- "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C", "#2B8A3C" ]
 
 export type Dataset = {
     sectionCaption: string,
@@ -161,13 +157,17 @@ export function stationColours(input : Array<DeviceData>) {
         if (!known) {
             ret.push({
             caption: station,
-            colour: bigColourArray[count]
+            colour: ""
             })
             count++
         }
     }
     const sorted_colour_pairs = ret.sort((a, b) => b.caption.localeCompare(a.caption))
     sorted_colour_pairs.reverse()
+    const colours = colorArrayFromTwo("#026773", "#3CA6A6", sorted_colour_pairs.length)
+    for (const item of sorted_colour_pairs) {
+        item.colour = colours(sorted_colour_pairs.indexOf(item).toString())
+    }
     return sorted_colour_pairs
 }
 
@@ -255,13 +255,30 @@ export function errorSpreadData(input: Array<DeviceData>) {
         xDomain: final_sorted_domain,
         dataSet: data
     }
-
-    // maybe reverse the date string here after sorting for better reading
-    // also maybe remove year if year is the same on all strings
     return ret
 }
 
 function convertDate(input: Date) {
     function pad(s: number) { return (s < 10) ? '0' + s : s}
     return [pad(input.getMonth() + 1), pad(input.getDate()), input.getFullYear()].join("-")
+}
+
+export function colorArrayFromTwo(start : string, end : string, range : number) {
+    const linearScale = d3.scaleLinear<string>()
+                            .domain([0, 1])
+                            .range([start, end])
+
+    const data = d3.range(range)
+    let string_data = []
+    for (let i = 0; i < data.length; i++) {
+        string_data.push(data[i].toString())
+    }
+
+    const colorArray = d3.range(data.length).map(d => linearScale(d/data.length - 1))
+
+    const ordinalScale = d3.scaleOrdinal<string>()
+                            .domain(string_data)
+                            .range(colorArray)
+
+    return ordinalScale
 }
