@@ -45,7 +45,7 @@ function getServer() {
       const requestId = call.request.chartId || 0
       let activityData: Array<DeviceData> = []
       if (!requestId) return call.end();
-      activityData = (requestId === 1) ? require("./data/deviceDummyV2.json") : require("./data/deviceDummyV2.1.json")
+      activityData = (requestId === 1) ? require("./data/deviceDummyV3.a.json") : require("./data/deviceDummyV3.b.json")
       for (const item of activityData) {
         const ret: ChartDatasetResponse = { "DeviceData": item }
         call.write(ret);

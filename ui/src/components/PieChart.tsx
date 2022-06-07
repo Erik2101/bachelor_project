@@ -112,13 +112,13 @@ function PieChart (props: {
                                             .append("path")
                                             .attr("d", d => arc(d as PieArcDatum<number>))
                                             .attr("fill", (_,i) => colours[i].colour)
-                                            .attr("fill-opacity", 0.6)
+                                            .attr("fill-opacity", 1)
                                             .attr("transform", "translate(" + (containerWidth / 4 + 1.75 * (containerWidth * 0.05)) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
 
                                             .on("mouseover", function(event, d) {
                                                 d3.select(this).transition()
                                                 .duration(50)
-                                                .attr("fill-opacity", 1);
+                                                .attr("fill-opacity", 0.6);
                                             
                                                 tooltip
                                                         .html(d.data.toString())
@@ -137,7 +137,7 @@ function PieChart (props: {
                                             .on("mouseout", function () {
                                                 d3.select(this).transition()
                                                                 .duration(50)
-                                                                .attr("fill-opacity", 0.6);
+                                                                .attr("fill-opacity", 1);
                                                             
                                                 tooltip.transition()
                                                         .duration(50)
