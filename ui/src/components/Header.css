@@ -11,12 +11,12 @@
 
 .logo {
     width: 50%;
-    padding:0px 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 .tab-container {
     justify-content: space-between;
     display: flex;
     width: 50%;
-    padding:0px 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
 }
