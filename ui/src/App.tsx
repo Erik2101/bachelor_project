@@ -9,6 +9,7 @@ import { DeviceData } from './proto/frontend_pb';
 import RoomCard from './components/RoomCard';
 import MultiLineChart from './components/MultiLineChart';
 import MultiBarChart from './components/MultiBarChart';
+import LolipopChart from './components/LolipopChart';
 
 function App() {
 
@@ -111,6 +112,7 @@ function App() {
       {deviceDataStore && <RoomCard data={deviceDataStore}/>}
       {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
       {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
+      {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
     </div>
   );
 }

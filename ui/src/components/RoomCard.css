@@ -5,13 +5,13 @@
     max-height: 600px;
     width: 90%;
     min-width: 500px;
-    background-color: #BAB8BA;
+    background-color: white;
     border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 2fr 17fr;
 }
 
-.room-card-container > select {
+.room-card-container>select {
     margin: 20px;
 }
 
@@ -21,7 +21,8 @@
     flex-direction: column;
 }
 
-.select-label, .indicator-label {
+.select-label,
+.indicator-label {
     margin-left: 1px;
     margin-bottom: 5px;
     font-weight: 600;
@@ -35,7 +36,8 @@
     grid-column: span 2;
 }
 
-.room-ready-indicator, .room-active-indicator {
+.room-ready-indicator,
+.room-active-indicator {
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -79,27 +81,34 @@
     height: 100%;
 }
 
-.device-table-head > tr > th {
+.device-table-head>tr>th {
     background-color: #8F8D8F;
     height: 30px;
 }
 
-.device-table-body > tr > td {
-    background-color: white;
+.device-table-body>tr>td {
+    background-color: lightgray;
 }
 
 .uuid-cell {
     width: 60%;
 }
 
-.activity-cell, .ready-cell, .medium-cell{
+.activity-cell,
+.ready-cell,
+.medium-cell {
     width: 10%;
 }
 
-.high-cell, .low-cell {
+.high-cell,
+.low-cell {
     width: 5%,
 }
 
-.activity-cell, .ready-cell, .high-cell , .medium-cell, .low-cell {
+.activity-cell,
+.ready-cell,
+.high-cell,
+.medium-cell,
+.low-cell {
     text-align: center;
 }
