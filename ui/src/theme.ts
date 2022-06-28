@@ -1,7 +1,7 @@
 const palette = {
     primary_grey : "",
     secondary_grey : "#8F8D8F", 
-    tertiary_grey : "",
+    tertiary_grey : "#D4D4D4",
     black : "",
     primary_green : "#025939",
     secondary_green : "#027333",
@@ -25,5 +25,6 @@ export const theme = {
         blue1: palette.primary_blue,
         blue2: palette.secondary_blue, 
         blue3: palette.tertiary_blue, 
-        blue4: palette.highlight_blue
+        blue4: palette.highlight_blue,
+        app_bg: palette.tertiary_grey
 }

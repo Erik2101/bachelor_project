@@ -9,6 +9,7 @@
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    box-shadow: 3px 3px #424242;
 }
 
 .chart-container {

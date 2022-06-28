@@ -9,6 +9,7 @@
     border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 2fr 17fr;
+    box-shadow: 3px 3px #424242;
 }
 
 .room-card-container>select {
@@ -111,4 +112,12 @@
 .medium-cell,
 .low-cell {
     text-align: center;
+}
+
+.device-table-body>tr:last-of-type>td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+
+.device-table-body>tr:last-of-type>td:last-of-type {
+    border-bottom-right-radius: 10px;
 }

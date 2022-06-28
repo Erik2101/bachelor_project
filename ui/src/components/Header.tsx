@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <header className="main-app-header">
             <div className="logo">
-            <h1 id="app-title">Platzhater-Titel</h1>
+            <h1 id="app-title">SDC Control Station Med</h1>
             </div>
             <div className="tab-container">
                 <h1 id="Bericht">Item 1</h1>
