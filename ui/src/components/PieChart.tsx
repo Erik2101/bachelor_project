@@ -118,7 +118,7 @@ function PieChart (props: {
                                             .on("mouseover", function(event, d) {
                                                 d3.select(this).transition()
                                                 .duration(50)
-                                                .attr("fill-opacity", 0.6);
+                                                .attr("fill-opacity", 0.75);
                                             
                                                 tooltip
                                                         .html(d.data.toString())

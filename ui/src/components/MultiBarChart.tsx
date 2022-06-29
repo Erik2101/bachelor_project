@@ -179,7 +179,7 @@ function MultiBarChart(props : {
                              g.transition().duration(0).style("opacity", 0).remove())
                 )
                 .attr("fill", (d) => (colour(d.key) as string))
-                .attr("fill-opacity", 0.8)
+                .attr("fill-opacity", 1)
                 .selectAll("rect")
                     .data(function(d) {return d})
                     .join(
@@ -213,7 +213,7 @@ function MultiBarChart(props : {
                         }
                         d3.select(event.target.parentElement).transition()
                                         .duration(50)
-                                        .attr("fill-opacity", 1);
+                                        .attr("fill-opacity", 0.75);
                         tooltip
                             .html("subgroup: " + subgroup_name + "<br>" + "Value: " + subgroup_value + " h")
                             .style("opacity", 1)
@@ -228,7 +228,7 @@ function MultiBarChart(props : {
                     .on("mouseout", function(event) {
                         d3.select(event.target.parentElement).transition()
                                         .duration(50)
-                                        .attr("fill-opacity", 0.8);
+                                        .attr("fill-opacity", 1);
                         tooltip
                             .style("opacity", 0)
                             .style("left", "0px")

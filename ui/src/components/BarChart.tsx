@@ -75,13 +75,13 @@ function BarChart(props: {
                                 .attr("height", d => y(0)-y(d.sectionValue))
                                 .attr("width", x.bandwidth())
                                 .attr("fill", (_, i) => colours[i])
-                                .attr("fill-opacity", 0.6)
+                                .attr("fill-opacity", 1)
                                 .attr("transform", "translate(0, 0)")
 
                                 .on("mouseover", function(event, d) {
                                     d3.select(this).transition()
                                                     .duration(50)
-                                                    .attr("fill-opacity", 1);
+                                                    .attr("fill-opacity", 0.75);
 
                                     tooltip
                                             .html(d.sectionValue.toString())
@@ -99,7 +99,7 @@ function BarChart(props: {
                                 .on("mouseout", function() {
                                     d3.select(this).transition()
                                                     .duration(50)
-                                                    .attr("fill-opacity", 0.6);
+                                                    .attr("fill-opacity", 1);
                                                             
                                     tooltip.transition()
                                             .duration(50)
