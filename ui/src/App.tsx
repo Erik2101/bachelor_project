@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/Header";
 import BarChart from "./components/BarChart";
 import PieChart from './components/PieChart';
 import {ChartDatasetRequest, ChartDatasetResponse} from "./proto/frontend_pb";
@@ -103,16 +102,20 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <button className="refresh-button" onClick={handleClick}>Datensatz wechseln.</button>
-      {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
-      {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
-      {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
-      {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
-      {deviceDataStore && <RoomCard data={deviceDataStore}/>}
-      {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
-      {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
-      {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
+      <header className="app-header">
+        <h1 id="app-title">SDC Control Station Med</h1>
+        <button className="refresh-button" onClick={handleClick}>Datensatz wechseln.</button>
+      </header>
+      <main className="main-content">
+        {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
+        {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
+        {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
+        {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
+        {deviceDataStore && <RoomCard data={deviceDataStore}/>}
+        {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
+        {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
+        {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
+      </main>
     </div>
   );
 }
