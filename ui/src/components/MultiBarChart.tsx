@@ -235,9 +235,30 @@ function MultiBarChart(props : {
                             .style("top", "0px")
                     })
 
-            svg.append("g")
-                .call(d3.axisLeft(y))
-                .attr("transform", "translate(" + margin.left + ", 0)") 
+            let yAxis = svg.append("g")
+                            .call(d3.axisLeft(y))
+                            .attr("transform", "translate(" + margin.left + ", 0)") 
+
+            yAxis.selectAll(".tick")
+                    .data(data)
+                    .on("mouseover", function(_, d) {
+                        tooltip
+                            .html(d.uuid)
+                            .style("opacity", 1)
+                    })
+
+                    .on("mousemove", function(event, d) {
+                        tooltip
+                            .style("left", (d3.pointer(event, window)[0] - margin.left) + "px")
+                            .style("top", (d3.pointer(event, window)[1] - 3*margin.top)  + "px")
+                    })
+
+                    .on("mouseout", function() {
+                        tooltip
+                        .style("opacity", 0)
+                        .style("left", "0px")
+                        .style("top", "0px")
+                    })
             
             svg.append("g")
                 .call(d3.axisBottom(x))
