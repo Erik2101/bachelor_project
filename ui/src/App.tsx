@@ -103,7 +103,7 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1 id="app-title">SDC Control Station Med</h1>
+        <h1 id="app-title">SDC Control Station Med Visualisierungsbeispiele</h1>
         <button className="refresh-button" onClick={handleClick}>Datensatz wechseln.</button>
       </header>
       <main className="main-content">

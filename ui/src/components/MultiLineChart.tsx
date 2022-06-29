@@ -52,6 +52,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
             const y = d3.scaleLinear()
                             .domain([0, yMax])
                             .range([chartHeight + margin.bottom, 2 * margin.top])
+                            .nice()
 
             const colours = [
                 {fill: "#44F295", stroke: theme.low_prio}, // low

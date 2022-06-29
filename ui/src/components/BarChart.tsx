@@ -56,6 +56,7 @@ function BarChart(props: {
         const y = d3.scaleLinear()
                     .domain([0, yMax])
                     .range([chartHeight + margin.bottom , 2 * margin.top])
+                    .nice()
 
         const tooltip = d3.select(".tooltip")
                             .style("opacity", 0)

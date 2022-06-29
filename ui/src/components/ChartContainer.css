@@ -11,7 +11,6 @@
     align-items: center;
     box-shadow: 3px 3px #424242;
     justify-self: center;
-    align-self: center;
 }
 
 .chart-container {
@@ -30,7 +29,7 @@
     padding-left: 15%;
     font-weight: 600;
     font-size: 1em;
-    align-self: flex-end;
+    align-self: center;
 }
 
 .sub-flex-container {
