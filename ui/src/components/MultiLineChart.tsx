@@ -3,12 +3,16 @@ import * as d3 from "d3";
 import "./ChartContainer.css"
 import { errorSpreadData, ErrPerDate, ErrSpreadChartData } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
-import { range, select } from "d3";
+import { range } from "d3";
 import { theme } from "../theme";
 
 function MultiLineChart (props: {data : Array<DeviceData>}) {
 
     const [data, setData] = React.useState<ErrSpreadChartData>()
+    const [tooltipValues, setTooltipValues] = React.useState([
+        {priority: "low", value: ""},
+        {priority: "medium", value: ""},
+        {priority: "high", value: ""}])
 
     const lineChart = React.useRef(null)
 
@@ -60,9 +64,9 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 {fill: "#F54E1B", stroke: theme.high_prio} // high
             ]
 
-            const tooltip = d3.select(".tooltip")
+            /* const tooltip = d3.select(".tooltip")
                                 .style("position", "absolute")
-                                .style("opacity", 0);
+                                .style("opacity", 0); */
 
             const justData = []
             const circleData = []
@@ -92,8 +96,9 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 .attr("fill", "none")
                 .attr("stroke", (_, i) => colours[i].stroke)
                 .attr("stroke-width", 1)
+                .attr("class", "line")
                 
-            svg.selectAll("circle")
+            /* svg.selectAll("circle")
                 .data(circleData)
                 .join(
                     enter => enter.append("circle"),               
@@ -123,24 +128,47 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                     tooltip.transition()
                                 .duration(50)
                                 .style("opacity", 0)
-                })
+                }) */
 
             const chartTitle = "Gerätefehler von " + data.xDomain[0] + " bis " +
             data.xDomain[data.xDomain.length - 1] + " nach Prioritäten"
             
-            svg.selectAll("text")
-                .data([1])
-                .join(
-                    enter => enter.append("text"),
-                    update => update,
-                    exit => exit.remove()
-                )
-                .attr("x", containerWidth / 2)             
-                .attr("y", margin.top )
-                .attr("text-anchor", "middle")  
-                .style("font-size", "1em")
-                .style("font-weight", "600")
-                .text(chartTitle)
+            svg.selectAll("text").remove()
+
+            svg.selectAll("headline")
+                        .data([1])
+                        .join(
+                            enter => enter.append("text"),
+                            update => update,
+                            exit => exit.remove()
+                        )
+                        .attr("x", containerWidth / 2)             
+                        .attr("y", margin.top )
+                        .attr("text-anchor", "middle")  
+                        .style("font-size", "1em")
+                        .style("font-weight", "600")
+                        .text(chartTitle)
+
+            const tooltip_values = [
+                {priority: "low", value: ""},
+                {priority: "medium", value: ""},
+                {priority: "high", value: ""}]
+
+            svg.selectAll("value-display")
+                    .data(data.dataSet)
+                    .join(
+                        enter => enter.append("text"),
+                        update => update,
+                        exit => exit.remove()
+                    )
+                    .attr("x", d => containerWidth / 6 + data.dataSet.indexOf(d) * (containerWidth / 3))             
+                    .attr("y", margin.top * 1.5 )
+                    .attr("text-anchor", "middle")  
+                    .attr("class", "value-display")
+                    .style("font-size", "0.75em")
+                    .style("font-weight", "600")
+                    .style("fill", d => colours[data.dataSet.indexOf(d)].stroke)
+                    .text(d => "" + d.priority + ": " + tooltip_values[data.dataSet.indexOf(d)].value)
 
             // remove old axis-ticks before drawing the new axis
             svg.selectAll("g").remove()
@@ -152,8 +180,91 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
             svg.append("g")
                 .call(d3.axisLeft(y))
                 .attr("transform", "translate("+ margin.left + ", 0)")
+
+            // new hover
+            let mouseG = svg.append("g")
+                                .attr("class", "mouse-over-effects")
+
+            mouseG.append("path")
+                        .attr("class", "mouse-line")
+                        .style("stroke", "#A9A9A9")
+                        .style("stroke-width", 1)
+                        .style("opacity", "0")
+
+            //const lines = document.getElementsByClassName('line')
+        
+            const mousePerLine = mouseG.selectAll(".mouse-per-line")
+                                        .data(data.dataSet)
+                                        .enter().append("g")
+                                        .attr("class", "mouse-per-line")
+                                            .append("circle")
+                                            .attr("r", 4)
+                                            .style("stroke", d => colours[data.dataSet.indexOf(d)].stroke)
+                                            .style("fill", "none")
+                                            .style("stroke-width", 1)
+                                            .style("opacity", 0)
+
+            mouseG.append("svg:rect")
+                            .attr("width", chartWidth)
+                            .attr("height", chartHeight)
+                            .attr("fill", "none")
+                            .attr("pointer-events", "all")
+                            .attr("transform", "translate(" + margin.left + ", " + margin.top + ")")
+                            .on("mouseout", () => {
+                                d3.select(".mouse-line")
+                                    .style("opacity", "0")
+                                d3.selectAll(".mouse-per-line circle")
+                                .style("opacity", "0")
+                            })
+                            .on('mouseover', () => { // on mouse in show line and circles
+                                d3.select(".mouse-line")
+                                    .style("opacity", "1")
+                                d3.selectAll(".mouse-per-line circle")
+                                    .style("opacity", "1")
+                            })
+                            .on("mousemove", function(event) {
+                                const mouse = d3.pointer(event)
+
+                                d3.selectAll(".mouse-per-line")
+                                    .attr("transform", function(d) {
+                                        const xDate = x.invert(mouse[0] + margin.left)
+                                        const bisect = d3.bisector<ErrPerDate, Date>((d, x) => { return new Date(d.date) - x})
+                                        let idx = bisect.left(d.data, xDate)
+                                        d3.select(".mouse-line")
+                                        .attr("d", () => {
+                                            let ret = "M"+ x(new Date(d.data[idx].date)) + ", " + (chartHeight + margin.bottom)
+                                            ret += " " + x(new Date(d.data[idx].date)) + ", " + (0 + margin.top + margin.bottom)
+                                            return ret
+                                        })
+                                        tooltip_values[data.dataSet.indexOf(d)].value = d.data[idx].errNum
+                                        return "translate(" + x(new Date(d.data[idx].date)) + "," + y(d.data[idx].errNum) + ")"
+                                    })
+                                setTooltipValues((prevState) => {
+                                    console.log(prevState)
+                                    console.log(tooltip_values)
+                                    if (tooltip_values[0].value === prevState[0].value &&
+                                        tooltip_values[1].value === prevState[1].value &&
+                                        tooltip_values[2].value === prevState[2].value) {
+                                        console.log("is the same?")
+                                        return tooltip_values
+                                    }
+                                    else {
+                                        console.log("Is totally different!!")
+                                        return tooltip_values
+                                    }
+                                })
+                                
+                            })
         }
     }, [data])
+
+    React.useEffect(() => {
+        console.log("fired")
+        const value_displays = document.getElementsByClassName('value-display')
+        for (let i = 0; i < value_displays.length; i++) {
+            value_displays[i].innerHTML = tooltipValues[i].priority + ": " + tooltipValues[i].value
+        }
+    }, [tooltipValues])
 
     React.useEffect(() => {
         if (data) drawChart()
