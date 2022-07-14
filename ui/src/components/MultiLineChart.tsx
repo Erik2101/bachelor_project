@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 import "./ChartContainer.css"
-import { errorSpreadData, ErrPerDate, ErrSpreadChartData, PriorityValuePair } from "../util";
+import { errorSpreadData, ErrPerDate, ErrPerPrioPerDate, ErrSpreadChartData, PriorityValuePair } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
 import { range } from "d3";
 import { theme } from "../theme";
@@ -173,7 +173,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
             // remove old axis-ticks before drawing the new axis
             svg.selectAll("g").remove()
 
-            let xAxis = d3.axisBottom(x)
+            let xAxis = d3.axisBottom<Date>(x)
                             .tickFormat(d3.timeFormat("%d.%m"))
 
             svg.append("g")
@@ -231,20 +231,21 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
 
                                 d3.selectAll(".mouse-per-line")
                                     .attr("transform", function(d) {
+                                        const b = d as ErrPerPrioPerDate
                                         const xDate = x.invert(mouse[0] + margin.left)
-                                        const bisect = d3.bisector<ErrPerDate, Date>((d, x) => { return new Date(d.date) - x})
-                                        let idx = bisect.left(d.data, xDate)
+                                        const bisect = d3.bisector<ErrPerDate, Date>((d, x) => { return new Date(d.date).getTime() - x.getTime()})
+                                        let idx = bisect.left(b.data, xDate)
                                         d3.select(".mouse-line")
                                         .attr("d", () => {
-                                            let ret = "M"+ x(new Date(d.data[idx].date)) + ", " + (chartHeight + margin.bottom)
-                                            ret += " " + x(new Date(d.data[idx].date)) + ", " + (0 + margin.top + margin.bottom)
+                                            let ret = "M"+ x(new Date(b.data[idx].date)) + ", " + (chartHeight + margin.bottom)
+                                            ret += " " + x(new Date(b.data[idx].date)) + ", " + (0 + margin.top + margin.bottom)
                                             return ret
                                         })
-                                        if (d.data[idx].errNum !== tooltip_values[data.dataSet.indexOf(d)].value) {
+                                        if (b.data[idx].errNum.toString() !== tooltip_values[data.dataSet.indexOf(b)].value) {
                                             tooltip_values = [...tooltip_values]
-                                            tooltip_values[data.dataSet.indexOf(d)].value = d.data[idx].errNum
+                                            tooltip_values[data.dataSet.indexOf(b)].value = b.data[idx].errNum.toString()
                                         }
-                                        return "translate(" + x(new Date(d.data[idx].date)) + "," + y(d.data[idx].errNum) + ")"
+                                        return "translate(" + x(new Date(b.data[idx].date)) + "," + y(b.data[idx].errNum) + ")"
                                     })
                                 setTooltipValues((prevState) => {
                                     if (tooltip_values !== prevState) {
