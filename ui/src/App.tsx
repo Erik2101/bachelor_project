@@ -20,17 +20,16 @@ function App() {
       const request = new ChartDatasetRequest ()
       request.setChartId(dataSetCount + 1)
 
-      /* // Test ob Daten über envoy ankommen
+      // Test ob Daten über envoy ankommen
       client.connectionTesting(request, {}, (error, resp) => {
         if(error) throw error;
         console.log(resp.toObject().hello)
-      }) */
+      })
 
       let streamData : Array<ChartDatasetResponse> = []
       const stream =  client.chartDatasetGathering(request, {});
       stream.on("data", function (response) {
           streamData.push(response)
-          // setDeviceDataStore(oldStore => update(oldStore, response))
         })
       stream.on("status", function(status) {
         console.log(status.code);
@@ -72,30 +71,6 @@ function App() {
     }
   }
 
-// streamt jede response in den state
- /*  function update(oldStore: Array<DeviceData> | undefined, response: ChartDatasetResponse) {
-    {
-      if (!oldStore) { oldStore = [] }
-      let ret = oldStore
-      // let ret : Array<DeviceData> = []
-      let respPushed = false
-      const resp = response.getDevicedata()
-      if (resp) {
-        for (const item of oldStore) {
-          if(item.getUuid() === resp.getUuid()) {
-            ret[ret.indexOf(item)] = resp
-            respPushed = true
-          }
-        }
-        if (!respPushed) {
-          ret.push(resp)
-          respPushed = false
-        }
-      }
-    return ret
-    }
-  } */
-
   function handleClick() {
     setDataSetCount(prevCount =>  {return prevCount === 0 ? 1 : 0})
   }
@@ -103,18 +78,19 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
+        <button className="header-button">Filter verwalten.</button>
         <h1 id="app-title">SDC Control Station Med Visualisierungsbeispiele</h1>
-        <button className="refresh-button" onClick={handleClick}>Datensatz wechseln.</button>
+        <button className="header-button" onClick={handleClick}>Datensatz wechseln.</button>
       </header>
       <main className="main-content">
         {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
         {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
-        {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
         {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
         {deviceDataStore && <RoomCard data={deviceDataStore}/>}
-        {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
         {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
         {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
+        {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
+        {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
       </main>
     </div>
   );

@@ -108,7 +108,7 @@ function LolipopChart(props : {
                     .attr("cx", (d) => { return (x(d.sectionValue) + margin.left) })
                     .attr("cy", (d) => { return y(d.sectionCaption)! })
                     .attr("r", "5")
-                    .style("fill", "#69b3a2")
+                    .style("fill", theme.blue4)
                     .attr("stroke", "black")
 
             svg.selectAll("g").remove()

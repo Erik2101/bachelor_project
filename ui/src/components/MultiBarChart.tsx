@@ -200,24 +200,25 @@ function MultiBarChart(props : {
                         const parent_datum = d3.select(event.target.parentElement).datum()
                         // weiß nicht wie man diese Fehler beheben kann, da datum abhängig von der Gerätezahl immer unterschiedlich ist
                         // was typechecking schwierig macht.
-                        const subgroup_name = parent_datum.key
-                        
-                        let subgroup_value
-                        if (subgroup_name === "total") {
-                            subgroup_value = Math.round((d.data[subgroup_name] + d.data["maintain"] + d.data["current"]) * 10) / 10
-                        } else {
-                            if (subgroup_name === "maintain") {
-                                subgroup_value = Math.round((d.data[subgroup_name] + d.data["current"]) * 10) / 10
+                        if (typeof parent_datum === "object" && parent_datum !== null && "key" in parent_datum) {
+                            const subgroup_name = parent_datum.key
+                            let subgroup_value
+                            if (subgroup_name === "total") {
+                                subgroup_value = Math.round((d.data[subgroup_name] + d.data["maintain"] + d.data["current"]) * 10) / 10
                             } else {
-                                subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
+                                if (subgroup_name === "maintain") {
+                                    subgroup_value = Math.round((d.data[subgroup_name] + d.data["current"]) * 10) / 10
+                                } else {
+                                    subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
+                                }
                             }
-                        }
-                        d3.select(event.target.parentElement).transition()
-                                        .duration(50)
-                                        .attr("fill-opacity", 0.75);
-                        tooltip
-                            .html("Variable: " + subgroup_name + "<br>" + "Wert: " + subgroup_value + " h")
-                            .style("opacity", 1)
+                            d3.select(event.target.parentElement).transition()
+                                            .duration(50)
+                                            .attr("fill-opacity", 0.75);
+                            tooltip
+                                .html("Variable: " + subgroup_name + "<br>" + "Wert: " + subgroup_value + " h")
+                                .style("opacity", 1)
+                        }                        
                     })
 
                     .on("mousemove", function(event, d) {

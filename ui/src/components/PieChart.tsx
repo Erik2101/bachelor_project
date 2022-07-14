@@ -116,9 +116,6 @@ function PieChart (props: {
                                                 d3.select(this).transition()
                                                 .duration(50)
                                                 .attr("fill-opacity", 0.75);
-                                            
-                                                console.log(d.index)
-                                                console.log(colours[d.index].caption)
 
                                                 tooltip
                                                         .html(colours[d.index].caption + "<br>" + d.data.toString())
