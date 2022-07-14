@@ -37,6 +37,11 @@ export type CaptionColourPair = {
     colour: string
 }
 
+export type PriorityValuePair = {
+    priority: string, 
+    value: string
+}
+
 export function totalActivityData( data: Array<DeviceData>) {
     const ret: Array<Dataset> = []
     let active: Dataset = {

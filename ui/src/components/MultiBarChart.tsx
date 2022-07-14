@@ -153,6 +153,7 @@ function MultiBarChart(props : {
             const x = d3.scaleLinear()
                             .domain([0, xMax])
                             .range([0, chartWidth])
+                            .nice()
 
             const subgroups = ["current", "maintain", "total"]
 
@@ -168,7 +169,7 @@ function MultiBarChart(props : {
 
             const tooltip = d3.select(".tooltip")
                             .style("opacity", 0)
-            
+            svg.selectAll("g").remove()
             svg.selectAll("g")
                 .data(stacked_data)
                 .join(
@@ -215,14 +216,14 @@ function MultiBarChart(props : {
                                         .duration(50)
                                         .attr("fill-opacity", 0.75);
                         tooltip
-                            .html("subgroup: " + subgroup_name + "<br>" + "Value: " + subgroup_value + " h")
+                            .html("Variable: " + subgroup_name + "<br>" + "Wert: " + subgroup_value + " h")
                             .style("opacity", 1)
                     })
 
                     .on("mousemove", function(event, d) {
                         tooltip
-                            .style("left", (d3.pointer(event, window)[0] - margin.left) + "px")
-                            .style("top", (d3.pointer(event, window)[1] - 3*margin.top)  + "px")
+                            .style("left", (d3.pointer(event, window)[0] - Math.max(100, margin.left)) + "px")
+                            .style("top", (d3.pointer(event, window)[1] - Math.max(50, 3*margin.top))  + "px")
                     })
 
                     .on("mouseout", function(event) {
@@ -262,8 +263,18 @@ function MultiBarChart(props : {
             
             svg.append("g")
                 .call(d3.axisBottom(x))
-                .attr("transform", "translate(" + margin.left + ", " + chartHeight + ")") 
-                
+                .attr("transform", "translate(" + margin.left + ", " +  chartHeight + ")") 
+
+            const vert_gridlines = d3.axisBottom(x)
+                .tickFormat( _ => "")
+                .tickSize(-chartHeight)
+
+            svg.insert("g", "g:first-child")
+                .attr("class", "grid")
+                .call(vert_gridlines)
+                    .attr("transform", "translate(" + margin.left + "," + chartHeight + ")")
+                    .style("stroke", theme.app_bg)
+                    .attr("opacity", 0.5)
 
         }
     }, [data])

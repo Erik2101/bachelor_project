@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 import "./ChartContainer.css"
-import { errorSpreadData, ErrPerDate, ErrSpreadChartData } from "../util";
+import { errorSpreadData, ErrPerDate, ErrSpreadChartData, PriorityValuePair } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
 import { range } from "d3";
 import { theme } from "../theme";
@@ -9,7 +9,7 @@ import { theme } from "../theme";
 function MultiLineChart (props: {data : Array<DeviceData>}) {
 
     const [data, setData] = React.useState<ErrSpreadChartData>()
-    const [tooltipValues, setTooltipValues] = React.useState([
+    const [tooltipValues, setTooltipValues] = React.useState<ReadonlyArray<PriorityValuePair>>([
         {priority: "low", value: ""},
         {priority: "medium", value: ""},
         {priority: "high", value: ""}])
@@ -149,7 +149,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                         .style("font-weight", "600")
                         .text(chartTitle)
 
-            const tooltip_values = [
+            let tooltip_values : ReadonlyArray<PriorityValuePair> = [
                 {priority: "low", value: ""},
                 {priority: "medium", value: ""},
                 {priority: "high", value: ""}]
@@ -173,9 +173,13 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
             // remove old axis-ticks before drawing the new axis
             svg.selectAll("g").remove()
 
+            let xAxis = d3.axisBottom(x)
+                            .tickFormat(d3.timeFormat("%d.%m"))
+
             svg.append("g")
-                .call(d3.axisBottom(x))
+                .call(xAxis)
                 .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
+                
 
             svg.append("g")
                 .call(d3.axisLeft(y))
@@ -236,22 +240,17 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                             ret += " " + x(new Date(d.data[idx].date)) + ", " + (0 + margin.top + margin.bottom)
                                             return ret
                                         })
-                                        tooltip_values[data.dataSet.indexOf(d)].value = d.data[idx].errNum
+                                        if (d.data[idx].errNum !== tooltip_values[data.dataSet.indexOf(d)].value) {
+                                            tooltip_values = [...tooltip_values]
+                                            tooltip_values[data.dataSet.indexOf(d)].value = d.data[idx].errNum
+                                        }
                                         return "translate(" + x(new Date(d.data[idx].date)) + "," + y(d.data[idx].errNum) + ")"
                                     })
                                 setTooltipValues((prevState) => {
-                                    console.log(prevState)
-                                    console.log(tooltip_values)
-                                    if (tooltip_values[0].value === prevState[0].value &&
-                                        tooltip_values[1].value === prevState[1].value &&
-                                        tooltip_values[2].value === prevState[2].value) {
-                                        console.log("is the same?")
+                                    if (tooltip_values !== prevState) {
                                         return tooltip_values
                                     }
-                                    else {
-                                        console.log("Is totally different!!")
-                                        return tooltip_values
-                                    }
+                                    return prevState
                                 })
                                 
                             })
@@ -259,7 +258,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
     }, [data])
 
     React.useEffect(() => {
-        console.log("fired")
         const value_displays = document.getElementsByClassName('value-display')
         for (let i = 0; i < value_displays.length; i++) {
             value_displays[i].innerHTML = tooltipValues[i].priority + ": " + tooltipValues[i].value
