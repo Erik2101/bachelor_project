@@ -9,6 +9,7 @@ import RoomCard from './components/RoomCard';
 import MultiLineChart from './components/MultiLineChart';
 import MultiBarChart from './components/MultiBarChart';
 import LolipopChart from './components/LolipopChart';
+import TabLayout from './components/TabLayout';
 
 function App() {
 
@@ -32,9 +33,6 @@ function App() {
           streamData.push(response)
         })
       stream.on("status", function(status) {
-        console.log(status.code);
-        console.log(status.details);
-        console.log(status.metadata);
       })
       stream.on("end", function() {
         if (streamData.length > 0) {
@@ -66,7 +64,6 @@ function App() {
           }
         }
       }
-    console.log(ret)
     return ret
     }
   }
@@ -82,16 +79,23 @@ function App() {
         <h1 id="app-title">SDC Control Station Med Visualisierungsbeispiele</h1>
         <button className="header-button" onClick={handleClick}>Datensatz wechseln.</button>
       </header>
-      <main className="main-content">
-        {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
-        {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
-        {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
-        {deviceDataStore && <RoomCard data={deviceDataStore}/>}
-        {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
-        {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
-        {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
-        {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
-      </main>
+      
+        <TabLayout>
+          <div id="Raummonitor">
+            {deviceDataStore && <RoomCard data={deviceDataStore}/>}
+          </div>
+          <div id="Gerätepark">
+            <main className="main-content">
+              {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
+              {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
+              {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
+              {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
+              {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
+              {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
+              {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
+            </main>
+          </div>
+        </TabLayout>
     </div>
   );
 }

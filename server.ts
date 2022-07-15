@@ -36,7 +36,7 @@ function getServer() {
       const requestId = call.request.chartId || 0
       if (!requestId) callback(new Error("requestID is required."))
         const ret = {
-          "hello": "is me"
+          "hello": "RPC war erfolgreich."
         } as TestResponse
       return callback(null, ret)
     },
