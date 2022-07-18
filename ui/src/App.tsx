@@ -75,27 +75,25 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <button className="header-button">Filter verwalten.</button>
-        <h1 id="app-title">SDC Control Station Med Visualisierungsbeispiele</h1>
+        <h1 id="app-title">SDC Control Station Med - Visualisierungsbeispiele</h1>
         <button className="header-button" onClick={handleClick}>Datensatz wechseln.</button>
       </header>
-      
-        <TabLayout>
-          <div id="Raummonitor">
-            {deviceDataStore && <RoomCard data={deviceDataStore}/>}
-          </div>
-          <div id="Gerätepark">
-            <main className="main-content">
-              {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
-              {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
-              {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
-              {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
-              {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
-              {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
-              {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
-            </main>
-          </div>
-        </TabLayout>
+      <TabLayout>
+        <div id="Überwachnug Gerätepark">
+          <main className="main-content">
+            {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
+            {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
+            {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
+            {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
+            {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
+            {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
+            {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
+          </main>
+        </div>
+        <div id="Raummonitor">
+          {deviceDataStore && <RoomCard data={deviceDataStore}/>}
+        </div>
+      </TabLayout>
     </div>
   );
 }

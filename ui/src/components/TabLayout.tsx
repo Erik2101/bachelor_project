@@ -27,6 +27,7 @@ function TabLayout(props : {
 
                 }
             </ol>
+            <hr className="tab-layout-spacer"></hr>
             <div className="tab-content">
                 {props.children.map((child) => {
                     if (child.props.id !== activeTab) return undefined
