@@ -1,6 +1,4 @@
 import * as d3 from "d3"
-import { lchown } from "fs"
-import { isExternalModuleNameRelative } from "typescript"
 import { DeviceData } from "./proto/frontend_pb"
 import { theme } from "./theme"
 
@@ -151,7 +149,6 @@ export function devicesOfAClassPerStation ( data: Array<DeviceData>) {
 
 export function stationColours(input : Array<DeviceData>) {
     const ret : Array<CaptionColourPair> = []
-    let count = 0
     for (const device of input) {
         let known = false
         const station = device.getLocation().split("-")[0]
@@ -165,7 +162,6 @@ export function stationColours(input : Array<DeviceData>) {
             caption: station,
             colour: ""
             })
-            count++
         }
     }
     const sorted_colour_pairs = ret.sort((a, b) => b.caption.localeCompare(a.caption))

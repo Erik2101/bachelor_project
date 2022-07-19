@@ -168,7 +168,7 @@ function BarChart(props: {
 
     React.useEffect(() => {
         if (data) drawChart()
-    }, [data])
+    }, [data, drawChart])
 
     return (
         <div className="chart-container">

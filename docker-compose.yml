@@ -7,3 +7,28 @@ services:
     ports:
       - "9901:9901"
       - "8080:8080"
+
+  server:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8082:8082"
+    depends_on:
+      - envoy
+    volumes:
+      - .:/app
+      - /app/node-modules
+
+  ui:
+    build:
+      dockerfile: Dockerfile
+      context: ./ui
+    ports:
+      - "3000:3000"
+    depends_on:
+      - envoy
+      - server
+    volumes:
+      - ./ui:/app
+      - /app/node_modules

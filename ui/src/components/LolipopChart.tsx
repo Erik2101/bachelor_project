@@ -15,10 +15,6 @@ function LolipopChart(props : {
     const [data, setData] = React.useState<Array<Dataset>>()
 
     React.useEffect(() => {
-        if (data) drawChart()
-    }, [data])
-
-    React.useEffect(() => {
         updateEnsList()
     }, [props])
 
@@ -122,6 +118,10 @@ function LolipopChart(props : {
                 .attr("transform", "translate(" + margin.left + ", " + chartHeight + ")")
         }          
     }, [data])
+
+    React.useEffect(() => {
+        if (data) drawChart()
+    }, [data, drawChart])
 
     function populateSelect(input: Array<DeviceData>) {
         let classes : Array<string> = []

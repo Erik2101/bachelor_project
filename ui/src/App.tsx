@@ -44,7 +44,6 @@ function App() {
   }, [dataSetCount])
 
   function update(oldStore: Array<DeviceData> | undefined, responses: Array<ChartDatasetResponse>) {
-    {
       if (!oldStore) { oldStore = [] }
       // let ret = oldStore
       let ret : Array<DeviceData> = []
@@ -65,7 +64,6 @@ function App() {
         }
       }
     return ret
-    }
   }
 
   function handleClick() {
