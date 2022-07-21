@@ -10,25 +10,27 @@ services:
 
   server:
     build:
-      dockerfile: Dockerfile
       context: .
+      dockerfile: Dockerfile
     ports:
       - "8082:8082"
-    depends_on:
-      - envoy
+    environment:
+      WATCHPACK_POLLING: "true"
     volumes:
-      - .:/app
-      - /app/node-modules
+      - /app/node_modules
+      - ./:/app
 
   ui:
     build:
-      dockerfile: Dockerfile
       context: ./ui
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    environment:
+      WATCHPACK_POLLING: "true"
     depends_on:
       - envoy
       - server
     volumes:
-      - ./ui:/app
-      - /app/node_modules
+      - /app/ui/node_modules
+      - ./ui:/app/ui
