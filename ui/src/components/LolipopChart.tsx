@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import { DeviceData } from "../proto/frontend_pb";
 import "./ChartContainer.css";
 import { theme } from "../theme";
-import { Dataset, devicesOfAClassPerStation } from "../util";
+import { Dataset, devicesOfAClassPerStation, populateSelect } from "../util";
 
 function LolipopChart(props : {
     data : Array<DeviceData>
@@ -112,39 +112,18 @@ function LolipopChart(props : {
             svg.append("g")
                 .call(d3.axisLeft(y))
                 .attr("transform", "translate(" + margin.left + ", 0)")
+                .style("font-size", "14px")
 
             svg.append("g")
                 .call(d3.axisBottom(x))
                 .attr("transform", "translate(" + margin.left + ", " + chartHeight + ")")
+                .style("font-size", "14px")
         }          
     }, [data])
 
     React.useEffect(() => {
         if (data) drawChart()
     }, [data, drawChart])
-
-    function populateSelect(input: Array<DeviceData>) {
-        let classes : Array<string> = []
-        for (const device of input) {
-            const target_class = device.getClasses()
-            let knownClass = false
-            for (const member of classes) {
-                if (member === target_class) {
-                    knownClass = true
-                }
-            }
-            if (!knownClass) classes.push(target_class)
-        }
-        const sorted_classes = classes.sort((a, b) => b.localeCompare(a))
-        sorted_classes.reverse()
-        let ret = []
-        for (const member of classes) {
-            ret.push(
-                <option value={member} key={ret.length}>{member}</option>
-            )
-        }
-        return ret
-    }
 
     return (
         <div className="chart-container-select">

@@ -10,11 +10,25 @@ import MultiLineChart from './components/MultiLineChart';
 import MultiBarChart from './components/MultiBarChart';
 import LolipopChart from './components/LolipopChart';
 import TabLayout from './components/TabLayout';
+import Popup from './components/Popup';
+
+export type Options = {
+  "station" : string,
+  "room" : string,
+  "device_class" : string
+}
 
 function App() {
 
   const [deviceDataStore, setDeviceDataStore] = React.useState<Array<DeviceData>>()
   const [dataSetCount, setDataSetCount] = React.useState(0)
+  const [filterOptions, setFilterOptions] = React.useState<Options>({
+    "station" : "default",
+    "room" : "default",
+    "device_class" : "default"
+  })
+  const [filteredDeviceData, setFilteredDeviceData] = React.useState<Array<DeviceData>>()
+  const [popupState, setPopupState] = React.useState(false)
 
   React.useEffect(()  => {
       const client = new DataServiceClient("http://localhost:8080");
@@ -39,13 +53,56 @@ function App() {
           setDeviceDataStore(oldStore => update(oldStore, streamData))
         }
       })
-
-      
   }, [dataSetCount])
+
+  React.useEffect(() => {
+    console.log("fired")
+    if(deviceDataStore && filterOptions.device_class === "default" && filterOptions.room === "default" && filterOptions.station === "default") {
+      setFilteredDeviceData(deviceDataStore)
+      console.log(filteredDeviceData)
+    }
+  }, [deviceDataStore])
+
+  React.useEffect(() => {
+    let step1 : Array<DeviceData> = []
+    let step2 : Array<DeviceData> = []
+    let step3 : Array<DeviceData> = []
+    // filter device data according to filter option selections and return remaining devices
+    if (deviceDataStore) {
+      if (filterOptions.device_class !== "default") {
+        for (const device of deviceDataStore) {
+          if (device.getClasses() === filterOptions.device_class) {
+            step1.push(device)
+          }
+        }
+      } else {
+        step1 = deviceDataStore
+      }
+      if (filterOptions.station !== "default") {
+        for (const device of step1) {
+          const temp_split = device.getLocation().split("-")
+          if (temp_split[0] === filterOptions.station) {
+            step2.push(device)
+          }
+        }
+      } else {
+        step2 = step1
+      }
+      if (filterOptions.room === "default") {
+        setFilteredDeviceData(step2)
+      } else {
+        for (const device of step2) {
+          if (device.getLocation() === filterOptions.room) {
+            step3.push(device)
+          }
+        }
+        setFilteredDeviceData(step3)
+      }
+    }
+  }, [filterOptions, deviceDataStore])
 
   function update(oldStore: Array<DeviceData> | undefined, responses: Array<ChartDatasetResponse>) {
       if (!oldStore) { oldStore = [] }
-      // let ret = oldStore
       let ret : Array<DeviceData> = []
       let respPushed = false
       for(const response of responses) {
@@ -74,18 +131,20 @@ function App() {
     <div className="App">
       <header className="app-header">
         <h1 id="app-title">SDC Control Station Med - Visualisierungsbeispiele</h1>
-        <button className="header-button" onClick={handleClick}>Datensatz wechseln.</button>
+        <button className="header-button" onClick={handleClick}>Datensatz wechseln</button>
+        <button className="header-button" onClick={() => {setPopupState(true)}}>Filteroptionen</button>
       </header>
       <TabLayout>
-        <div id="Überwachnug Gerätepark">
+        <div id="Überwachung Gerätepark">
           <main className="main-content">
-            {deviceDataStore && <MultiBarChart data={deviceDataStore}/>}
-            {deviceDataStore && <PieChart typeId={1} data={deviceDataStore}/>}
-            {deviceDataStore && <MultiLineChart data={deviceDataStore}/>}
-            {deviceDataStore && <BarChart typeId={2} data={deviceDataStore}/>}
-            {deviceDataStore && <LolipopChart data={deviceDataStore}/>}
-            {deviceDataStore && <BarChart typeId={1} data={deviceDataStore}/>}
-            {deviceDataStore && <PieChart typeId={2} data={deviceDataStore}/>}
+            {deviceDataStore && <Popup data={deviceDataStore}  current={filterOptions} trigger={popupState} setTrigger={setPopupState} submitFunction={setFilterOptions}/>}
+            {filteredDeviceData && <MultiBarChart data={filteredDeviceData}/>}
+            {filteredDeviceData && <PieChart typeId={1} data={filteredDeviceData}/>}
+            {/* {filteredDeviceData && <MultiLineChart data={filteredDeviceData}/>} */}
+            {filteredDeviceData && <BarChart typeId={2} data={filteredDeviceData}/>}
+            {filteredDeviceData && <LolipopChart data={filteredDeviceData}/>}
+            {filteredDeviceData && <BarChart typeId={1} data={filteredDeviceData}/>}
+            {filteredDeviceData && <PieChart typeId={2} data={filteredDeviceData}/>}
           </main>
         </div>
         <div id="Raummonitor">

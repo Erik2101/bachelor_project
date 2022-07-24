@@ -43,11 +43,11 @@ export type PriorityValuePair = {
 export function totalActivityData( data: Array<DeviceData>) {
     const ret: Array<Dataset> = []
     let active: Dataset = {
-        sectionCaption: "active",
+        sectionCaption: "Aktiv",
         sectionValue: 0
     }
     let inactive: Dataset = {
-        sectionCaption: "inactive",
+        sectionCaption: "Inaktiv",
         sectionValue: 0
     }
     const dummy = data
@@ -62,15 +62,15 @@ export function totalActivityData( data: Array<DeviceData>) {
 export function totalActivityData2( data: Array<DeviceData>) {
     const ret: Array<Dataset> =[]
     let a_u: Dataset = {
-        sectionCaption: "active_usable",
+        sectionCaption: "Aktiv",
         sectionValue: 0
     }
     let ia_u: Dataset = {
-        sectionCaption: "inactive_usable",
+        sectionCaption: "Bereit (Inaktiv)",
         sectionValue: 0
     }
     let ia_uu: Dataset = {
-        sectionCaption: "inactive_unusable",
+        sectionCaption: "Nicht Bereit",
         sectionValue: 0
     }
     const dummy = data
@@ -242,9 +242,8 @@ export function errorSpreadData(input: Array<DeviceData>) {
     } else {
         final_sorted_domain = sorted_domain
     }
-
     for(const prio of data) {
-        if (prio.data.length < final_sorted_domain.length) {
+        if (0 < prio.data.length && prio.data.length < final_sorted_domain.length) {
             for ( let i = 0; i < final_sorted_domain.length; i++ ) {
                 if (prio.data[i].date !== final_sorted_domain[i]) {
                     prio.data.splice(i, 0, {date: final_sorted_domain[i], errNum: 0})
@@ -283,4 +282,80 @@ export function colorArrayFromTwo(start : string, end : string, range : number) 
                             .range(colorArray)
 
     return ordinalScale
+}
+
+export function sToHour(input : number) {
+    const ret = input / 60 / 60
+    return ret
+}
+
+export function populateSelect(input: Array<DeviceData>) {
+    let classes : Array<string> = []
+    for (const device of input) {
+        const target_class = device.getClasses()
+        let knownClass = false
+        for (const member of classes) {
+            if (member === target_class) {
+                knownClass = true
+            }
+        }
+        if (!knownClass) classes.push(target_class)
+    }
+    const sorted_classes = classes.sort((a, b) => b.localeCompare(a))
+    sorted_classes.reverse()
+    let ret = []
+    for (const member of classes) {
+        ret.push(
+            <option value={member} key={ret.length}>{member}</option>
+        )
+    }
+    return ret
+}
+
+export function getStations(input: Array<DeviceData>) {
+    let stations : Array<string> = []
+    for (const device of input) {
+        const split_array = device.getLocation().split("-")
+        let knownStation = false
+        for (const station of stations) {
+            if (station === split_array[0]) {
+                knownStation = true
+            }
+        }
+        if (!knownStation) stations.push(split_array[0])
+    }
+    const sorted_stations = stations.sort((a, b) => b.localeCompare(a))
+    sorted_stations.reverse()
+    let ret = []
+    for (const station of sorted_stations) {
+        ret.push(
+            <option value={station} key={ret.length}>{station}</option>
+        )
+    }
+    return ret
+}
+
+export function getRooms(input : Array<DeviceData>, station: string) {
+    let rooms : Array<string> = []
+    for (const device of input) {
+        const split_array = device.getLocation().split("-")
+        let knownRoom = false
+        for (const room of rooms) {
+            if (room === device.getLocation()) {
+                knownRoom = true
+            }
+        }
+        if (!knownRoom && split_array[0] === station) {
+            rooms.push(device.getLocation())
+        }
+    }
+    const sorted_rooms = rooms.sort((a, b) => b.localeCompare(a))
+    sorted_rooms.reverse()
+    let ret = []
+    for (const room of sorted_rooms) {
+        ret.push(
+            <option value={room} key={ret.length}>{room}</option>
+        )
+    }
+    return ret
 }

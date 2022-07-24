@@ -34,6 +34,10 @@
     color: #D4D4D4;
 }
 
+.header-button:hover {
+    background-color: #4d4c4c;
+}
+
 .tab-layout {
     align-self: flex-start;
     justify-self: flex-start;
@@ -77,6 +81,10 @@
     height: 100%;
     display: flex;
     justify-content: center;
+}
+
+select {
+    font-size: 1em;
 }
 
 .main-content {

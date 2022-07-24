@@ -1,17 +1,16 @@
 .room-card-container {
     display: grid;
     height: 90%;
-    min-height: 300px;
     width: 95%;
-    min-width: 450px;
     background-color: white;
     border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2fr 17fr;
+    grid-template-rows: 1.5fr 10fr 4fr 4fr;
     box-shadow: 3px 3px #424242;
     align-self: center;
     justify-self: center;
     margin-bottom: 10px;
+    padding: 20px;
 }
 
 .room-card-container>select {
@@ -20,8 +19,9 @@
 
 .select-container {
     display: flex;
-    padding: 10px;
     flex-direction: column;
+    align-self: center;
+    justify-self: center;
 }
 
 .select-label,
@@ -39,6 +39,11 @@
     grid-column: span 2;
 }
 
+.indicator {
+    font-weight: 500;
+    padding-left: 10px;
+}
+
 .room-ready-indicator,
 .room-active-indicator {
     border-radius: 50%;
@@ -52,16 +57,6 @@
     line-height: 40px;
     margin-right: 5px;
     margin-left: 20px;
-}
-
-.divider {
-    grid-column: 1 / 7;
-    width: 90%;
-    height: 2px;
-    align-self: center;
-    justify-self: center;
-    background-color: #8F8D8F;
-    border: none;
 }
 
 .table-container {
@@ -94,25 +89,38 @@
 }
 
 .uuid-cell {
-    width: 60%;
+    width: 30%;
+    padding-left: 10px;
 }
 
 .activity-cell,
 .ready-cell,
 .medium-cell {
-    width: 10%;
+    width: 8%;
 }
 
 .high-cell,
 .low-cell {
-    width: 5%,
+    width: 8%;
+}
+
+.staff-cell {
+    width: 15%;
+    padding-left: 10px;
+}
+
+.crt-cell,
+.trt-cell {
+    width: 7, 5%;
+    text-align: center;
 }
 
 .activity-cell,
 .ready-cell,
 .high-cell,
 .medium-cell,
-.low-cell {
+.low-cell,
+.crt-cell {
     text-align: center;
 }
 
@@ -122,4 +130,17 @@
 
 .device-table-body>tr:last-of-type>td:last-of-type {
     border-bottom-right-radius: 10px;
+}
+
+.device-table-head>tr:first-of-type>th:first-of-type {
+    border-top-left-radius: 10px;
+}
+
+.device-table-head>tr:first-of-type>th:last-of-type {
+    border-top-right-radius: 10px;
+}
+
+.room-card-container>.chart-container {
+    grid-column: span 3;
+    grid-row: span 2;
 }

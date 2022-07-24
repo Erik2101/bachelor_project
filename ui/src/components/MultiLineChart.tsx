@@ -64,10 +64,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 {fill: "#F54E1B", stroke: theme.high_prio} // high
             ]
 
-            /* const tooltip = d3.select(".tooltip")
-                                .style("position", "absolute")
-                                .style("opacity", 0); */
-
             const justData = []
             const circleData = []
 
@@ -97,38 +93,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 .attr("stroke", (_, i) => colours[i].stroke)
                 .attr("stroke-width", 1)
                 .attr("class", "line")
-                
-            /* svg.selectAll("circle")
-                .data(circleData)
-                .join(
-                    enter => enter.append("circle"),               
-                    update => update,
-                    exit => exit.remove()
-                )
-                .attr("fill", (_, i) => colours[Math.ceil((i + 1) / domain.length) - 1].stroke)
-                .attr("stroke", "none")
-                .attr("cx", (d, i) => x(new Date(d.date)))
-                .attr("cy", (d, i) => y(d.errNum))
-                .attr("r", 2)
-                
-                .on("mouseover", (element) => select(element.currentTarget).attr("r", 4))
-                .on("mouseout", (element) => select(element.currentTarget).attr("r", 2))
-
-                .on("mousemove", function(event, d) {
-                    tooltip.transition()
-                                .duration(50)
-                                .style("opacity", 1)
-
-                    tooltip.html(d.errNum.toString())
-                            .style("left", d3.pointer(event, window)[0] + "px")
-                            .style("top", (d3.pointer(event, window)[1] - margin.top * 0.8)  + "px");
-                })
-
-                .on("mouseleave", function() {
-                    tooltip.transition()
-                                .duration(50)
-                                .style("opacity", 0)
-                }) */
 
             const chartTitle = "Gerätefehler von " + data.xDomain[0] + " bis " +
             data.xDomain[data.xDomain.length - 1] + " nach Prioritäten"
@@ -194,8 +158,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                         .style("stroke", "#A9A9A9")
                         .style("stroke-width", 1)
                         .style("opacity", "0")
-
-            //const lines = document.getElementsByClassName('line')
         
             const mousePerLine = mouseG.selectAll(".mouse-per-line")
                                         .data(data.dataSet)
@@ -237,6 +199,8 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                         let idx = bisect.left(b.data, xDate)
                                         d3.select(".mouse-line")
                                         .attr("d", () => {
+                                            console.log(new Date(b.data[idx].date))
+                                            console.log(x(new Date(b.data[idx].date)))
                                             let ret = "M"+ x(new Date(b.data[idx].date)) + ", " + (chartHeight + margin.bottom)
                                             ret += " " + x(new Date(b.data[idx].date)) + ", " + (0 + margin.top + margin.bottom)
                                             return ret
@@ -253,7 +217,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                     }
                                     return prevState
                                 })
-                                
                             })
         }
     }, [data])
@@ -270,6 +233,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
     }, [data])
 
     React.useEffect(() => {
+        console.log(props.data)
         setData(errorSpreadData(props.data))
     }, [props])
 

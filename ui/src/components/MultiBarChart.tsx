@@ -2,8 +2,8 @@ import React from "react";
 import * as d3 from "d3";
 import { DeviceData } from "../proto/frontend_pb";
 import "./ChartContainer.css";
-import "./MultiBarChart.css";
 import { theme } from "../theme";
+import { sToHour } from "../util";
 
 function MultiBarChart(props : {
     data : Array<DeviceData>
@@ -40,9 +40,9 @@ function MultiBarChart(props : {
     type DeviceUptime = {
         uuid: string,
         data: {
-            current: number,
-            maintain: number,
-            total: number
+            Aktuell: number,
+            Wartung: number,
+            Gesamt: number
         }
     }
 
@@ -62,11 +62,6 @@ function MultiBarChart(props : {
         } 
     }
 
-    function sToHour(input : number) {
-        const ret = input / 60 / 60
-        return ret
-    }
-
     function ensembleDeviceUptime(input : Array<DeviceData>) {
         const ensembles : Array<EnsembleDeviceList>= []
         for (const device of input) {
@@ -75,9 +70,9 @@ function MultiBarChart(props : {
                 for (const ensemble of ensembles) {
                     for (const item of ensemble.devices) {
                         if (device.getUuid() === item.uuid) {
-                            item.data.current = sToHour(device.getRuntimecurrent())
-                            item.data.maintain = sToHour(device.getRuntimemaintenance() - item.data.current)
-                            item.data.total = sToHour(device.getRuntimetotal() - device.getRuntimemaintenance())
+                            item.data.Aktuell = sToHour(device.getRuntimecurrent())
+                            item.data.Wartung = sToHour(device.getRuntimemaintenance() - item.data.Aktuell)
+                            item.data.Gesamt = sToHour(device.getRuntimetotal() - device.getRuntimemaintenance())
                             devicePushed = true 
                         }
                     }
@@ -88,16 +83,16 @@ function MultiBarChart(props : {
                         dev.push({
                             uuid: member,
                             data: {
-                                total: 0,
-                                maintain: 0,
-                                current: 0
+                                Gesamt: 0,
+                                Wartung: 0,
+                                Aktuell: 0
                             }
                         })
                     }
                     const current = dev[dev.length - 1].data
-                    current.current = sToHour(device.getRuntimecurrent())
-                    current.maintain = sToHour(device.getRuntimemaintenance() - current.current)
-                    current.total = sToHour(device.getRuntimetotal() - device.getRuntimemaintenance())
+                    current.Aktuell = sToHour(device.getRuntimecurrent())
+                    current.Wartung = sToHour(device.getRuntimemaintenance() - current.Aktuell)
+                    current.Gesamt = sToHour(device.getRuntimetotal() - device.getRuntimemaintenance())
                     ensembles.push({
                         ensembleName: device.getLocation(),
                         devices: dev
@@ -146,8 +141,8 @@ function MultiBarChart(props : {
 
             let xMax = 0
             for (const device of data) {
-                const temp_total = device.data.total + device.data.maintain + device.data.current
-                if (temp_total > xMax) xMax = temp_total 
+                const temp_total = device.data.Gesamt + device.data.Wartung + device.data.Aktuell
+                if (temp_total > xMax) xMax = temp_total
             }
 
             const x = d3.scaleLinear()
@@ -155,7 +150,7 @@ function MultiBarChart(props : {
                             .range([0, chartWidth])
                             .nice()
 
-            const subgroups = ["current", "maintain", "total"]
+            const subgroups = ["Aktuell", "Wartung", "Gesamt"]
 
             const colour = d3.scaleOrdinal()
                                 .domain(subgroups)
@@ -203,11 +198,11 @@ function MultiBarChart(props : {
                         if (typeof parent_datum === "object" && parent_datum !== null && "key" in parent_datum) {
                             const subgroup_name = parent_datum.key
                             let subgroup_value
-                            if (subgroup_name === "total") {
-                                subgroup_value = Math.round((d.data[subgroup_name] + d.data["maintain"] + d.data["current"]) * 10) / 10
+                            if (subgroup_name === "Gesamt") {
+                                subgroup_value = Math.round((d.data[subgroup_name] + d.data["Wartung"] + d.data["Aktuell"]) * 10) / 10
                             } else {
-                                if (subgroup_name === "maintain") {
-                                    subgroup_value = Math.round((d.data[subgroup_name] + d.data["current"]) * 10) / 10
+                                if (subgroup_name === "Wartung") {
+                                    subgroup_value = Math.round((d.data[subgroup_name] + d.data["Aktuell"]) * 10) / 10
                                 } else {
                                     subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
                                 }
@@ -239,7 +234,8 @@ function MultiBarChart(props : {
 
             let yAxis = svg.append("g")
                             .call(d3.axisLeft(y))
-                            .attr("transform", "translate(" + margin.left + ", 0)") 
+                            .attr("transform", "translate(" + margin.left + ", 0)")
+                            .style("font-size", "14px")
 
             yAxis.selectAll(".tick")
                     .data(data)
@@ -264,7 +260,8 @@ function MultiBarChart(props : {
             
             svg.append("g")
                 .call(d3.axisBottom(x))
-                .attr("transform", "translate(" + margin.left + ", " +  chartHeight + ")") 
+                .attr("transform", "translate(" + margin.left + ", " +  chartHeight + ")")
+                .style("font-size", "14px")
 
             const vert_gridlines = d3.axisBottom(x)
                 .tickFormat( _ => "")

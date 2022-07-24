@@ -212,9 +212,9 @@ function PieChart (props: {
             final_return = (
             <div className="chart-container-select">
                 <div className="select-container">
-                    <label className="select-label">Station:</label>
+                    <label className="select-label">Geräteklasse:</label>
                     <select className="class-select" onChange={handleClassChange}>
-                        <option value="default">-Station wählen:-</option>
+                        <option value="default">-Geräteklasse wählen:-</option>
                         {populateSelect(props.data)}
                     </select>
                 </div>

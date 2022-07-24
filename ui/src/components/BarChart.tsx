@@ -145,10 +145,12 @@ function BarChart(props: {
         svg.append("g")
             .call(d3.axisBottom(x).tickFormat(null).tickSizeOuter(0))
             .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
+            .style("font-size", "14px")
 
         svg.append("g")
             .call(d3.axisLeft(y))
-            .attr("transform", "translate(" + margin.left + ", 0)") 
+            .attr("transform", "translate(" + margin.left + ", 0)")
+            .style("font-size", "14px")
                             
     }, [data, title, colours])
 

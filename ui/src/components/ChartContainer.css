@@ -28,7 +28,7 @@
 .chart-title {
     padding-left: 15%;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 1.2em;
     align-self: center;
 }
 
@@ -42,7 +42,7 @@
 
 .tooltip {
     position: absolute;
-    font-size: 0.8em;
+    font-size: 1em;
     background-color: #424242;
     color: #D4D4D4;
     padding: 5px;
