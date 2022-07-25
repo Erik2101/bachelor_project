@@ -138,7 +138,7 @@ function BarChart(props: {
                 .attr("x", (containerWidth / 2))             
                 .attr("y", margin.top )
                 .attr("text-anchor", "middle")  
-                .style("font-size", "1em")
+                .style("font-size", "1.2em")
                 .style("font-weight", "600")
                 .text(title)
                             

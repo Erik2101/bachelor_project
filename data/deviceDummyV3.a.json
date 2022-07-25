@@ -398,13 +398,13 @@
         "errors": [
             {
                 "id": 8667,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 15:57:44"
             },
             {
                 "id": 9018,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-07 09:35:59"
             },
@@ -433,7 +433,7 @@
         "errors": [
             {
                 "id": 9273,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-08 22:32:15"
             },
@@ -800,7 +800,7 @@
         "errors": [
             {
                 "id": 4864,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-08 09:54:46"
             },
@@ -852,13 +852,13 @@
         "errors": [
             {
                 "id": 7044,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-09 08:05:41"
             },
             {
                 "id": 7442,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-10 14:46:21"
             },
@@ -956,13 +956,13 @@
         "errors": [
             {
                 "id": 4382,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-08 13:46:30"
             },
             {
                 "id": 1655,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-10 04:33:08"
             },
@@ -1157,7 +1157,7 @@
         "errors": [
             {
                 "id": 9183,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-07 18:22:24"
             },
@@ -1301,7 +1301,7 @@
         "errors": [
             {
                 "id": 2143,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-07 16:36:25"
             },
@@ -1330,13 +1330,13 @@
         "errors": [
             {
                 "id": 6990,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-07 15:27:29"
             },
             {
                 "id": 3621,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-07 06:40:33"
             },
@@ -1480,13 +1480,13 @@
         "errors": [
             {
                 "id": 2975,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-09 16:09:53"
             },
             {
                 "id": 890,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 19:25:45"
             },
@@ -1814,7 +1814,7 @@
         "errors": [
             {
                 "id": 8363,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-10 08:30:04"
             },
@@ -2032,13 +2032,13 @@
         "errors": [
             {
                 "id": 2212,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-09 21:29:35"
             },
             {
                 "id": 318,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-08 03:52:03"
             },
@@ -2067,7 +2067,7 @@
         "errors": [
             {
                 "id": 4353,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 18:26:54"
             },
@@ -2234,7 +2234,7 @@
         "errors": [
             {
                 "id": 5688,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-09 19:12:14"
             },
@@ -2769,7 +2769,7 @@
         "errors": [
             {
                 "id": 613,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-08 14:10:36"
             },
@@ -2826,7 +2826,7 @@
         "errors": [
             {
                 "id": 7316,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-08 13:38:14"
             },
@@ -2970,7 +2970,7 @@
         "errors": [
             {
                 "id": 9003,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-09 09:17:06"
             },
@@ -3101,7 +3101,7 @@
         "errors": [
             {
                 "id": 52,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-07 12:30:51"
             },
@@ -3176,13 +3176,13 @@
         "errors": [
             {
                 "id": 4504,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-07 17:06:17"
             },
             {
                 "id": 2413,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-10 16:44:39"
             },
@@ -3635,13 +3635,13 @@
         "errors": [
             {
                 "id": 8029,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-07 10:50:43"
             },
             {
                 "id": 8609,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-08 22:04:56"
             },
@@ -3859,13 +3859,13 @@
         "errors": [
             {
                 "id": 7793,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-08 18:57:32"
             },
             {
                 "id": 4934,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-08 13:45:33"
             },
@@ -3940,7 +3940,7 @@
         "errors": [
             {
                 "id": 2151,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-07 18:48:16"
             },
@@ -3969,7 +3969,7 @@
         "errors": [
             {
                 "id": 2458,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-08 00:26:54"
             },
@@ -4422,13 +4422,13 @@
         "errors": [
             {
                 "id": 34,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-08 16:38:11"
             },
             {
                 "id": 9968,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-07 19:42:44"
             },
@@ -4687,7 +4687,7 @@
         "errors": [
             {
                 "id": 968,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-09 04:10:42"
             },
@@ -4979,13 +4979,13 @@
         "errors": [
             {
                 "id": 2832,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-10 14:59:11"
             },
             {
                 "id": 3626,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-08 12:52:41"
             },
@@ -5065,7 +5065,7 @@
         "errors": [
             {
                 "id": 4517,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-07 12:38:13"
             },
@@ -5094,13 +5094,13 @@
         "errors": [
             {
                 "id": 1011,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-08 09:10:40"
             },
             {
                 "id": 3767,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 07:48:52"
             },
@@ -5663,13 +5663,13 @@
         "errors": [
             {
                 "id": 645,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 08:48:41"
             },
             {
                 "id": 8962,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 04:08:10"
             },
@@ -6077,7 +6077,7 @@
         "errors": [
             {
                 "id": 8201,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-09 17:22:56"
             },
@@ -6111,13 +6111,13 @@
         "errors": [
             {
                 "id": 4384,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-09 05:54:03"
             },
             {
                 "id": 3126,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-07 21:31:44"
             },
@@ -6599,7 +6599,7 @@
         "errors": [
             {
                 "id": 7088,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-09 19:31:44"
             },
@@ -6812,7 +6812,7 @@
         "errors": [
             {
                 "id": 9374,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-10 12:42:09"
             },
@@ -6864,13 +6864,13 @@
         "errors": [
             {
                 "id": 4271,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-10 08:11:30"
             },
             {
                 "id": 5715,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 04:01:10"
             },
@@ -7205,7 +7205,7 @@
         "errors": [
             {
                 "id": 9850,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-09 21:12:10"
             },
@@ -7280,7 +7280,7 @@
         "errors": [
             {
                 "id": 8527,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-08 01:11:00"
             },
@@ -7452,13 +7452,13 @@
         "errors": [
             {
                 "id": 2885,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-07 11:38:12"
             },
             {
                 "id": 6364,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-10 01:47:26"
             },
@@ -7607,13 +7607,13 @@
         "errors": [
             {
                 "id": 3199,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-08 08:00:44"
             },
             {
                 "id": 2628,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-08 18:20:38"
             },
@@ -7642,13 +7642,13 @@
         "errors": [
             {
                 "id": 4335,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-09 13:11:35"
             },
             {
                 "id": 6650,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-07 19:29:43"
             },
@@ -7677,7 +7677,7 @@
         "errors": [
             {
                 "id": 126,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-10 18:44:47"
             },
@@ -7734,13 +7734,13 @@
         "errors": [
             {
                 "id": 1904,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-07 11:41:48"
             },
             {
                 "id": 9410,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-08 08:16:28"
             },
@@ -7815,7 +7815,7 @@
         "errors": [
             {
                 "id": 6491,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-07 07:10:20"
             },
@@ -8212,13 +8212,13 @@
         "errors": [
             {
                 "id": 9636,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-10 02:30:45"
             },
             {
                 "id": 241,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-10 12:48:51"
             },
@@ -8469,7 +8469,7 @@
         "errors": [
             {
                 "id": 813,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-09 00:35:09"
             },
@@ -8549,7 +8549,7 @@
         "errors": [
             {
                 "id": 9864,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-09 09:05:34"
             },
@@ -8721,13 +8721,13 @@
         "errors": [
             {
                 "id": 6774,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-08 01:03:20"
             },
             {
                 "id": 7640,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-09 20:45:12"
             },
@@ -9313,7 +9313,7 @@
         "errors": [
             {
                 "id": 1748,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-08 14:58:07"
             },
@@ -9807,7 +9807,7 @@
         "errors": [
             {
                 "id": 785,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-08 00:48:48"
             },
@@ -10392,13 +10392,13 @@
         "errors": [
             {
                 "id": 1139,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-09 01:48:02"
             },
             {
                 "id": 9563,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-08 08:33:17"
             },
@@ -10427,7 +10427,7 @@
         "errors": [
             {
                 "id": 9381,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-10 00:23:23"
             },
@@ -10479,7 +10479,7 @@
         "errors": [
             {
                 "id": 3266,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-08 06:20:36"
             },
@@ -10973,7 +10973,7 @@
         "errors": [
             {
                 "id": 3497,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-09 16:17:11"
             },
@@ -11519,13 +11519,13 @@
         "errors": [
             {
                 "id": 6023,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-08 00:00:52"
             },
             {
                 "id": 1492,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-10 09:39:45"
             },
@@ -11738,7 +11738,7 @@
         "errors": [
             {
                 "id": 4926,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-10 20:32:49"
             },
@@ -12040,7 +12040,7 @@
         "errors": [
             {
                 "id": 6879,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-07 04:45:34"
             },
@@ -12069,13 +12069,13 @@
         "errors": [
             {
                 "id": 4312,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-09 07:26:53"
             },
             {
                 "id": 2624,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-07 21:53:27"
             },
@@ -12109,7 +12109,7 @@
         "errors": [
             {
                 "id": 7546,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-10 23:01:18"
             },
@@ -12672,7 +12672,7 @@
         "errors": [
             {
                 "id": 5861,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-09 22:58:50"
             },
@@ -12908,13 +12908,13 @@
         "errors": [
             {
                 "id": 2526,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 19:38:02"
             },
             {
                 "id": 9924,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-10 15:04:42"
             },
@@ -12989,13 +12989,13 @@
         "errors": [
             {
                 "id": 9478,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-10 19:44:15"
             },
             {
                 "id": 9743,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-08 14:33:40"
             },
@@ -13305,13 +13305,13 @@
         "errors": [
             {
                 "id": 7525,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 14:04:46"
             },
             {
                 "id": 6796,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 19:22:17"
             },
@@ -13603,7 +13603,7 @@
         "errors": [
             {
                 "id": 7730,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 00:37:10"
             },
@@ -13982,7 +13982,7 @@
         "errors": [
             {
                 "id": 7496,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-12 14:58:29"
             },
@@ -14034,13 +14034,13 @@
         "errors": [
             {
                 "id": 1985,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 13:31:41"
             },
             {
                 "id": 1524,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 01:46:32"
             },
@@ -14207,13 +14207,13 @@
         "errors": [
             {
                 "id": 2046,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 10:34:44"
             },
             {
                 "id": 511,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-13 11:06:29"
             },
@@ -14275,13 +14275,13 @@
         "errors": [
             {
                 "id": 3973,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 14:28:47"
             },
             {
                 "id": 4522,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 04:17:19"
             },
@@ -15010,13 +15010,13 @@
         "errors": [
             {
                 "id": 3665,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 04:15:46"
             },
             {
                 "id": 3620,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 22:00:59"
             },
@@ -15847,7 +15847,7 @@
         "errors": [
             {
                 "id": 3515,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 11:02:24"
             },
@@ -15955,7 +15955,7 @@
         "errors": [
             {
                 "id": 8436,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 16:46:12"
             },
@@ -16224,7 +16224,7 @@
         "errors": [
             {
                 "id": 881,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 03:23:29"
             },
@@ -16350,7 +16350,7 @@
         "errors": [
             {
                 "id": 2174,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-11 16:45:01"
             },
@@ -16517,13 +16517,13 @@
         "errors": [
             {
                 "id": 9319,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-11 01:30:11"
             },
             {
                 "id": 9129,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 05:14:32"
             },
@@ -17165,13 +17165,13 @@
         "errors": [
             {
                 "id": 9022,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 22:56:32"
             },
             {
                 "id": 8459,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 15:13:02"
             },
@@ -17573,13 +17573,13 @@
         "errors": [
             {
                 "id": 2934,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 20:19:58"
             },
             {
                 "id": 2808,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 14:12:17"
             },
@@ -17705,13 +17705,13 @@
         "errors": [
             {
                 "id": 8905,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 04:28:04"
             },
             {
                 "id": 4365,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 10:46:53"
             },
@@ -17988,13 +17988,13 @@
         "errors": [
             {
                 "id": 4843,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 21:03:09"
             },
             {
                 "id": 7501,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-11 07:53:32"
             },
@@ -18184,7 +18184,7 @@
         "errors": [
             {
                 "id": 9057,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 18:24:17"
             },
@@ -19568,7 +19568,7 @@
         "errors": [
             {
                 "id": 7795,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 08:41:01"
             },
@@ -19850,13 +19850,13 @@
         "errors": [
             {
                 "id": 6148,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 17:41:42"
             },
             {
                 "id": 5648,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 20:25:10"
             },
@@ -20023,13 +20023,13 @@
         "errors": [
             {
                 "id": 603,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 17:21:25"
             },
             {
                 "id": 3562,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 23:32:15"
             },
@@ -20224,13 +20224,13 @@
         "errors": [
             {
                 "id": 4133,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 11:20:30"
             },
             {
                 "id": 2502,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 12:42:17"
             },
@@ -20287,7 +20287,7 @@
         "errors": [
             {
                 "id": 1740,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 13:18:57"
             },
@@ -20362,13 +20362,13 @@
         "errors": [
             {
                 "id": 7842,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 07:30:31"
             },
             {
                 "id": 337,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 22:23:26"
             },
@@ -20992,13 +20992,13 @@
         "errors": [
             {
                 "id": 8070,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 14:03:05"
             },
             {
                 "id": 7762,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 02:17:06"
             },
@@ -21078,7 +21078,7 @@
         "errors": [
             {
                 "id": 2942,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 11:14:56"
             },
@@ -21412,13 +21412,13 @@
         "errors": [
             {
                 "id": 9067,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 09:49:22"
             },
             {
                 "id": 3380,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 08:02:54"
             },
@@ -21820,7 +21820,7 @@
         "errors": [
             {
                 "id": 9023,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 08:14:54"
             },
@@ -22464,13 +22464,13 @@
         "errors": [
             {
                 "id": 168,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 03:52:01"
             },
             {
                 "id": 6162,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-11 09:18:09"
             },
@@ -22568,7 +22568,7 @@
         "errors": [
             {
                 "id": 3540,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 19:48:37"
             },
@@ -22689,13 +22689,13 @@
         "errors": [
             {
                 "id": 4471,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 09:50:14"
             },
             {
                 "id": 6197,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 07:35:59"
             },
@@ -22793,7 +22793,7 @@
         "errors": [
             {
                 "id": 6401,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 10:35:43"
             },
@@ -22960,13 +22960,13 @@
         "errors": [
             {
                 "id": 3692,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 07:08:10"
             },
             {
                 "id": 9578,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 04:10:51"
             },
@@ -23189,13 +23189,13 @@
         "errors": [
             {
                 "id": 2947,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 23:18:56"
             },
             {
                 "id": 1286,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 12:01:49"
             },
@@ -23551,7 +23551,7 @@
         "errors": [
             {
                 "id": 4865,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 09:57:02"
             },
@@ -23654,13 +23654,13 @@
         "errors": [
             {
                 "id": 662,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 17:02:39"
             },
             {
                 "id": 7725,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 10:35:13"
             },
@@ -24338,7 +24338,7 @@
         "errors": [
             {
                 "id": 4869,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 17:51:01"
             },
@@ -24482,13 +24482,13 @@
         "errors": [
             {
                 "id": 9856,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 14:19:52"
             },
             {
                 "id": 952,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-13 11:53:46"
             },
@@ -24540,13 +24540,13 @@
         "errors": [
             {
                 "id": 3795,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 21:47:15"
             },
             {
                 "id": 3634,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-11 03:42:20"
             },
@@ -24856,13 +24856,13 @@
         "errors": [
             {
                 "id": 8898,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 08:53:47"
             },
             {
                 "id": 5259,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 11:53:50"
             },
@@ -25029,7 +25029,7 @@
         "errors": [
             {
                 "id": 6803,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 10:56:31"
             },
@@ -25229,7 +25229,7 @@
         "errors": [
             {
                 "id": 8109,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 19:33:48"
             },
@@ -25304,7 +25304,7 @@
         "errors": [
             {
                 "id": 6141,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 12:13:00"
             },
@@ -25701,13 +25701,13 @@
         "errors": [
             {
                 "id": 9305,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 06:34:20"
             },
             {
                 "id": 5128,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 13:56:23"
             },
@@ -25759,13 +25759,13 @@
         "errors": [
             {
                 "id": 1878,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 16:20:00"
             },
             {
                 "id": 7490,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 19:07:24"
             },
@@ -25794,13 +25794,13 @@
         "errors": [
             {
                 "id": 9206,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 23:37:42"
             },
             {
                 "id": 7224,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 15:23:22"
             },
@@ -26128,13 +26128,13 @@
         "errors": [
             {
                 "id": 4421,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 22:07:21"
             },
             {
                 "id": 2224,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 04:00:06"
             },
@@ -26616,7 +26616,7 @@
         "errors": [
             {
                 "id": 2780,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 03:58:31"
             },
@@ -26737,7 +26737,7 @@
         "errors": [
             {
                 "id": 6534,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 15:09:29"
             },
@@ -26766,13 +26766,13 @@
         "errors": [
             {
                 "id": 4,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 02:37:49"
             },
             {
                 "id": 9278,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-13 04:46:41"
             },
@@ -27036,7 +27036,7 @@
         "errors": [
             {
                 "id": 4001,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-11 02:44:28"
             },
@@ -27456,7 +27456,7 @@
         "errors": [
             {
                 "id": 8570,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 03:10:51"
             },
@@ -27531,7 +27531,7 @@
         "errors": [
             {
                 "id": 5559,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-13 13:37:41"
             },
@@ -27749,7 +27749,7 @@
         "errors": [
             {
                 "id": 9692,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 13:52:50"
             },
@@ -28789,13 +28789,13 @@
         "errors": [
             {
                 "id": 3127,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 13:47:00"
             },
             {
                 "id": 2579,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 08:05:40"
             },
@@ -28824,13 +28824,13 @@
         "errors": [
             {
                 "id": 4465,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 18:28:09"
             },
             {
                 "id": 9844,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 18:02:50"
             },
@@ -29434,13 +29434,13 @@
         "errors": [
             {
                 "id": 7588,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 13:50:53"
             },
             {
                 "id": 1596,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 17:28:58"
             },
@@ -29860,7 +29860,7 @@
         "errors": [
             {
                 "id": 4691,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 12:42:35"
             },
@@ -29981,13 +29981,13 @@
         "errors": [
             {
                 "id": 4984,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 00:09:50"
             },
             {
                 "id": 7600,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 03:44:39"
             },
@@ -30067,13 +30067,13 @@
         "errors": [
             {
                 "id": 6711,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 03:01:45"
             },
             {
                 "id": 790,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 07:01:03"
             },
@@ -30554,7 +30554,7 @@
         "errors": [
             {
                 "id": 8615,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 12:34:32"
             },
@@ -30726,13 +30726,13 @@
         "errors": [
             {
                 "id": 4637,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 02:30:57"
             },
             {
                 "id": 3024,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 17:57:01"
             },
@@ -31065,7 +31065,7 @@
         "errors": [
             {
                 "id": 7329,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-11 08:38:26"
             },
@@ -31191,7 +31191,7 @@
         "errors": [
             {
                 "id": 7623,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 05:38:02"
             },
@@ -31335,7 +31335,7 @@
         "errors": [
             {
                 "id": 474,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-11 07:32:25"
             },
@@ -31484,7 +31484,7 @@
         "errors": [
             {
                 "id": 4354,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 02:41:37"
             },
@@ -32024,7 +32024,7 @@
         "errors": [
             {
                 "id": 6252,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 08:48:20"
             },
@@ -32053,7 +32053,7 @@
         "errors": [
             {
                 "id": 6753,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-11 00:21:43"
             },
@@ -32312,7 +32312,7 @@
         "errors": [
             {
                 "id": 9105,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 17:31:34"
             },
@@ -32829,13 +32829,13 @@
         "errors": [
             {
                 "id": 6085,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-12 13:53:49"
             },
             {
                 "id": 1587,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 13:56:41"
             },
@@ -33370,7 +33370,7 @@
         "errors": [
             {
                 "id": 1974,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 11:57:38"
             },
@@ -33422,13 +33422,13 @@
         "errors": [
             {
                 "id": 8217,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 12:51:28"
             },
             {
                 "id": 9013,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 19:28:41"
             },
@@ -33572,7 +33572,7 @@
         "errors": [
             {
                 "id": 7120,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 21:26:51"
             },
@@ -33652,13 +33652,13 @@
         "errors": [
             {
                 "id": 2196,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-11 20:02:53"
             },
             {
                 "id": 7777,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 23:08:32"
             },
@@ -33905,7 +33905,7 @@
         "errors": [
             {
                 "id": 5903,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 23:47:07"
             },
@@ -33934,7 +33934,7 @@
         "errors": [
             {
                 "id": 202,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 21:54:53"
             },
@@ -34055,7 +34055,7 @@
         "errors": [
             {
                 "id": 8034,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 15:13:22"
             },
@@ -34135,7 +34135,7 @@
         "errors": [
             {
                 "id": 5438,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-13 16:01:01"
             },
@@ -34801,7 +34801,7 @@
         "errors": [
             {
                 "id": 4996,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 07:56:35"
             },
@@ -34928,7 +34928,7 @@
         "errors": [
             {
                 "id": 8262,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-12 04:08:29"
             },
@@ -34957,13 +34957,13 @@
         "errors": [
             {
                 "id": 8150,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 23:12:20"
             },
             {
                 "id": 4717,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 01:17:37"
             },
@@ -35319,13 +35319,13 @@
         "errors": [
             {
                 "id": 2513,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 21:36:16"
             },
             {
                 "id": 7884,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 15:33:25"
             },
@@ -35354,13 +35354,13 @@
         "errors": [
             {
                 "id": 7168,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 01:32:36"
             },
             {
                 "id": 3984,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 10:48:01"
             },
@@ -35923,7 +35923,7 @@
         "errors": [
             {
                 "id": 3620,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 18:05:38"
             },
@@ -36074,7 +36074,7 @@
         "errors": [
             {
                 "id": 403,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 15:10:03"
             },
@@ -36103,7 +36103,7 @@
         "errors": [
             {
                 "id": 5104,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 05:41:40"
             },
@@ -37023,13 +37023,13 @@
         "errors": [
             {
                 "id": 1356,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-12 00:43:23"
             },
             {
                 "id": 2563,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 22:40:44"
             },
@@ -37224,7 +37224,7 @@
         "errors": [
             {
                 "id": 9146,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-13 09:21:38"
             },
@@ -37253,13 +37253,13 @@
         "errors": [
             {
                 "id": 699,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 04:56:28"
             },
             {
                 "id": 2744,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 14:53:25"
             },
@@ -37403,7 +37403,7 @@
         "errors": [
             {
                 "id": 6754,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 19:35:55"
             },
@@ -37639,7 +37639,7 @@
         "errors": [
             {
                 "id": 7077,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-11 15:02:20"
             },
@@ -37673,7 +37673,7 @@
         "errors": [
             {
                 "id": 4942,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-13 09:53:50"
             },
@@ -38379,7 +38379,7 @@
         "errors": [
             {
                 "id": 7192,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 18:03:06"
             },
@@ -39281,7 +39281,7 @@
         "errors": [
             {
                 "id": 2294,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 20:19:57"
             },
@@ -39494,13 +39494,13 @@
         "errors": [
             {
                 "id": 2316,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 12:45:38"
             },
             {
                 "id": 3307,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 12:46:46"
             },
@@ -39644,13 +39644,13 @@
         "errors": [
             {
                 "id": 2408,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 22:28:24"
             },
             {
                 "id": 2477,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 12:28:06"
             },
@@ -39679,7 +39679,7 @@
         "errors": [
             {
                 "id": 3531,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 22:34:31"
             },
@@ -39943,7 +39943,7 @@
         "errors": [
             {
                 "id": 4426,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 12:10:47"
             },
@@ -40291,7 +40291,7 @@
         "errors": [
             {
                 "id": 7099,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 16:37:27"
             },
@@ -40435,13 +40435,13 @@
         "errors": [
             {
                 "id": 7194,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 10:25:57"
             },
             {
                 "id": 2126,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-12 19:40:11"
             },
@@ -40682,13 +40682,13 @@
         "errors": [
             {
                 "id": 7039,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 16:35:57"
             },
             {
                 "id": 8934,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 14:25:05"
             },
@@ -41279,13 +41279,13 @@
         "errors": [
             {
                 "id": 1702,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-11 11:26:35"
             },
             {
                 "id": 1866,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 03:51:32"
             },
@@ -41498,7 +41498,7 @@
         "errors": [
             {
                 "id": 3610,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 02:14:38"
             },
@@ -42291,13 +42291,13 @@
         "errors": [
             {
                 "id": 673,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 19:40:54"
             },
             {
                 "id": 3138,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 14:34:17"
             },
@@ -42607,7 +42607,7 @@
         "errors": [
             {
                 "id": 2411,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 15:26:20"
             },
@@ -42820,13 +42820,13 @@
         "errors": [
             {
                 "id": 1468,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 08:53:05"
             },
             {
                 "id": 8231,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 07:33:16"
             },
@@ -42924,7 +42924,7 @@
         "errors": [
             {
                 "id": 6508,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 08:19:05"
             },
@@ -43022,7 +43022,7 @@
         "errors": [
             {
                 "id": 5764,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 14:20:17"
             },
@@ -43051,7 +43051,7 @@
         "errors": [
             {
                 "id": 3738,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 20:18:27"
             },
@@ -43195,7 +43195,7 @@
         "errors": [
             {
                 "id": 7158,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 07:25:12"
             },
@@ -43500,7 +43500,7 @@
         "errors": [
             {
                 "id": 8889,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-13 16:38:18"
             },
@@ -43759,7 +43759,7 @@
         "errors": [
             {
                 "id": 2662,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 05:21:44"
             },
@@ -43982,13 +43982,13 @@
         "errors": [
             {
                 "id": 3688,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 07:48:00"
             },
             {
                 "id": 8088,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 22:58:01"
             },
@@ -44063,13 +44063,13 @@
         "errors": [
             {
                 "id": 1159,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-11 02:34:06"
             },
             {
                 "id": 5876,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 10:36:56"
             },
@@ -44259,7 +44259,7 @@
         "errors": [
             {
                 "id": 2794,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-13 20:18:23"
             },
@@ -44426,7 +44426,7 @@
         "errors": [
             {
                 "id": 765,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 16:35:10"
             },
@@ -44455,13 +44455,13 @@
         "errors": [
             {
                 "id": 9766,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 15:25:54"
             },
             {
                 "id": 9900,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 00:05:02"
             },
@@ -44697,13 +44697,13 @@
         "errors": [
             {
                 "id": 8784,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 05:20:26"
             },
             {
                 "id": 9021,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-12 18:00:52"
             },
@@ -44806,7 +44806,7 @@
         "errors": [
             {
                 "id": 5329,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-11 06:48:17"
             },
@@ -44835,13 +44835,13 @@
         "errors": [
             {
                 "id": 8765,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-11 08:45:20"
             },
             {
                 "id": 6593,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-12 10:26:11"
             },
@@ -44962,7 +44962,7 @@
         "errors": [
             {
                 "id": 9746,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 12:12:06"
             },
@@ -45014,7 +45014,7 @@
         "errors": [
             {
                 "id": 754,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-11 18:38:00"
             },
@@ -45089,7 +45089,7 @@
         "errors": [
             {
                 "id": 7831,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-11 02:28:22"
             },
@@ -45187,7 +45187,7 @@
         "errors": [
             {
                 "id": 5258,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-12 22:28:03"
             },
@@ -45354,7 +45354,7 @@
         "errors": [
             {
                 "id": 1307,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 21:40:02"
             },
@@ -45705,13 +45705,13 @@
         "errors": [
             {
                 "id": 7814,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-11 23:17:41"
             },
             {
                 "id": 1539,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 03:52:15"
             },
@@ -46453,13 +46453,13 @@
         "errors": [
             {
                 "id": 2122,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 01:45:54"
             },
             {
                 "id": 1351,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-11 15:20:11"
             },
@@ -46649,7 +46649,7 @@
         "errors": [
             {
                 "id": 7256,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 04:35:44"
             },
@@ -46896,13 +46896,13 @@
         "errors": [
             {
                 "id": 5008,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-12 20:58:07"
             },
             {
                 "id": 9085,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 03:16:47"
             },
@@ -46931,13 +46931,13 @@
         "errors": [
             {
                 "id": 7210,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-12 08:23:52"
             },
             {
                 "id": 8998,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 08:38:15"
             },
@@ -47139,7 +47139,7 @@
         "errors": [
             {
                 "id": 9431,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 03:02:31"
             },
@@ -47237,13 +47237,13 @@
         "errors": [
             {
                 "id": 2522,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-13 02:03:17"
             },
             {
                 "id": 7140,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-11 23:22:17"
             },
@@ -47341,7 +47341,7 @@
         "errors": [
             {
                 "id": 1570,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-13 22:52:54"
             },
@@ -47858,7 +47858,7 @@
         "errors": [
             {
                 "id": 6989,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-12 06:21:42"
             },
@@ -48063,13 +48063,13 @@
         "errors": [
             {
                 "id": 3168,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-16 07:36:29"
             },
             {
                 "id": 3437,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-14 21:56:22"
             },
@@ -48627,13 +48627,13 @@
         "errors": [
             {
                 "id": 6817,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-14 19:34:02"
             },
             {
                 "id": 1487,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-14 04:57:30"
             },
@@ -48800,7 +48800,7 @@
         "errors": [
             {
                 "id": 6805,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-16 04:03:18"
             },
@@ -49243,13 +49243,13 @@
         "errors": [
             {
                 "id": 8741,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-14 10:44:01"
             },
             {
                 "id": 5096,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-14 08:50:32"
             },
@@ -49577,13 +49577,13 @@
         "errors": [
             {
                 "id": 1587,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-16 08:45:52"
             },
             {
                 "id": 1366,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-15 04:27:17"
             },
@@ -49727,7 +49727,7 @@
         "errors": [
             {
                 "id": 2115,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-14 19:30:50"
             },
@@ -49756,13 +49756,13 @@
         "errors": [
             {
                 "id": 8142,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-15 17:33:36"
             },
             {
                 "id": 5876,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-14 17:11:18"
             },
@@ -50366,7 +50366,7 @@
         "errors": [
             {
                 "id": 2956,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-16 17:32:50"
             },
@@ -50510,7 +50510,7 @@
         "errors": [
             {
                 "id": 6855,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-14 13:08:56"
             },
@@ -51078,13 +51078,13 @@
         "errors": [
             {
                 "id": 7803,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-14 01:46:07"
             },
             {
                 "id": 5097,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-15 18:29:24"
             },
@@ -51366,7 +51366,7 @@
         "errors": [
             {
                 "id": 4217,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-15 21:54:43"
             },
@@ -51441,13 +51441,13 @@
         "errors": [
             {
                 "id": 8900,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-16 23:17:10"
             },
             {
                 "id": 5252,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-15 22:59:39"
             },
@@ -51476,13 +51476,13 @@
         "errors": [
             {
                 "id": 3336,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-16 17:10:16"
             },
             {
                 "id": 9192,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-16 08:52:43"
             },
@@ -51746,7 +51746,7 @@
         "errors": [
             {
                 "id": 9078,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-16 02:24:27"
             },
@@ -51821,7 +51821,7 @@
         "errors": [
             {
                 "id": 7278,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-14 17:59:42"
             },
@@ -52389,7 +52389,7 @@
         "errors": [
             {
                 "id": 5705,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 22:19:51"
             },
@@ -52985,13 +52985,13 @@
         "errors": [
             {
                 "id": 4122,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-19 01:10:55"
             },
             {
                 "id": 360,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-21 12:40:44"
             },
@@ -53577,13 +53577,13 @@
         "errors": [
             {
                 "id": 1070,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-18 20:15:10"
             },
             {
                 "id": 655,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 16:51:22"
             },
@@ -53750,13 +53750,13 @@
         "errors": [
             {
                 "id": 2045,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-21 01:38:13"
             },
             {
                 "id": 8862,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 14:07:50"
             },
@@ -53808,7 +53808,7 @@
         "errors": [
             {
                 "id": 3278,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 13:38:44"
             },
@@ -53929,13 +53929,13 @@
         "errors": [
             {
                 "id": 9861,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 01:15:05"
             },
             {
                 "id": 8987,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 06:19:14"
             },
@@ -53987,13 +53987,13 @@
         "errors": [
             {
                 "id": 1929,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-17 11:39:19"
             },
             {
                 "id": 4596,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-17 02:51:18"
             },
@@ -54321,7 +54321,7 @@
         "errors": [
             {
                 "id": 205,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-17 07:23:03"
             },
@@ -54442,7 +54442,7 @@
         "errors": [
             {
                 "id": 1710,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 14:19:43"
             },
@@ -54885,13 +54885,13 @@
         "errors": [
             {
                 "id": 5482,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-19 10:40:13"
             },
             {
                 "id": 685,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-19 00:25:08"
             },
@@ -55196,13 +55196,13 @@
         "errors": [
             {
                 "id": 1960,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-19 17:59:10"
             },
             {
                 "id": 6538,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 08:08:03"
             },
@@ -55415,7 +55415,7 @@
         "errors": [
             {
                 "id": 6089,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-19 23:30:45"
             },
@@ -55444,7 +55444,7 @@
         "errors": [
             {
                 "id": 3474,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-17 17:24:21"
             },
@@ -55639,13 +55639,13 @@
         "errors": [
             {
                 "id": 4801,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-20 03:27:34"
             },
             {
                 "id": 8945,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 06:42:34"
             },
@@ -56185,13 +56185,13 @@
         "errors": [
             {
                 "id": 5107,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-21 03:20:34"
             },
             {
                 "id": 9660,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 07:54:30"
             },
@@ -56570,7 +56570,7 @@
         "errors": [
             {
                 "id": 6285,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 09:45:57"
             },
@@ -57036,13 +57036,13 @@
         "errors": [
             {
                 "id": 2778,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-20 12:32:13"
             },
             {
                 "id": 9911,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 18:20:23"
             },
@@ -57347,7 +57347,7 @@
         "errors": [
             {
                 "id": 4617,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 05:45:12"
             },
@@ -57583,13 +57583,13 @@
         "errors": [
             {
                 "id": 9969,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-19 05:24:11"
             },
             {
                 "id": 8475,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 05:04:19"
             },
@@ -57756,13 +57756,13 @@
         "errors": [
             {
                 "id": 6314,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 01:15:58"
             },
             {
                 "id": 411,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 06:28:26"
             },
@@ -58095,7 +58095,7 @@
         "errors": [
             {
                 "id": 8698,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 22:51:04"
             },
@@ -58331,13 +58331,13 @@
         "errors": [
             {
                 "id": 5030,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 16:04:46"
             },
             {
                 "id": 2100,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 18:32:33"
             },
@@ -58527,13 +58527,13 @@
         "errors": [
             {
                 "id": 884,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-21 04:03:23"
             },
             {
                 "id": 4346,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 12:36:12"
             },
@@ -58654,13 +58654,13 @@
         "errors": [
             {
                 "id": 4729,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 07:38:08"
             },
             {
                 "id": 4873,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 22:20:03"
             },
@@ -59103,7 +59103,7 @@
         "errors": [
             {
                 "id": 8608,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 07:12:33"
             },
@@ -59753,13 +59753,13 @@
         "errors": [
             {
                 "id": 1743,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 05:40:40"
             },
             {
                 "id": 3398,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 19:14:07"
             },
@@ -59972,7 +59972,7 @@
         "errors": [
             {
                 "id": 2764,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-21 16:27:47"
             },
@@ -60024,7 +60024,7 @@
         "errors": [
             {
                 "id": 1824,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-21 03:06:23"
             },
@@ -60168,13 +60168,13 @@
         "errors": [
             {
                 "id": 9487,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 00:18:12"
             },
             {
                 "id": 7578,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 21:18:44"
             },
@@ -60456,13 +60456,13 @@
         "errors": [
             {
                 "id": 7245,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-18 03:56:46"
             },
             {
                 "id": 4788,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 04:01:48"
             },
@@ -60514,13 +60514,13 @@
         "errors": [
             {
                 "id": 8793,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-19 02:25:31"
             },
             {
                 "id": 2354,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-18 06:28:55"
             },
@@ -60572,13 +60572,13 @@
         "errors": [
             {
                 "id": 9094,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-21 07:53:22"
             },
             {
                 "id": 2976,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-21 16:39:23"
             },
@@ -60860,13 +60860,13 @@
         "errors": [
             {
                 "id": 9153,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-21 09:02:22"
             },
             {
                 "id": 4221,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-20 09:06:28"
             },
@@ -61470,13 +61470,13 @@
         "errors": [
             {
                 "id": 4649,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 11:29:31"
             },
             {
                 "id": 4030,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-20 17:32:17"
             },
@@ -62172,13 +62172,13 @@
         "errors": [
             {
                 "id": 7747,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-20 03:16:16"
             },
             {
                 "id": 3300,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 00:54:14"
             },
@@ -62207,13 +62207,13 @@
         "errors": [
             {
                 "id": 8236,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-19 10:16:21"
             },
             {
                 "id": 9462,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 10:48:06"
             },
@@ -62357,13 +62357,13 @@
         "errors": [
             {
                 "id": 1301,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-20 08:23:28"
             },
             {
                 "id": 2243,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-20 22:00:53"
             },
@@ -62783,13 +62783,13 @@
         "errors": [
             {
                 "id": 6897,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-17 06:28:05"
             },
             {
                 "id": 1511,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 11:40:05"
             },
@@ -62864,13 +62864,13 @@
         "errors": [
             {
                 "id": 4532,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 06:10:01"
             },
             {
                 "id": 9786,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-17 21:26:05"
             },
@@ -63520,13 +63520,13 @@
         "errors": [
             {
                 "id": 3548,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-21 01:48:25"
             },
             {
                 "id": 2917,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-17 00:38:53"
             },
@@ -63670,7 +63670,7 @@
         "errors": [
             {
                 "id": 1756,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 05:22:17"
             },
@@ -64021,7 +64021,7 @@
         "errors": [
             {
                 "id": 6200,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 04:07:13"
             },
@@ -64257,7 +64257,7 @@
         "errors": [
             {
                 "id": 8229,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 05:55:11"
             },
@@ -64286,13 +64286,13 @@
         "errors": [
             {
                 "id": 108,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-19 10:42:14"
             },
             {
                 "id": 386,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 11:06:10"
             },
@@ -64344,13 +64344,13 @@
         "errors": [
             {
                 "id": 9231,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-19 02:13:39"
             },
             {
                 "id": 1565,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-21 13:22:54"
             },
@@ -65161,13 +65161,13 @@
         "errors": [
             {
                 "id": 9958,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 16:26:30"
             },
             {
                 "id": 5165,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 02:15:58"
             },
@@ -65357,7 +65357,7 @@
         "errors": [
             {
                 "id": 6626,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-19 06:32:07"
             },
@@ -66467,13 +66467,13 @@
         "errors": [
             {
                 "id": 2409,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 17:05:32"
             },
             {
                 "id": 1412,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-17 12:52:11"
             },
@@ -66663,13 +66663,13 @@
         "errors": [
             {
                 "id": 2226,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-20 09:01:18"
             },
             {
                 "id": 3844,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-17 17:10:40"
             },
@@ -66790,13 +66790,13 @@
         "errors": [
             {
                 "id": 3933,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 23:36:15"
             },
             {
                 "id": 8052,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 19:08:45"
             },
@@ -66894,7 +66894,7 @@
         "errors": [
             {
                 "id": 9583,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-17 15:48:32"
             },
@@ -67475,7 +67475,7 @@
         "errors": [
             {
                 "id": 5282,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-19 17:13:20"
             },
@@ -67573,13 +67573,13 @@
         "errors": [
             {
                 "id": 7574,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 14:51:39"
             },
             {
                 "id": 8036,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-19 08:34:43"
             },
@@ -67631,13 +67631,13 @@
         "errors": [
             {
                 "id": 1407,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 10:24:32"
             },
             {
                 "id": 8740,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 16:29:26"
             },
@@ -67942,13 +67942,13 @@
         "errors": [
             {
                 "id": 1993,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 21:11:37"
             },
             {
                 "id": 9239,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-18 03:05:12"
             },
@@ -68575,13 +68575,13 @@
         "errors": [
             {
                 "id": 4879,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 07:47:49"
             },
             {
                 "id": 8220,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 23:35:31"
             },
@@ -68702,13 +68702,13 @@
         "errors": [
             {
                 "id": 5850,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 22:28:32"
             },
             {
                 "id": 4171,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-21 05:47:36"
             },
@@ -68852,13 +68852,13 @@
         "errors": [
             {
                 "id": 7116,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 21:19:20"
             },
             {
                 "id": 8979,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-21 10:57:46"
             },
@@ -69025,13 +69025,13 @@
         "errors": [
             {
                 "id": 3473,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 05:34:21"
             },
             {
                 "id": 3059,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 21:09:05"
             },
@@ -69658,7 +69658,7 @@
         "errors": [
             {
                 "id": 4611,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 12:01:30"
             },
@@ -70170,13 +70170,13 @@
         "errors": [
             {
                 "id": 2605,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 12:10:21"
             },
             {
                 "id": 7651,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-21 19:06:55"
             },
@@ -70274,7 +70274,7 @@
         "errors": [
             {
                 "id": 3500,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 23:19:35"
             },
@@ -70533,7 +70533,7 @@
         "errors": [
             {
                 "id": 7622,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 02:28:31"
             },
@@ -70907,13 +70907,13 @@
         "errors": [
             {
                 "id": 9402,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-19 06:28:06"
             },
             {
                 "id": 7417,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-21 00:53:42"
             },
@@ -71264,13 +71264,13 @@
         "errors": [
             {
                 "id": 2650,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 08:14:23"
             },
             {
                 "id": 1244,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 18:36:05"
             },
@@ -71506,13 +71506,13 @@
         "errors": [
             {
                 "id": 5306,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 01:19:38"
             },
             {
                 "id": 2311,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 22:21:17"
             },
@@ -71610,13 +71610,13 @@
         "errors": [
             {
                 "id": 9561,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 10:33:11"
             },
             {
                 "id": 2694,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 12:39:37"
             },
@@ -71714,13 +71714,13 @@
         "errors": [
             {
                 "id": 1341,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 07:30:33"
             },
             {
                 "id": 6895,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 14:23:28"
             },
@@ -71864,7 +71864,7 @@
         "errors": [
             {
                 "id": 6402,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 19:53:51"
             },
@@ -72928,13 +72928,13 @@
         "errors": [
             {
                 "id": 2139,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 15:01:20"
             },
             {
                 "id": 3883,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 12:18:38"
             },
@@ -73009,13 +73009,13 @@
         "errors": [
             {
                 "id": 7646,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-20 10:40:11"
             },
             {
                 "id": 9291,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 11:37:29"
             },
@@ -73182,13 +73182,13 @@
         "errors": [
             {
                 "id": 1239,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-19 13:28:31"
             },
             {
                 "id": 4452,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-18 09:16:28"
             },
@@ -73240,13 +73240,13 @@
         "errors": [
             {
                 "id": 4881,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 15:28:10"
             },
             {
                 "id": 5799,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 13:04:18"
             },
@@ -73344,13 +73344,13 @@
         "errors": [
             {
                 "id": 8618,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 21:49:16"
             },
             {
                 "id": 7665,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 02:34:27"
             },
@@ -73540,13 +73540,13 @@
         "errors": [
             {
                 "id": 5474,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 20:49:04"
             },
             {
                 "id": 4137,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 23:54:58"
             },
@@ -73736,13 +73736,13 @@
         "errors": [
             {
                 "id": 8123,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-18 11:00:10"
             },
             {
                 "id": 6098,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-19 04:27:13"
             },
@@ -73840,13 +73840,13 @@
         "errors": [
             {
                 "id": 6024,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-20 22:31:46"
             },
             {
                 "id": 1871,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-19 00:04:49"
             },
@@ -74151,13 +74151,13 @@
         "errors": [
             {
                 "id": 9886,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 00:22:36"
             },
             {
                 "id": 4275,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 20:12:00"
             },
@@ -74255,13 +74255,13 @@
         "errors": [
             {
                 "id": 79,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 02:09:19"
             },
             {
                 "id": 9141,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-18 23:40:51"
             },
@@ -74635,13 +74635,13 @@
         "errors": [
             {
                 "id": 8639,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 19:35:07"
             },
             {
                 "id": 626,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-21 00:30:54"
             },
@@ -75245,13 +75245,13 @@
         "errors": [
             {
                 "id": 9714,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-21 08:15:12"
             },
             {
                 "id": 1267,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 10:48:21"
             },
@@ -75487,13 +75487,13 @@
         "errors": [
             {
                 "id": 9427,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-20 17:39:14"
             },
             {
                 "id": 6064,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-17 00:50:59"
             },
@@ -75706,7 +75706,7 @@
         "errors": [
             {
                 "id": 8770,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-20 17:05:25"
             },
@@ -76356,13 +76356,13 @@
         "errors": [
             {
                 "id": 3725,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-21 13:54:03"
             },
             {
                 "id": 3829,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-20 15:00:26"
             },
@@ -76414,7 +76414,7 @@
         "errors": [
             {
                 "id": 8217,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-21 13:32:16"
             },
@@ -76466,7 +76466,7 @@
         "errors": [
             {
                 "id": 5611,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 17:49:41"
             },
@@ -76633,13 +76633,13 @@
         "errors": [
             {
                 "id": 3850,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-17 22:04:33"
             },
             {
                 "id": 7467,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 16:44:55"
             },
@@ -76783,7 +76783,7 @@
         "errors": [
             {
                 "id": 3727,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 15:48:05"
             },
@@ -77318,7 +77318,7 @@
         "errors": [
             {
                 "id": 6369,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 19:07:04"
             },
@@ -77370,7 +77370,7 @@
         "errors": [
             {
                 "id": 2579,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-17 00:42:26"
             },
@@ -77445,7 +77445,7 @@
         "errors": [
             {
                 "id": 9710,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-19 05:31:10"
             },
@@ -77934,7 +77934,7 @@
         "errors": [
             {
                 "id": 878,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 03:02:11"
             },
@@ -77963,7 +77963,7 @@
         "errors": [
             {
                 "id": 5962,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 08:07:37"
             },
@@ -78084,13 +78084,13 @@
         "errors": [
             {
                 "id": 6758,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-20 05:14:16"
             },
             {
                 "id": 1568,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-19 12:08:00"
             },
@@ -78395,13 +78395,13 @@
         "errors": [
             {
                 "id": 9729,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 12:45:38"
             },
             {
                 "id": 4824,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 09:06:30"
             },
@@ -78476,7 +78476,7 @@
         "errors": [
             {
                 "id": 551,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 11:53:12"
             },
@@ -78666,13 +78666,13 @@
         "errors": [
             {
                 "id": 2039,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-18 15:59:40"
             },
             {
                 "id": 5181,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 23:20:28"
             },
@@ -78747,13 +78747,13 @@
         "errors": [
             {
                 "id": 6448,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 18:04:43"
             },
             {
                 "id": 573,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 22:03:38"
             },
@@ -78851,7 +78851,7 @@
         "errors": [
             {
                 "id": 1616,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-19 02:19:44"
             },
@@ -79409,7 +79409,7 @@
         "errors": [
             {
                 "id": 7692,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-17 20:36:30"
             },
@@ -79507,7 +79507,7 @@
         "errors": [
             {
                 "id": 8476,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-20 21:31:19"
             },
@@ -79559,13 +79559,13 @@
         "errors": [
             {
                 "id": 9026,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-20 08:46:19"
             },
             {
                 "id": 725,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-18 06:52:44"
             },
@@ -79594,13 +79594,13 @@
         "errors": [
             {
                 "id": 5708,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-21 16:21:28"
             },
             {
                 "id": 1411,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-18 23:42:45"
             },
@@ -80250,7 +80250,7 @@
         "errors": [
             {
                 "id": 1335,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 12:51:10"
             },
@@ -80371,7 +80371,7 @@
         "errors": [
             {
                 "id": 9436,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-18 22:22:17"
             },
@@ -80883,13 +80883,13 @@
         "errors": [
             {
                 "id": 3315,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-18 13:11:50"
             },
             {
                 "id": 4831,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-18 23:20:09"
             },
@@ -81470,7 +81470,7 @@
         "errors": [
             {
                 "id": 2876,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 22:32:18"
             },
@@ -81522,13 +81522,13 @@
         "errors": [
             {
                 "id": 7119,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-17 11:30:11"
             },
             {
                 "id": 2406,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 11:10:48"
             },
@@ -81741,7 +81741,7 @@
         "errors": [
             {
                 "id": 498,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-21 07:38:28"
             },
@@ -81908,13 +81908,13 @@
         "errors": [
             {
                 "id": 3232,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-17 00:25:03"
             },
             {
                 "id": 629,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 11:32:36"
             },
@@ -82495,13 +82495,13 @@
         "errors": [
             {
                 "id": 1903,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 07:01:32"
             },
             {
                 "id": 3523,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 16:30:52"
             },
@@ -82576,7 +82576,7 @@
         "errors": [
             {
                 "id": 944,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-20 20:09:19"
             },
@@ -82628,7 +82628,7 @@
         "errors": [
             {
                 "id": 635,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 16:33:04"
             },
@@ -82772,13 +82772,13 @@
         "errors": [
             {
                 "id": 8074,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-17 22:50:43"
             },
             {
                 "id": 9718,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-20 16:12:01"
             },
@@ -83037,7 +83037,7 @@
         "errors": [
             {
                 "id": 9693,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-20 14:51:53"
             },
@@ -83526,13 +83526,13 @@
         "errors": [
             {
                 "id": 6809,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-19 01:44:09"
             },
             {
                 "id": 6135,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-21 02:16:42"
             },
@@ -83561,13 +83561,13 @@
         "errors": [
             {
                 "id": 3564,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-18 11:00:54"
             },
             {
                 "id": 9590,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 19:16:29"
             },
@@ -83849,7 +83849,7 @@
         "errors": [
             {
                 "id": 1859,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "technical",
                 "date": "2022-03-18 01:04:28"
             },
@@ -84315,7 +84315,7 @@
         "errors": [
             {
                 "id": 5191,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-19 12:13:08"
             },
@@ -84528,13 +84528,13 @@
         "errors": [
             {
                 "id": 5703,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-18 22:11:41"
             },
             {
                 "id": 4686,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-20 00:04:13"
             },
@@ -84655,7 +84655,7 @@
         "errors": [
             {
                 "id": 6726,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 20:38:22"
             },
@@ -84753,13 +84753,13 @@
         "errors": [
             {
                 "id": 4178,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 10:54:52"
             },
             {
                 "id": 6955,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 21:24:59"
             },
@@ -84903,7 +84903,7 @@
         "errors": [
             {
                 "id": 3288,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-19 11:53:51"
             },
@@ -85024,13 +85024,13 @@
         "errors": [
             {
                 "id": 7484,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-21 21:57:50"
             },
             {
                 "id": 2799,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-18 06:05:33"
             },
@@ -85059,7 +85059,7 @@
         "errors": [
             {
                 "id": 5769,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-17 09:24:25"
             },
@@ -85318,7 +85318,7 @@
         "errors": [
             {
                 "id": 45,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-19 18:07:15"
             },
@@ -85508,13 +85508,13 @@
         "errors": [
             {
                 "id": 1000,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-17 07:29:50"
             },
             {
                 "id": 4707,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 17:17:01"
             },
@@ -85681,13 +85681,13 @@
         "errors": [
             {
                 "id": 8124,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-20 16:19:23"
             },
             {
                 "id": 3069,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-20 10:12:53"
             },
@@ -85716,7 +85716,7 @@
         "errors": [
             {
                 "id": 3404,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-17 00:15:32"
             },
@@ -85929,13 +85929,13 @@
         "errors": [
             {
                 "id": 4395,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "technical",
                 "date": "2022-03-17 17:44:35"
             },
             {
                 "id": 4510,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "physical",
                 "date": "2022-03-18 22:47:21"
             },
@@ -86102,13 +86102,13 @@
         "errors": [
             {
                 "id": 6966,
-                "priority": "low",
+                "priority": "Niedrig",
                 "kind": "technical",
                 "date": "2022-03-19 14:08:12"
             },
             {
                 "id": 8476,
-                "priority": "medium",
+                "priority": "Medium",
                 "kind": "physical",
                 "date": "2022-03-18 13:04:43"
             },
@@ -86344,7 +86344,7 @@
         "errors": [
             {
                 "id": 7295,
-                "priority": "high",
+                "priority": "Hoch",
                 "kind": "physical",
                 "date": "2022-03-17 15:25:13"
             },

@@ -59,10 +59,10 @@ function RoomCard(props: {data: Array<DeviceData>}) {
                     for (const error of errors) {
                         if (error.getId() !== 0) {
                             const prio = error.getPriority()
-                            if (prio === "high") {
+                            if (prio === "Hoch") {
                                 count[0]++
                             } else {
-                                if (prio === "medium") {
+                                if (prio === "Medium") {
                                     count[1]++
                                 } else {
                                     count[2]++
@@ -212,7 +212,7 @@ function RoomCard(props: {data: Array<DeviceData>}) {
                 </table>
             </div>
             }
-            {/* {roomDeviceData && <MultiLineChart data={roomDeviceData} />} */}
+            {roomDeviceData && selectedRoom!=="default" && <MultiLineChart data={roomDeviceData} />}
         </div>
     )
 }

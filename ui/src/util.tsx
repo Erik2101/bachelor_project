@@ -173,25 +173,29 @@ export function stationColours(input : Array<DeviceData>) {
     return sorted_colour_pairs
 }
 
+// generate data object for Errors by Date by Priority MultiLineChart
 export function errorSpreadData(input: Array<DeviceData>) {
     const data: Array<ErrPerPrioPerDate> = []
     const domain: Array<string> = []
+    // the priority properties defined here are later used for labeling data in the chart
     const low: ErrPerPrioPerDate = {
-        priority: "low",
+        priority: "Niedrig",
         data: []
     }
     const med: ErrPerPrioPerDate = {
-        priority: "medium",
+        priority: "Medium",
         data: []
     }
     const high: ErrPerPrioPerDate = {
-        priority: "high",
+        priority: "Hoch",
         data: []
     }
     data.push(low, med, high)
+
     for (const item of input) {
         const target = item.getErrorsList()
         for (const error of target) {
+            // exclude dummy error
             if (error.getId() !== 0) {
                 const prio = error.getPriority()
                 const date = new Date(error.getDate())
@@ -230,22 +234,22 @@ export function errorSpreadData(input: Array<DeviceData>) {
         item.data = item.data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     }
     const sorted_domain = domain.sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
-
+    // checking if the domain is missing a day
     let final_sorted_domain = []
     const day_in_ms = 24 * 60 * 60 * 1000
-    const is_ms = sorted_domain.length * day_in_ms
+    const is_ms = sorted_domain.length + 1 * day_in_ms
     const should_ms = new Date(sorted_domain[sorted_domain.length - 1]).getTime() - new Date(sorted_domain[0]).getTime()
     if ( should_ms > is_ms) {
-        for (let i = 0; i < should_ms / (day_in_ms); i++) {
+        for (let i = 0; i <= should_ms / day_in_ms; i++) {
             final_sorted_domain.push(convertDate(new Date(new Date(sorted_domain[0]).getTime() + (i * day_in_ms))))
         }
     } else {
         final_sorted_domain = sorted_domain
     }
     for(const prio of data) {
-        if (0 < prio.data.length && prio.data.length < final_sorted_domain.length) {
+        if (prio.data.length < final_sorted_domain.length) {
             for ( let i = 0; i < final_sorted_domain.length; i++ ) {
-                if (prio.data[i].date !== final_sorted_domain[i]) {
+                if (prio.data.length === i || prio.data[i].date !== final_sorted_domain[i]) {
                     prio.data.splice(i, 0, {date: final_sorted_domain[i], errNum: 0})
                 }
             }

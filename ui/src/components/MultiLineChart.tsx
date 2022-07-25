@@ -17,29 +17,29 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
     const lineChart = React.useRef(null)
 
     const drawChart = React.useCallback(() => {
-        if(data) {
+
+        const containerWidth = parseInt(d3.select(".chart-container").style("width"))
+        const containerHeight = parseInt(d3.select(".chart-container").style("height"))
+        const margin = {
+            top: containerHeight * 0.1, 
+            right: containerWidth * 0.1,
+            bottom: containerHeight * 0.1,
+            left: containerWidth * 0.1
+        }
+
+        const chartWidth = containerWidth - margin.left - margin.right
+        const chartHeight = containerHeight - margin.top - margin.bottom
+
+        const svg = d3.select(lineChart.current)
+                        .attr("width", containerWidth)
+                        .attr("height", containerHeight)
+                        .attr("viewBox", [0, 0, containerWidth, containerHeight])
+
+        if(data && data.xDomain.length > 0) {
             let domain : Array<Date> = []   
             for (const date of data.xDomain) {
                 domain.push(new Date(date))
             }
-
-            const containerWidth = parseInt(d3.select(".chart-container").style("width"))
-            const containerHeight = parseInt(d3.select(".chart-container").style("height"))
-            const margin = {
-                top: containerHeight * 0.1, 
-                right: containerWidth * 0.1,
-                bottom: containerHeight * 0.1,
-                left: containerWidth * 0.1
-            }
-
-            const chartWidth = containerWidth - margin.left - margin.right
-            const chartHeight = containerHeight - margin.top - margin.bottom
-
-            const svg = d3.select(lineChart.current)
-                            .attr("width", containerWidth)
-                            .attr("height", containerHeight)
-                            .attr("viewBox", [0, 0, containerWidth, containerHeight])
-
 
             const dx = [domain[0], domain[domain.length - 1]]
             const x = d3.scaleTime()
@@ -59,9 +59,9 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                             .nice()
 
             const colours = [
-                {fill: "#44F295", stroke: theme.low_prio}, // low
-                {fill: "#F5CC26", stroke: theme.medium_prio}, // medium
-                {fill: "#F54E1B", stroke: theme.high_prio} // high
+                {fill: theme.low_prio},
+                {fill: theme.medium_prio},
+                {fill: theme.high_prio}
             ]
 
             const justData = []
@@ -74,7 +74,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                     circleData.push(data.dataSet[j].data[i])
                 }
             }
-        
             const lineFunction = d3.line<ErrPerDate>()
                                     .x((d) => x(new Date(d.date)))
                                     .y((d) => y(d.errNum))
@@ -90,7 +89,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 )
                 .attr("d", (d) => lineFunction(d))
                 .attr("fill", "none")
-                .attr("stroke", (_, i) => colours[i].stroke)
+                .attr("stroke", (_, i) => colours[i].fill)
                 .attr("stroke-width", 1)
                 .attr("class", "line")
 
@@ -109,7 +108,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                         .attr("x", containerWidth / 2)             
                         .attr("y", margin.top )
                         .attr("text-anchor", "middle")  
-                        .style("font-size", "1em")
+                        .style("font-size", "1.2em")
                         .style("font-weight", "600")
                         .text(chartTitle)
 
@@ -129,9 +128,9 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                     .attr("y", margin.top * 1.5 )
                     .attr("text-anchor", "middle")  
                     .attr("class", "value-display")
-                    .style("font-size", "0.75em")
+                    .style("font-size", "1em")
                     .style("font-weight", "600")
-                    .style("fill", d => colours[data.dataSet.indexOf(d)].stroke)
+                    .style("fill", d => colours[data.dataSet.indexOf(d)].fill)
                     .text(d => "" + d.priority + ": " + tooltip_values[data.dataSet.indexOf(d)].value)
 
             // remove old axis-ticks before drawing the new axis
@@ -143,11 +142,13 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
             svg.append("g")
                 .call(xAxis)
                 .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
+                .style("font-size", "14px")
                 
 
             svg.append("g")
                 .call(d3.axisLeft(y))
                 .attr("transform", "translate("+ margin.left + ", 0)")
+                .style("font-size", "14px")
 
             // new hover
             let mouseG = svg.append("g")
@@ -165,22 +166,22 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                         .attr("class", "mouse-per-line")
                                             .append("circle")
                                             .attr("r", 4)
-                                            .style("stroke", d => colours[data.dataSet.indexOf(d)].stroke)
+                                            .style("stroke", d => colours[data.dataSet.indexOf(d)].fill)
                                             .style("fill", "none")
                                             .style("stroke-width", 1)
                                             .style("opacity", 0)
 
             mouseG.append("svg:rect")
                             .attr("width", chartWidth)
-                            .attr("height", chartHeight)
+                            .attr("height", chartHeight - margin.top)
                             .attr("fill", "none")
                             .attr("pointer-events", "all")
-                            .attr("transform", "translate(" + margin.left + ", " + margin.top + ")")
+                            .attr("transform", "translate(" + margin.left + ", " + 2 * margin.top + ")")
                             .on("mouseout", () => {
                                 d3.select(".mouse-line")
                                     .style("opacity", "0")
                                 d3.selectAll(".mouse-per-line circle")
-                                .style("opacity", "0")
+                                    .style("opacity", "0")
                             })
                             .on('mouseover', () => { // on mouse in show line and circles
                                 d3.select(".mouse-line")
@@ -199,8 +200,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                         let idx = bisect.left(b.data, xDate)
                                         d3.select(".mouse-line")
                                         .attr("d", () => {
-                                            console.log(new Date(b.data[idx].date))
-                                            console.log(x(new Date(b.data[idx].date)))
                                             let ret = "M"+ x(new Date(b.data[idx].date)) + ", " + (chartHeight + margin.bottom)
                                             ret += " " + x(new Date(b.data[idx].date)) + ", " + (0 + margin.top + margin.bottom)
                                             return ret
@@ -218,6 +217,25 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                     return prevState
                                 })
                             })
+        } else {
+            svg.selectAll("g").remove()
+            svg.selectAll("path").remove()
+            svg.selectAll("text").remove()
+
+            svg.selectAll("disclaimer")
+            .data([1])
+            .join(
+                enter => enter.append("text"),
+                update => update,
+                exit => exit.remove()
+            )
+            .attr("x", containerWidth / 2)             
+            .attr("y", containerHeight / 2 )
+            .attr("text-anchor", "middle")  
+            .style("font-size", "1.2em")
+            .style("font-weight", "600")
+            .style("fill", "green")
+            .text("Es wurden keine Gerätefehler für die übergebenen Geräte gefunden.")
         }
     }, [data])
 
@@ -233,7 +251,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
     }, [data])
 
     React.useEffect(() => {
-        console.log(props.data)
         setData(errorSpreadData(props.data))
     }, [props])
 
