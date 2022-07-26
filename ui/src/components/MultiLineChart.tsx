@@ -113,9 +113,9 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                         .text(chartTitle)
 
             let tooltip_values : ReadonlyArray<PriorityValuePair> = [
-                {priority: "low", value: ""},
-                {priority: "medium", value: ""},
-                {priority: "high", value: ""}]
+                {priority: "Niedrig", value: ""},
+                {priority: "Medium", value: ""},
+                {priority: "Hoch", value: ""}]
 
             svg.selectAll("value-display")
                     .data(data.dataSet)

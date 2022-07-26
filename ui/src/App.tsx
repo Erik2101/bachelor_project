@@ -13,8 +13,8 @@ import TabLayout from './components/TabLayout';
 import Popup from './components/Popup';
 
 export type Options = {
-  "station" : string,
-  "device_class" : string
+  "station" : Array<string>,
+  "device_class" : Array<string>
 }
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
   const [deviceDataStore, setDeviceDataStore] = React.useState<Array<DeviceData>>()
   const [dataSetCount, setDataSetCount] = React.useState(0)
   const [filterOptions, setFilterOptions] = React.useState<Options>({
-    "station" : "default",
-    "device_class" : "default"
+    "station" : [],
+    "device_class" : []
   })
   const [filteredDeviceData, setFilteredDeviceData] = React.useState<Array<DeviceData>>()
   const [popupState, setPopupState] = React.useState(false)
@@ -54,7 +54,8 @@ function App() {
   }, [dataSetCount])
 
   React.useEffect(() => {
-    if(deviceDataStore && filterOptions.device_class === "default" && filterOptions.station === "default") {
+    if(deviceDataStore && filterOptions.device_class.length === 0 && filterOptions.station.length === 0) {
+      console.log("am here")
       setFilteredDeviceData(deviceDataStore)
     }
   }, [deviceDataStore])
@@ -64,20 +65,24 @@ function App() {
     let step2 : Array<DeviceData> = []
     // filter device data according to filter option selections and return remaining devices
     if (deviceDataStore) {
-      if (filterOptions.device_class !== "default") {
+      if (filterOptions.device_class.length > 0) {
         for (const device of deviceDataStore) {
-          if (device.getClasses() === filterOptions.device_class) {
-            step1.push(device)
+          for (const fltr_item of filterOptions.device_class) {
+            if (device.getClasses() === fltr_item) {
+              step1.push(device)
+            }
           }
         }
       } else {
         step1 = deviceDataStore
       }
-      if (filterOptions.station !== "default") {
+      if (filterOptions.station.length > 0) {
         for (const device of step1) {
           const temp_split = device.getLocation().split("-")
-          if (temp_split[0] === filterOptions.station) {
-            step2.push(device)
+          for (const fltr_item of filterOptions.station) {
+            if (temp_split[0] === fltr_item) {
+              step2.push(device)
+            }
           }
         }
       } else {
