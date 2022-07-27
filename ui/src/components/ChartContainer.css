@@ -3,14 +3,13 @@
     height: 90%;
     min-height: 300px;
     max-height: 600px;
-    width: 90%;
+    width: 95%;
     min-width: 450px;
     background-color: white;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
     box-shadow: 3px 3px #424242;
-    justify-self: center;
 }
 
 .chart-container {
@@ -32,6 +31,13 @@
     align-self: center;
 }
 
+.pie-chart-title {
+    align-self: flex-start;
+    text-align: center;
+    margin-top: 10%;
+    max-width: 40%;
+}
+
 .sub-flex-container {
     display: flex;
     grid-column: span 2;
@@ -48,4 +54,12 @@
     padding: 5px;
     border-radius: 5px;
     opacity: 0;
+}
+
+@media screen and (min-width: 1750px) {
+
+    .chart-container,
+    .chart-container-select {
+        width: 95%;
+    }
 }

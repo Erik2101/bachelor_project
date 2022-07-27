@@ -77,6 +77,8 @@ function LolipopChart(props : {
                             .domain([0, xMax])
                             .nice()
 
+            svg.select(".grid").remove()
+
             svg.selectAll("line")
                     .data(sorted_data)
                     .join(
@@ -90,7 +92,8 @@ function LolipopChart(props : {
                     .attr("x2", x(0) + margin.left)
                     .attr("y1", (d) => { return y(d.sectionCaption)! })
                     .attr("y2", (d) => { return y(d.sectionCaption)! })
-                    .attr("stroke", "grey")
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 1.5)
 
             svg.selectAll("circle")
                     .data(sorted_data)
@@ -106,6 +109,7 @@ function LolipopChart(props : {
                     .attr("r", "5")
                     .style("fill", theme.blue4)
                     .attr("stroke", "black")
+                    .attr("stroke-width", 1.5)
 
             svg.selectAll("g").remove()
             
@@ -118,6 +122,18 @@ function LolipopChart(props : {
                 .call(d3.axisBottom(x))
                 .attr("transform", "translate(" + margin.left + ", " + chartHeight + ")")
                 .style("font-size", "14px")
+
+            const vert_gridlines = d3.axisBottom(x)
+                .tickFormat( _ => "")
+                .tickSize(-chartHeight)
+
+            svg.insert("g", "line:first-child")
+                .attr("class", "grid")
+                .call(vert_gridlines)
+                    .attr("transform", "translate(" + margin.left + "," + chartHeight + ")")
+                    .style("stroke", theme.app_bg)
+                    .attr("opacity", 0.5)
+                    .attr("stroke-width", 0.5)
         }          
     }, [data])
 

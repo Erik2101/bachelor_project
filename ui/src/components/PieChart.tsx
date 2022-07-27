@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import "./PieChart.css";
 import "./ChartContainer.css";
 import { DeviceData } from "../proto/frontend_pb";
-import { CaptionColourPair, devicesOfAClassPerStation, PieDataSet, pieReadyData, stationColours, totalActivityData } from "../util";
+import { CaptionColourPair, devicesOfAClassPerStation, PieDataSet, pieReadyData, stationColours, totalActivityData, totalActivityData2 } from "../util";
 import { PieArcDatum } from "d3";
 import { theme } from "../theme";
 
@@ -34,6 +34,14 @@ function PieChart (props: {
             setTitle("Anzahl der Geräte einer Klasse pro Station")
             setColours(stationColours(props.data))
         }
+        if (props.typeId === 3) {
+            setData(pieReadyData(totalActivityData2(props.data)))
+            setTitle("Aktivitätstatus und Einsatzbereitschaft aller bekannten Geräte")
+            setColours([
+                {caption: "Aktiv", colour: theme.active},
+                {caption: "Bereit (Inaktiv)", colour: theme.medium_prio},
+                {caption: "Nicht Bereit", colour: theme.high_prio}])
+        }
         return () => {};
     }, [props])
 
@@ -54,18 +62,19 @@ function PieChart (props: {
         
     const drawChart = React.useCallback(() => {
 
-        const containerWidth = props.typeId === 1 ? 
+        const containerWidth = props.typeId === 1 || props.typeId === 3 ? 
                                 parseInt(d3.select(".chart-container").style("width")) :
                                 parseInt(d3.select(".sub-flex-container").style("width"))
-        const containerHeight = props.typeId === 1 ?
+        const containerHeight = props.typeId === 1 || props.typeId === 3 ?
                                 parseInt(d3.select(".chart-container").style("height")) :
                                 parseInt(d3.select(".sub-flex-container").style("height"))
-        const margin = props.typeId === 1 ? 
+
+        const margin = props.typeId === 1 || props.typeId === 3 ? 
             {
                 top: containerHeight * 0.1, 
-                right: containerWidth * 0.1,
+                right: containerWidth * 0.05,
                 bottom: containerHeight * 0.1,
-                left: containerWidth * 0.1
+                left: containerWidth * 0.05
             } :
             {
                 top: 0, 
@@ -74,16 +83,16 @@ function PieChart (props: {
                 left: containerWidth * 0.05
             }
 
-        const chartWidth = containerWidth - margin.left - margin.right
+        const chartWidth = (containerWidth - margin.right - margin.left) * 0.6
         const chartHeight = containerHeight - margin.top - margin.bottom
-        const size = containerHeight < containerWidth ? chartHeight : chartWidth
+        const size = containerHeight < chartWidth ? chartHeight : chartWidth
 
         const size_reg = containerWidth < 600 ? 0.75 : 1 
 
         const svg = d3.select(d3Chart.current)
-                        .attr("width", containerWidth)
+                        .attr("width", chartWidth)
                         .attr("height", containerHeight)
-                        .attr("viewBox", [0, 0, containerWidth, containerHeight])
+                        .attr("viewBox", [0, 0, chartWidth, containerHeight])
 
         const pie = d3.pie()
                         .sort(null)
@@ -110,7 +119,7 @@ function PieChart (props: {
                                             .attr("d", d => arc(d as PieArcDatum<number>))
                                             .attr("fill", (_,i) => colours[i].colour)
                                             .attr("fill-opacity", 1)
-                                            .attr("transform", "translate(" + (containerWidth / 2) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
+                                            .attr("transform", "translate(" + (chartWidth / 2) + ", " + (containerHeight / 2) + ")")
 
                                             .on("mouseover", function(event, d) {
                                                 d3.select(this).transition()
@@ -126,9 +135,8 @@ function PieChart (props: {
 
                                             .on("mousemove", function (event) {
                                                 tooltip
-                                                // turboscuffed btw.
-                                                        .style("left", (d3.pointer(event, window)[0] - margin.left * size_reg * props.typeId) + "px")
-                                                        .style("top", (d3.pointer(event, window)[1] - margin.bottom * size_reg * props.typeId)  + "px");           
+                                                        .style("left", (d3.pointer(event, window)[0] - 2 * margin.left) + "px")
+                                                        .style("top", (d3.pointer(event, window)[1] -  1.5 * margin.top)  + "px");           
                                             })
                             
                                             .on("mouseout", function () {
@@ -148,30 +156,14 @@ function PieChart (props: {
                                     g
                                         .select("path")
                                             .transition()
-                                                .duration(1)
+                                                .duration(0)
                                                 .attr("d", d => arc(d as PieArcDatum<number>))
-                                                .attr("transform", "translate(" + (containerWidth / 2) + ", " + (containerHeight / 2 + margin.top / 2) + ")")
+                                                .attr("transform", "translate(" + (chartWidth / 2) + ", " + (containerHeight / 2) + ")")
                                 ),
                         (exit) =>
                             exit.call((g) => g.transition().duration(0).style("opacity", 0).remove())
                     )               
 
-        }
-
-        if (props.typeId === 1) {
-            svg.selectAll("text")
-                .data([1])
-                .join(
-                    enter => enter.append("text"),
-                    update => update,
-                    exit => exit.remove()
-                )
-                .attr("x", (containerWidth / 2))             
-                .attr("y", margin.top )
-                .attr("text-anchor", "middle")  
-                .style("font-size", "1.2em")
-                .style("font-weight", "600")
-                .text(title)
         }
                 
     }, [data])
@@ -200,9 +192,10 @@ function PieChart (props: {
     }
 
     let final_return
-    if (props.typeId === 1) {
+    if (props.typeId === 1 || props.typeId === 3) {
         final_return = (
             <div className="chart-container">
+                <h3 className="pie-chart-title">{title}</h3>
                 <svg ref={d3Chart}/>
                 <div className="tooltip"></div>
             </div>

@@ -135,7 +135,7 @@ function App() {
             {filteredDeviceData && <BarChart typeId={2} data={filteredDeviceData}/>}
             {filteredDeviceData && <LolipopChart data={filteredDeviceData}/>}
             {filteredDeviceData && <BarChart typeId={1} data={filteredDeviceData}/>}
-            {filteredDeviceData && <PieChart typeId={2} data={filteredDeviceData}/>}
+            {filteredDeviceData && <PieChart typeId={3} data={filteredDeviceData}/>}
           </main>
         </div>
         <div id="Raummonitor">

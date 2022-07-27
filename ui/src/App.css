@@ -4,9 +4,8 @@
 }
 
 .App {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 10vh 90vh;
+    display: flex;
+    flex-direction: column;
     background-color: #D4D4D4;
     justify-items: center;
     align-items: center;
@@ -14,8 +13,7 @@
 
 .app-header {
     width: 100%;
-    height: 100%;
-    max-height: 10vh;
+    height: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -25,7 +23,7 @@
 }
 
 .header-button {
-    height: 80%;
+    height: 60%;
     width: 18%;
     background-color: #424242;
     font-size: 2em;
@@ -42,7 +40,7 @@
     align-self: flex-start;
     justify-self: flex-start;
     width: 100%;
-    height: 100%;
+    height: 90vh;
 }
 
 .tab-list {
@@ -78,9 +76,11 @@
 
 .tab-content {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 40px);
     display: flex;
     justify-content: center;
+    align-content: center;
+    overflow-y: auto;
 }
 
 select {
@@ -89,13 +89,11 @@ select {
 
 .main-content {
     width: 100%;
-    height: 100%;
     display: grid;
-    overflow: auto;
-    grid-template-rows: 55vh;
+    grid-template-rows: 65vh;
     grid-auto-flow: row;
-    grid-auto-rows: 55vh;
-    justify-content: center;
+    grid-auto-rows: 65vh;
+    justify-items: center;
     align-items: center;
 }
 
@@ -103,5 +101,12 @@ select {
 
     .main-content {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    .main-content {
+        grid-template-rows: 55vh;
+        grid-auto-rows: 55vh;
     }
 }

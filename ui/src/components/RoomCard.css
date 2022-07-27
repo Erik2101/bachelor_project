@@ -5,12 +5,14 @@
     background-color: white;
     border-radius: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1.5fr 10fr 4fr 4fr;
+    grid-template-rows: 10vh 50vh 60vh;
     box-shadow: 3px 3px #424242;
     align-self: center;
     justify-self: center;
     margin-bottom: 10px;
     padding: 20px;
+    row-gap: 20px;
+    overflow-y: auto;
 }
 
 .room-card-container>select {
@@ -61,6 +63,7 @@
 
 .table-container {
     width: 100%;
+    min-height: 300px;
     height: 100%;
     max-height: 500px;
     grid-column: 1 / 7;
@@ -69,9 +72,14 @@
     justify-self: center;
 }
 
-.table-container thead th {
+.top-head {
     position: sticky;
     top: 0;
+}
+
+.sub-head {
+    position: sticky;
+    top: 30px;
 }
 
 .device-table {
@@ -88,20 +96,21 @@
     background-color: lightgray;
 }
 
-.uuid-cell {
-    width: 30%;
+.uuid-cell,
+.class-cell {
+    width: 17, 5%;
     padding-left: 10px;
 }
 
 .activity-cell,
 .ready-cell,
 .medium-cell {
-    width: 8%;
+    width: 7%;
 }
 
 .high-cell,
 .low-cell {
-    width: 8%;
+    width: 7%;
 }
 
 .staff-cell {
@@ -142,5 +151,6 @@
 
 .room-card-container>.chart-container {
     grid-column: span 3;
-    grid-row: span 2;
+    justify-self: center;
+    align-self: center;
 }

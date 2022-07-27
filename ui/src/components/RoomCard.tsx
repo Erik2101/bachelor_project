@@ -3,6 +3,7 @@ import { DeviceData } from "../proto/frontend_pb";
 import { theme } from "../theme";
 import { colorArrayFromTwo, getRooms, getStations, sToHour } from "../util";
 import MultiLineChart from "./MultiLineChart";
+import PieChart from "./PieChart";
 import "./RoomCard.css";
 
 function RoomCard(props: {data: Array<DeviceData>}) {
@@ -85,6 +86,7 @@ function RoomCard(props: {data: Array<DeviceData>}) {
                 ret.push(
                     <tr key={`row_${key_index}`}>
                         <td className="uuid-cell" key={`uuid_${key_index}`}>{device.getUuid()}</td>
+                        <td className="class-cell" key={`class_${key_index}`}>{device.getClasses()}</td>
                         <td className="activity-cell" key={`activity_${key_index}`}>{device.getIsactive().toString()}</td>
                         <td className="ready-cell" key={`ready_${key_index}`}>{(device.getIsusable()).toString()}</td>
                         <td className="high-cell" key={`high_${key_index}`} style={error_colours[0]}>{count[0]}</td>
@@ -187,15 +189,16 @@ function RoomCard(props: {data: Array<DeviceData>}) {
             <div className="table-container">
                 <table className="device-table">
                     <thead className="device-table-head">
-                        <tr>
-                            <th>Gerätekennzeichnung</th>
+                        <tr className="top-head">
+                            <th colSpan={2}>Gerätekennzeichnung</th>
                             <th colSpan={2}> Gerätestatus</th>
                             <th colSpan={3}>Gerätefehler (Priorität)</th>
                             <th>Kontakt</th>
                             <th colSpan={2}>Betriebsdauer</th>
                         </tr>
-                        <tr>
+                        <tr className="sub-head">
                             <th className="uuid-cell">UUID</th>
+                            <th className="class-cell">Geräteklasse</th>
                             <th className="activity-cell">Aktiv</th>
                             <th className="ready-cell">Einsatzbereit</th>
                             <th className="high-cell">Hoch</th>
@@ -213,6 +216,7 @@ function RoomCard(props: {data: Array<DeviceData>}) {
             </div>
             }
             {roomDeviceData && selectedRoom!=="default" && <MultiLineChart data={roomDeviceData} />}
+            {roomDeviceData && selectedRoom!=="default" && <PieChart data={roomDeviceData} typeId={3}/>}
         </div>
     )
 }

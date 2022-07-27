@@ -135,7 +135,7 @@ function MultiBarChart(props : {
         if (data) {
 
             const y = d3.scaleBand()
-                            .domain(data.map(function (d) {return (d.uuid.split("-")[0] + "...")}))
+                            .domain(data.map(function (d) {return (d.uuid.split("-")[0])}))
                             .range([0, chartHeight])
                             .padding(0.3)
 
@@ -164,7 +164,9 @@ function MultiBarChart(props : {
 
             const tooltip = d3.select(".tooltip")
                             .style("opacity", 0)
-            svg.selectAll("g").remove()
+
+            svg.selectAll(".grid").remove()
+
             svg.selectAll("g")
                 .data(stacked_data)
                 .join(
@@ -273,6 +275,7 @@ function MultiBarChart(props : {
                     .attr("transform", "translate(" + margin.left + "," + chartHeight + ")")
                     .style("stroke", theme.app_bg)
                     .attr("opacity", 0.5)
+                    .attr("stroke-width", 0.5)
 
         }
     }, [data])

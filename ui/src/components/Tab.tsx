@@ -7,7 +7,6 @@ function Tab(props : {
 }) {
     
     function handleClick() {
-        console.log("Tab handle Click")
         props.onClick(props.label)
     }
 

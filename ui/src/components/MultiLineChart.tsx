@@ -78,6 +78,8 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                     .x((d) => x(new Date(d.date)))
                                     .y((d) => y(d.errNum))
 
+            svg.select(".grid").remove()
+                                
             svg.selectAll("path")
                 .data(justData)
                 .join(
@@ -90,7 +92,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 .attr("d", (d) => lineFunction(d))
                 .attr("fill", "none")
                 .attr("stroke", (_, i) => colours[i].fill)
-                .attr("stroke-width", 1)
+                .attr("stroke-width", 2)
                 .attr("class", "line")
 
             const chartTitle = "Gerätefehler von " + data.xDomain[0] + " bis " +
@@ -136,8 +138,15 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
             // remove old axis-ticks before drawing the new axis
             svg.selectAll("g").remove()
 
-            let xAxis = d3.axisBottom<Date>(x)
-                            .tickFormat(d3.timeFormat("%d.%m"))
+            let xAxis
+            if (domain.length < chartWidth / 50) {
+                xAxis = d3.axisBottom<Date>(x)
+                .tickFormat(d3.timeFormat("%d.%m"))
+                .tickValues(domain)
+            } else {
+                xAxis = d3.axisBottom<Date>(x)
+                .tickFormat(d3.timeFormat("%d.%m"))
+            }
 
             svg.append("g")
                 .call(xAxis)
@@ -217,6 +226,19 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                     return prevState
                                 })
                             })
+
+            const hori_gridlines = d3.axisLeft(y)
+                .tickFormat( _ => "")
+                .tickSize(-chartWidth)
+
+            svg.insert("g", "path:first-child")
+                .attr("class", "grid")
+                .call(hori_gridlines)
+                    .attr("transform", "translate(" + margin.left + "," + 0 + ")")
+                    .style("stroke", theme.app_bg)
+                    .attr("opacity", 0.5)  
+                    .attr("stroke-width", 0.5)              
+            
         } else {
             svg.selectAll("g").remove()
             svg.selectAll("path").remove()

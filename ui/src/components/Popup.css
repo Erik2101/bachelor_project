@@ -12,10 +12,10 @@
 
 .popup-body {
     padding: 32px;
-    height: 75vh;
+    height: 85vh;
     width: 100%;
     max-width: 640px;
-    background-color: white;
+    background-color: #D4D4D4;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 12fr 1fr;
@@ -60,6 +60,7 @@
     display: flex;
     flex-wrap: wrap;
     border: 1px solid #424242;
+    background-color: white;
     border-radius: 10px;
     width: 90%;
     padding: 10px 0 10px 0;

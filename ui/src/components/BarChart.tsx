@@ -37,7 +37,7 @@ function BarChart(props: {
         const x = d3.scaleBand()
                     .domain(data.map(item => item.sectionCaption))
                     .range([margin.left, chartWidth + margin.right])
-                    .padding(0.4)
+                    .padding(0.55)
 
         function makeValueIterable() {
             const ret = []
@@ -60,6 +60,8 @@ function BarChart(props: {
 
         const tooltip = d3.select(".tooltip")
                             .style("opacity", 0)
+
+        svg.select(".grid").remove()
 
         svg
             .selectAll("g")
@@ -151,6 +153,18 @@ function BarChart(props: {
             .call(d3.axisLeft(y))
             .attr("transform", "translate(" + margin.left + ", 0)")
             .style("font-size", "14px")
+
+        const hori_gridlines = d3.axisLeft(y)
+                                    .tickFormat( _ => "")
+                                    .tickSize(-chartWidth)
+
+        svg.insert("g", "g:first-child")
+            .attr("class", "grid")
+            .call(hori_gridlines)
+                .attr("transform", "translate(" + margin.left + "," + 0 + ")")
+                .style("stroke", theme.app_bg)
+                .attr("opacity", 0.5)
+                .attr("stroke-width", 0.5)
                             
     }, [data, title, colours])
 
