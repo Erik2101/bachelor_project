@@ -195,10 +195,9 @@ function MultiBarChart(props : {
                     
                     .on("mouseover", function(event, d) {
                         const parent_datum = d3.select(event.target.parentElement).datum()
-                        // weiß nicht wie man diese Fehler beheben kann, da datum abhängig von der Gerätezahl immer unterschiedlich ist
-                        // was typechecking schwierig macht.
                         if (typeof parent_datum === "object" && parent_datum !== null && "key" in parent_datum) {
-                            const subgroup_name = parent_datum.key
+                            //@ts-ignore
+                            const subgroup_name = parent_datum.key 
                             let subgroup_value
                             if (subgroup_name === "Gesamt") {
                                 subgroup_value = Math.round((d.data[subgroup_name] + d.data["Wartung"] + d.data["Aktuell"]) * 10) / 10

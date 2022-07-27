@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import "./ChartContainer.css"
 import { errorSpreadData, ErrPerDate, ErrPerPrioPerDate, ErrSpreadChartData, PriorityValuePair } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
-import { range } from "d3";
+import { range, timeParse } from "d3";
 import { theme } from "../theme";
 
 function MultiLineChart (props: {data : Array<DeviceData>}) {
@@ -40,7 +40,8 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
             for (const date of data.xDomain) {
                 domain.push(new Date(date))
             }
-
+            console.log(data.xDomain)
+            console.log(domain)
             const dx = [domain[0], domain[domain.length - 1]]
             const x = d3.scaleTime()
                             .domain(dx)
@@ -75,7 +76,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 }
             }
             const lineFunction = d3.line<ErrPerDate>()
-                                    .x((d) => x(new Date(d.date)))
+                                    .x((d) => { console.log(x(new Date(d.date))); return x(new Date(d.date))})
                                     .y((d) => y(d.errNum))
 
             svg.select(".grid").remove()
@@ -152,7 +153,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 .call(xAxis)
                 .attr("transform", "translate(0, " + (containerHeight - margin.top) + ")")
                 .style("font-size", "14px")
-                
 
             svg.append("g")
                 .call(d3.axisLeft(y))
@@ -209,7 +209,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                         let idx = bisect.left(b.data, xDate)
                                         d3.select(".mouse-line")
                                         .attr("d", () => {
-                                            let ret = "M"+ x(new Date(b.data[idx].date)) + ", " + (chartHeight + margin.bottom)
+                                            let ret = "M" + x(new Date(b.data[idx].date)) + ", " + (chartHeight + margin.bottom)
                                             ret += " " + x(new Date(b.data[idx].date)) + ", " + (0 + margin.top + margin.bottom)
                                             return ret
                                         })

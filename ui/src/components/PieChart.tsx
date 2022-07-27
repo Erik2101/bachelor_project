@@ -97,6 +97,7 @@ function PieChart (props: {
         const pie = d3.pie()
                         .sort(null)
 
+
         if (data) {
             const arcs = pie(data.valueArray)
 
