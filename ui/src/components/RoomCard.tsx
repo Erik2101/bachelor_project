@@ -1,12 +1,12 @@
 import React from "react";
-import { DeviceData } from "../proto/frontend_pb";
+import { DeviceData, StationHelperArray } from "../proto/frontend_pb";
 import { theme } from "../theme";
 import { colorArrayFromTwo, getRooms, getStations, sToHour } from "../util";
 import MultiLineChart from "./MultiLineChart";
 import PieChart from "./PieChart";
 import "./RoomCard.css";
 
-function RoomCard(props: {data: Array<DeviceData>}) {
+function RoomCard(props: {data: Array<DeviceData>, helperData: Array<StationHelperArray>}) {
 
     const [deviceData, setDeviceData] = React.useState<Array<DeviceData>>()
     const [roomDeviceData, setRoomDeviceData] = React.useState<Array<DeviceData>>()
@@ -129,15 +129,12 @@ function RoomCard(props: {data: Array<DeviceData>}) {
 
     function roomIndicator(int : number) {
         let property : number
-        let class_name : string
         let label : string
         if (int === 0) {
             property = roomStatus[1]
-            class_name = "room-ready-indicator"
             label = "Geräte Einsatzbereit:"
         } else {
             property = roomStatus[2]
-            class_name = "room-active-indicator"
             label = "Geräte Aktiv:"
         }
         const ratio = property / roomStatus[0]
@@ -170,7 +167,7 @@ function RoomCard(props: {data: Array<DeviceData>}) {
                 <label className="select-label">Station:</label>
                 <select className="station-select" onChange={handleStationChange}>
                     <option value="default">-Station wählen-</option>
-                    {getStations(deviceData)}
+                    {getStations(deviceData, props.helperData)}
                 </select>
             </div>
             }

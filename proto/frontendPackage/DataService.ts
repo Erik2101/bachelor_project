@@ -4,6 +4,7 @@ import type * as grpc from '@grpc/grpc-js'
 import type { MethodDefinition } from '@grpc/proto-loader'
 import type { ChartDatasetRequest as _frontendPackage_ChartDatasetRequest, ChartDatasetRequest__Output as _frontendPackage_ChartDatasetRequest__Output } from '../frontendPackage/ChartDatasetRequest';
 import type { ChartDatasetResponse as _frontendPackage_ChartDatasetResponse, ChartDatasetResponse__Output as _frontendPackage_ChartDatasetResponse__Output } from '../frontendPackage/ChartDatasetResponse';
+import type { StationHelperArray as _frontendPackage_StationHelperArray, StationHelperArray__Output as _frontendPackage_StationHelperArray__Output } from '../frontendPackage/StationHelperArray';
 import type { TestResponse as _frontendPackage_TestResponse, TestResponse__Output as _frontendPackage_TestResponse__Output } from '../frontendPackage/TestResponse';
 
 export interface DataServiceClient extends grpc.Client {
@@ -21,6 +22,11 @@ export interface DataServiceClient extends grpc.Client {
   connectionTesting(argument: _frontendPackage_ChartDatasetRequest, options: grpc.CallOptions, callback: (error?: grpc.ServiceError, result?: _frontendPackage_TestResponse__Output) => void): grpc.ClientUnaryCall;
   connectionTesting(argument: _frontendPackage_ChartDatasetRequest, callback: (error?: grpc.ServiceError, result?: _frontendPackage_TestResponse__Output) => void): grpc.ClientUnaryCall;
   
+  StationHelperFetch(argument: _frontendPackage_ChartDatasetRequest, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_frontendPackage_StationHelperArray__Output>;
+  StationHelperFetch(argument: _frontendPackage_ChartDatasetRequest, options?: grpc.CallOptions): grpc.ClientReadableStream<_frontendPackage_StationHelperArray__Output>;
+  stationHelperFetch(argument: _frontendPackage_ChartDatasetRequest, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_frontendPackage_StationHelperArray__Output>;
+  stationHelperFetch(argument: _frontendPackage_ChartDatasetRequest, options?: grpc.CallOptions): grpc.ClientReadableStream<_frontendPackage_StationHelperArray__Output>;
+  
 }
 
 export interface DataServiceHandlers extends grpc.UntypedServiceImplementation {
@@ -28,9 +34,12 @@ export interface DataServiceHandlers extends grpc.UntypedServiceImplementation {
   
   ConnectionTesting: grpc.handleUnaryCall<_frontendPackage_ChartDatasetRequest__Output, _frontendPackage_TestResponse>;
   
+  StationHelperFetch: grpc.handleServerStreamingCall<_frontendPackage_ChartDatasetRequest__Output, _frontendPackage_StationHelperArray>;
+  
 }
 
 export interface DataServiceDefinition extends grpc.ServiceDefinition {
   ChartDatasetGathering: MethodDefinition<_frontendPackage_ChartDatasetRequest, _frontendPackage_ChartDatasetResponse, _frontendPackage_ChartDatasetRequest__Output, _frontendPackage_ChartDatasetResponse__Output>
   ConnectionTesting: MethodDefinition<_frontendPackage_ChartDatasetRequest, _frontendPackage_TestResponse, _frontendPackage_ChartDatasetRequest__Output, _frontendPackage_TestResponse__Output>
+  StationHelperFetch: MethodDefinition<_frontendPackage_ChartDatasetRequest, _frontendPackage_StationHelperArray, _frontendPackage_ChartDatasetRequest__Output, _frontendPackage_StationHelperArray__Output>
 }

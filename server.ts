@@ -6,6 +6,7 @@ import { DataServiceHandlers } from "./proto/frontendPackage/DataService"
 import { ChartDatasetResponse } from "./proto/frontendPackage/ChartDatasetResponse"
 import { DeviceData } from "./proto/frontendPackage/DeviceData"
 import { TestResponse } from "./proto/frontendPackage/TestResponse"
+import { StationHelperArray } from "./proto/frontendPackage/StationHelperArray"
 
 const PORT = 8082
 const PROTO_FILE = './proto/frontend.proto'
@@ -55,6 +56,20 @@ function getServer() {
       activityData = pulled_data.data
       for (const item of activityData) {
         const ret: ChartDatasetResponse = { "DeviceData": item }
+        call.write(ret);
+      }
+      call.on('cancelled', () => {
+      })
+      call.end();
+    },
+
+    StationHelperFetch: (call) => {
+      const requestId = call.request.chartId || 0
+      if (!requestId) return call.end();
+      let pulled_array : PulledData = (requestId === 1) ? require("./data/deviceDummyV4.a.json") : require("./data/deviceDummyV4.b.json")
+      const helper_array_container = pulled_array.helper
+      for (const item of helper_array_container) {
+        const ret: StationHelperArray = {name : item[0], short : item[1]}
         call.write(ret);
       }
       call.on('cancelled', () => {

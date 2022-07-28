@@ -110,3 +110,7 @@ select {
         grid-auto-rows: 55vh;
     }
 }
+
+.tick {
+    cursor: default;
+}

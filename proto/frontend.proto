@@ -5,6 +5,7 @@ package frontendPackage;
 service DataService {
   rpc ConnectionTesting(ChartDatasetRequest) returns (TestResponse) {};
   rpc ChartDatasetGathering(ChartDatasetRequest) returns (stream ChartDatasetResponse) {}; 
+  rpc StationHelperFetch(ChartDatasetRequest) returns  (stream StationHelperArray) {};
 }
 
 message ChartDatasetRequest {
@@ -39,4 +40,9 @@ message ChartDatasetResponse {
 
 message TestResponse {
   string hello = 1;
+}
+
+message StationHelperArray {
+  string name = 1;
+  string short = 2;
 }

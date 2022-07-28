@@ -63,9 +63,7 @@
 
 .table-container {
     width: 100%;
-    min-height: 300px;
-    height: 100%;
-    max-height: 500px;
+    height: minmax(300px, 500px);
     grid-column: 1 / 7;
     overflow-y: auto;
     overflow-x: auto;

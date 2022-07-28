@@ -4,7 +4,7 @@ import BarChart from "./components/BarChart";
 import PieChart from './components/PieChart';
 import {ChartDatasetRequest, ChartDatasetResponse} from "./proto/frontend_pb";
 import {DataServiceClient} from "./proto/FrontendServiceClientPb";
-import { DeviceData } from './proto/frontend_pb';
+import { DeviceData, StationHelperArray } from './proto/frontend_pb';
 import RoomCard from './components/RoomCard';
 import MultiLineChart from './components/MultiLineChart';
 import MultiBarChart from './components/MultiBarChart';
@@ -20,6 +20,7 @@ export type Options = {
 function App() {
 
   const [deviceDataStore, setDeviceDataStore] = React.useState<Array<DeviceData>>()
+  const [stationDict, setStationDict] = React.useState<Array<StationHelperArray>>()
   const [dataSetCount, setDataSetCount] = React.useState(0)
   const [filterOptions, setFilterOptions] = React.useState<Options>({
     "station" : [],
@@ -51,12 +52,23 @@ function App() {
           setDeviceDataStore(oldStore => update(oldStore, streamData))
         }
       })
-      console.log(deviceDataStore)
+
+      let helperData : Array<StationHelperArray> = []
+      const second_stream = client.stationHelperFetch(request, {});
+      second_stream.on("data", function(response) {
+        helperData.push(response)
+      })
+      stream.on("status", function(status) {
+      })
+      stream.on("end", function() {
+        if (helperData.length > 0) {
+          setStationDict(helperData)
+        }
+      })
   }, [dataSetCount])
 
   React.useEffect(() => {
     if(deviceDataStore && filterOptions.device_class.length === 0 && filterOptions.station.length === 0) {
-      console.log("am here")
       setFilteredDeviceData(deviceDataStore)
     }
   }, [deviceDataStore])
@@ -129,18 +141,18 @@ function App() {
       <TabLayout>
         <div id="Überwachung Gerätepark">
           <main className="main-content">
-            {deviceDataStore && <Popup data={deviceDataStore}  current={filterOptions} trigger={popupState} setTrigger={setPopupState} submitFunction={setFilterOptions}/>}
+            {deviceDataStore && stationDict && <Popup data={deviceDataStore} helperData={stationDict}  current={filterOptions} trigger={popupState} setTrigger={setPopupState} submitFunction={setFilterOptions}/>}
             {filteredDeviceData && <MultiBarChart data={filteredDeviceData}/>}
             {filteredDeviceData && <PieChart typeId={1} data={filteredDeviceData}/>}
             {filteredDeviceData && <MultiLineChart data={filteredDeviceData}/>}
             {filteredDeviceData && <BarChart typeId={2} data={filteredDeviceData}/>}
-            {filteredDeviceData && <LolipopChart data={filteredDeviceData}/>}
+            {filteredDeviceData && stationDict && <LolipopChart data={filteredDeviceData} dict={stationDict}/>}
             {filteredDeviceData && <BarChart typeId={1} data={filteredDeviceData}/>}
             {filteredDeviceData && <PieChart typeId={3} data={filteredDeviceData}/>}
           </main>
         </div>
         <div id="Raummonitor">
-          {deviceDataStore && <RoomCard data={deviceDataStore}/>}
+          {deviceDataStore && stationDict && <RoomCard data={deviceDataStore} helperData={stationDict}/>}
         </div>
       </TabLayout>
     </div>

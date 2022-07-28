@@ -14,6 +14,7 @@ export interface ProtoGrpcType {
     DataService: SubtypeConstructor<typeof grpc.Client, _frontendPackage_DataServiceClient> & { service: _frontendPackage_DataServiceDefinition }
     DeviceData: MessageTypeDefinition
     Error: MessageTypeDefinition
+    StationHelperArray: MessageTypeDefinition
     TestResponse: MessageTypeDefinition
   }
 }

@@ -154,3 +154,25 @@ export namespace TestResponse {
   }
 }
 
+export class StationHelperArray extends jspb.Message {
+  getName(): string;
+  setName(value: string): StationHelperArray;
+
+  getShort(): string;
+  setShort(value: string): StationHelperArray;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StationHelperArray.AsObject;
+  static toObject(includeInstance: boolean, msg: StationHelperArray): StationHelperArray.AsObject;
+  static serializeBinaryToWriter(message: StationHelperArray, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StationHelperArray;
+  static deserializeBinaryFromReader(message: StationHelperArray, reader: jspb.BinaryReader): StationHelperArray;
+}
+
+export namespace StationHelperArray {
+  export type AsObject = {
+    name: string,
+    pb_short: string,
+  }
+}
+

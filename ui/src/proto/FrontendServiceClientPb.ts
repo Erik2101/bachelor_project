@@ -100,5 +100,27 @@ export class DataServiceClient {
       this.methodDescriptorChartDatasetGathering);
   }
 
+  methodDescriptorStationHelperFetch = new grpcWeb.MethodDescriptor(
+    '/frontendPackage.DataService/StationHelperFetch',
+    grpcWeb.MethodType.SERVER_STREAMING,
+    proto_frontend_pb.ChartDatasetRequest,
+    proto_frontend_pb.StationHelperArray,
+    (request: proto_frontend_pb.ChartDatasetRequest) => {
+      return request.serializeBinary();
+    },
+    proto_frontend_pb.StationHelperArray.deserializeBinary
+  );
+
+  stationHelperFetch(
+    request: proto_frontend_pb.ChartDatasetRequest,
+    metadata?: grpcWeb.Metadata): grpcWeb.ClientReadableStream<proto_frontend_pb.StationHelperArray> {
+    return this.client_.serverStreaming(
+      this.hostname_ +
+        '/frontendPackage.DataService/StationHelperFetch',
+      request,
+      metadata || {},
+      this.methodDescriptorStationHelperFetch);
+  }
+
 }
 

@@ -1,25 +1,25 @@
 import React, { FormEvent } from 'react';
 import { Options } from '../App';
-import { DeviceData } from '../proto/frontend_pb';
+import { DeviceData, StationHelperArray } from '../proto/frontend_pb';
 import { getStations, populateSelect } from '../util';
 import FilterItemButton from './FilterItemButton';
 import "./Popup.css";
 
 type PopupProps = {
   data : Array<DeviceData>,
+  helperData : Array<StationHelperArray>,
   current : Options,
   trigger : boolean,
   setTrigger : Function,
   submitFunction : Function
 }
 
-function Popup({ data, current, trigger, setTrigger, submitFunction} : PopupProps) {
+function Popup({ data, helperData, current, trigger, setTrigger, submitFunction} : PopupProps) {
 
   const [station, setStation] = React.useState<Array<string>>(current.station)
   const [selectedClass, setSelectedClass] = React.useState<Array<string>>(current.device_class)
 
   React.useLayoutEffect(() => {
-    console.log("update")
     submitFunction({"station" : station, "device_class" : selectedClass})
   }, [station, selectedClass])
 
@@ -82,7 +82,6 @@ function Popup({ data, current, trigger, setTrigger, submitFunction} : PopupProp
       setStation(prevArray => { 
         const idx = prevArray.indexOf(item_to_remove)
         let new_array
-        console.log(idx)
         if(idx !== -1) {
           new_array = [...prevArray]
           new_array.splice(idx, 1)
@@ -126,7 +125,7 @@ function Popup({ data, current, trigger, setTrigger, submitFunction} : PopupProp
           <div className="filter-selector">
             <select className="station-select" id="popup-station-select">
               <option value="default">- Station Auswählen - </option>
-              {getStations(data)}
+              {getStations(data, helperData)}
             </select>
             <div className="add-btn" onClick={handleStationAdd}>Hinzufügen</div>
           </div>

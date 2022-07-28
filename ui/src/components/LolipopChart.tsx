@@ -1,12 +1,13 @@
 import React from "react";
 import * as d3 from "d3";
-import { DeviceData } from "../proto/frontend_pb";
+import { DeviceData, StationHelperArray } from "../proto/frontend_pb";
 import "./ChartContainer.css";
 import { theme } from "../theme";
 import { Dataset, devicesOfAClassPerStation, populateSelect } from "../util";
 
 function LolipopChart(props : {
-    data : Array<DeviceData>
+    data : Array<DeviceData>,
+    dict : Array<StationHelperArray>
 }) {
 
     const d3Chart = React.useRef(null)
@@ -77,6 +78,9 @@ function LolipopChart(props : {
                             .domain([0, xMax])
                             .nice()
 
+            const tooltip = d3.select(".tooltip")
+                    .style("opacity", 0)
+                
             svg.select(".grid").remove()
 
             svg.selectAll("line")
@@ -113,10 +117,38 @@ function LolipopChart(props : {
 
             svg.selectAll("g").remove()
             
-            svg.append("g")
-                .call(d3.axisLeft(y))
-                .attr("transform", "translate(" + margin.left + ", 0)")
-                .style("font-size", "14px")
+            let yAxis = svg.append("g")
+                            .call(d3.axisLeft(y))
+                            .attr("transform", "translate(" + margin.left + ", 0)")
+                            .style("font-size", "14px")
+
+            yAxis.selectAll(".tick")
+                    .data(sorted_data)
+                    .on("mouseover", function(_, d) {
+                        tooltip
+                            .html(() => {
+                                    for (const entry of props.dict) {
+                                        if (entry.getShort() == d.sectionCaption) {
+                                            return entry.getName()
+                                        }
+                                    }
+                                return ""
+                            })
+                            .style("opacity", 1)
+                    })
+
+                    .on("mousemove", function(event, d) {
+                        tooltip
+                            .style("left", (d3.pointer(event, window)[0] - margin.left) + "px")
+                            .style("top", (d3.pointer(event, window)[1] - 3*margin.top)  + "px")
+                    })
+
+                    .on("mouseout", function() {
+                        tooltip
+                        .style("opacity", 0)
+                        .style("left", "0px")
+                        .style("top", "0px")
+                    })
 
             svg.append("g")
                 .call(d3.axisBottom(x))

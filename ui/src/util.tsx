@@ -1,5 +1,5 @@
 import * as d3 from "d3"
-import { DeviceData } from "./proto/frontend_pb"
+import { DeviceData, StationHelperArray } from "./proto/frontend_pb"
 import { theme } from "./theme"
 
 export type Dataset = {
@@ -238,7 +238,6 @@ export function errorSpreadData(input: Array<DeviceData>) {
     const day_in_ms = 24 * 60 * 60 * 1000
     const is_ms = sorted_domain.length + 1 * day_in_ms
     const should_ms = new Date(sorted_domain[sorted_domain.length - 1]).getTime() - new Date(sorted_domain[0]).getTime()
-    console.log(data)
     if ( should_ms > is_ms) {
         for (let i = 0; i <= should_ms / day_in_ms; i++) {
             final_sorted_domain.push((new Date(new Date(sorted_domain[0]).getTime() + (i * day_in_ms))).toString())
@@ -246,7 +245,6 @@ export function errorSpreadData(input: Array<DeviceData>) {
     } else {
         final_sorted_domain = sorted_domain
     }
-    console.log(final_sorted_domain)
     for(const prio of data) {
         if (prio.data.length < final_sorted_domain.length) {
             for ( let i = 0; i < final_sorted_domain.length; i++ ) {
@@ -261,7 +259,6 @@ export function errorSpreadData(input: Array<DeviceData>) {
         xDomain: final_sorted_domain,
         dataSet: data
     }
-    console.log(ret)
     return ret
 }
 
@@ -328,7 +325,7 @@ export function populateSelect(input: Array<DeviceData>) {
     return ret
 }
 
-export function getStations(input: Array<DeviceData>) {
+export function getStations(input: Array<DeviceData>, helper : Array<StationHelperArray>) {
     let stations : Array<string> = []
     for (const device of input) {
         const split_array = device.getLocation().split("-")
@@ -344,8 +341,14 @@ export function getStations(input: Array<DeviceData>) {
     sorted_stations.reverse()
     let ret = []
     for (const station of sorted_stations) {
+        let idx : number = 0
+        for (const entry of helper) {
+            if (entry.getShort() === station) {
+                idx = helper.indexOf(entry)
+            }
+        }
         ret.push(
-            <option value={station} key={ret.length}>{station}</option>
+            <option value={station} key={ret.length}>{helper[idx].getName()}</option>
         )
     }
     return ret
