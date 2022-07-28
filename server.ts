@@ -14,6 +14,11 @@ const packageDef = protoLoader.loadSync(path.resolve(__dirname, PROTO_FILE))
 const grpcObj = (grpc.loadPackageDefinition(packageDef) as unknown) as ProtoGrpcType
 const frontendPackage = grpcObj.frontendPackage
 
+type PulledData = {
+  "data" : Array<DeviceData>,
+  "helper" : Array<[string, string]>
+}
+
 function main() {
   const server = getServer()
 
@@ -45,7 +50,9 @@ function getServer() {
       const requestId = call.request.chartId || 0
       let activityData: Array<DeviceData> = []
       if (!requestId) return call.end();
-      activityData = (requestId === 1) ? require("./data/deviceDummyV3.a.json") : require("./data/deviceDummyV3.b.json")
+      let pulled_data : PulledData
+      pulled_data = (requestId === 1) ? require("./data/deviceDummyV4.a.json") : require("./data/deviceDummyV4.b.json")
+      activityData = pulled_data.data
       for (const item of activityData) {
         const ret: ChartDatasetResponse = { "DeviceData": item }
         call.write(ret);

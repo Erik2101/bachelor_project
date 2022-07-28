@@ -3,18 +3,24 @@ import * as d3 from "d3";
 import "./ChartContainer.css"
 import { errorSpreadData, ErrPerDate, ErrPerPrioPerDate, ErrSpreadChartData, PriorityValuePair } from "../util";
 import { DeviceData } from "../proto/frontend_pb";
-import { range, timeParse } from "d3";
+import { range } from "d3";
 import { theme } from "../theme";
 
 function MultiLineChart (props: {data : Array<DeviceData>}) {
 
     const [data, setData] = React.useState<ErrSpreadChartData>()
     const [tooltipValues, setTooltipValues] = React.useState<ReadonlyArray<PriorityValuePair>>([
-        {priority: "low", value: ""},
-        {priority: "medium", value: ""},
-        {priority: "high", value: ""}])
+        {priority: "Niedrig", value: ""},
+        {priority: "Medium", value: ""},
+        {priority: "Hoch", value: ""}])
 
     const lineChart = React.useRef(null)
+
+    function makeHeaderDate(input : string) : string {
+        const temp = new Date(input)
+        function pad(s : number) { return s > 9 ? s : "0" + s}
+        return [pad(temp.getDate()), pad(temp.getMonth() + 1), temp.getFullYear()].join(".")
+    }
 
     const drawChart = React.useCallback(() => {
 
@@ -40,8 +46,6 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
             for (const date of data.xDomain) {
                 domain.push(new Date(date))
             }
-            console.log(data.xDomain)
-            console.log(domain)
             const dx = [domain[0], domain[domain.length - 1]]
             const x = d3.scaleTime()
                             .domain(dx)
@@ -76,7 +80,7 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 }
             }
             const lineFunction = d3.line<ErrPerDate>()
-                                    .x((d) => { console.log(x(new Date(d.date))); return x(new Date(d.date))})
+                                    .x((d) => { /* console.log(x(new Date(d.date))); */ return x(new Date(d.date))})
                                     .y((d) => y(d.errNum))
 
             svg.select(".grid").remove()
@@ -96,8 +100,8 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                 .attr("stroke-width", 2)
                 .attr("class", "line")
 
-            const chartTitle = "Gerätefehler von " + data.xDomain[0] + " bis " +
-            data.xDomain[data.xDomain.length - 1] + " nach Prioritäten"
+            const chartTitle = "Gerätefehler von " + makeHeaderDate(data.xDomain[0]) + " bis " +
+            makeHeaderDate(data.xDomain[data.xDomain.length - 1]) + " nach Prioritäten"
             
             svg.selectAll("text").remove()
 

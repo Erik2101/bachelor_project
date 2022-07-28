@@ -198,14 +198,13 @@ export function errorSpreadData(input: Array<DeviceData>) {
             // exclude dummy error
             if (error.getId() !== 0) {
                 const prio = error.getPriority()
-                const date = new Date(error.getDate())
-                const dateString = convertDate(date)
+                const dateString = makeTick(new Date(error.getDate()))
                 for (const group of data) {
                     if (group.priority === prio) {
                         const data = group.data
                         let dateExists = false
                         for (const errDate of data) {
-                            if (errDate.date === dateString) {
+                            if (dateString === errDate.date) {
                                 dateExists = true
                                 errDate.errNum++
                             }
@@ -220,7 +219,7 @@ export function errorSpreadData(input: Array<DeviceData>) {
                 }
                 let dateInDomain = false
                 for (const date of domain) {
-                    if (date === dateString) {
+                    if (dateString === date) {
                         dateInDomain = true
                     }
                 }
@@ -239,17 +238,19 @@ export function errorSpreadData(input: Array<DeviceData>) {
     const day_in_ms = 24 * 60 * 60 * 1000
     const is_ms = sorted_domain.length + 1 * day_in_ms
     const should_ms = new Date(sorted_domain[sorted_domain.length - 1]).getTime() - new Date(sorted_domain[0]).getTime()
+    console.log(data)
     if ( should_ms > is_ms) {
         for (let i = 0; i <= should_ms / day_in_ms; i++) {
-            final_sorted_domain.push(convertDate(new Date(new Date(sorted_domain[0]).getTime() + (i * day_in_ms))))
+            final_sorted_domain.push((new Date(new Date(sorted_domain[0]).getTime() + (i * day_in_ms))).toString())
         }
     } else {
         final_sorted_domain = sorted_domain
     }
+    console.log(final_sorted_domain)
     for(const prio of data) {
         if (prio.data.length < final_sorted_domain.length) {
             for ( let i = 0; i < final_sorted_domain.length; i++ ) {
-                if (prio.data.length === i || prio.data[i].date !== final_sorted_domain[i]) {
+                if (prio.data.length === i || !checkSameDay(prio.data[i].date, final_sorted_domain[i])) {
                     prio.data.splice(i, 0, {date: final_sorted_domain[i], errNum: 0})
                 }
             }
@@ -260,12 +261,23 @@ export function errorSpreadData(input: Array<DeviceData>) {
         xDomain: final_sorted_domain,
         dataSet: data
     }
+    console.log(ret)
     return ret
 }
 
-function convertDate(input: Date) {
-    function pad(s: number) { return (s < 10) ? '0' + s : s}
-    return [pad(input.getMonth() + 1), pad(input.getDate()), input.getFullYear()].join("-")
+function checkSameDay(date : string, compare_to : string) : boolean{
+let ret : boolean = false
+    const a = new Date(date)
+    const b = new Date(compare_to)
+    if (a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()) {
+        ret = true
+    }
+    return ret
+}
+
+function makeTick(input : Date) : string{
+    input.setHours(0, 0, 0, 0)
+    return input.toDateString()
 }
 
 export function colorArrayFromTwo(start : string, end : string, range : number) {

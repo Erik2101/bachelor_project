@@ -51,6 +51,7 @@ function App() {
           setDeviceDataStore(oldStore => update(oldStore, streamData))
         }
       })
+      console.log(deviceDataStore)
   }, [dataSetCount])
 
   React.useEffect(() => {
