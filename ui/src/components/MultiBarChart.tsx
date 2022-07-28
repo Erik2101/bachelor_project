@@ -63,7 +63,7 @@ function MultiBarChart(props : {
     }
 
     function ensembleDeviceUptime(input : Array<DeviceData>) {
-        const ensembles : Array<EnsembleDeviceList>= []
+        const ensembles : Array<EnsembleDeviceList> = []
         for (const device of input) {
             let devicePushed = false
             if (device.getEnsembleList().length > 1) {
@@ -100,7 +100,13 @@ function MultiBarChart(props : {
                 }
             }
         }
-        const sorted_ensembles = ensembles.sort((a, b) => b.ensembleName.localeCompare(a.ensembleName))
+        let device_sorted_ens = []
+        for (const ensemble of ensembles) {
+            const temp = ensemble.devices.sort((a, b) => (a.data.Gesamt + a.data.Wartung + a.data.Aktuell) - (b.data.Gesamt + b.data.Wartung + b.data.Aktuell))
+            temp.reverse()
+            device_sorted_ens.push(ensemble)
+        }
+        const sorted_ensembles = device_sorted_ens.sort((a, b) => b.ensembleName.localeCompare(a.ensembleName))
         sorted_ensembles.reverse()
         return sorted_ensembles
     }
