@@ -73,17 +73,26 @@ export function totalActivityData2( data: Array<DeviceData>) {
         sectionCaption: "Nicht Bereit",
         sectionValue: 0
     }
+    let defekt : Dataset = {
+        sectionCaption: "Fehlerhaft",
+        sectionValue: 0
+    }
     const dummy = data
     for(const point of dummy){
         if (point.getIsactive()) {
             a_u.sectionValue!++
         } else {
-            point.getIsusable()? ia_u.sectionValue!++  : ia_uu.sectionValue!++
+            if (point.getErrorsList().length > 1) {
+                defekt.sectionValue++
+            } else {
+                point.getIsusable()? ia_u.sectionValue!++  : ia_uu.sectionValue!++
+            } 
         }
     }
     ret.push(a_u)
     ret.push(ia_u)
     ret.push(ia_uu)
+    ret.push(defekt)
     return ret
 }
 

@@ -39,8 +39,9 @@ function PieChart (props: {
             setTitle("Aktivitätstatus und Einsatzbereitschaft aller bekannten Geräte")
             setColours([
                 {caption: "Aktiv", colour: theme.active},
-                {caption: "Bereit (Inaktiv)", colour: theme.medium_prio},
-                {caption: "Nicht Bereit", colour: theme.high_prio}])
+                {caption: "Bereit (Inaktiv)", colour: theme.i_u},
+                {caption: "Nicht Bereit", colour: theme.medium_prio},
+                {caption: "Fehlerhaft", colour: theme.high_prio}])
         }
         return () => {};
     }, [props])
@@ -95,6 +96,7 @@ function PieChart (props: {
                         .attr("viewBox", [0, 0, chartWidth, containerHeight])
 
         const pie = d3.pie()
+                        .padAngle(0.01)
                         .sort(null)
 
 
@@ -104,6 +106,7 @@ function PieChart (props: {
             const arc = d3.arc<PieArcDatum<number>>()
                             .innerRadius((size * size_reg) / 4 - 2)
                             .outerRadius((size * size_reg) / 2 - 1)
+                            .cornerRadius(10)
 
             const tooltip = d3.select(".tooltip")
                                 .style("opacity", 0)
