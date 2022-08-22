@@ -32,10 +32,38 @@
 }
 
 .pie-chart-title {
-    align-self: flex-start;
     text-align: center;
-    margin-top: 10%;
-    max-width: 40%;
+    margin-top: 20%;
+    max-width: 100%;
+}
+
+.pie-chart-accessories {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+    justify-items: flex-start;
+    height: 100%;
+}
+
+.legend-container {
+    margin-top: 25%;
+}
+
+.legend-header {
+    margin-bottom: 20px;
+}
+
+.legend-item-container {
+    display: flex;
+    margin-top: 5%;
+}
+
+.legend-color {
+    height: 25px;
+    width: 25px;
+    border-radius: 10px;
+    margin-right: 10px;
 }
 
 .sub-flex-container {

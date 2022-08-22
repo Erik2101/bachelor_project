@@ -19,8 +19,32 @@ function PieChart (props: {
     const [selection, setSelection] = React.useState<string>("default")
 
     React.useEffect(() => {
-        if (data) drawChart()
+        if (data) {
+            drawChart()
+        }
     },[data])
+
+    function generateLegend() {
+        if (data) {
+            let ret : Array<JSX.Element> = []
+            let idx : number 
+            for(const set of data.captionArray) {
+                idx = data.captionArray.indexOf(set)
+                const style = {backgroundColor: colours[idx].colour}
+                const temp = (
+                    <div className="legend-item-container" key={data.captionArray[idx]}>
+                        <div className="legend-color" style={style}></div>
+                        <label className="legend-label">{data.captionArray[idx]}</label>
+                    </div>
+                )
+                if(data.valueArray[idx] > 0 && !ret.some(e => e.key === temp.key)){
+                    ret.push(temp)
+                }
+            }
+            return ret
+        }
+        return <></>
+    }
 
     React.useEffect(() => {
         if (props.typeId === 1) {
@@ -199,7 +223,14 @@ function PieChart (props: {
     if (props.typeId === 1 || props.typeId === 3) {
         final_return = (
             <div className="chart-container">
-                <h3 className="pie-chart-title">{title}</h3>
+                <div className="pie-chart-accessories">
+                    <h3 className="pie-chart-title">{title}</h3>
+                    {DeviceData && colours && 
+                        <div className="legend-container">
+                            <h3 className="legend-header">Legende</h3>
+                            {generateLegend()}
+                        </div>}
+                </div>
                 <svg ref={d3Chart}/>
                 <div className="tooltip"></div>
             </div>

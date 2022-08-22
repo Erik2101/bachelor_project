@@ -34,6 +34,7 @@ function main() {
   })
 }
 
+// create grpc server with DataService implementation
 function getServer() {
   const server = new grpc.Server()
   server.addService(frontendPackage.DataService.service, {
@@ -47,15 +48,19 @@ function getServer() {
       return callback(null, ret)
     },
 
+    // rpc handler for gathering device data
     ChartDatasetGathering: (call) => {
+      // get requestId from Web-App Request
       const requestId = call.request.chartId || 0
       let activityData: Array<DeviceData> = []
       if (!requestId) return call.end();
       let pulled_data : PulledData
+      // read device data from JSON, choice depends on requestId
       pulled_data = (requestId === 1) ? require("./data/deviceDummyV4.a.json") : require("./data/deviceDummyV4.b.json")
       activityData = pulled_data.data
       for (const item of activityData) {
         const ret: ChartDatasetResponse = { "DeviceData": item }
+        // write each child of activityData to ServerWriteableStream call
         call.write(ret);
       }
       call.on('cancelled', () => {

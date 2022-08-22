@@ -12,7 +12,7 @@ function MultiBarChart(props : {
     const d3Chart = React.useRef(null)
     const [selection, setSelection] = React.useState<string>("default")
     const [data, setData] = React.useState<Array<DeviceUptime>>()
-    const [title, setTitle] = React.useState<string>("XXXXXXXXXXXXXXXXX")
+    const [title, setTitle] = React.useState<string>("")
     const [colours, setColours] = React.useState<Array<string>>(["red", "blue", "green"])
 
     React.useEffect(() => {
@@ -166,15 +166,18 @@ function MultiBarChart(props : {
             for (const item of data) {
                 iterable_data.push(item.data)
             }
+            console.log(iterable_data, null, "  ")
             const stacked_data = d3.stack().keys(subgroups)(iterable_data)
-
+            console.log(JSON.stringify(stacked_data, null, "  "))
             const tooltip = d3.select(".tooltip")
                             .style("opacity", 0)
 
             svg.selectAll(".grid").remove()
 
+            // create grouping for each subgroup of stacked_data (Gesamt, Wartung, Aktuell)
             svg.selectAll("g")
                 .data(stacked_data)
+                // define lifecycle actions for each grouping
                 .join(
                     enter => enter.append("g"),
                     update => update,
@@ -182,10 +185,13 @@ function MultiBarChart(props : {
                         exit.call((g) =>
                              g.transition().duration(0).style("opacity", 0).remove())
                 )
+                //style each appended grouping
                 .attr("fill", (d) => (colour(d.key) as string))
                 .attr("fill-opacity", 1)
+                // create rectangle for each member of each subgroup
                 .selectAll("rect")
                     .data(function(d) {return d})
+                    // define lifecycle actions for each rectangle
                     .join(
                         enter => enter.append("rect"),
                         update => update,
@@ -193,10 +199,12 @@ function MultiBarChart(props : {
                         exit.call((rect) =>
                              rect.transition().duration(0).style("opacity", 0).remove())
                     )
+                    // set dimensions of each rectangle according to corresponding part of stacked_data
                     .attr("y", (_, i) =>  (i + 1) * (y.step() - y.bandwidth()) + i * y.bandwidth())
                     .attr("x", (d) => x(d[0]) + margin.left)
                     .attr("width", (d) => x(d[1]) - x(d[0]))
                     .attr("height", y.bandwidth())
+                    // style each appended rectangle
                     .attr("stroke", "#424242")
                     
                     .on("mouseover", function(event, d) {
@@ -244,20 +252,22 @@ function MultiBarChart(props : {
                             .attr("transform", "translate(" + margin.left + ", 0)")
                             .style("font-size", "14px")
 
+            // define hover tooltip for yAxis ticks
             yAxis.selectAll(".tick")
                     .data(data)
+                    // show tooltip when hovering axis label
                     .on("mouseover", function(_, d) {
                         tooltip
                             .html(d.uuid)
                             .style("opacity", 1)
                     })
-
+                    // move tooltip according to mouse position
                     .on("mousemove", function(event, d) {
                         tooltip
                             .style("left", (d3.pointer(event, window)[0] - margin.left) + "px")
                             .style("top", (d3.pointer(event, window)[1] - 3*margin.top)  + "px")
                     })
-
+                    // hide tooltip when not hovering
                     .on("mouseout", function() {
                         tooltip
                         .style("opacity", 0)

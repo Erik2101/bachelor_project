@@ -35,8 +35,11 @@ function BarChart(props: {
 
 
         const x = d3.scaleBand()
+                    // data to be displayed on axis, in this case string labels
                     .domain(data.map(item => item.sectionCaption))
+                    // coordinates for start-/endpoint of axis
                     .range([margin.left, chartWidth + margin.right])
+                    // padding between data points on axis
                     .padding(0.55)
 
         function makeValueIterable() {

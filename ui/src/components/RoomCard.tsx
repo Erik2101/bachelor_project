@@ -167,7 +167,7 @@ function RoomCard(props: {data: Array<DeviceData>, helperData: Array<StationHelp
                 <label className="select-label">Station:</label>
                 <select className="station-select" onChange={handleStationChange}>
                     <option value="default">-Station wählen-</option>
-                    {getStations(deviceData, props.helperData)}
+                    {getStations(deviceData, props.helperData, [])}
                 </select>
             </div>
             }

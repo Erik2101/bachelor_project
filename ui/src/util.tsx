@@ -62,7 +62,7 @@ export function totalActivityData( data: Array<DeviceData>) {
 export function totalActivityData2( data: Array<DeviceData>) {
     const ret: Array<Dataset> =[]
     let a_u: Dataset = {
-        sectionCaption: "Aktiv",
+        sectionCaption: "Bereit (Aktiv)",
         sectionValue: 0
     }
     let ia_u: Dataset = {
@@ -311,7 +311,7 @@ export function sToHour(input : number) {
     return ret
 }
 
-export function populateSelect(input: Array<DeviceData>) {
+export function populateSelect(input: Array<DeviceData>, exclude: Array<string>) {
     let classes : Array<string> = []
     for (const device of input) {
         const target_class = device.getClasses()
@@ -327,14 +327,22 @@ export function populateSelect(input: Array<DeviceData>) {
     sorted_classes.reverse()
     let ret = []
     for (const member of classes) {
-        ret.push(
-            <option value={member} key={ret.length}>{member}</option>
-        )
+        let do_exclude = false
+        for(const ex_item of exclude) {
+            if (ex_item === member) {
+                do_exclude = true
+            }
+        }
+        if(!do_exclude) {
+            ret.push(
+                <option value={member} key={ret.length}>{member}</option>
+            )
+        }
     }
     return ret
 }
 
-export function getStations(input: Array<DeviceData>, helper : Array<StationHelperArray>) {
+export function getStations(input: Array<DeviceData>, helper : Array<StationHelperArray>, exclude: Array<string>) {
     let stations : Array<string> = []
     for (const device of input) {
         const split_array = device.getLocation().split("-")
@@ -350,15 +358,25 @@ export function getStations(input: Array<DeviceData>, helper : Array<StationHelp
     sorted_stations.reverse()
     let ret = []
     for (const station of sorted_stations) {
-        let idx : number = 0
-        for (const entry of helper) {
-            if (entry.getShort() === station) {
-                idx = helper.indexOf(entry)
+        let do_exclude = false
+        if (exclude.length > 0) {
+            for (const ex_item of exclude) {
+                if (ex_item === station) {
+                    do_exclude = true
+                }
             }
         }
-        ret.push(
-            <option value={station} key={ret.length}>{helper[idx].getName()}</option>
-        )
+        if (!do_exclude) {
+            let idx : number = 0
+            for (const entry of helper) {
+                if (entry.getShort() === station) {
+                    idx = helper.indexOf(entry)
+                }
+            }
+            ret.push(
+                <option value={station} key={ret.length}>{helper[idx].getName()}</option>
+            )
+        }   
     }
     return ret
 }

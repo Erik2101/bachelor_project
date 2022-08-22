@@ -125,7 +125,7 @@ function Popup({ data, helperData, current, trigger, setTrigger, submitFunction}
           <div className="filter-selector">
             <select className="station-select" id="popup-station-select">
               <option value="default">- Station Auswählen - </option>
-              {getStations(data, helperData)}
+              {getStations(data, helperData, station)}
             </select>
             <div className="add-btn" onClick={handleStationAdd}>Hinzufügen</div>
           </div>
@@ -145,7 +145,7 @@ function Popup({ data, helperData, current, trigger, setTrigger, submitFunction}
           <div className="filter-selector">
             <select className="device-class-select" id="device-class-select">
               <option value="default">- Geräteklasse auswählen -</option>
-              {populateSelect(data)}
+              {populateSelect(data, selectedClass)}
             </select>
             <div className="add-btn" onClick={handleClassAdd}>Hinzufügen</div>
           </div>

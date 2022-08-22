@@ -84,7 +84,14 @@ function MultiLineChart (props: {data : Array<DeviceData>}) {
                                     .y((d) => y(d.errNum))
 
             svg.select(".grid").remove()
-                                
+            
+            console.log(justData[0])
+            let temp = []
+            for (const item of justData[0]) {
+                temp.push(lineFunction(justData[0]))
+            }
+            console.table(temp)
+
             svg.selectAll("path")
                 .data(justData)
                 .join(

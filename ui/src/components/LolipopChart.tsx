@@ -179,7 +179,7 @@ function LolipopChart(props : {
                 <label className="select-label">Geräteklasse:</label>
                 <select className="device-class-select" id="device-class-select" onChange={handleSelection}>
                     <option value="default">-Geräteklasse wählen:-</option>
-                    {populateSelect(props.data)}
+                    {populateSelect(props.data, [])}
                 </select>
             </div>
             <h3 className="chart-title">{title}</h3>
