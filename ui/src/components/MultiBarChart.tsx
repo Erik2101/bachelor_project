@@ -40,7 +40,7 @@ function MultiBarChart(props : {
     type DeviceUptime = {
         uuid: string,
         data: {
-            Aktuell: number,
+            Zuletzt: number,
             Wartung: number,
             Gesamt: number
         }
@@ -70,8 +70,8 @@ function MultiBarChart(props : {
                 for (const ensemble of ensembles) {
                     for (const item of ensemble.devices) {
                         if (device.getUuid() === item.uuid) {
-                            item.data.Aktuell = sToHour(device.getRuntimecurrent())
-                            item.data.Wartung = sToHour(device.getRuntimemaintenance() - item.data.Aktuell)
+                            item.data.Zuletzt = sToHour(device.getRuntimecurrent())
+                            item.data.Wartung = sToHour(device.getRuntimemaintenance() - device.getRuntimecurrent())
                             item.data.Gesamt = sToHour(device.getRuntimetotal() - device.getRuntimemaintenance())
                             devicePushed = true 
                         }
@@ -85,13 +85,13 @@ function MultiBarChart(props : {
                             data: {
                                 Gesamt: 0,
                                 Wartung: 0,
-                                Aktuell: 0
+                                Zuletzt: 0
                             }
                         })
                     }
                     const current = dev[dev.length - 1].data
-                    current.Aktuell = sToHour(device.getRuntimecurrent())
-                    current.Wartung = sToHour(device.getRuntimemaintenance() - current.Aktuell)
+                    current.Zuletzt = sToHour(device.getRuntimecurrent())
+                    current.Wartung = sToHour(device.getRuntimemaintenance() - device.getRuntimecurrent())
                     current.Gesamt = sToHour(device.getRuntimetotal() - device.getRuntimemaintenance())
                     ensembles.push({
                         ensembleName: device.getLocation(),
@@ -102,7 +102,7 @@ function MultiBarChart(props : {
         }
         let device_sorted_ens = []
         for (const ensemble of ensembles) {
-            const temp = ensemble.devices.sort((a, b) => (a.data.Gesamt + a.data.Wartung + a.data.Aktuell) - (b.data.Gesamt + b.data.Wartung + b.data.Aktuell))
+            const temp = ensemble.devices.sort((a, b) => (a.data.Gesamt + a.data.Wartung + a.data.Zuletzt) - (b.data.Gesamt + b.data.Wartung + b.data.Zuletzt))
             temp.reverse()
             device_sorted_ens.push(ensemble)
         }
@@ -119,6 +119,33 @@ function MultiBarChart(props : {
             )
         }
         return ret
+    }
+
+    function generateLegend() {
+        if (data) {
+            let result = []
+            for (let key in data[0].data) {
+                if (data[0].data.hasOwnProperty(key)) {
+                    result.push(key)
+                }
+            }
+            let ret : Array<JSX.Element> = []
+            let idx
+            result.reverse()
+            for (const item of result ) {
+                idx = result.indexOf(item)    
+                const style = {backgroundColor: colours[idx]}
+                const temp = (
+                    <div className="legend-item-vert" key={item}>
+                        <div className="legend-color" style={style}></div>
+                        <label className="legend-label">{item}</label>
+                    </div>
+                )
+                ret.push(temp)
+            }
+            return ret
+        }
+        return <></>
     }
 
     const drawChart = React.useCallback(() => {
@@ -147,7 +174,7 @@ function MultiBarChart(props : {
 
             let xMax = 0
             for (const device of data) {
-                const temp_total = device.data.Gesamt + device.data.Wartung + device.data.Aktuell
+                const temp_total = device.data.Gesamt + device.data.Wartung + device.data.Zuletzt
                 if (temp_total > xMax) xMax = temp_total
             }
 
@@ -156,7 +183,7 @@ function MultiBarChart(props : {
                             .range([0, chartWidth])
                             .nice()
 
-            const subgroups = ["Aktuell", "Wartung", "Gesamt"]
+            const subgroups = ["Zuletzt", "Wartung", "Gesamt"]
 
             const colour = d3.scaleOrdinal()
                                 .domain(subgroups)
@@ -174,7 +201,7 @@ function MultiBarChart(props : {
 
             svg.selectAll(".grid").remove()
 
-            // create grouping for each subgroup of stacked_data (Gesamt, Wartung, Aktuell)
+            // create grouping for each subgroup of stacked_data (Gesamt, Wartung, Zuletzt)
             svg.selectAll("g")
                 .data(stacked_data)
                 // define lifecycle actions for each grouping
@@ -214,10 +241,10 @@ function MultiBarChart(props : {
                             const subgroup_name = parent_datum.key 
                             let subgroup_value
                             if (subgroup_name === "Gesamt") {
-                                subgroup_value = Math.round((d.data[subgroup_name] + d.data["Wartung"] + d.data["Aktuell"]) * 10) / 10
+                                subgroup_value = Math.round((d.data[subgroup_name] + d.data["Wartung"] + d.data["Zuletzt"]) * 10) / 10
                             } else {
                                 if (subgroup_name === "Wartung") {
-                                    subgroup_value = Math.round((d.data[subgroup_name] + d.data["Aktuell"]) * 10) / 10
+                                    subgroup_value = Math.round((d.data[subgroup_name] + d.data["Zuletzt"]) * 10) / 10
                                 } else {
                                     subgroup_value = Math.round(d.data[subgroup_name] * 10) / 10
                                 }
@@ -296,7 +323,7 @@ function MultiBarChart(props : {
     }, [data])
 
     return (
-        <div className="chart-container-select">
+        <div className="chart-container-select with-legend">
             <div className="select-container">
                 <label className="select-label">Ensemble:</label>
                 <select className="ensemble-select" id="ensemble-select" onChange={handleSelection}>
@@ -305,6 +332,10 @@ function MultiBarChart(props : {
                 </select>
             </div>
             <h3 className="chart-title">{title}</h3>
+            {DeviceData && colours && 
+                        <div className="legend-container vertical">
+                            {generateLegend()}
+                        </div>}
             <div className="sub-flex-container">
                 {selection !== "default" && <svg ref={d3Chart}/>}
             </div>

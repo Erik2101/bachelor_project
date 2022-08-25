@@ -24,6 +24,10 @@
     align-items: center;
 }
 
+.with-legend {
+    grid-template-rows: 2fr 1fr 17fr;
+}
+
 .chart-title {
     padding-left: 15%;
     font-weight: 600;
@@ -50,6 +54,13 @@
     margin-top: 25%;
 }
 
+.vertical {
+    display: flex;
+    margin-top: 0px;
+    grid-column: span 2;
+    justify-content: space-evenly;
+}
+
 .legend-header {
     margin-bottom: 20px;
 }
@@ -57,6 +68,11 @@
 .legend-item-container {
     display: flex;
     margin-top: 5%;
+}
+
+.legend-item-vert {
+    display: flex;
+    margin-top: 0px;
 }
 
 .legend-color {

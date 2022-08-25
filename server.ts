@@ -56,7 +56,7 @@ function getServer() {
       if (!requestId) return call.end();
       let pulled_data : PulledData
       // read device data from JSON, choice depends on requestId
-      pulled_data = (requestId === 1) ? require("./data/deviceDummyV4.a.json") : require("./data/deviceDummyV4.b.json")
+      pulled_data = (requestId === 1) ? require("./data/deviceDummyV5.a.json") : require("./data/deviceDummyV5.b.json")
       activityData = pulled_data.data
       for (const item of activityData) {
         const ret: ChartDatasetResponse = { "DeviceData": item }

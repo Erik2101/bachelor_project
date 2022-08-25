@@ -34,6 +34,7 @@ function Popup({ data, helperData, current, trigger, setTrigger, submitFunction}
         }
         let ret = [...oldState]
         ret.push(value)
+        ret.sort()
         return ret
       })
     }
@@ -50,6 +51,7 @@ function Popup({ data, helperData, current, trigger, setTrigger, submitFunction}
         }
         const ret = [...oldState]
         ret.push(value)
+        ret.sort()
         return ret
       })
     }

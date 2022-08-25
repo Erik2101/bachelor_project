@@ -179,7 +179,7 @@ function BarChart(props: {
         }
         else if(props.typeId === 2) {
             setData(totalActivityData2(props.data))
-            setColours([theme.active, theme.i_u, theme.inactive, theme.high_prio])
+            setColours([theme.active, theme.i_u, theme.medium_prio, theme.high_prio])
             setTitle("Aktivitätsstatus und Einsatzbereitschaft aller bekannten Geräte")
         }
         return () => {};
