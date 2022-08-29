@@ -71,7 +71,7 @@ function App() {
     if(deviceDataStore && filterOptions.device_class.length === 0 && filterOptions.station.length === 0) {
       setFilteredDeviceData(deviceDataStore)
     }
-  }, [deviceDataStore])
+  }, [deviceDataStore, filterOptions])
 
   React.useEffect(() => {
     let step1 : Array<DeviceData> = []
@@ -151,6 +151,7 @@ function App() {
             {filteredDeviceData && stationDict && <LolipopChart data={filteredDeviceData} dict={stationDict}/>}
             {filteredDeviceData && <BarChart typeId={1} data={filteredDeviceData}/>}
             {filteredDeviceData && <PieChart typeId={3} data={filteredDeviceData}/>}
+{/*             {filteredDeviceData && <div className="bottom-margin"></div>} */}
           </main>
         </div>
         <div id="Raummonitor">
